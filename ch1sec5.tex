@@ -1,0 +1,312 @@
+%=============================================================================================================
+%= SECTION 1.5
+%=============================================================================================================
+\section{Constructing the Rational Numbers}
+\label{rat}
+
+\begin{definition} %% 1.5.1
+	Let $\mathbb{Z}^{*} = \mathbb{Z} - \{0\}$. The relation $\asymp$ on $\mathbb{Z} \times \mathbb{Z}^{*}$ is defined by $(x, y) \asymp (z, w)$ if and only if $x w = y z$, for all $(x, y), (z, w) \in \mathbb{Z} \times \mathbb{Z}^{*}$.
+\end{definition}
+
+\begin{lemma} %% 1.5.2
+	\label{rat:l:equiv}
+	The relation $\asymp$ is an equivalence relation.
+\end{lemma}
+
+\begin{definition} %% 1.5.3
+	The set of \emph{rational numbers}, denoted $\mathbb{Q}$, is the set of equivalence classes of $\mathbb{Z} \times \mathbb{Z}^{*}$ with respect to the equivalence relation $\asymp$.
+
+	The elements $\overline{0}, \overline{1} \in \mathbb{Q}$ are defined by $\overline{0} = [(0, 1)]$ and $\overline{1} = [(1, 1)] .$ Let $\mathbb{Q}^{*} = \mathbb{Q} - \{\overline{0}\}$. The binary operations $+$ and $\cdot$ on $\mathbb{Q}$ are defined by
+	\begin{align*}
+		[(x, y)] + [(z, w)]     & = [(x w + y z, y w)] \\
+		[(x, y)] \cdot [(z, w)] & = [(x z, y w)]
+	\end{align*}
+	for all $[(x, y)], [(z, w)] \in \mathbb{Q}$. The unary operation $-$ on $\mathbb{Q}$ is defined by $-[(x, y)] = [(-x, y)]$ for all $[(x, y)] \in \mathbb{Q}$. The unary operation $^{-1}$ on $\mathbb{Q}^{*}$ is defined by $[(x, y)]^{-1} = [(y, x)]$ for all $[(x, y)] \in \mathbb{Q}^{*}$. The relation $<$ on $\mathbb{Q}$ is defined by $[(x, y)] < [(z, w)]$ if and only if either $x w < y z$ when $y>0$ and $w > 0$ or when $y < 0$ and $w < 0$, and $x w > y z$ when $y > 0$ and $w < 0$ or when $y < 0$ and $w > 0$, for all $[(x, y)], [(z, w)] \in \mathbb{Q}$. The relation $\leq$ on $\mathbb{Q}$ is defined by $[(x, y)] \leq [(z, w)]$ if and only if $[(x, y)] < [(z, w)]$ or $[(x, y)] = [(z, w)]$, for all $[(x, y)], [(z, w)] \in \mathbb{Q}$.
+\end{definition}
+
+\begin{lemma} %% 1.5.4
+	\label{rat:l:ops}
+	The binary operations $+$ and $\cdot$, the unary operations $-$ and $^{-1}$, and the relation $<$, all on $\mathbb{Q}$, are well-defined.
+\end{lemma}
+
+\begin{theorem} %% 1.5.5
+	\label{rat:t:props}
+	Let $r, s, t \in \mathbb{Q}$.
+	\begin{enumerate}
+		\item $(r + s) + t = r + (s + t)$ \quad (\nameref*{rat:t:props:associative_add}). \xlabel[Associative Law for Addition]{rat:t:props:associative_add}
+		\item $r + s = s + r$ \quad (\nameref*{rat:t:props:commutative_add}). \xlabel[Commutative Law for Addition]{rat:t:props:commutative_add}
+		\item $r + \overline{0} = r$ \quad (\nameref*{rat:t:props:identity_add}). \xlabel[Identity Law for Addition]{rat:t:props:identity_add}
+		\item $r + (-r) = \overline{0}$ \quad (\nameref*{rat:t:props:inverses_add}). \xlabel[Inverses Law for Addition]{rat:t:props:inverses_add}
+		\item $(r s) t = r(s t)$ \quad (\nameref*{rat:t:props:associative_mult}). \xlabel[Associative Law for Multiplication]{rat:t:props:associative_mult}
+		\item $r s = s r$ \quad (\nameref*{rat:t:props:commutative_mult}). \xlabel[Commutative Law for Multiplication]{rat:t:props:commutative_mult}
+		\item $r \cdot \overline{1} = r$ \quad (\nameref*{rat:t:props:identity_mult}). \xlabel[Identity Law for Multiplication]{rat:t:props:identity_mult}
+		\item If $r \neq \overline{0}$, then $r \cdot r^{-1} = \overline{1}$ \quad (\nameref*{rat:t:props:inverses_mult}). \xlabel[Inverses Law for Multiplication]{rat:t:props:inverses_mult}
+		\item $r(s + t) = r s + r t$ \quad (\nameref*{rat:t:props:distributive}). \xlabel[Distributive Law]{rat:t:props:distributive}
+		\item Precisely one of $r < s$ or $r = s$ or $r > s$ holds \quad (\nameref*{rat:t:props:trichotomy}). \xlabel[Trichotomy Law]{rat:t:props:trichotomy}
+		\item If $r < s$ and $s < t$, then $r < t$ \quad (\nameref*{rat:t:props:transitive}). \xlabel[Transitive Law]{rat:t:props:transitive}
+		\item If $r < s$ then $r + t < s + t$ \quad (\nameref*{rat:t:props:addition_order}). \xlabel[Addition Law for Order]{rat:t:props:addition_order}
+		\item If $r < s$ and $t > \overline{0}$, then $r t < s t$ \quad (\nameref*{rat:t:props:multiplication_order}). \xlabel[Multiplication Law for Order]{rat:t:props:multiplication_order}
+		\item $\overline{0} \neq \overline{1}$ \quad (\nameref*{rat:t:props:non_triviality}). \xlabel[Non-Triviality]{rat:t:props:non_triviality}
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem} %% 1.5.6
+	\label{rat:t:int}
+	Let $i: \mathbb{Z} \to \mathbb{Q}$ be defined by $i(x) = [(x, 1)]$ for all $x \in \mathbb{Z}$.
+	\begin{enumerate}
+		\item The function $i: \mathbb{Z} \to \mathbb{Q}$ is injective. \label{rat:t:int:injective}
+		\item $i(0) = \overline{0}$ and $i(1) = \overline{1}$. \label{rat:t:int:zero_one}
+		\item Let $x, y \in \mathbb{Z}$. Then
+		      \begin{enumerate}
+			      \item $i(x + y) = i(x) + i(y)$;
+			      \item $i(-x) = -i(x)$;
+			      \item $i(x y) = i(x) i(y)$;
+			      \item $x < y$ if and only if $i(x) < i(y)$.
+		      \end{enumerate} \label{rat:t:int:props}
+		\item For each $r \in \mathbb{Q}$ there are $x, y \in \mathbb{Z}$ such that $y \neq 0$ and $r = i(x)(i(y))^{-1}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition} %% 1.5.7
+	The binary operation $-$ on $\mathbb{Q}$ is defined by $r - s = r + (-s)$ for all $r, s \in \mathbb{Q}$. The binary operation $\div$ on $\mathbb{Q}^{*}$ is defined by $r \div s = r s^{-1}$ for all $r, s \in \mathbb{Q}^{*}$; we also let $0 \div s = 0 \cdot s^{-1} = 0$ for all $s \in \mathbb{Q}^{*}$. The number $r \div s$ is also denoted $\frac{r}{s}$.
+\end{definition}
+
+\begin{lemma} %% 1.5.8
+	Let $a, c \in \mathbb{Z}$ and $b, d \in \mathbb{Z}^{*}$.
+	\begin{enumerate}
+		\item $\frac{a}{b} = \frac{c}{d}$ if and only if $a d = b c$.
+		\item $\frac{a}{b} + \frac{c}{d} = \frac{a d + b c}{b d}$.
+		\item $-\frac{a}{b} = \frac{-a}{b}$.
+		\item $\frac{a}{b} \cdot \frac{c}{d} = \frac{a c}{b d}$.
+		\item If $a \neq 0$, then $\left( \frac{a}{b} \right)^{-1} = \frac{b}{a}$.
+		\item If $b > 0$ and $d > 0$, or if $b < 0$ and $d < 0$, then $\frac{a}{b} < \frac{c}{d}$ if and only if $a d < b c$; if $b > 0$ and $d < 0$, or if $b < 0$ and $d > 0$, then $\frac{a}{b} < \frac{c}{d}$ if and only if $a d > b c$.
+	\end{enumerate}
+\end{lemma}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{rat:l:equiv}] %% 1.5.1
+	Complete the proof of Lemma \ref{rat:l:equiv}. That is, prove that the relation $\asymp$ is reflexive and symmetric.
+\end{exercise}
+
+\begin{proof}
+	\begin{notmine}
+		Let $(x, y), (z, w), (u, v) \in \mathbb{Z} \times \mathbb{Z}^{*}$. Suppose that $(x, y) \asymp (z, w)$ and $(z, w) \asymp (u, v)$. Then $x w = y z$ and $z v = w u$. It follows that $(x w)v = (y z) v$ and $y(z v) = y(w u)$, which implies that $(x v) w = (y z) v$ and $(y z) v = (y u) w$, and hence $(x v) w = (y u) w$. We know that $w \neq 0$, and therefore we deduce that $x v = y u$. It follows that $(x, y) \asymp (u, v)$. Therefore $\asymp$ is transitive.
+	\end{notmine}
+	Since $x y = y x$, it follows that $(x, y) \asymp (x, y)$, and hence $\asymp$ is reflexive. Now to see that $\asymp$ is symmetric, suppose that $(x, y) \asymp (z, w)$. Then $x w = y z$. This implies that $y z = x w$, which implies that $z y = w x$. Hence, $(z, w) \asymp (x, y)$.
+\end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{rat:l:ops}] %% 1.5.2
+	Complete the proof of Lemma \ref{rat:l:ops}. That is, prove that the binary operation $+$, the unary operation $^{-1}$ and the relation $<$, all on $\mathbb{Q}$, are well-defined.
+\end{exercise}
+
+\begin{proof}
+	\begin{notmine}
+		Let $(x, y), (z, w), (a, b), (c, d) \in \mathbb{Z} \times \mathbb{Z}^{*}$. Suppose that $[(x, y)] = [(a, b)]$ and that $[(z, w)] = [(c, d)]$.
+
+		By hypothesis we know that $(x, y) \asymp (a, b)$ and $(z, w) \asymp (c, d)$. Hence $x b = y a$ and $z d = w c$. By multiplying these two equations and doing some rearranging we obtain $(x z)(b d) = (y w)(a c)$, and this implies that $[(x z, y w)] = [(a c, b d)]$. Therefore $\cdot$ is well-defined. Also, from $x b = y a$ we deduce that $(-x)b = y(-a)$, and hence $[(-x, y)] = [(-a, b)]$. Therefore $-$ is well-defined.
+	\end{notmine}
+
+	\TODO
+\end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{rat:t:props} and Theorem \ref{rat:t:int}] %% 1.5.3
+	\label{rat:e:3}
+	Let $x \in \mathbb{Z}$ and $y \in \mathbb{Z}^{*}$.
+	\begin{enumerate}
+		\item Prove that $[(x, y)] = \overline{0}$ if and only if $x = 0$. \label{rat:e:3:1}
+		\item Prove that $[(x, y)] = \overline{1}$ if and only if $x = y$. \label{rat:e:3:2}
+		\item Prove that $\overline{0} < [(x, y)]$ if and only if $0 < x y$. \label{rat:e:3:3}
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{rat:e:3:1})]
+	\TODO
+\end{proof}
+
+% \begin{proof}[(\ref{rat:e:3:2})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[(\ref{rat:e:3:3})]
+% 	\TODO
+% \end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{rat:t:props}] %% 1.5.4
+	Prove Theorem \ref{rat:t:props} (\ref{rat:t:props:associative_add}) (\ref{rat:t:props:commutative_add}) (\ref{rat:t:props:identity_add}) (\ref{rat:t:props:associative_mult}) (\ref{rat:t:props:commutative_mult}) (\ref{rat:t:props:inverses_mult}) (\ref{rat:t:props:distributive}) (\ref{rat:t:props:transitive}) (\ref{rat:t:props:addition_order}) (\ref{rat:t:props:non_triviality}).
+\end{exercise}
+
+\begin{proof}[Part (\ref{rat:t:props:associative_add})]
+	\TODO
+\end{proof}
+
+% \begin{proof}[Part (\ref{rat:t:props:commutative_add})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[Part (\ref{rat:t:props:identity_add})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[Part (\ref{rat:t:props:associative_mult})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[Part (\ref{rat:t:props:commutative_mult})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[Part (\ref{rat:t:props:inverses_mult})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[Part (\ref{rat:t:props:distributive})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[Part (\ref{rat:t:props:transitive})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[Part (\ref{rat:t:props:addition_order})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[Part (\ref{rat:t:props:non_triviality})]
+% 	\TODO
+% \end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{rat:t:int}] %% 1.5.5
+	Prove Theorem \ref{rat:t:int} (\ref{rat:t:int:injective}) (\ref{rat:t:int:zero_one}) (\ref{rat:t:int:props}).
+\end{exercise}
+
+\begin{proof}[Part (\ref{rat:t:int:injective})]
+	\TODO
+\end{proof}
+
+% \begin{proof}[Part (\ref{rat:t:int:zero_one})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[Part (\ref{rat:t:int:props})]
+% 	\TODO
+% \end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Exercise \ref{cuts:e:2}, Theorem \ref{real:t:props} and Exercise \ref{real:e:3}] %% 1.5.6
+	\label{rat:e:6}
+	Let ${r, s, p, q \in \mathbb{Q}}$.
+	\begin{enumerate}
+		\item Prove that $-1 < 0 < 1$. \label{rat:e:6:1}
+		\item Prove that if $r < s$ then $-s < -r$. \label{rat:e:6:2}
+		\item Prove that $r \cdot 0 = 0$. \label{rat:e:6:3}
+		\item Prove that if $r > 0$ and $s > 0$, then $r + s > 0$ and $r s > 0$. \label{rat:e:6:4}
+		\item Prove that if $r > 0$, then $\frac{1}{r} > 0$. \label{rat:e:6:5}
+		\item Prove that if $0 < r < s$, then $\frac{1}{s} < \frac{1}{r}$. \label{rat:e:6:6}
+		\item Prove that if $0 < r < p$ and $0 < s < q$, then $r s < p q$. \label{rat:e:6:7}
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{rat:e:6:1})]
+	\TODO
+\end{proof}
+
+% \begin{proof}[(\ref{rat:e:6:2})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[(\ref{rat:e:6:3})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[(\ref{rat:e:6:4})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[(\ref{rat:e:6:5})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[(\ref{rat:e:6:6})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[(\ref{rat:e:6:7})]
+% 	\TODO
+% \end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise} %% 1.5.7
+	\label{rat:e:7}
+	\hfill
+	\begin{enumerate}
+		\item Prove that $1 < 2$. \label{rat:e:7:1}
+		\item Let $s, t \in \mathbb{Q}$. Suppose that $s < t$. Prove that $\frac{s + t}{2} \in \mathbb{Q}$, and that $s < \frac{s + t}{2} < t$. \label{rat:e:7:2}
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{rat:e:7:1})]
+	\TODO
+\end{proof}
+
+% \begin{proof}[(\ref{rat:e:7:2})]
+% 	\TODO
+% \end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise} %% 1.5.8
+	\label{rat:e:8}
+	Let $r \in \mathbb{Q}$. Suppose that $r > 0$.
+	\begin{enumerate}
+		\item Prove that if $r = \frac{a}{b}$ for some $a, b \in \mathbb{Z}$ such that $b \neq 0$, then either $a > 0$ and $b > 0$, or $a < 0$ and $b < 0$. \label{rat:e:8:1}
+		\item Prove that $r = \frac{m}{n}$ for some $m, n \in \mathbb{Z}$ such that $m > 0$ and $n > 0$. \label{rat:e:8:2}
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{rat:e:8:1})]
+	\TODO
+\end{proof}
+
+% \begin{proof}[(\ref{rat:e:8:2})]
+% 	\TODO
+% \end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{cuts:l:aprops} and Exercise \ref{cuts:e:2}] %% 1.5.9
+	\label{rat:e:9}
+	Let $r, s \in \mathbb{Q}$.
+	\begin{enumerate}
+		\item \label{rat:e:9:1}
+		      Suppose that $r > 0$ and $s > 0$. Prove that there is some $n \in \mathbb{N}$ such that $s < n r$.
+
+		      \hfill[Use Exercise \ref{rat:e:6}, \ref{rat:e:8}, and either Exercise \ref{int:e:8} or \ref{int2:e:4}.]
+		\item \label{rat:e:9:2}
+		      Suppose that $r > 0$. Prove that there is some $m \in \mathbb{N}$ such that $\frac{1}{m} < r$.
+		\item \label{rat:e:9:3}
+		      For each $x \in \mathbb{Q}$, let $x^{2}$ denote $x \cdot x$. Suppose that $r > 0$ and $s > 0$. Prove that if $r^{2} < p$, then there is some $k \in \mathbb{N}$ such that $\left( r + \frac{1}{k} \right)^{2} < s$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{rat:e:9:1})]
+	\TODO
+\end{proof}
+
+% \begin{proof}[(\ref{rat:e:9:2})]
+% 	\TODO
+% \end{proof}
+
+% \begin{proof}[(\ref{rat:e:9:3})]
+% 	\TODO
+% \end{proof}

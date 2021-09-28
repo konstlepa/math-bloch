@@ -1,0 +1,119 @@
+\usepackage{stix}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{mdframed}
+\usepackage[hidelinks]{hyperref}
+\usepackage{thmtools}
+\usepackage{thm-restate}
+
+\mdfsetup{
+	innerleftmargin=6pt,
+	innerrightmargin=6pt,
+	splittopskip=\topskip,
+	skipabove=1.5em
+}
+
+\makeatletter
+\newcommand\xlabel[2][]{\phantomsection\def\@currentlabelname{#1}\label{#2}}
+\makeatother
+
+\usepackage[active,tightpage]{preview}
+\usepackage{preview}
+
+\renewcommand{\PreviewBorder}{0.5em}
+
+%% Restore par-indent for preview.
+\usepackage{etoolbox}
+\edef\keptparindent{\the\parindent}
+\patchcmd{\preview}
+{\ignorespaces} %%% \preview ends with \ignorespaces
+{\parindent\keptparindent\ignorespaces}
+{}{}
+
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\makeatletter
+\def\p@section{\thechapter.}
+\makeatother
+
+\setlist[1]{leftmargin=*,labelindent=\parindent}
+
+\newlist{bycases}{enumerate}{10}
+\setlist[bycases]{leftmargin=*}
+\setlist[bycases,1]{label=Case \arabic*., ref=\arabic*}
+\setlist[bycases,2]{label=Case \theenumi\,\alph*., ref=\theenumi.\alph*}
+
+\newlist{lenumerate}{enumerate}{10}
+\setlist[lenumerate]{label=(\alph*), leftmargin=*}
+\setlist[lenumerate,1]{ref=\alph*}
+\setlist[lenumerate,2]{ref=\theenumi \, \alph*}
+
+\setlist[enumerate]{leftmargin=*}
+\setlist[enumerate,1]{label=(\arabic*), ref=\arabic*}
+\setlist[enumerate,2]{label=(\alph*), ref=\theenumi \, \alph*}
+
+\renewcommand{\datename}{}
+
+\declaretheoremstyle[
+	headfont=\normalfont\bfseries,
+	notefont=\normalfont\bfseries,
+	notebraces={(}{)},
+	bodyfont=\normalfont,
+	postheadspace=0.5em,
+	preheadhook=\begin{mdframed}, postfoothook=\end{mdframed}
+]{exercisestyle}
+
+\declaretheoremstyle[
+	headfont=\normalfont\bfseries,
+	notefont=\normalfont\bfseries,
+	notebraces={(}{)},
+	bodyfont=\normalfont\itshape,
+	postheadspace=0.5em,
+	spaceabove=1.5em
+]{theoremstyle}
+
+\declaretheorem[style=exercisestyle, numberwithin=section]{exercise}
+\declaretheorem[style=theoremstyle, numberwithin=section]{theorem}
+\declaretheorem[style=theoremstyle, sibling=theorem]{lemma}
+\declaretheorem[style=theoremstyle, sibling=theorem]{definition}
+\declaretheorem[style=theoremstyle, sibling=theorem]{axiom}
+\declaretheorem[style=theoremstyle, sibling=theorem]{corollary}
+
+\renewcommand{\theexercise}{\thechapter.\thesection.\arabic{exercise}}
+\renewcommand{\thetheorem}{\thechapter.\thesection.\arabic{theorem}}
+\renewcommand{\thelemma}{\thechapter.\thesection.\arabic{lemma}}
+\renewcommand{\thedefinition}{\thechapter.\thesection.\arabic{definition}}
+\renewcommand{\thecorollary}{\thechapter.\thesection.\arabic{corollary}}
+\renewcommand{\theaxiom}{\thechapter.\thesection.\arabic{axiom}}
+
+\let\proof\relax
+\declaretheoremstyle[
+	spaceabove=6pt,
+	spacebelow=6pt,
+	headfont=\normalfont\itshape\bfseries,
+	notefont=\normalfont\itshape\bfseries,
+	notebraces={of }{},
+	bodyfont=\normalfont,
+	postheadspace=1em,
+	qed=$\square$
+]{proofstyle}
+\declaretheorem[style=proofstyle, unnumbered]{proof}
+
+\newcommand{\bibbloch}[1]{
+	\bibitem{bloch#1}
+	Ethan~D. Bloch,
+	\emph{The Real Numbers and Real Analysis},
+	1st ed.,
+	Springer,
+	2011.
+}
+
+\newcommand{\TBD}{{\color{red} TBD}}
+\newcommand{\TODO}{{\color{red} TODO}}
+
+\newenvironment{notmine}[1][]{\color{gray}}{}
+
+\let\emph\relax
+\DeclareTextFontCommand{\emph}{\bfseries}

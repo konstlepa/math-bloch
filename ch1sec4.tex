@@ -1,0 +1,217 @@
+%=============================================================================================================
+%= SECTION 1.4
+%=============================================================================================================
+\section{Entry 2: Axioms for the Integers}
+\label{int2}
+
+\begin{definition} %% 1.4.1
+	\xlabel[ordered integral domain]{int2:d:oid}
+	An \emph{\nameref*{int2:d:oid}} is a set $R$ with elements $0,1 \in R$, binary operations $+$ and $\cdot$, a unary operation $-$ and a relation $<$, which satisfy the following properties. Let $x, y, z \in R$.
+	\begin{lenumerate}
+		\item \xlabel[Associative Law for Addition]{int2:d:oid:associative_add}
+		$(x + y) + z = x + (y + z)$ \quad (\nameref*{int2:d:oid:associative_add}).
+		\item \xlabel[Commutative Law for Addition]{int2:d:oid:commutative_add}
+		$x + y = y + x$ \quad (\nameref*{int2:d:oid:commutative_add}).
+		\item \xlabel[Identity Law for Addition]{int2:d:oid:identity_add}
+		$x + 0 = x$ \quad (\nameref*{int2:d:oid:identity_add}).
+		\item \xlabel[Inverses Law for Addition]{int2:d:oid:inverses_add}
+		$x + (-x) = 0$ \quad (\nameref*{int2:d:oid:inverses_add}).
+		\item \xlabel[Associative Law for Multiplication]{int2:d:oid:associative_mult}
+		$(x y) z = x (y z)$ \quad (\nameref*{int2:d:oid:associative_mult}).
+		\item \xlabel[Commutative Law for Multiplication]{int2:d:oid:commutative_mult}
+		$x y = y x$ \quad (\nameref*{int2:d:oid:commutative_mult}).
+		\item \xlabel[Identity Law for Multiplication]{int2:d:oid:identity_mult}
+		$x \cdot 1 = x$ \quad (\nameref*{int2:d:oid:identity_mult}).
+		\item \xlabel[Distributive Law]{int2:d:oid:distributive}
+		$x (y + z) = x y + x z$ \quad (\nameref*{int2:d:oid:distributive}).
+		\item \xlabel[No Zero Divisors Law]{int2:d:oid:no_zero_divisors}
+		If $x y = 0$, then $x = 0$ or $y = 0$ \quad (\nameref*{int2:d:oid:no_zero_divisors}).
+		\item \xlabel[Trichotomy Law]{int2:d:oid:trichotomy}
+		Precisely one of $x < y$ or $x = y$ or $x > y$ holds \quad (\nameref*{int2:d:oid:trichotomy}).
+		\item \xlabel[Transitive Law]{int2:d:oid:transitive}
+		If $x < y$ and $y < z$, then $x < z$ \quad (\nameref*{int2:d:oid:transitive}).
+		\item \xlabel[Addition Law for Order]{int2:d:oid:addition_order}
+		If $x < y$ then $x + z < y + z$ \quad (\nameref*{int2:d:oid:addition_order}).
+		\item \xlabel[Multiplication Law for Order]{int2:d:oid:multiplication_order}
+		If $x < y$ and $z > 0$, then $x z < y z$ \quad (\nameref*{int2:d:oid:multiplication_order}).
+		\item \xlabel[Non-Triviality]{int2:d:oid:non_triviality}
+		$0 \neq \hat{1}$ \quad (\nameref*{int2:d:oid:non_triviality}).
+	\end{lenumerate}
+\end{definition}
+
+\begin{definition} %% 1.4.2
+	Let $R$ be an \nameref{int2:d:oid}, and let $A \subseteq R$ be a set.
+	\begin{enumerate}
+		\item The relation $\leq$ on $R$ is defined by $a \leq b$ if and only if $a < b$ or $a = b$, for all $a, b \in R$.
+		\item \xlabel[least element]{int2:d:least_element}
+		      The set $A$ has a \emph{\nameref*{int2:d:least_element}} if there is some $a \in A$ such that $a \leq x$ for all $x \in A$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition} %% 1.4.3
+	\xlabel[Well-Ordering Principle]{int2:d:wop}
+	Let $R$ be an \nameref{int2:d:oid}. The ordered integral domain $R$ satisfies the \emph{\nameref*{int2:d:wop}} if every non-empty subset of $\{x \in R \mid x > 0 \}$
+	has a \nameref{int2:d:least_element}.
+\end{definition}
+
+\begin{axiom}[Axiom for the Integers]  %% 1.4.4
+	There exists an \nameref{int2:d:oid} $\mathbb{Z}$ that satisfies the \nameref{int2:d:wop}.
+\end{axiom}
+
+\begin{lemma} %% 1.4.5
+	\label{int2:l:props}
+	Let $x, y, z \in \mathbb{Z}$.
+	\begin{enumerate}
+		\item \xlabel[Cancellation Law for Addition]{int2:l:props:cancellation_add}
+		      If $x + z = y + z$, then $x = y$ \quad (\nameref*{int2:l:props:cancellation_add}).
+		\item \label{int2:l:props:2}
+		      $-(-x) = x$.
+		\item \label{int2:l:props:3}
+		      $-(x + y) = (-x) + (-y)$.
+		\item \label{int2:l:props:4}
+		      $x \cdot 0 = 0$.
+		\item \xlabel[Cancellation Law for Multiplication]{int2:l:props:cancellation_mult}
+		      If $z \neq 0$ and if $x z = y z$, then $x = y$ \quad (\nameref*{int2:l:props:cancellation_mult}).
+		\item \label{int2:l:props:6}
+		      $(-x) y = -x y = x(-y)$.
+		\item \label{int2:l:props:7}
+		      $x y = 1$ if and only if $x = 1 = y$ or $x = -1 = y$.
+		\item \label{int2:l:props:8}
+		      $x > 0$ if and only if $-x < 0$, and $x < 0$ if and only if $-x > 0$.
+		\item \label{int2:l:props:9}
+		      $0 < 1$.
+		\item \label{int2:l:props:10}
+		      If $x \leq y$ and $y \leq x$, then $x = y$.
+		\item \label{int2:l:props:11}
+		      If $x > 0$ and $y > 0$, then $x y > 0 .$ If $x > 0$ and $y < 0$, then $x y < 0$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{theorem} %% 1.4.6
+	Let $x \in \mathbb{Z}$. Then there is no $y \in \mathbb{Z}$ such that $x < y < x + 1$.
+\end{theorem}
+
+\begin{definition} %% 1.4.7
+	\hfill
+	\begin{enumerate}
+		\item Let $x \in \mathbb{Z}$. The number $x$ is positive if $x > 0$, and the number $x$ is negative if $x < 0$.
+		\item The set of natural numbers, denoted $\mathbb{N}$, is defined by
+		      \[
+			      \mathbb{N} = \{ x \in \mathbb{Z} \mid x > 0 \}.
+		      \]
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Peano Postulates] %% 1.4.8
+	\label{int2:t:peano}
+	Let $s: \mathbb{N} \to \mathbb{N}$ be defined by $s(n) = n + 1$ for all $n \in \mathbb{N}$.
+	\begin{lenumerate}
+		\item There is no $n \in \mathbb{N}$ such that $s(n) = 1$.
+		\item The function $s$ is injective.
+		\item Let $G \subseteq \mathbb{N}$ be a set. Suppose that $1 \in G$, and that if $g \in G$ then $s(g) \in G$. Then
+		$G = \mathbb{N}$. \label{int2:t:peano:induction}
+	\end{lenumerate}
+\end{theorem}
+
+\addtocounter{exercise}{1}
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Section \ref{int2}] %% 1.4.2
+	Let $n \in \mathbb{N}$. Prove that $n + 1 \in \mathbb{N}$.
+\end{exercise}
+
+\begin{proof}
+	Suppose that $n \in \mathbb{N}$. Then $n \in \mathbb{Z}$ and $n > 0$. Using the \nameref{int2:d:oid:addition_order} we obtain $n + 1 > 0 + 1$. By the \hyperref[int2:d:oid:commutative_add]{Commutative} and \hyperref[int2:d:oid:identity_add]{Identity} Laws for Addition we deduce that $n + 1 > 1$. Also, we know by Part (\ref{int2:l:props:9}) of Lemma\,\ref{int2:l:props} that $0 < 1$. Then applying the \nameref{int2:d:oid:transitive} we get $n + 1 > 0$, and hence by the definition of $\mathbb{N}$ we see that $n + 1 \in \mathbb{N}$.
+\end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Exercise \ref{int2:e:8}] %% 1.4.3
+	\label{int2:e:3}
+	Let $x, y \in \mathbb{Z}$. Prove that $x \leq y$ if and only if $-x \geq -y$.
+\end{exercise}
+
+\begin{proof}
+	Suppose that $x \leq y$, which means that either $x = y$ or $x < y$. Suppose that $x = y$. Then $x(-1) = y(-1)$, and by Part (\ref{int2:l:props:6}) of Lemma \ref{int2:l:props} we obtain
+	$-(x \cdot 1) = -(y \cdot 1)$. Hence by the \nameref{int2:d:oid:identity_mult} we see that $-x = -y$.
+
+	Now suppose that $x < y$, or in other words $y > x$. Then by the \nameref{int2:d:oid:addition_order} we deduce that $y + (-x) + (-y) > x + (-x) + (-y)$. Using the \hyperref[int2:d:oid:commutative_add]{Commutative} and \hyperref[int2:d:oid:associative_add]{Associative} Laws for Addition we get $(-x) + [y + (-y)] > (-y) + [x + (-x)]$. But then by the \hyperref[int2:d:oid:inverses_add]{Inverses} and \hyperref[int2:d:oid:identity_add]{Identity} Laws for Addition we can conclude that $-x > -y$.
+
+	Thus, $-x \geq -y$. This process can be done backwards, and hence $x \leq y$ if and only if $-x \geq -y$.
+\end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Exercise \ref{int2:e:6}, Exercise \ref{int2:e:8} and Exercise \ref{rat:e:9}] %% 1.4.4
+	\label{int2:e:4}
+	Prove that $\mathbb{N} = \{ x \in \mathbb{Z} \mid x \geq 1 \}$.
+\end{exercise}
+
+\begin{proof}
+	We will prove that $x > 0$ if and only if $x \geq 1$ for all $x \in \mathbb{Z}$, which will imply that $\mathbb{N} = \{ x \in \mathbb{Z} \mid x \geq 1 \}$. Let $x \in \mathbb{Z}$, and suppose that $x > 0$. Then by the \nameref{int2:d:wop} it follows that $x \geq 0 + 1$, and hence by the \hyperref[int2:d:oid:commutative_add]{Commutative} and \hyperref[int2:d:oid:identity_add]{Identity} Laws for Addition we can conclude that $x \geq 1$. Now suppose that $x \geq 1$, which means that either $x = 1$ or $x > 1$. Because of Lemma \ref{int2:l:props} (\ref{int2:l:props:9}) we know that $0 < 1$, so if $x = 1$ then clearly $x > 0$. But if $x > 1$ then $0 < 1 < x$, and by the \nameref{int2:d:oid:transitive} we deduce that $x > 0$.
+
+\end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise} %% 1.4.5
+	Let $a, b \in \mathbb{Z}$. Prove that if $a < b$, then $a + 1 \leq b$.
+\end{exercise}
+
+\begin{proof}
+	If $a < b$ then by the \nameref{int2:d:wop} it follows that $a + 1 \leq b$.
+\end{proof}
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{irp:t:ind}] %% 1.4.6
+	\label{int2:e:6}
+	Let $n \in \mathbb{N}$. Suppose that $n \neq 1$. Prove that there is some $b \in \mathbb{N}$ such that $b + 1 = n$.
+	\hfill [Use Exercise \ref{int2:e:4}.]
+\end{exercise}
+
+\begin{proof}
+	Let $b = n + (-1)$. By Exercise \ref{int2:e:4} we know that $n \geq 1$, and because $n \not= 1$ it implies that $n > 1$. By the \nameref{int2:d:oid:addition_order} it follows that $n + (-1) > 1 + (-1)$, and by the \nameref{int2:d:oid:inverses_add} we deduce that $n + (-1) > 0$, so $b > 0$. Hence, $b \in \mathbb{N}$.
+
+	We have $b + 1 = n + (-1) + 1$. By the \hyperref[int2:d:oid:commutative_add]{Commutative} and \hyperref[int2:d:oid:inverses_add]{Inverses} Laws for Addition we see that $(-1) + 1 = 1 + (-1) = 0$. Then applying the \nameref{int2:d:oid:associative_add} we deduce that $n + [(-1) + 1] = n + 0$, and hence by the \nameref{int2:d:oid:identity_add} we can conclude that $b + 1 = n$.
+\end{proof}
+
+\addtocounter{exercise}{1}
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{lemma}
+	\label{int2:e:8:l}
+	Let $a, b \in \mathbb{Z}$. Suppose that $a < b$. Then there is some $k \in \mathbb{N}$ such that $a + k = b$.
+\end{lemma}
+
+\begin{proof}
+	Let $k = b + (-a)$. By the \nameref{int2:d:oid:addition_order} we have ${b + (-a) > a + (-a)}$, and by the \nameref{int2:d:oid:inverses_add} we deduce that $k = b + (-a) > 0$. Hence, $k \in \mathbb{N}$. Now adding $a$ to both sides of the equation $k = b + (-a)$ we obtain $k + a = b + (-a) + a$. Using the \hyperref[int2:d:oid:associative_add]{Associative} and \hyperref[int2:d:oid:commutative_add]{Commutative} Laws for Addition it follows that $a + k = b + [a + (-a)]$, and hence by the \hyperref[int2:d:oid:inverses_add]{Inverses} and \hyperref[int2:d:oid:identity_add]{Identity} Laws for Addition we see that $a + k = b$.
+\end{proof}
+
+\begin{exercise} %% 1.4.8
+	\label{int2:e:8}
+	Let $a \in \mathbb{Z}$.
+	\begin{enumerate}
+		\item \label{int2:e:8:1}
+		      Let $G \subseteq \{ x \in \mathbb{Z} \mid x \geq a \}$ be a set. Suppose that $a \in G$, and that if $g \in G$ then $g + 1 \in G$. Prove that $G = \{ x \in \mathbb{Z} \mid x \geq a \}$.
+		      \hfill [Use Exercise \ref{int2:e:4}.]
+		\item \label{int2:e:8:2}
+		      Let $H \subseteq \{x \in \mathbb{Z} \mid x \leq a \}$ be a set. Suppose that $a \in H$, and that if $h \in H$ then $h + (-1) \in H$. Prove that $H = \{ x \in \mathbb{Z} \mid x \leq a \}$.
+		      \hfill [Use Exercise \ref{int2:e:3}.]
+	\end{enumerate}
+
+\end{exercise}
+
+\begin{proof}[(\ref{int2:e:8:1})]
+	Let $y \in \mathbb{Z}$, and suppose that $y \geq a$. If $y = a$, then clearly $y \in G$. Now suppose that $y \not= a$, so $y > a$. Then according to Lemma\,\ref{int2:e:8:l} we can choose some $k \in \mathbb{N}$ such that $y = a + k$.
+
+	Let $I = \{ n \in \mathbb{N} \mid a + n \in G \}$. Clearly $I \subseteq \mathbb{N}$. Because $a \in G$ it follows that $a + 1 \in G$, and therefore $1 \in I$. Now suppose that $n \in I$, which means that $a + n \in G$. Then $(a + n) + 1 \in G$. By the \nameref{int2:d:oid:associative_add} we have $a + (n + 1) \in G$. Hence $n + 1 \in I$, and using Part (\ref{int2:t:peano:induction}) of the \nameref{int2:t:peano} we deduce that $I = \mathbb{N}$. Hence, $y = a + k \in G$.
+\end{proof}
+
+\begin{proof}[(\ref{int2:e:8:2})]
+	Let $y \in \mathbb{Z}$, and suppose that $y \leq a$. By Exercise \ref{int2:e:3} it follows that ${-y \geq -a}$, which means that either $-y = -a$ or $-y > -a$. Suppose that $-y = -a$. Then by the \nameref{int2:d:oid:identity_mult} we have $-(y \cdot 1) = -(a \cdot 1)$. By Lemma \ref{int2:l:props} (\ref{int2:l:props:6}) and the \nameref{int2:l:props:cancellation_mult} we deduce that $y = a$. Hence, $y \in H$.
+
+	Now suppose that $-y > -a$. It follows from Lemma \ref{int2:e:8:l} that there is some ${k \in \mathbb{N}}$ such that $-y = (-a) + k$. Multiplying both sides of this equation by $-1$ we obtain ${(-1)(-y) = (-1)[(-a) + k]}$. According to Lemma \ref{int2:l:props} (\ref{int2:l:props:6}) and the \nameref{int2:d:oid:commutative_mult} we obtain $[-(-y)] \cdot 1 = [-(-a)] \cdot 1 + (-k) \cdot 1$, and by Lemma \ref{int2:l:props} (\ref{int2:l:props:2}) and the \nameref{int2:d:oid:identity_mult} we see that $y = a + (-k)$.
+
+	Let $I = \{ n \in \mathbb{N} \mid a + (-n) \in H \}$. Clearly $I \subseteq H$. Because $a \in G$ it follows that $a + (-1) \in G$, and therefore $1 \in I$. Now suppose that $n \in I$. Then $a + (-n) \in H$, so $[a + (-n)] + (-1) \in H$. Using the \nameref{int2:d:oid:associative_add} we get $a + [(-n) + (-1)]$, and using Part (\ref{int2:l:props:3}) of Lemma \ref{int2:l:props} we get $a + [-(n + 1)] \in H$. Thus, $n + 1 \in I$, and by Part (\ref{int2:t:peano:induction}) of the \nameref{int2:t:peano} we deduce that $I = \mathbb{N}$. Hence, $y = a + (-k) \in H$.
+\end{proof}

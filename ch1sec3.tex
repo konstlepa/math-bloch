@@ -1,0 +1,610 @@
+%=============================================================================================================
+%= SECTION 1.3
+%=============================================================================================================
+
+\section{Constructing the Integers}
+\label{int}
+
+\begin{definition} %% 1.3.1
+	The relation $\sim$ on $\mathbb{N} \times \mathbb{N}$ is defined by $(a, b) \sim (c, d)$ if and only if $a + d = b + c$, for all $(a, b), (c, d) \in \mathbb{N} \times \mathbb{N}$.
+\end{definition}
+
+\begin{lemma} %% 1.3.2
+	\label{int:l:equiv}
+	The relation $\sim$ is an equivalence relation on $\mathbb{N} \times \mathbb{N}$.
+\end{lemma}
+
+\begin{definition} % 1.3.3
+	\label{int:d:z_ops}
+	The set of \emph{integers}, denoted $\mathbb{Z}$, is the set of equivalence classes of $\mathbb{N} \times \mathbb{N}$ with respect to the equivalence relation $\sim$.
+
+	The elements $\hat{0}, \hat{1} \in \mathbb{Z}$ are defined by $\hat{0} = [(1, 1)]$ and $\hat{1} = [(1 + 1, 1)]$. The binary operations $+$ and $\cdot$ on $\mathbb{Z}$ are defined by
+	\begin{align*}
+		[(a, b)] + [(c, d)]     & = [(a + c, b + d)]         \\
+		[(a, b)] \cdot [(c, d)] & = [(a c + b d, a d + b c)]
+	\end{align*}
+	for all $[(a, b)], [(c, d)] \in \mathbb{Z}$. The unary operation $-$ on $\mathbb{Z}$ is defined by $-[(a, b)] = [(b, a)]$ for all $[(a, b)] \in \mathbb{Z}$. The relation $<$ on $\mathbb{Z}$ is defined by $[(a, b)] < [(c, d)]$ if and only if $a + d < b + c$, for all $[(a, b)], [(c, d)] \in \mathbb{Z}$. The relation $\leq$ on $\mathbb{Z}$ is defined by $[(a, b)] \leq [(c, d)]$ if and only if $[(a, b)] < [(c, d)]$ or $[(a, b)] = [(c, d)]$, for all $[(a, b)], [(c, d)] \in \mathbb{Z}$.
+\end{definition}
+
+\begin{lemma} %% 1.3.4
+	\label{int:l:well_defined}
+	The binary operations $+$ and $\cdot$, the unary operation $-$, and the relation $<$, all on $\mathbb{Z}$, are well-defined.
+\end{lemma}
+
+\begin{theorem} %% 1.3.5
+	\label{int:t:props}
+	Let $x, y, z \in \mathbb{Z}$.
+	\begin{enumerate}
+		\item \xlabel[Associative Law for Addition]{int:t:props:associative_add}
+		      $(x + y) + z = x + (y + z)$ \quad (\nameref*{int:t:props:associative_add}).
+		\item \xlabel[Commutative Law for Addition]{int:t:props:commutative_add}
+		      $x + y = y + x$ \quad (\nameref*{int:t:props:commutative_add}).
+		\item \xlabel[Identity Law for Addition]{int:t:props:identity_add}
+		      $x + \hat{0} = x$ \quad (\nameref*{int:t:props:identity_add}).
+		\item \xlabel[Inverses Law for Addition]{int:t:props:inverses_add}
+		      $x + (-x) = \hat{0}$ \quad (\nameref*{int:t:props:inverses_add}).
+		\item \xlabel[Associative Law for Multiplication]{int:t:props:associative_mult}
+		      $(x y) z = x (y z)$ \quad (\nameref*{int:t:props:associative_mult}).
+		\item \xlabel[Commutative Law for Multiplication]{int:t:props:commutative_mult}
+		      $x y = y x$ \quad (\nameref*{int:t:props:commutative_mult}).
+		\item \xlabel[Identity Law for Multiplication]{int:t:props:identity_mult}
+		      $x \cdot \hat{1} = x$ \quad (\nameref*{int:t:props:identity_mult}).
+		\item \xlabel[Distributive Law]{int:t:props:distributive}
+		      $x (y + z) = x y + x z$ \quad (\nameref*{int:t:props:distributive}).
+		\item \xlabel[No Zero Divisors Law]{int:t:props:no_zero_divisors}
+		      If $x y = \hat{0}$, then $x = \hat{0}$ or $y = \hat{0}$ \quad (\nameref*{int:t:props:no_zero_divisors}).
+		\item \xlabel[Trichotomy Law]{int:t:props:trichotomy}
+		      Precisely one of $x < y$ or $x = y$ or $x > y$ holds \quad (\nameref*{int:t:props:trichotomy}).
+		\item \xlabel[Transitive Law]{int:t:props:transitive}
+		      If $x < y$ and $y < z$, then $x < z$ \quad (\nameref*{int:t:props:transitive}).
+		\item \xlabel[Addition Law for Order]{int:t:props:addition_order}
+		      If $x < y$ then $x + z < y + z$ \quad (\nameref*{int:t:props:addition_order}).
+		\item \xlabel[Multiplication Law for Order]{int:t:props:multiplication_order}
+		      If $x < y$ and $z > \hat{0}$, then $x z < y z$ \quad (\nameref*{int:t:props:multiplication_order}).
+		\item \xlabel[Non-Triviality]{int:t:props:non_triviality}
+		      $\hat{0} \neq \hat{1}$ \quad (\nameref*{int:t:props:non_triviality}).
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition} %% 1.3.6
+	Let $x \in \mathbb{Z}$. The number $x$ is \emph{positive} if $x > \hat{0}$, and the number $x$ is \emph{negative} if $x < \hat{0}$.
+\end{definition}
+
+\begin{theorem} %% 1.3.7
+	\label{int:t:nat_int}
+	Let $i: \mathbb{N} \to \mathbb{Z}$ be defined by $i(n) = [(n + 1, 1)]$ for all $n \in \mathbb{N}$.
+	\begin{enumerate}
+		\item \label{int:t:nat_int:1}
+		      The function $i: \mathbb{N} \to \mathbb{Z}$ is injective.
+		\item \label{int:t:nat_int:2}
+		      $i(\mathbb{N})=\{x \in \mathbb{Z} \mid x>\hat{0}\}$.
+		\item \label{int:t:nat_int:3}
+		      $i(1) = \hat{1}$.
+		\item \label{int:t:nat_int:4}
+		      Let $a, b \in \mathbb{N}$. Then
+
+		      \begin{enumerate}
+			      \item \label{int:t:nat_int:4:1}
+			            $i(a + b) = i(a) + i(b)$;
+			      \item \label{int:t:nat_int:4:2}
+			            $i(a b) = i(a) i(b)$;
+			      \item \label{int:t:nat_int:4:3}
+			            $a < b$ if and only if $i(a) < i(b)$.
+		      \end{enumerate}
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem} %% 1.3.8
+	\label{int:t:neg_zero_props}
+
+	Let $x, y, z \in \mathbb{Z}$.
+	\begin{enumerate}
+		\item \xlabel[Cancellation Law for Addition]{int:t:neg_zero_props:cancellation_add}
+		      If $x + z = y + z$, then $x = y$ \quad (\nameref*{int:t:neg_zero_props:cancellation_add}).
+		\item \label{int:t:neg_zero_props:2}
+		      $-(-x) = x$.
+		\item \label{int:t:neg_zero_props:3}
+		      $-(x + y) = (-x) + (-y)$.
+		\item \label{int:t:neg_zero_props:4}
+		      $x \cdot 0 = 0$.
+		\item \xlabel[Cancellation Law for Multiplication]{int:t:neg_zero_props:cancellation_mult}
+		      If $z \neq 0$ and if $x z = y z$, then $x = y$ \quad (\nameref*{int:t:neg_zero_props:cancellation_mult}).
+		\item \label{int:t:neg_zero_props:6}
+		      $(-x) y = -x y = x(-y)$.
+		\item \label{int:t:neg_zero_props:7}
+		      $x y = 1$ if and only if $x = 1 = y$ or $x = -1 = y$.
+		\item \label{int:t:neg_zero_props:8}
+		      $x > 0$ if and only if $-x < 0$, and $x < 0$ if and only if $-x > 0$.
+		\item \label{int:t:neg_zero_props:9}
+		      $0 < 1$.
+		\item \label{int:t:neg_zero_props:10}
+		      If $x \leq y$ and $y \leq x$, then $x = y$.
+		\item \label{int:t:neg_zero_props:11}
+		      If $x > 0$ and $y > 0$, then $x y > 0 .$ If $x > 0$ and $y < 0$, then $x y < 0$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem} %% 1.3.9
+	\label{int:t:discrete}
+	Let $x \in \mathbb{Z}$. Then there is no $y \in \mathbb{Z}$ such that $x < y < x + 1$.
+\end{theorem}
+
+
+\addtocounter{exercise}{1}
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{int:l:equiv}] %% 1.3.2
+	Complete the proof of Lemma \ref{int:l:equiv}. That is, prove that the relation $\sim$ is transitive.
+\end{exercise}
+
+\begin{proof}
+	\begin{notmine}
+		Let $(a, b),(c, d) \in \mathbb{N} \times \mathbb{N}$. We note that $a+b=b+a$, and hence $(a, b) \sim(a, b)$. Therefore $\sim$ is reflexive. Now suppose that $(a, b) \sim(c, d)$. Then $a+d=b+c$. Hence $c+b=d+a$, and therefore $(c, d) \sim(a, b) .$ It follows that $\sim$ is symmetric.
+	\end{notmine}
+
+	Now let $(a, b), (c, d), (e, f) \in \mathbb{N} \times \mathbb{N}$, and suppose that $(a, b) \sim (c, d)$ and $(c, d) \sim (e, f)$. Then $a + d = b + c$ and $c + f = d + e$. By adding these two equations and doing some rearranging we obtain $(a + f) + (c + d) = (b + e) + (c + d)$. Canceling yields $a + f = b + e$, or in other words $(a, b) \sim (e, f)$. Hence, $\sim$ is transitive.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------  
+\Newpage
+\begin{exercise}[Used in Lemma \ref{int:l:well_defined}] %% 1.3.3
+	\label{int:e:3}
+	Complete the proof of Lemma \ref{int:l:well_defined}. That is, prove that $\cdot$ and $-$ for $\mathbb{Z}$ are well-defined. The proof for $\cdot$ is a bit more complicated than might be expected. \hfill [Use Exercise \ref{nat:e:5}.]
+\end{exercise}
+
+\begin{proof}
+	\begin{notmine}
+		Let $(a, b), (c, d), (x, y), (z, w) \in \mathbb{N} \times \mathbb{N}$. Suppose that $[(a, b)] = [(x, y)]$ and $[(c, d)] = [(z, w)]$.
+
+		By hypothesis we know that $(a, b) \sim (x, y)$ and $(c, d) \sim (z, w)$. Hence $a + y = b + x$ and $c + w=d + z$. By adding these two equations and doing some rearranging we obtain $(a + c) + (y + w) = (b + d) + (x + z)$, and we deduce that $[(a + c, b + d)] = [(x + z, y + w)]$. Therefore $+$ is well-defined.
+
+		Now suppose that $[(a, b)] < [(b, d)]$. Therefore $a + d < b + c$. Adding $b + x = a + y$ and $c + w = d + z$ to this inequality, we obtain $a + d + b + x + c + w < b + c + a + y + d + z$. Canceling yields $x + w < y + z$, and it follows that $[(x, y)] < [(y, w)]$. This process can be done backwards, and hence $[(x,  y)] < [(y, w)]$ implies $[(a, b)] < [(b, d)]$. Therefore $[(a, b)] < [(b, d)]$ if and only if $[(x, y)] < [(y, w)]$, which means that $<$ is well-defined.
+	\end{notmine}
+
+	Next we will show that $-$ is well-defined, so
+	\begin{align*}
+		(a, b) \sim (x, y) & \iff a + y = b + x        \\
+		                   & \iff x + b = y + a        \\
+		                   & \iff (y, x) \sim (b, a)   \\
+		                   & \iff (b, a) \sim (y, x)   \\
+		                   & \iff [(b, a)] = [(y, x)].
+	\end{align*}
+	Because $-$ is a function, it follows that
+	\[
+		[(a, b)] = -[(b, a)] = -[(y, x)] = [(x, y)].
+	\]
+	Hence, $-$ is well-defined.
+
+	We know that $a + y = b + x$, so $(a + y)c = (b + x)c$ and $(b + x)d = (a + y)d$. Having $c + w = d + z$ and by adding these two equations we obtain
+	\begin{align*}
+		(a + y)c + (b + x)d                        & = (b + x)c + (a + y)d                   \\
+		\iff a c + y c + b d + x d                 & = b c + x c + a d + y d                 \\
+		\iff (a c + b d) + y c + x d               & = (a d + b c) + x c + y d               \\
+		\iff (a c + b d) + y c + x d + y w + x z   & = (a d + b c) + x c + y d + y w + x z   \\
+		\iff (a c + b d) + y(c + w) + x(d + z)     & = (a d + b c) + (x z + y w) + x c + y d \\
+		\iff (a c + b d) + y(d + z) + x(c + w)     & = (a d + b c) + (x z + y w) + x c + y d \\
+		\iff (a c + b d) + y d + y z + x c + x w   & = (a d + b c) + (x z + y w) + x c + y d \\
+		\iff (a c + b d) + (x w + y z) + x c + y d & = (a d + b c) + (x z + y w) + x c + y d \\
+		\iff (a c + b d) + (x w + y z)             & = (a d + b c) + (x z + y w)             \\
+		\iff (a c + b d, x w + y z)                & \sim (a d + b c, x z + y w)             \\
+		\iff [(a c + b d, a d + b c)]              & = [(x z + y w, x w + y z)]              \\
+		\iff [(a, b)] \cdot [(c, d)]               & = [(x, y)] \cdot [(z, w)].
+	\end{align*}
+	Hence, $\cdot$ is well-defined.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------  
+\Newpage
+\begin{exercise}[Used in Theorem \ref{int:t:props} and Theorem \ref{int:t:nat_int}] %% 1.3.4
+	\label{int:e:4}
+	Let $a, b \in \mathbb{N}$.
+	\begin{enumerate}
+		\item \label{int:e:4:1}
+		      Prove that $[(a, b)] = \hat{0}$ if and only if $a = b$.
+		\item \label{int:e:4:2}
+		      Prove that $[(a, b)] = \hat{1}$ if and only if $a = b + 1$.
+		\item \label{int:e:4:3}
+		      Prove that $[(a, b)] = [(n, 1)]$ for some $n \in \mathbb{N}$ such that
+		      $n \neq 1$ if and only if $a > b$ if and only if $[(a, b)] > \hat{0}$.
+		\item \label{int:e:4:4}
+		      Prove that $[(a, b)] = [(1, m)]$ for some $m \in \mathbb{N}$ such that
+		      $m \neq 1$ if and only if $a < b$ if and only if $[(a, b)] < \hat{0}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{int:e:4:1})]
+	Suppose that $[(a, b)] = \hat{0}$. Then,
+	\begin{align*}
+		[(a, b)] = \hat{0} & \iff [(a, b)] = [(1, 1)] \iff (a, b) \sim (1, 1) \\
+		                   & \iff a + 1 = b + 1 \iff a = b.
+	\end{align*}
+\end{proof}
+
+\begin{proof}[(\ref{int:e:4:2})]
+	Suppose that $[(a, b)] = \hat{1}$. Then,
+	\begin{align*}
+		[(a, b)] = \hat{1} & \iff [(a,b)] = [(1 + 1, 1)] \iff (a, b) \sim (1 + 1, 1) \\
+		                   & \iff a + 1 = b + 1 + 1 \iff a = b + 1.
+	\end{align*}
+\end{proof}
+
+\begin{proof}[(\ref{int:e:4:3})]
+	Suppose that $[(a, b)] = [(n, 1)]$ for some $n \in \mathbb{N}$ such that $n \not= 1$. Then ${(a, b) \sim (n, 1)}$, so $a + 1 = b + n$. Because $n \not= 1$, by Lemma \ref{nat:l:exists_prev} we can find some $k \in \mathbb{N}$ such that $n = k + 1$. Then $a + 1 = b + k + 1$, so $a = b + k$. By Definition \ref{nat:d:relation}, it then follows that $a > b$.
+
+	Now suppose that $a > b$. Then $a + 1 > b + 1$, and hence $[(a, b)] > [(1, 1)] = \hat{0}$.
+
+	Finally, suppose that $[(a, b)] > \hat{0} = [(1, 1)]$. Then $a + 1 > b + 1$. By Definition \ref{nat:d:relation}, there is some $k \in \mathbb{N}$ such that $a + 1 = b + 1 + k$. Let $n = 1 + k$. Then $n \not= 1$ and $a + 1 = b + n$, so $(a, b) \sim (n, 1)$, and hence $[(a, b)] = [(n, 1)]$.
+\end{proof}
+
+\begin{proof}[(\ref{int:e:4:4})]
+	Suppose that $[(a, b)] = [(1, m)]$ for some $m \in \mathbb{N}$ such that $m \not= 1$. Then ${(a, b) \sim (1, m)}$, so $a + m = b + 1$. Because $m \not= 1$, by Lemma \ref{nat:l:exists_prev} we can find some $k \in \mathbb{N}$ such that $m = k + 1$. Then $a + k + 1 = b + 1$, so $a + k = b$. By Definition \ref{nat:d:relation}, it then follows that $a < b$.
+
+	Now suppose that $a < b$. Then $a + 1 < b + 1$, and hence $[(a, b)] < [(1, 1)] = \hat{0}$.
+
+	Finally, suppose that $[(a, b)] < \hat{0} = [(1, 1)]$. Then $a + 1 < b + 1$. By Definition \ref{nat:d:relation}, there is some $k \in \mathbb{N}$ such that $a + 1 + k = b + 1$. Let $m = 1 + k$. Then $m \not= 1$ and $a + m = b + 1$, so $(a, b) \sim (1, m)$, and hence $[(a, b)] = [(1, m)]$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------  
+\Newpage
+\begin{exercise}[Used in Theorem \ref{int:t:props}] %% 1.3.5
+	Prove Theorem \ref{int:t:props} (\ref{int:t:props:associative_add}) (\ref{int:t:props:identity_add}) (\ref{int:t:props:inverses_add}) (\ref{int:t:props:associative_mult}) (\ref{int:t:props:commutative_mult}) (\ref{int:t:props:identity_mult}) (\ref{int:t:props:distributive}) (\ref{int:t:props:trichotomy}) (\ref{int:t:props:transitive}) (\ref{int:t:props:multiplication_order}) (\ref{int:t:props:non_triviality}).
+\end{exercise}
+
+\begin{proof}[Part (\ref{int:t:props:associative_add})]
+	We have
+	\begin{align*}
+		(x + y) + z & = ([(a, b)] + [(c, d)]) + [(e, f)] = [(a + c, b + d)] + [(e, f)] \\
+		            & = [((a + c) + e, (b + d) + f)] = [(a + (c + e), b + (d + f))]    \\
+		            & = [(a, b)] + [(c + e, d + f)] = [(a, b)] + ([(c, d)] + [(e, f)]) \\
+		            & = x + (y + z).
+	\end{align*}
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:props:identity_add})]
+	We have
+	\begin{align*}
+		(a + 1) + b = (b + 1) + a & \iff (a + 1, b + 1)      \sim (a, b) \\
+		                          & \iff [(a + 1, b + 1)]    = [(a, b)]  \\
+		                          & \iff [(a, b)] + [(1, 1)] = [(a, b)]  \\
+		                          & \iff x + \hat{0}         = x.
+	\end{align*}
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:props:inverses_add})]
+	We have
+	\begin{align*}
+		x + (-x) & = [(a, b)] + (-[(a, b)]) = [(a, b)] + [(b, a)] \\
+		         & = [(a + b, b + a)] = [(a + b, a + b)].
+	\end{align*}
+	By Exercise \ref{int:e:4} (\ref{int:e:4:1}), it then follows that $[(a + b, a + b)] = \hat{0}$, and hence $x + (-x) = \hat{0}$.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:props:associative_mult})]
+	We have
+	\begin{align*}
+		(xy)z & = ([(a, b)] \cdot [(c, d)]) \cdot [(e, f)])            \\
+		      & = [(ac + bd, ad + bc)] \cdot [(e, f)]                  \\
+		      & = [((ac + bd)e + (ad + bc)f, (ac + bd)f + (ad + bc)e)] \\
+		      & = [(ace + bde + adf + bcf, acf + bdf + ade + bce)]     \\
+		      & = [(a(ce + df) + b(cf + de), a(cf + de) + b(ce + df))] \\
+		      & = [(a, b)] \cdot [(ce + df, cf + de)]                  \\
+		      & = [(a, b)] \cdot ([(c, d)] \cdot [(e, f)]) = x(yz).
+	\end{align*}
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:props:commutative_mult})]
+	We have
+	\begin{align*}
+		xy & = [(a, b)] \cdot [(c, d)] = [(ac + bd, ad + bc)] \\
+		   & = [(ca + db, da + cb)] = [(ca + db, cb + da)]    \\
+		   & = [(c, d)] \cdot [(a, b)]                        \\
+		   & = yx.
+	\end{align*}
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:props:identity_mult})]
+	By Exercise \ref{int:e:4} (\ref{int:e:4:1}) and Part (\ref{int:t:props:identity_add}) of this theorem, it follows that
+	\begin{align*}
+		x \cdot \hat{1} & = [(a, b)] \cdot [(1 + 1, 1)] = [(a(1 + 1) + b \cdot 1, a \cdot 1 + b(1 + 1))] \\
+		                & = [(a + a + b, a + b + b)] = [(a + (a + b), b + (a + b))]                      \\
+		                & = [(a, b)] + [(a + b, a + b)] = x + \hat{0} = x.
+	\end{align*}
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:props:distributive})]
+	We have
+	\begin{align*}
+		x(y + z) & = [(a, b)] \cdot ([(c, d)] + [(e, f)])                  \\
+		         & = [(a, b)] \cdot [(c + e, d + f)]                       \\
+		         & = [(a(c + e) + b(d + f), a(d + f) + b(c + e))]          \\
+		         & = [(ac + ae + bd + bf, ad + af + bc + be)]              \\
+		         & = [((ac + bd) + (ae + bf), (ad + bc) + (af + be))]      \\
+		         & = [(ac + bd, ad + bc)] + [(ae + bf, af + be)]           \\
+		         & = ([(a, b)] \cdot [(c, d)]) + ([(a, b)] \cdot [(e, f)]) \\
+		         & = xy + yz.
+	\end{align*}
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:props:trichotomy})]
+	Suppose that $x = y$. Then $[(a, b)] = [(c, d)]$, so $(a, b) \sim (c, d)$, and as a result $a + d = b + c$. The \nameref{int:t:props:trichotomy} of $\mathbb{N}$ implies that $a + d \nless b + c$ and $a + d \ngtr b + c$. Therefore $[(a, b)] \nless [(c, d)]$ and $[(a, b)] \ngtr [(c, d)]$. Thus, $x \nless y$ and $x \ngtr y$.
+
+	Now suppose that $x < y$. Then $[(a, b)] < [(c, d)]$, so $a + d < b + c$. Using the \nameref{int:t:props:trichotomy} of $\mathbb{N}$ again, it follows that
+	$a + d \not= b + c$ and $a + d \ngtr b + c$, so ${[(a, b)] \not= [(c, d)]}$ and $[(a, b)] \ngtr [(c, d)]$. Therefore $x \not= y$ and $x \ngtr y$.
+
+	A similar argument shows that if $x > y$ then $x \not= y$ and $x \nless y$.  Thus, $x < y$ or $x = y$ or $x > y$.
+
+	Finally, suppose to the contrary that $x \nless y$ and $x \not= y$ and $x \ngtr y$. Then
+	\[
+		[(a, b)] \nless [(c, d)] \text{ and } [(a, b)] \not= [(c, d)] \text{ and } [(a, b)] \ngtr [(c, d)].
+	\]
+	This implies that
+	\[
+		a + d \nless b + c \text{ and } a + d \not= b + c \text{ and } a + d \ngtr b + c,
+	\]
+	which is a contradiction to the \nameref{int:t:props:trichotomy} of $\mathbb{N}$. Hence, precisely one of $x < y$ or $x = y$ or $x > y$ holds.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:props:transitive})]
+	Suppose that $x < y$ and $y < z$. Then
+	\[
+		[(a, b)] < [(c, d)] \text{ and } [(c, d)] < [(e, f)],
+	\]
+	and we obtain
+	\[
+		a + d < b + c \text{ and } c + f < d + e.
+	\]
+	Adding $f$ to the inequality $a + d < b + c$, we get $a + d + f < b + c + f$. Similarly, adding $b$ to the inequality $c + f < d + e$, we get $b + c + f < b + d + e$. Then
+	\[
+		a + d + f < b + c + f < b + d + e,
+	\]
+	which implies that $a + d + f < b + d + e$, so $a + f < b + e$. Therefore $[(a, b)] < [(e, f)]$, and hence $x < z$.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:props:multiplication_order})]
+	Because $z > \hat{0}$, by Exercise \ref{int:e:4} (\ref{int:e:4:3}) there is some $n \in \mathbb{N}$ such that $n \not= 1$ and $[(e, f)] = [(n, 1)]$. Now we can choose some $m \in \mathbb{N}$ such that $n = m + 1$ because of Lemma \ref{nat:l:exists_prev}. By hypothesis we know that $x < y$, so $a + d < b + c$. Then $(a + d)m < (b + c)m$. Adding $(a + d) + (b + c)$ to both sides of this inequality, we obtain
+	\begin{align*}
+		(a + d)m + (a + d) + (b + c)  & < (b + c)m + (a + d) + (b + c) \\
+		\iff (a + d)(m + 1) + (b + c) & < (b + c)(m + 1) + (a + d).
+	\end{align*}
+	Since $n = m + 1$, we have
+	\begin{align*}
+		(a + d)n + (b + c)           & < (b + c)n + (a + d)       \\
+		\iff a n + d n + b + c       & < b n + c n + a + d        \\
+		\iff (a n + b) + (c + d n)   & < (a + b n) + (c n + d)    \\
+		\iff [(a n + b, a + b n)]    & < [(c n + d, c + d n)]     \\
+		\iff [(a, b)] \cdot [(n, 1)] & < [(c, d)] \cdot [(n, 1)].
+	\end{align*}
+	Because $[(n, 1)] = [(e, f)]$, it follows that $[(a, b)] \cdot [(e, f)] < [(c, d)] \cdot [(e, f)]$, and hence $x z < y z$.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:props:non_triviality})]
+	We have
+	\begin{align*}
+		(1 + 1) + 1 & = 1 + (1 + 1)  \\
+		1 + 1       & < 1 + (1 + 1)  \\
+		[(1, 1)]    & < [(1 + 1, 1)] \\
+		\hat{0}     & < \hat{1}.
+	\end{align*}
+	By the \nameref{int:t:props:trichotomy} it then follows that $\hat{0} \not= \hat{1}$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------  
+\Newpage
+\begin{exercise}[Used in Theorem \ref{int:t:nat_int}] %% 1.3.6
+	Prove Theorem \ref{int:t:nat_int} (\ref{int:t:nat_int:1}) (\ref{int:t:nat_int:3}) (\ref{int:t:nat_int:4:2}) (\ref{int:t:nat_int:4:3}).
+\end{exercise}
+
+\begin{proof}[Part (\ref{int:t:nat_int:1})]
+	Suppose that $i(a) = i(b)$. It then follows that $[(a + 1, 1)] = [(b + 1, 1)]$, so $(a + 1) + 1 = 1 + (b + 1)$. Doing some rearranging, we get $a + (1 + 1) = b + (1 + 1)$, and canceling yields $a = b$. Hence, the function $i: \mathbb{N} \to \mathbb{Z}$ is injective.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:nat_int:3})]
+	We have $i(1) = [(1 + 1, 1)] = \hat{1}$.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:nat_int:4:2})]
+	We have
+	\begin{align*}
+		i(a)i(b) & = [(a + 1, 1)] \cdot [(b + 1, 1)]             \\
+		         & = [((a + 1)(b + 1) + 1, (a + 1) + (b + 1))]   \\
+		         & = [(ab + a + b + 1 + 1, a + 1 + b + 1)]       \\
+		         & = [((ab + 1) + (a + b + 1), 1 + (a + b + 1))] \\
+		         & = [(ab + 1, 1)] + [(a + b + 1, a + b + 1)].
+	\end{align*}
+	By Exercise \ref{int:e:4} (\ref{int:e:4:1}) we know that $[(a + b + 1, a + b + 1)] = \hat{0}$, so by the \nameref{int:t:props:identity_add} of $\mathbb{Z}$, it then follows that $i(a)i(b) = [(ab + 1, 1)] + \hat{0} = [(ab + 1, 1)] = i(ab)$.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:nat_int:4:3})]
+	Suppose that $a < b$. Then,
+	\begin{align*}
+		a < b & \iff a + (1 + 1) < b + (1 + 1)   \\
+		      & \iff (a + 1) + 1 = 1 + (b + 1)   \\
+		      & \iff [(a + 1, 1)] < [(b + 1, 1)] \\
+		      & \iff i(a) < i(b).
+	\end{align*}
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------  
+\Newpage
+\begin{exercise} %% 1.3.7
+	\label{int:e:7}
+	Let $x, y, z \in \mathbb{Z}$.
+	\begin{enumerate}
+		\item \label{int:e:7:1}
+		      Prove that $x < y$ if and only if $ -x > -y$.
+		\item \label{int:e:7:2}
+		      Prove that if $z < 0$, then $x < y$ if and only if $x z > y z$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{int:e:7:1})]
+	Suppose that $y > x$. Adding $[(-x)] + [(-y)]$ to both sides of this inequality, we have $y + [(-x) + (-y)] > x + [(-x) + (-y)]$ because of the \nameref{int:t:props:addition_order}. By repeated use of the \hyperref[int:t:props:associative_add]{Associative} and \hyperref[int:t:props:commutative_add]{Commutative} Laws for Addition we deduce that ${(-x) + [y + (-y)] > (-y) + [x + (-x)]}$. Now by the Inverse Law for Addition we see that $(-x) + 0 > (-y) + 0$, and because of \nameref{int:t:props:identity_add}, we  can conclude that $-x > -y$. This process can be done backwards, and hence $x < y$ if $-x > -y$.
+\end{proof}
+
+\begin{proof}[(\ref{int:e:7:2})]
+	Suppose that $z < 0$, and suppose that $x < y$. By Theorem \ref{int:t:neg_zero_props} (\ref{int:t:neg_zero_props:8}) we see that $-z > 0$. Then by the \nameref{int:t:props:multiplication_order} we deduce that $x(-z) < y(-z)$, and by Theorem \ref{int:t:neg_zero_props} (\ref{int:t:neg_zero_props:6}) it follows that $-xz < -yz$. But then $-(-xz) > -(-yz)$ because of Part (\ref{int:e:7:1}) of this exercise, and by Theorem \ref{int:t:neg_zero_props} (\ref{int:t:neg_zero_props:2}) we can conclude that $xz > yz$. This process can be done backwards, and hence $x < y$ if $xz > yz$.
+\end{proof}
+
+%-------------------------------------------------------------------------------------------------------------  
+\Newpage
+\begin{exercise}[Used in Exercise \ref{rat:e:9}] %% 1.3.8
+	\label{int:e:8}
+	Let $x \in \mathbb{Z}$. Prove that if $x > 0$ then $x \geq 1$. Prove that if $x < 0$ then $x \leq -1$.
+\end{exercise}
+
+\begin{proof}
+	Suppose that $x > 0$. Then by Theorem \ref{int:t:discrete} we know that there is no $z \in \mathbb{Z}$ such that $0 < z < 0 + 1$, or in other words if $z > 0$ then $z \geq 0 + 1$. Because $x > 0$ we deduce that $x \geq 0 + 1$. But then by the \hyperref[int:t:props:commutative_add]{Commutative} and \hyperref[int:t:props:identity_add]{Identity} Laws for Addition it follows that $0 + 1 = 1 + 0 = 1$, and hence $x \geq 1$. A similar argument shows that $x \geq 1$ implies $x > 0$, and also shows that $x < 0$ if and only if $x \leq -1$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------  
+\Newpage
+\begin{exercise} %% 1.3.9
+	\hfill
+	\begin{enumerate}
+		\item \label{int:e:9:1}
+		      Prove that $1 < 2$.
+		\item \label{int:e:9:2}
+		      Let $x \in \mathbb{Z}$. Prove that $2 x \neq 1$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{int:e:9:1})]
+	By Theorem \ref{int:t:neg_zero_props} (\ref{int:t:neg_zero_props:9}) we know that $0 < 1$. Then by the \nameref{int:t:props:addition_order} we deduce that $0 + 1 < 1 + 1 = 2$, and by the \hyperref[int:t:props:commutative_add]{Commutative} and \hyperref[int:t:props:identity_add]{Identity} Laws for Addition it follows that $0 + 1 = 1 + 0 = 1 < 2$, as required.
+\end{proof}
+
+\begin{proof}[(\ref{int:e:9:2})]
+	Suppose to the contrary that $2x = 1$. Then by Theorem \ref{int:t:neg_zero_props} (\ref{int:t:neg_zero_props:7}) there is either $x = 1 = 2$ or $x = -1 = 2$.
+	\begin{bycases}
+		\item $x = 1 = 2$. By Part (\ref{int:e:9:1}) of this exercise we know that $1 < 2$, so $1 = 2$ and $1 < 2$, which is a contradiction to the \nameref{int:t:props:trichotomy}. Hence, $2x \not= 1$.
+		\item $x = -1 = 2$. By Theorem \ref{int:t:neg_zero_props} (\ref{int:t:neg_zero_props:9}) we have $0 < 1$, and because of the \nameref{int:t:props:addition_order} we get $0 + (-1) < 1 + (-1)$. Now applying the \hyperref[int:t:props:commutative_add]{Commutative}, \hyperref[int:t:props:identity_add]{Identity}, and \hyperref[int:t:props:inverses_add]{Inverses} Laws for Addition we obtain $-1 < 0$. Also by Part (\ref{int:e:9:1}) of this exercise we have $1 < 2$. Then $-1 < 0 < 1 < 2$, and by the \nameref{int:t:props:transitive} $-1 < 2$. Since $-1 = 2$ and $-1 < 2$, there is a contradiction to the \nameref{int:t:props:trichotomy}, and hence $2x \not= 1$.
+	\end{bycases}
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------  
+\Newpage
+\begin{exercise}[Used in Section \ref{int}] %% 1.3.10
+	Prove that the \nameref{nat:t:wop} (Theorem \ref{nat:t:wop}), which was stated for $\mathbb{N}$ in Section \ref{nat}, still holds when we think of $\mathbb{N}$ as the set of positive integers. That is, let $G \subseteq \{ x \in \mathbb{Z} \mid x > 0 \}$ be a non-empty set. Prove that there is some $m \in G$ such that $m \leq g$ for all $g \in G$. Use Theorem \ref{int:t:nat_int}.
+\end{exercise}
+
+\begin{proof}
+	Let
+	\[
+		\mathbb{N}_{G} = \{ a \in \mathbb{N} \mid \text{there is some } g \in G \text{ such that } i(a) = g \}.
+	\]
+	Then clearly $\mathbb{N}_{G} \subseteq \mathbb{N}$ and $G = i(\mathbb{N}_{G})$. The nonemptiness of $G$ implies the nonemptiness of $\mathbb{N}_{G}$, and by \nameref{nat:t:wop} of $\mathbb{N}$ there is some $n_{\circ} \in \mathbb{N}_{G}$ such that $n_{\circ} \leq n$ for all ${n \in \mathbb{N}_{G}}$. Let $m = i(n_{\circ})$, and let $g \in G$. By hypothesis on $G$ we know that ${G \subseteq \{ x \in \mathbb{Z} \mid x > 0 \}}$, so by Theorem \ref{int:t:nat_int} (\ref{int:t:nat_int:2}) it follows that $G = i(\mathbb{N}_{G}) \subseteq i(\mathbb{N})$. We can choose some $n \in \mathbb{N}_{G}$ such that $i(n) = g$. Then $n_{\circ} \leq n$, and by Theorem \ref{int:t:nat_int} (\ref{int:t:nat_int:4:3}) we can conclude that $m = i(n_{\circ}) \leq i(n) = g$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------  
+\Newpage
+\begin{exercise}[Used in Theorem \ref{int:t:neg_zero_props}] %% 1.3.11
+	\label{int:e:11}
+	Prove Theorem \ref{int:t:neg_zero_props} (\ref{int:t:neg_zero_props:cancellation_add}) (\ref{int:t:neg_zero_props:3}) (\ref{int:t:neg_zero_props:4}) (\ref{int:t:neg_zero_props:cancellation_mult}) (\ref{int:t:neg_zero_props:7}) (\ref{int:t:neg_zero_props:10}) (\ref{int:t:neg_zero_props:11}).
+\end{exercise}
+
+\begin{proof}[Part (\ref{int:t:neg_zero_props:cancellation_add})]
+	\label{int:e:11:1}
+	Suppose that $x + z = y + z$. Adding $-z$ to both sides of this equation we obtain $x + z + (-z) = y + z + (-z)$. By the \nameref{int:t:props:associative_add} we get $x + [z + (-z)] = y + [z + (-z)]$. Because of \nameref{int:t:props:inverses_add} we see that $z + (-z) = 0$, so this implies that $x + 0 = y + 0$. But then by \nameref{int:t:props:identity_add} we can conclude that $x = y$.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:neg_zero_props:3})]
+	By the \nameref{int:t:props:inverses_add} we have $-(x + y) + (x + y) = 0$. Adding $(-x) + (-y)$ to both sides of this equation we obtain \[
+		-(x + y) + (x + y) + (-x) + (-y) = (-x) + (-y).
+	\] By repeated use of the \hyperref[int:t:props:associative_add]{Associative}, \hyperref[int:t:props:commutative_add]{Commutative}, and \hyperref[int:t:props:identity_add]{Identity} Laws for Addition it follows that
+	\begin{align*}
+		-(x + y) + (x + y) + (-x) + (-y) & = -(x + y) + [x + (-x)] + [y + (-y)] \\
+		                                 & = -(x + y) + 0 + 0                   \\
+		                                 & = [-(x + y) + 0] + 0 = -(x + y) + 0  \\
+		                                 & = -(x + y).
+	\end{align*}
+	Hence, $-(x + y) = (-x) + (-y)$.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:neg_zero_props:4})]
+	By the \nameref{int:t:props:identity_add} we know that $0 + 0 = 0$, so using the \nameref{int:t:props:distributive} we obtain
+	\[
+		x \cdot 0 = x \cdot (0 + 0) = x \cdot 0 + x \cdot 0.
+	\]
+	Adding $-(x \cdot 0)$ to both sides of the equation $x \cdot 0 + x \cdot 0 = x \cdot 0$ we get
+	\[
+		x \cdot 0 + x \cdot 0 + [-(x \cdot 0)] = x \cdot 0 + [-(x \cdot 0)].
+	\]
+	Now by the \nameref{int:t:props:associative_add} we get
+	\[
+		x \cdot 0 + (x \cdot 0 + ([-(x \cdot 0)])) = x \cdot 0 + [-(x \cdot 0)],
+	\]
+	and by the \nameref{int:t:props:inverses_add} we see that $x \cdot 0 + 0 = 0$. Finally, by the \nameref{int:t:props:identity_add} it follows that $x \cdot 0 = 0$, as required.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:neg_zero_props:cancellation_mult})]
+	Suppose that $z \not= 0$ and $xz = yz$. Now suppose to the contrary that ${x \not= y}$, and suppose, without loss of generality, that $x < y$. If $z < 0$ then by Exercise\,\ref{int:e:7}\,(\ref{int:e:7:2}) it follows that $xz > yz$, which is a contradiction to the \nameref{int:t:props:trichotomy}. If $z > 0$ then by the \nameref{int:t:props:multiplication_order} it follows that $xz < yz$, again a contradiction to the \nameref{int:t:props:trichotomy}. Hence, $x = y$.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:neg_zero_props:7})]
+	By Part (\ref{int:t:neg_zero_props:9}) of this theorem we know that $0 < 1$, so by the \nameref{int:t:props:addition_order} we deduce that $0 + a < 1 + a$ for all $a \in \mathbb{Z}$. By the Commutative and Identity Laws for Addition we obtain $a < a + 1$ for all $a \in \mathbb{Z}$.
+
+	Suppose that $x y = 1$, and suppose to the contrary that either $x \not= 1$ or $y \not= 1$. Without loss of generality, suppose that $x \not= 1$. Then either $x < 1$ or $x > 1$.
+	Suppose that $x < 1$. We have
+	\begin{align*}
+		x < 1 & \iff x < 1 + 0                                & \text{(\nameref{int:t:props:identity_add})}    \\
+		      & \iff x < 0 + 1                                & \text{(\nameref{int:t:props:commutative_add})} \\
+		      & \iff x \leq 0                                 & \text{(\nameref{nat:t:wop})}                   \\
+		      & \iff \text{ either } x < 0 \text{ or } x = 0.
+	\end{align*}
+	If $x = 0$, then using the \nameref{int:t:props:commutative_mult} we get ${x y = 0 \cdot y = y \cdot 0 = 1}$, which contradicts Part (4) of this theorem. Hence, $x \not= 0$. A similar argument shows that $y \not= 0$. Next since $x \not= 0$, we have
+	\begin{align*}
+		x < 0 & \iff x < 1 + (-1)  & \text{(\nameref{int:t:props:inverses_add})}                   \\
+		      & \iff x < (-1) + 1  & \text{(\nameref{int:t:props:commutative_add})}                \\
+		      & \iff x \leq -1     & \text{(\nameref{nat:t:wop})}                                  \\
+		      & \iff -x \geq -(-1) & \text{(Part (\ref{int:e:7:1}) of Exercise \ref{int:e:7})}     \\
+		      & \iff -x \geq 1     & \text{(Part (\ref{int:t:neg_zero_props:2}) of this theorem)}.
+	\end{align*}
+	We also know that $-x < (-x) + 1$, so $1 \leq -x < (-x) + 1$, and by the \nameref{int:t:props:transitive} we get $1 < (-x) + 1$. If $y > 0$ then
+	\begin{align*}
+		1 \leq -x < (-x) + 1 & \iff 1 < (-x) + 1                            & \text{(\nameref{int:t:props:transitive})}                    \\
+		                     & \iff y \cdot 1 < y[(-x) + 1]                 & \text{(\nameref{int:t:props:multiplication_order})}          \\
+		                     & \iff y \cdot 1 < y(-x) + y \cdot 1           & \text{(\nameref{int:t:props:distributive})}                  \\
+		                     & \iff y \cdot 1 < y[-(x \cdot 1)] + y \cdot 1 & \text{(\nameref{int:t:props:identity_mult})}                 \\
+		                     & \iff y \cdot 1 < -[y(x \cdot 1)] + y \cdot 1 & \text{(Part (\ref{int:t:neg_zero_props:6}) of this theorem)} \\
+		                     & \iff y < (-yx) + y                           & \text{(\nameref{int:t:props:identity_mult})}                 \\
+		                     & \iff y < (-1) + y                            & \text{(Hypothesis on $xy$)}                                  \\
+		                     & \iff y + 1 < (-1) + y + 1                    & \text{(\nameref{int:t:props:addition_order})}                \\
+		                     & \iff y + 1 < y + 1 + (-1)                    & \text{(\nameref{int:t:props:commutative_add})}               \\
+		                     & \iff y + 1 < y + [1 + (-1)]                  & \text{(\nameref{int:t:props:associative_add})}               \\
+		                     & \iff y + 1 < y + 0                           & \text{(\nameref{int:t:props:inverses_add})}                  \\
+		                     & \iff y + 1 < y                               & \text{(\nameref{int:t:props:identity_add})},
+	\end{align*}
+	which is a contradiction to the \nameref{int:t:props:trichotomy} because  $a < a + 1$ for all $a \in \mathbb{Z}$. If $y < 0$ then
+	\begin{align*}
+		1 \leq -x & < (-x) + 1                                                                                                           \\
+		          & \iff  y[(-x) + 1] < y(-x) < y \cdot 1                 & \text{(\nameref{int:t:props:multiplication_order})}          \\
+		          & \iff y(-x) + y \cdot 1 < y(-x) < y \cdot 1            & \text{(\nameref{int:t:props:distributive})}                  \\
+		          & \iff  y[-(x \cdot 1)] + y \cdot 1 < y(-x) < y \cdot 1 & \text{(\nameref{int:t:props:identity_mult})}                 \\
+		          & \iff  [-y(x \cdot 1)] + y \cdot 1 < -yx < y \cdot 1   & \text{(Part (\ref{int:t:neg_zero_props:6}) of this theorem)} \\
+		          & \iff  (-yx) + y  < -xy < y                            & \text{(\nameref{int:t:props:identity_mult})}                 \\
+		          & \iff  (-1) + y  < -xy < y                             & \text{(Hypothesis on $xy$)}                                  \\
+		          & \iff  (-1) + y + 1  < -xy < y + 1                     & \text{(\nameref{int:t:props:addition_order})}                \\
+		          & \iff  y + 1 + (-1) < -xy < y + 1                      & \text{(\nameref{int:t:props:commutative_add})}               \\
+		          & \iff y + [1 + (-1)] < -xy < y + 1                     & \text{(\nameref{int:t:props:associative_add})}               \\
+		          & \iff y + 0 < -xy < y + 1                              & \text{(\nameref{int:t:props:inverses_add})}                  \\
+		          & \iff y < -xy < y + 1                                  & \text{(\nameref{int:t:props:identity_add})},
+	\end{align*}
+	which is a contradiction to the \nameref{nat:t:wop}. Hence, if $x < 1$ then $x = 1 = y$. If $x > 1$, then it follows that $1 < x < x + 1$, so a similar argument leads to a contradiction, and hence $x = 1 = y$. Thus, we can conclude that if $x y = 1$ then either $x = 1 = y$ or $x = -1 = y$.
+
+	Now suppose that either $x = 1 = y$ or $x = -1 = y$. If $x = 1 = y$ then ${x y = 1 \cdot 1 = 1}$ because of the \nameref{int:t:props:identity_mult}. Suppose that $x = -1 = y$. Then ${x y = (-1) \cdot (-1)}$. Using Part (\ref{int:t:neg_zero_props:6}) of this theorem we have $(-1) \cdot (-1) = -[(-1) \cdot 1]$, and by the \nameref{int:t:props:identity_mult} it follows that $(-1) \cdot 1 = -1$, so $x y = -(-1)$. Finally, by Part (\ref{int:t:neg_zero_props:2}) of this theorem we deduce that $xy = 1$.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:neg_zero_props:10})]
+	Taking the contrapositive, suppose that $x \not= y$. Then by the \nameref{int:t:props:trichotomy} we deduce that either $x > y$ or $y > x$, as required.
+\end{proof}
+
+\begin{proof}[Part (\ref{int:t:neg_zero_props:11})]
+	Suppose that $x > 0$ and $y > 0$. By the \nameref{int:t:props:addition_order} it follows that $x + 1 > 1$. Using the \nameref{int:t:props:multiplication_order} we obtain $(x + 1)y > 1 \cdot y$. Because of the \nameref{int:t:props:distributive} we get $y(x + 1) = yx + y$, and by the \nameref{int:t:props:commutative_mult} we know that $y x = x y$ and $1 \cdot y = y \cdot 1$, so $x y + y > y \cdot 1$. Also, we know that $y \cdot 1 = y$ because of the \nameref{int:t:props:identity_mult}. Thus, $x y + y > y$. Using the \hyperref[int:t:props:inverses_add]{Inverses} and \hyperref[int:t:props:commutative_add]{Commutative} Laws for Addition we deduce that $y = y + 0 = 0 + y$, so $x y + y > 0 + y$. Finally, by the \nameref{int:t:neg_zero_props:cancellation_add} we can conclude that $x y > 0$. A similar argument shows that if $x < 0$ and $y < 0$ then $x y < 0$.
+\end{proof}

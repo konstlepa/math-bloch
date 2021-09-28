@@ -1,0 +1,43 @@
+{
+	"name": "math-bloch",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "vscode",
+	"runServices": [
+		"vscode"
+	],
+	"shutdownAction": "stopCompose",
+	"workspaceFolder": "/workspace",
+	"postCreateCommand": "rm -rf .vscode && cp -r .devcontainer/vscode-config .vscode",
+	"extensions": [
+		"james-yu.latex-workshop",
+		// Other helpers
+		"spadin.memento-inputs",
+		"ban.spellright",
+	],
+	"settings": {
+		// General settings
+		"files.eol": "\n",
+		// Latex settings
+		"latex-workshop.latex.clean.subfolder.enabled": true,
+		"latex-workshop.synctex.afterBuild.enabled": true,
+		"latex-workshop.latex.autoClean.run": "onBuilt",
+		"latex-workshop.view.pdf.viewer": "tab",
+		"editor.formatOnSave": true,
+		"files.associations": {
+			"*.tex": "latex"
+		},
+		"latex-workshop.latexindent.args": [
+			"-c",
+			"%DIR%/",
+			"%TMPFILE%",
+			"-y=\"defaultIndent: '%INDENT%',onlyOneBackUp: 1\"",
+			"-m",
+			"--yaml='indentAfterItems:lenumerate:1,bycases:1'",
+		],
+		"spellright.language": [
+			"en_US"
+		],
+	}
+}
