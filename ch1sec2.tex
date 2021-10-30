@@ -9,12 +9,12 @@
 	There exists a set $\mathbb{N}$ with an element $1 \in \mathbb{N}$ and a function $s : \mathbb{N} \to \mathbb{N}$ that satisfy the following three properties.
 	\begin{lenumerate}
 		\item \label{nat:a:peano:1}
-		There is no $n \in \mathbb{N}$ such that $s(n) = 1$.
+		      There is no $n \in \mathbb{N}$ such that $s(n) = 1$.
 		\item \label{nat:a:peano:injective}
-		The function $s$ is injective.
+		      The function $s$ is injective.
 		\item \label{nat:a:peano:induction}
-		Let $G \subseteq \mathbb{N}$ be a set. Suppose that $1 \in G$, and that if $g \in G$ then $s(g) \in G$. Then
-		$G = \mathbb{N}$.
+		      Let $G \subseteq \mathbb{N}$ be a set. Suppose that $1 \in G$, and that if $g \in G$ then $s(g) \in G$. Then
+		      $G = \mathbb{N}$.
 	\end{lenumerate}
 \end{axiom}
 
@@ -38,9 +38,9 @@
 	There is a unique binary operation $+ : \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ that satisfies the following two properties for all $n, m \in \mathbb{N}$.
 	\begin{lenumerate}
 		\item \label{nat:t:add:1}
-		$n + 1 = s(n)$.
+		      $n + 1 = s(n)$.
 		\item \label{nat:t:add:n}
-		$n + s(m) = s(n + m)$.
+		      $n + s(m) = s(n + m)$.
 	\end{lenumerate}
 \end{theorem}
 
@@ -50,9 +50,9 @@
 	following two properties for all $n, m \in \mathbb{N}$.
 	\begin{lenumerate}
 		\item \label{nat:t:mult:1}
-		$n \cdot 1 = n$.
+		      $n \cdot 1 = n$.
 		\item \label{nat:t:mult:n}
-		$n \cdot s(m) = (n \cdot m) + n$.
+		      $n \cdot s(m) = (n \cdot m) + n$.
 	\end{lenumerate}
 \end{theorem}
 
@@ -128,6 +128,7 @@
 	Let $G \subseteq \mathbb{N}$ be a non-empty set. Then there is some $m \in G$ such that $m \leq g$ for all $g \in G$.
 \end{theorem}
 
+
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
 \begin{exercise}[Used in Theorem \ref{nat:t:mult}] %% 1.2.1
@@ -157,14 +158,17 @@
 	which is Part (\ref{nat:t:mult:n}).
 \end{proof}
 
+
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
 \begin{exercise}[Used in Theorem \ref{nat:t:props}] %% 1.2.2
 	Prove Theorem \ref{nat:t:props} (\ref{nat:t:props:associative_add}) (\ref{nat:t:props:3}) (\ref{nat:t:props:commutative_add}) (\ref{nat:t:props:identity_mult}) (\ref{nat:t:props:distributive_right}) (\ref{nat:t:props:commutative_mult}) (\ref{nat:t:props:distributive_left}) (\ref{nat:t:props:associative_mult}) (\ref{nat:t:props:13}).
 \end{exercise}
 
-\begin{proof}[Part (\ref{nat:t:props:associative_add})]
-	Let
+\begin{proof}
+	\hfill
+
+	\PartProof{nat:t:props:associative_add} Let
 	\[
 		G = \{ z \in \mathbb{N} \mid (x + y) + z = x + (y + z) \text{ for all } x, y \in \mathbb{N} \}.
 	\]
@@ -178,10 +182,8 @@
 		               & = a + s(b + c) = a + (b + s(c)).
 	\end{align*}
 	Therefore $s(c) \in G$, and hence $G = \mathbb{N}$ by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}.
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:props:3})]
-	Let
+	\PartProof{nat:t:props:3} Let
 	\[
 		G = \{ 1 + n = s(n) \text{ for all } n \in \mathbb{N} \}.
 	\]
@@ -192,10 +194,8 @@
 		         & = s(s(a)).
 	\end{align*}
 	Therefore $s(a) \in G$, and hence $G = \mathbb{N}$ by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}.
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:props:commutative_add})]
-	Let
+	\PartProof{nat:t:props:commutative_add} Let
 	\[
 		G = \{ x \in \mathbb{N} \mid x + y = y + x \text{ for all } y \in \mathbb{N} \}.
 	\]
@@ -208,10 +208,8 @@
 		         & = b + (1 + a) = b + (a + 1) = b + s(a).
 	\end{align*}
 	Hence, $s(a) \in G$. We deduce that $G = \mathbb{N}$ by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}.
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:props:identity_mult})]
-	Let
+	\PartProof{nat:t:props:identity_mult} Let
 	\[
 		G = \{ 1 \cdot x = x \text{ for all x } \in \mathbb{N} \}.
 	\]
@@ -220,10 +218,8 @@
 		1 \cdot s(a) = 1 \cdot a + 1 = a + 1 = s(a).
 	\]
 	Hence $s(a) \in G$, and by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}, we deduce that $G = \mathbb{N}$.
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:props:distributive_right})]
-	Let
+	\PartProof{nat:t:props:distributive_right} Let
 	\[
 		G = \{ z \in \mathbb{N} \mid (x + y)z = x z + y z \text{ for all } x, y \in \mathbb{N} \}.
 	\]
@@ -240,10 +236,8 @@
 		            & = a s(c) + b s(c)
 	\end{align*}
 	Hence, $s(c) \in G$, and by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}, we can conclude that $G \in \mathbb{N}$.
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:props:commutative_mult})]
-	Let
+	\PartProof{nat:t:props:commutative_mult} Let
 	\[
 		G = \{ x \in \mathbb{N} \mid x y = y x \text{ for all } y \in \mathbb{N} \}.
 	\]
@@ -255,17 +249,13 @@
 		       & = b s(a).
 	\end{align*}
 	Hence, $s(a) \in G$, and we deduce that $G = \mathbb{N}$ because of Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}.
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:props:distributive_left})]
-	Using Part (\ref{nat:t:props:distributive_right}) (\nameref{nat:t:props:distributive_right}) and Part (\ref{nat:t:props:commutative_mult}) (\nameref{nat:t:props:commutative_mult}), it follows that
+	\PartProof{nat:t:props:distributive_left} Using Part (\ref{nat:t:props:distributive_right}) (\nameref{nat:t:props:distributive_right}) and Part (\ref{nat:t:props:commutative_mult}) (\nameref{nat:t:props:commutative_mult}), it follows that
 	\[
 		c(a + b) = (a + b)c = a c + b c = c a + c b.
 	\]
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:props:associative_mult})]
-	Let
+	\PartProof{nat:t:props:associative_mult} Let
 	\[
 		G = \{ z \in \mathbb{N} \mid (x y)z = x(y z) \text{ for all } x, y \in \mathbb{N}  \}.
 	\]
@@ -277,13 +267,12 @@
 		          & = a(b s(c)).
 	\end{align*}
 	Hence $s(c) \in G$. By Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}, it then follows that $G = \mathbb{N}$.
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:props:13})]
-	Let $a b = 1$. Suppose to the contrary that either $a \not= 1$ or $b \not= 1$. Suppose, without loss of generality, that $a \not= 1$. By Lemma \ref{nat:l:exists_prev}, there is some $p \in \mathbb{N}$ such that $a = s(p)$, so $a b = s(p) b$. Because of the \nameref{nat:t:props:commutative_mult} and Theorem \ref{nat:t:mult} (\ref{nat:t:mult:n}), $s(p)b = b s(p) = b p + b = 1$, which is a contradiction to Part (\ref{nat:t:props:5}) of this theorem. Hence, $a = 1 = b$.
+	\PartProof{nat:t:props:13} Let $a b = 1$. Suppose to the contrary that either $a \not= 1$ or $b \not= 1$. Suppose, without loss of generality, that $a \not= 1$. By Lemma \ref{nat:l:exists_prev}, there is some $p \in \mathbb{N}$ such that $a = s(p)$, so $a b = s(p) b$. Because of the \nameref{nat:t:props:commutative_mult} and Theorem \ref{nat:t:mult} (\ref{nat:t:mult:n}), $s(p)b = b s(p) = b p + b = 1$, which is a contradiction to Part (\ref{nat:t:props:5}) of this theorem. Hence, $a = 1 = b$.
 
 	Now let $a = 1 = b$. By Theorem \ref{nat:t:mult} (\ref{nat:t:mult:1}), it then follows that $a b = 1 \cdot 1 = 1$.
 \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -295,29 +284,30 @@
 	Since $a < b$, Definition \ref{nat:d:relation} immediately implies the existence part. For uniqueness, suppose that there are $p_{1}, p_{2} \in \mathbb{N}$ such that $a + p_{1} = b$ and $a + p_{2} = b$, so $a + p_{1} = a + p_{2}$. By the \nameref{nat:t:props:commutative_add}, it follows that $p_{1} + a = p_{2} + a$, and by the \nameref{nat:t:props:cancellation_add}, it follows that $p_{1} = p_{2}$.
 \end{proof}
 
+
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
 \begin{exercise}[Used in Theorem \ref{nat:t:relprops}] %% 1.2.4
 	Prove Theorem \ref{nat:t:relprops} (\ref{nat:t:relprops:1}) (\ref{nat:t:relprops:3}) (\ref{nat:t:relprops:4}) (\ref{nat:t:relprops:5}) (\ref{nat:t:relprops:11}).
 \end{exercise}
 
-\begin{proof}[Part (\ref{nat:t:relprops:1})]
+\begin{proof}
+	\hfill
+
+	\PartProof{nat:t:relprops:1}
 	As $a = a$, we have either $a < a$ or $a = a$, so $a \leq a$. Next suppose to the contrary that $a < a$. We can find some $p \in \mathbb{N}$ such that $a + p = a$, which is a contradiction to Theorem \ref{nat:t:relprops} (\ref{nat:t:relprops:trichotomy}). Hence, $a \nless a$. Finally, let $p = 1$. Then $a + p = a + 1$, and by Definition \ref{nat:d:relation} we deduce that $a < a + 1$.
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:relprops:3})]
+	\PartProof{nat:t:relprops:3}
 	Suppose that $a < b$ and $b < c$. We can choose some $p, q \in \mathbb{N}$ such that $a + p = b$ and $b + q = c$. Then $(a + p) + q = c$, and by the \nameref{nat:t:props:associative_add} we get $a + (p + q) = c$, which implies that $a < c$. Now suppose that $a \leq b$ and $b < c$. Then either $a < b$ or $a = b$. If $a < b$, then we already know that $a < c$. If $a = b$, then clearly $b = a < c$. A similar argument shows that if $a < b$ and $b \leq c$, then $a < c$. Finally, suppose that $a \leq b$ and $b \leq c$. This means either $a < b$ or $a = b$ and either $b < c$ or $b = c$. We have shown all cases above except the trivial case when we have $a = b = c$. Hence, either $a < c$ or $a = c$, or in other words $a \leq c$.
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:relprops:4})]
+	\PartProof{nat:t:relprops:4}
 	Suppose that $a < b$. We can find some $p \in \mathbb{N}$ such that $a + p = b$. Then $(a + p) + c = b + c$. Using Theorem \ref{nat:t:relprops} (\ref{nat:t:relprops:2}) (\ref{nat:t:relprops:4}), we have
 	\begin{align*}
 		(a + p) + c = a + (p + c) = a + (c + p) = (a + c) + p.
 	\end{align*}
 	Hence, $(a + c) + p = b + c$, which implies that $a + c < b + c$. It is possible to reverse these implications and deduce the argument.
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:relprops:5})]
+	\PartProof{nat:t:relprops:5}
 	Let
 	\[
 		G = \{ z \in \mathbb{N} \mid \text{ if } x < y \text{ then } x z < y z \}.
@@ -333,13 +323,13 @@
 		\item $a = b$. Then $a c = b c$, which is a contradiction to the fact that $a c < b c$ because of the \nameref{nat:t:relprops:trichotomy}. Hence $a < b$.
 		\item $a > b$. This means that $b < a$, and it then follows that $b c < a c$, again a contradiction. Hence $a < b$.
 	\end{bycases}
-\end{proof}
 
-\begin{proof}[Part (\ref{nat:t:relprops:11})]
+	\PartProof{nat:t:relprops:11}
 	Suppose that $a < b$, and suppose to the contrary that $b < a + 1$. By Part (\ref{nat:t:relprops:4}) it then follows that $a + 1 < b + 1$, so $b < a + 1 < b + 1$, which is a contradiction to Part (\ref{nat:t:relprops:9}) of this theorem. Hence, $a + 1 \leq b$.
 
 	Now suppose that $a + 1 \leq b$, and suppose to the contrary that $b \leq a$. Then by Part (\ref{nat:t:relprops:3}) we deduce that $a + 1 \leq a$, which means either $a + 1 < a$ or $a + 1 = a$. If $a + 1 < a$ then there is a contradiction to Parts (\ref{nat:t:relprops:1}) and (\ref{nat:t:relprops:trichotomy}) of this theorem. If $a + 1 = a$ then there is a contradiction to Theorem \ref{nat:t:props} (\ref{nat:t:props:6}). Hence, $a < b$.
 \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -355,6 +345,7 @@
 	\]
 	Thus, $a(1 + 1) = b(1 + 1)$. Then by the \nameref{nat:t:props:cancellation_mult} we deduce that $a = b$.
 \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -386,6 +377,7 @@
 	Suppose to the contrary that $M \not= \emptyset$. We can choose some $a \in M$ such that $1 \leq a \leq b$ and $b + 1 \leq a$. Using Theorem \ref{nat:t:relprops} (\ref{nat:t:relprops:10}), we have $a < b + 1$ and $b + 1 < a + 1$, or in other words $a < b + 1 < a + 1$, which is a contradiction to Theorem \ref{nat:t:relprops} (\ref{nat:t:relprops:9}). Therefore $M = \emptyset$.
 \end{proof}
 
+
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
 \begin{exercise} %% 1.2.7
@@ -409,6 +401,7 @@
 \begin{proof}[(\ref{nat:e:7:2})]
 	Let $a \in A$, and suppose that $n \in \{ x \in \mathbb{N} \mid x \geq a \}$. Then $a \leq n$, which means either $a < n$ or $a = n$. If $a = n$ then clearly $n \in A$. Now suppose that $a \not= n$, so $a < n$. According to Definition \ref{nat:d:relation} there is some $k \in \mathbb{N}$ such that $a + k = n$. By Part (\ref{nat:e:7:1}) of this exercise, it follows that $a + k \in A$, or in other words $n \in A$. Since $n$ was arbitrary, we can conclude that $\{ x \in \mathbb{N} \mid x \geq a \} \subseteq A$.
 \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -436,6 +429,7 @@
 	Now let $n \in \mathbb{N}$ and $n' \in \mathbb{N}'$. If $n' = f(n)$ then $g(n') = g(f(n)) = n$. Also, if $n = g(n')$ then $f(n) = f(g(n')) = n'$. Because of uniqueness of $g$, it then follows that $g$ is an inverse of $f$, and we can conclude that $f$ is bijective.
 \end{proof}
 
+
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
 \begin{exercise}[Not in the book] %% 1.2.9
@@ -454,7 +448,7 @@ Then they satisfy the following two properties.
 \begin{lenumerate}
 	\item The function $s$ is injective.
 	\item Let $G \subseteq A$ be a set. Suppose that $1 \in G$, and that if $g \in G$ then $s(g) \in G$. Then
-	$G = A$.
+	      $G = A$.
 \end{lenumerate}
 But then $s(n) = 1$.
 
@@ -470,7 +464,7 @@ Then they satisfy the following two properties.
 \begin{lenumerate}
 	\item There is no $n \in A$ such that $s(n) = 1$.
 	\item Let $G \subseteq A$ be a set. Suppose that $1 \in G$, and that if $g \in G$ then $s(g) \in G$. Then
-	$G = A$.
+	      $G = A$.
 \end{lenumerate}
 We can find some $m \in A$ such that $m + 1 = n$. Then $s(m) = n = s(n)$ and $m \not= n$, and hence $s$ is not injective.
 
@@ -482,3 +476,92 @@ Let $A = \mathbb{N}$, and let $s: A \to A$ be a function that is defined by $s(x
 \end{lenumerate}
 Let $G = \{ a \in A \mid  a \text{ is even } \}$. Clearly $G \subseteq A$ and $1 \in G$. Also, if $g \in G$ then $s(g) \in G$. But it is obvious that $G \not= A$.
 
+
+\Newpage
+%-------------------------------------------------------------------------------------------------------------
+\begin{exercise}[Not in the book] %% 1.2.10
+	Construct the exponentiation $n^m$ and prove its basic properties.
+\end{exercise}
+
+\begin{theorem}[Exponentiation]
+	\label{nat:t:exp}
+	There is a unique binary operation $\boxdot: \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ that satisfies the following two properties for all $n, m \in \mathbb{N}$.
+	\begin{lenumerate}
+		\item \label{nat:t:exp:1}
+		      $n \boxdot 1 = n$.
+		\item \label{nat:t:exp:n}
+		      $n \boxdot s(m) = (n \boxdot m) \cdot n$.
+	\end{lenumerate}
+	The number $n \boxdot m$ is also denoted $n^m$.
+\end{theorem}
+
+\begin{proof}
+	To prove uniqueness, suppose that there are two binary operations $\boxdot: \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ and $\boxtimes: \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ that satisfy the two properties of this theorem. Let
+	\[
+		G = \{ g \in \mathbb{N} \mid n \boxdot g = n \boxtimes g \text{ for all } n \in \mathbb{N} \}.
+	\]
+	We will prove that $G = \mathbb{N}$, which will imply that $\boxdot$ and $\boxtimes$ are the same opertion. Clearly $G \subseteq \mathbb{N}$. Because $n \boxdot 1 = n = n \boxtimes 1$ it follows that $1 \in G$. Now let $n \in \mathbb{N}$ and $g \in G$. This means that $n \boxdot g = n \boxtimes g$. Then,
+	\[
+		n \boxdot s(g) = (n \boxdot g) \cdot n = (n \boxtimes g) \cdot n = n \boxtimes s(g).
+	\]
+	Hence $s(g) \in G$, and by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano} we can conclude that $G = \mathbb{N}$.
+
+	For existence, let $p \in \mathbb{N}$, and let $k_{p}: \mathbb{N} \to \mathbb{N}$ be defined by $k_{p}(n) = p \cdot n$ for all $n \in \mathbb{N}$. We can apply Theorem \ref{nat:t:recusion} to the set $\mathbb{N}$, the element $p \in \mathbb{N}$ and the function $k_{p}: \mathbb{N} \to \mathbb{N}$, to deduce that there is a unique function $f_{p}: \mathbb{N} \to \mathbb{N}$ such that $f_{p}(1) = p$ and $f_{p} \circ s = k_{p} \circ f_{p}$. Let $\boxdot: \mathbb{N} \to \mathbb{N}$ be defined by $c \boxdot d = f_{c}(d)$ for all $(c, d) \in \mathbb{N}$. Let $n, m \in \mathbb{N}$. It then follows that $n \boxdot 1 = f_{n}(1) = n$, which is Part (\ref{nat:t:exp:1}), and also we have
+	\begin{align*}
+		n \boxdot s(m) & = f_{n}(s(m)) = (f_{n} \circ s)(m) = (k_{n} \circ f_{n})(m)     \\
+		               & = k_{n}(f_{n}(m)) = k_{n}(n \boxdot m) = (n \boxdot m) \cdot n,
+	\end{align*}
+	which is Part (\ref{nat:t:exp:n}).
+\end{proof}
+
+\begin{theorem}
+	\label{nat:t:exp_props}
+	Let $a, b, c \in \mathbb{N}$.
+	\begin{enumerate}
+		\item \label{nat:t:exp_props:1}
+		      $a^{b + c} = a^b a^c$.
+		\item \label{nat:t:exp_props:2}
+		      $a^{b c} = (a^b)^c$.
+		\item \label{nat:t:exp_props:3}
+		      $b^a c^a = (b c)^a$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\hfill
+
+	\PartProof{nat:t:exp_props:1}
+	Let
+	\[
+		G = \{ y \in \mathbb{N} \mid  a^{x + y} = a^x a^y \text{ for all } x \in \mathbb{N} \}.
+	\]
+	We will prove that $G = \mathbb{N}$, which will immediately imply that $a^{b + c} = a^b a^c$. Clearly $G \in \mathbb{N}$. By Theorem \ref{nat:t:exp} it follows that
+	\[
+		a^{b + 1} = a^{s(b)} = a^b a = a^b a^1,
+	\]
+	and hence $1 \in G$. Now let $c \in G$, or in other words $a^{b + c} = a^b a^c$. By repeated use of the \hyperref[nat:t:props:associative_add]{Associative} and \hyperref[nat:t:props:commutative_add]{Commutative} Laws for Addition and \nameref{nat:t:props:associative_mult} we obtain
+	\begin{align*}
+		a^{b + s(c)} & = a^{b + (c + 1)} = a^{b + (1 + c)} = a^{(b + 1) + c} = a^{s(b + c)} \\
+		             & = a^{b + c} a  = (a^b a^c)a = a^b (a^c a) = a^b a^{s(c)},
+	\end{align*}
+	and hence $s(c) \in G$. Thus, by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano} we can conclude that $G = \mathbb{N}$.
+
+	\PartProof{nat:t:exp_props:2}
+	Let
+	\[
+		G = \{ y \in \mathbb{N} \mid  a^{x y} = (a^x)^y \text{ for all } x \in \mathbb{N} \}.
+	\]
+	We will prove that $G = \mathbb{N}$, which will immediately imply that $a^{b c} = (a^b)^c$. Clearly $G \in \mathbb{N}$. By Part (\ref{nat:t:exp:1}) of Theorem \ref{nat:t:exp} we deduce that $a^{b \cdot 1} = a^b = (a^b)^1$, and hence $1 \in G$. Now let $c \in G$. This means that $a^{b c} = (a^b)^c$. Using the \nameref{nat:t:props:distributive_left} we obtain
+	\[
+		a^{b \cdot s(c)} = a^{b(c + 1)} = a^{b c + b} = a^{b c} a^b = (a^b)^c a^b = (a^b)^{s(c)}.
+	\]
+	Therefore $s(c) \in G$, and hence by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano} we can conclude that $G = \mathbb{N}$.
+
+	\PartProof{nat:t:exp_props:3}
+	Let $G = \{ x \in \mathbb{N} \mid  b^x c^x = (b c)^x \}$. We will prove that $G = \mathbb{N}$, which will immediately imply that $b^a c^a = (b c)^a$. Clearly $G \in \mathbb{N}$. Because of Part (\ref{nat:t:exp:1}) of Theorem\,\ref{nat:t:exp} it follows that $b^1 c^1 = b c = (b c)^1$. Now let $a \in G$. Then $b^a c^a = (b c)^a$. Using Part (\ref{nat:t:exp:n}) of Theorem \ref{nat:t:exp} we deduce that $b^{s(a)} = b^a b$ and $c^{s(a)} = c^a c$. By repeated use of the \hyperref[nat:t:props:associative_mult]{Associative} and \hyperref[nat:t:props:commutative_mult]{Commutative} Laws for Multiplication we obtain
+	\begin{align*}
+		b^{s(a)} c^{s(a)} & = (b^a b)(c^a c) = b^a (b c^a) c = b^a (c^a b) c \\
+		                  & = (b^a c^a)(b c) = (b c)^a (b c) = (b c)^{s(a)}.
+	\end{align*}
+	Hence $s(a) \in G$, and because of Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano} we can conclude that $G = \mathbb{N}$.
+\end{proof}

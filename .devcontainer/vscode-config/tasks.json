@@ -8,7 +8,9 @@
 			"type": "shell",
 			"command": "make-snapshot.sh",
 			"args": [
-				"${input:pageNumber}"
+				"${input:pageNumber}",
+				"${config:latex-workshop.latex.outDir}/main.pdf",
+				"${config:latex-workshop.latex.outDir}/snapshot.jpg"
 			],
 			"presentation": {
 				"reveal": "never",
@@ -27,7 +29,8 @@
 			"type": "shell",
 			"command": "send-snapshot.sh",
 			"args": [
-				"${input:webhookUrl}"
+				"${input:webhookUrl}",
+				"${config:latex-workshop.latex.outDir}/snapshot.jpg"
 			],
 			"presentation": {
 				"reveal": "never",

@@ -6,7 +6,7 @@
 \label{int}
 
 \begin{definition} %% 1.3.1
-	The relation $\sim$ on $\mathbb{N} \times \mathbb{N}$ is defined by $(a, b) \sim (c, d)$ if and only if $a + d = b + c$, for all $(a, b), (c, d) \in \mathbb{N} \times \mathbb{N}$.
+	The relation $\sim$ on $\mathbb{N} \times \mathbb{N}$ is defined by $(a, b) \sim (c, d)$ if and only if ${a + d = b + c}$, for all $(a, b), (c, d) \in \mathbb{N} \times \mathbb{N}$.
 \end{definition}
 
 \begin{lemma} %% 1.3.2
@@ -253,7 +253,10 @@
 	Prove Theorem \ref{int:t:props} (\ref{int:t:props:associative_add}) (\ref{int:t:props:identity_add}) (\ref{int:t:props:inverses_add}) (\ref{int:t:props:associative_mult}) (\ref{int:t:props:commutative_mult}) (\ref{int:t:props:identity_mult}) (\ref{int:t:props:distributive}) (\ref{int:t:props:trichotomy}) (\ref{int:t:props:transitive}) (\ref{int:t:props:multiplication_order}) (\ref{int:t:props:non_triviality}).
 \end{exercise}
 
-\begin{proof}[Part (\ref{int:t:props:associative_add})]
+\begin{proof}
+	Suppose that $x = [(a, b)]$, that $y = [(c, d)]$ and that $z = [(e, f)]$, for some $a, b, c, d, e, f \in \mathbb{N}$.
+
+	\PartProof{int:t:props:associative_add}
 	We have
 	\begin{align*}
 		(x + y) + z & = ([(a, b)] + [(c, d)]) + [(e, f)] = [(a + c, b + d)] + [(e, f)] \\
@@ -261,9 +264,8 @@
 		            & = [(a, b)] + [(c + e, d + f)] = [(a, b)] + ([(c, d)] + [(e, f)]) \\
 		            & = x + (y + z).
 	\end{align*}
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:props:identity_add})]
+	\PartProof{int:t:props:identity_add}
 	We have
 	\begin{align*}
 		(a + 1) + b = (b + 1) + a & \iff (a + 1, b + 1)      \sim (a, b) \\
@@ -271,18 +273,16 @@
 		                          & \iff [(a, b)] + [(1, 1)] = [(a, b)]  \\
 		                          & \iff x + \hat{0}         = x.
 	\end{align*}
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:props:inverses_add})]
+	\PartProof{int:t:props:inverses_add}
 	We have
 	\begin{align*}
 		x + (-x) & = [(a, b)] + (-[(a, b)]) = [(a, b)] + [(b, a)] \\
 		         & = [(a + b, b + a)] = [(a + b, a + b)].
 	\end{align*}
 	By Exercise \ref{int:e:4} (\ref{int:e:4:1}), it then follows that $[(a + b, a + b)] = \hat{0}$, and hence $x + (-x) = \hat{0}$.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:props:associative_mult})]
+	\PartProof{int:t:props:associative_mult}
 	We have
 	\begin{align*}
 		(xy)z & = ([(a, b)] \cdot [(c, d)]) \cdot [(e, f)])            \\
@@ -293,9 +293,8 @@
 		      & = [(a, b)] \cdot [(ce + df, cf + de)]                  \\
 		      & = [(a, b)] \cdot ([(c, d)] \cdot [(e, f)]) = x(yz).
 	\end{align*}
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:props:commutative_mult})]
+	\PartProof{int:t:props:commutative_mult}
 	We have
 	\begin{align*}
 		xy & = [(a, b)] \cdot [(c, d)] = [(ac + bd, ad + bc)] \\
@@ -303,18 +302,16 @@
 		   & = [(c, d)] \cdot [(a, b)]                        \\
 		   & = yx.
 	\end{align*}
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:props:identity_mult})]
+	\PartProof{int:t:props:identity_mult}
 	By Exercise \ref{int:e:4} (\ref{int:e:4:1}) and Part (\ref{int:t:props:identity_add}) of this theorem, it follows that
 	\begin{align*}
 		x \cdot \hat{1} & = [(a, b)] \cdot [(1 + 1, 1)] = [(a(1 + 1) + b \cdot 1, a \cdot 1 + b(1 + 1))] \\
 		                & = [(a + a + b, a + b + b)] = [(a + (a + b), b + (a + b))]                      \\
 		                & = [(a, b)] + [(a + b, a + b)] = x + \hat{0} = x.
 	\end{align*}
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:props:distributive})]
+	\PartProof{int:t:props:distributive}
 	We have
 	\begin{align*}
 		x(y + z) & = [(a, b)] \cdot ([(c, d)] + [(e, f)])                  \\
@@ -326,9 +323,8 @@
 		         & = ([(a, b)] \cdot [(c, d)]) + ([(a, b)] \cdot [(e, f)]) \\
 		         & = xy + yz.
 	\end{align*}
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:props:trichotomy})]
+	\PartProof{int:t:props:trichotomy}
 	Suppose that $x = y$. Then $[(a, b)] = [(c, d)]$, so $(a, b) \sim (c, d)$, and as a result $a + d = b + c$. The \nameref{int:t:props:trichotomy} of $\mathbb{N}$ implies that $a + d \nless b + c$ and $a + d \ngtr b + c$. Therefore $[(a, b)] \nless [(c, d)]$ and $[(a, b)] \ngtr [(c, d)]$. Thus, $x \nless y$ and $x \ngtr y$.
 
 	Now suppose that $x < y$. Then $[(a, b)] < [(c, d)]$, so $a + d < b + c$. Using the \nameref{int:t:props:trichotomy} of $\mathbb{N}$ again, it follows that
@@ -345,9 +341,8 @@
 		a + d \nless b + c \text{ and } a + d \not= b + c \text{ and } a + d \ngtr b + c,
 	\]
 	which is a contradiction to the \nameref{int:t:props:trichotomy} of $\mathbb{N}$. Hence, precisely one of $x < y$ or $x = y$ or $x > y$ holds.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:props:transitive})]
+	\PartProof{int:t:props:transitive}
 	Suppose that $x < y$ and $y < z$. Then
 	\[
 		[(a, b)] < [(c, d)] \text{ and } [(c, d)] < [(e, f)],
@@ -361,9 +356,8 @@
 		a + d + f < b + c + f < b + d + e,
 	\]
 	which implies that $a + d + f < b + d + e$, so $a + f < b + e$. Therefore $[(a, b)] < [(e, f)]$, and hence $x < z$.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:props:multiplication_order})]
+	\PartProof{int:t:props:multiplication_order}
 	Because $z > \hat{0}$, by Exercise \ref{int:e:4} (\ref{int:e:4:3}) there is some $n \in \mathbb{N}$ such that $n \not= 1$ and $[(e, f)] = [(n, 1)]$. Now we can choose some $m \in \mathbb{N}$ such that $n = m + 1$ because of Lemma \ref{nat:l:exists_prev}. By hypothesis we know that $x < y$, so $a + d < b + c$. Then $(a + d)m < (b + c)m$. Adding $(a + d) + (b + c)$ to both sides of this inequality, we obtain
 	\begin{align*}
 		(a + d)m + (a + d) + (b + c)  & < (b + c)m + (a + d) + (b + c) \\
@@ -378,9 +372,8 @@
 		\iff [(a, b)] \cdot [(n, 1)] & < [(c, d)] \cdot [(n, 1)].
 	\end{align*}
 	Because $[(n, 1)] = [(e, f)]$, it follows that $[(a, b)] \cdot [(e, f)] < [(c, d)] \cdot [(e, f)]$, and hence $x z < y z$.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:props:non_triviality})]
+	\PartProof{int:t:props:non_triviality}
 	We have
 	\begin{align*}
 		(1 + 1) + 1 & = 1 + (1 + 1)  \\
@@ -398,15 +391,16 @@
 	Prove Theorem \ref{int:t:nat_int} (\ref{int:t:nat_int:1}) (\ref{int:t:nat_int:3}) (\ref{int:t:nat_int:4:2}) (\ref{int:t:nat_int:4:3}).
 \end{exercise}
 
-\begin{proof}[Part (\ref{int:t:nat_int:1})]
+\begin{proof}
+	\hfill
+
+	\PartProof{int:t:nat_int:1}
 	Suppose that $i(a) = i(b)$. It then follows that $[(a + 1, 1)] = [(b + 1, 1)]$, so $(a + 1) + 1 = 1 + (b + 1)$. Doing some rearranging, we get $a + (1 + 1) = b + (1 + 1)$, and canceling yields $a = b$. Hence, the function $i: \mathbb{N} \to \mathbb{Z}$ is injective.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:nat_int:3})]
+	\PartProof{int:t:nat_int:3}
 	We have $i(1) = [(1 + 1, 1)] = \hat{1}$.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:nat_int:4:2})]
+	\PartProof{int:t:nat_int:4:2}
 	We have
 	\begin{align*}
 		i(a)i(b) & = [(a + 1, 1)] \cdot [(b + 1, 1)]             \\
@@ -416,9 +410,8 @@
 		         & = [(ab + 1, 1)] + [(a + b + 1, a + b + 1)].
 	\end{align*}
 	By Exercise \ref{int:e:4} (\ref{int:e:4:1}) we know that $[(a + b + 1, a + b + 1)] = \hat{0}$, so by the \nameref{int:t:props:identity_add} of $\mathbb{Z}$, it then follows that $i(a)i(b) = [(ab + 1, 1)] + \hat{0} = [(ab + 1, 1)] = i(ab)$.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:nat_int:4:3})]
+	\PartProof{int:t:nat_int:4:3}
 	Suppose that $a < b$. Then,
 	\begin{align*}
 		a < b & \iff a + (1 + 1) < b + (1 + 1)   \\
@@ -449,6 +442,7 @@
 \begin{proof}[(\ref{int:e:7:2})]
 	Suppose that $z < 0$, and suppose that $x < y$. By Theorem \ref{int:t:neg_zero_props} (\ref{int:t:neg_zero_props:8}) we see that $-z > 0$. Then by the \nameref{int:t:props:multiplication_order} we deduce that $x(-z) < y(-z)$, and by Theorem \ref{int:t:neg_zero_props} (\ref{int:t:neg_zero_props:6}) it follows that $-xz < -yz$. But then $-(-xz) > -(-yz)$ because of Part (\ref{int:e:7:1}) of this exercise, and by Theorem \ref{int:t:neg_zero_props} (\ref{int:t:neg_zero_props:2}) we can conclude that $xz > yz$. This process can be done backwards, and hence $x < y$ if $xz > yz$.
 \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------  
 \Newpage
@@ -509,12 +503,14 @@
 	Prove Theorem \ref{int:t:neg_zero_props} (\ref{int:t:neg_zero_props:cancellation_add}) (\ref{int:t:neg_zero_props:3}) (\ref{int:t:neg_zero_props:4}) (\ref{int:t:neg_zero_props:cancellation_mult}) (\ref{int:t:neg_zero_props:7}) (\ref{int:t:neg_zero_props:10}) (\ref{int:t:neg_zero_props:11}).
 \end{exercise}
 
-\begin{proof}[Part (\ref{int:t:neg_zero_props:cancellation_add})]
+\begin{proof}
+	\hfill
+
+	\PartProof{int:t:neg_zero_props:cancellation_add}
 	\label{int:e:11:1}
 	Suppose that $x + z = y + z$. Adding $-z$ to both sides of this equation we obtain $x + z + (-z) = y + z + (-z)$. By the \nameref{int:t:props:associative_add} we get $x + [z + (-z)] = y + [z + (-z)]$. Because of \nameref{int:t:props:inverses_add} we see that $z + (-z) = 0$, so this implies that $x + 0 = y + 0$. But then by \nameref{int:t:props:identity_add} we can conclude that $x = y$.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:neg_zero_props:3})]
+	\PartProof{int:t:neg_zero_props:3}
 	By the \nameref{int:t:props:inverses_add} we have $-(x + y) + (x + y) = 0$. Adding $(-x) + (-y)$ to both sides of this equation we obtain \[
 		-(x + y) + (x + y) + (-x) + (-y) = (-x) + (-y).
 	\] By repeated use of the \hyperref[int:t:props:associative_add]{Associative}, \hyperref[int:t:props:commutative_add]{Commutative}, and \hyperref[int:t:props:identity_add]{Identity} Laws for Addition it follows that
@@ -525,9 +521,8 @@
 		                                 & = -(x + y).
 	\end{align*}
 	Hence, $-(x + y) = (-x) + (-y)$.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:neg_zero_props:4})]
+	\PartProof{int:t:neg_zero_props:4}
 	By the \nameref{int:t:props:identity_add} we know that $0 + 0 = 0$, so using the \nameref{int:t:props:distributive} we obtain
 	\[
 		x \cdot 0 = x \cdot (0 + 0) = x \cdot 0 + x \cdot 0.
@@ -541,13 +536,11 @@
 		x \cdot 0 + (x \cdot 0 + ([-(x \cdot 0)])) = x \cdot 0 + [-(x \cdot 0)],
 	\]
 	and by the \nameref{int:t:props:inverses_add} we see that $x \cdot 0 + 0 = 0$. Finally, by the \nameref{int:t:props:identity_add} it follows that $x \cdot 0 = 0$, as required.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:neg_zero_props:cancellation_mult})]
+	\PartProof{int:t:neg_zero_props:cancellation_mult}
 	Suppose that $z \not= 0$ and $xz = yz$. Now suppose to the contrary that ${x \not= y}$, and suppose, without loss of generality, that $x < y$. If $z < 0$ then by Exercise\,\ref{int:e:7}\,(\ref{int:e:7:2}) it follows that $xz > yz$, which is a contradiction to the \nameref{int:t:props:trichotomy}. If $z > 0$ then by the \nameref{int:t:props:multiplication_order} it follows that $xz < yz$, again a contradiction to the \nameref{int:t:props:trichotomy}. Hence, $x = y$.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:neg_zero_props:7})]
+	\PartProof{int:t:neg_zero_props:7}
 	By Part (\ref{int:t:neg_zero_props:9}) of this theorem we know that $0 < 1$, so by the \nameref{int:t:props:addition_order} we deduce that $0 + a < 1 + a$ for all $a \in \mathbb{Z}$. By the Commutative and Identity Laws for Addition we obtain $a < a + 1$ for all $a \in \mathbb{Z}$.
 
 	Suppose that $x y = 1$, and suppose to the contrary that either $x \not= 1$ or $y \not= 1$. Without loss of generality, suppose that $x \not= 1$. Then either $x < 1$ or $x > 1$.
@@ -599,12 +592,10 @@
 	which is a contradiction to the \nameref{nat:t:wop}. Hence, if $x < 1$ then $x = 1 = y$. If $x > 1$, then it follows that $1 < x < x + 1$, so a similar argument leads to a contradiction, and hence $x = 1 = y$. Thus, we can conclude that if $x y = 1$ then either $x = 1 = y$ or $x = -1 = y$.
 
 	Now suppose that either $x = 1 = y$ or $x = -1 = y$. If $x = 1 = y$ then ${x y = 1 \cdot 1 = 1}$ because of the \nameref{int:t:props:identity_mult}. Suppose that $x = -1 = y$. Then ${x y = (-1) \cdot (-1)}$. Using Part (\ref{int:t:neg_zero_props:6}) of this theorem we have $(-1) \cdot (-1) = -[(-1) \cdot 1]$, and by the \nameref{int:t:props:identity_mult} it follows that $(-1) \cdot 1 = -1$, so $x y = -(-1)$. Finally, by Part (\ref{int:t:neg_zero_props:2}) of this theorem we deduce that $xy = 1$.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:neg_zero_props:10})]
+	\PartProof{int:t:neg_zero_props:10}
 	Taking the contrapositive, suppose that $x \not= y$. Then by the \nameref{int:t:props:trichotomy} we deduce that either $x > y$ or $y > x$, as required.
-\end{proof}
 
-\begin{proof}[Part (\ref{int:t:neg_zero_props:11})]
+	\PartProof{int:t:neg_zero_props:11}
 	Suppose that $x > 0$ and $y > 0$. By the \nameref{int:t:props:addition_order} it follows that $x + 1 > 1$. Using the \nameref{int:t:props:multiplication_order} we obtain $(x + 1)y > 1 \cdot y$. Because of the \nameref{int:t:props:distributive} we get $y(x + 1) = yx + y$, and by the \nameref{int:t:props:commutative_mult} we know that $y x = x y$ and $1 \cdot y = y \cdot 1$, so $x y + y > y \cdot 1$. Also, we know that $y \cdot 1 = y$ because of the \nameref{int:t:props:identity_mult}. Thus, $x y + y > y$. Using the \hyperref[int:t:props:inverses_add]{Inverses} and \hyperref[int:t:props:commutative_add]{Commutative} Laws for Addition we deduce that $y = y + 0 = 0 + y$, so $x y + y > 0 + y$. Finally, by the \nameref{int:t:neg_zero_props:cancellation_add} we can conclude that $x y > 0$. A similar argument shows that if $x < 0$ and $y < 0$ then $x y < 0$.
 \end{proof}

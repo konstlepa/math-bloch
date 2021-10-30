@@ -1,12 +1,12 @@
 #!/bin/bash
 
 usage() {
-	echo "Usage: $0 <WEBHOOK URL>"
+	echo "Usage: $0 <WEBHOOK URL> <FILE>"
 }
 
-if [ "$#" -ne 1 ]; then
+if [ "$#" -ne 2 ]; then
 	usage
 	exit 1
 fi
 
-curl -F "file1=@snapshot.jpg" $1
+curl -F "file1=@$2" $1

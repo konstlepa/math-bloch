@@ -30,14 +30,21 @@
 		},
 		"latex-workshop.latexindent.args": [
 			"-c",
-			"%DIR%/",
+			"%OUTDIR%/",
 			"%TMPFILE%",
-			"-y=\"defaultIndent: '%INDENT%',onlyOneBackUp: 1\"",
-			"-m",
-			"--yaml='indentAfterItems:lenumerate:1,bycases:1'",
+			"-y=\"defaultIndent: '%INDENT%',onlyOneBackUp:1,indentAfterItems:lenumerate:1,indentAfterItems:bycases:1\"",
+		],
+		"latex-workshop.latex.outDir": "./out",
+		"latex-workshop.latex.recipes": [
+			{
+				"name": "latexmk",
+				"tools": [
+					"latexmk"
+				]
+			}
 		],
 		"spellright.language": [
 			"en_US"
-		],
+		]
 	}
 }

@@ -4,9 +4,12 @@
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{mdframed}
+\usepackage{etoolbox}
 \usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 \usepackage{thmtools}
 \usepackage{thm-restate}
+\usepackage[active,tightpage]{preview}
 
 \mdfsetup{
 	innerleftmargin=6pt,
@@ -19,13 +22,9 @@
 \newcommand\xlabel[2][]{\phantomsection\def\@currentlabelname{#1}\label{#2}}
 \makeatother
 
-\usepackage[active,tightpage]{preview}
-\usepackage{preview}
-
 \renewcommand{\PreviewBorder}{0.5em}
 
 %% Restore par-indent for preview.
-\usepackage{etoolbox}
 \edef\keptparindent{\the\parindent}
 \patchcmd{\preview}
 {\ignorespaces} %%% \preview ends with \ignorespaces
@@ -39,20 +38,18 @@
 \makeatother
 
 \setlist[1]{leftmargin=*,labelindent=\parindent}
+\setlist[2]{leftmargin=*,labelindent=\parindent}
 
-\newlist{bycases}{enumerate}{10}
-\setlist[bycases]{leftmargin=*}
-\setlist[bycases,1]{label=Case \arabic*., ref=\arabic*}
-\setlist[bycases,2]{label=Case \theenumi\,\alph*., ref=\theenumi.\alph*}
+\newlist{bycases}{enumerate}{2}
+\setlist[bycases,1]{label=Case\,\arabic{bycasesi}., ref=\arabic{bycasesi}}
+\setlist[bycases,2]{label=Case\,\arabic{bycasesi}\,\alph{bycasesii}., ref=\arabic{bycasesi}.\alph{bycasesii}}
 
-\newlist{lenumerate}{enumerate}{10}
-\setlist[lenumerate]{label=(\alph*), leftmargin=*}
-\setlist[lenumerate,1]{ref=\alph*}
-\setlist[lenumerate,2]{ref=\theenumi \, \alph*}
+\newlist{lenumerate}{enumerate}{2}
+\setlist[lenumerate,1]{label=(\alph{lenumeratei}), ref=\alph{lenumeratei}}
 
 \setlist[enumerate]{leftmargin=*}
 \setlist[enumerate,1]{label=(\arabic*), ref=\arabic*}
-\setlist[enumerate,2]{label=(\alph*), ref=\theenumi \, \alph*}
+\setlist[enumerate,2]{label=(\alph*), ref=\theenumi\,\alph*}
 
 \renewcommand{\datename}{}
 
@@ -88,7 +85,6 @@
 \renewcommand{\thecorollary}{\thechapter.\thesection.\arabic{corollary}}
 \renewcommand{\theaxiom}{\thechapter.\thesection.\arabic{axiom}}
 
-\let\proof\relax
 \declaretheoremstyle[
 	spaceabove=6pt,
 	spacebelow=6pt,
@@ -99,6 +95,7 @@
 	postheadspace=1em,
 	qed=$\square$
 ]{proofstyle}
+\let\proof\relax
 \declaretheorem[style=proofstyle, unnumbered]{proof}
 
 \newcommand{\bibbloch}[1]{
@@ -111,9 +108,13 @@
 }
 
 \newcommand{\TBD}{{\color{red} TBD}}
-\newcommand{\TODO}{{\color{red} TODO}}
 
 \newenvironment{notmine}[1][]{\color{gray}}{}
+\newenvironment{done}[1][]{\color{gray}}{}
 
 \let\emph\relax
 \DeclareTextFontCommand{\emph}{\bfseries}
+
+\newcommand{\PartProof}[1]{\bigskip\emph{(\ref{#1})}\enspace}
+
+\def\preambleloaded{Precompiled preamble loaded.}

@@ -9,33 +9,33 @@
 	An \emph{\nameref*{int2:d:oid}} is a set $R$ with elements $0,1 \in R$, binary operations $+$ and $\cdot$, a unary operation $-$ and a relation $<$, which satisfy the following properties. Let $x, y, z \in R$.
 	\begin{lenumerate}
 		\item \xlabel[Associative Law for Addition]{int2:d:oid:associative_add}
-		$(x + y) + z = x + (y + z)$ \quad (\nameref*{int2:d:oid:associative_add}).
+		      $(x + y) + z = x + (y + z)$ \quad (\nameref*{int2:d:oid:associative_add}).
 		\item \xlabel[Commutative Law for Addition]{int2:d:oid:commutative_add}
-		$x + y = y + x$ \quad (\nameref*{int2:d:oid:commutative_add}).
+		      $x + y = y + x$ \quad (\nameref*{int2:d:oid:commutative_add}).
 		\item \xlabel[Identity Law for Addition]{int2:d:oid:identity_add}
-		$x + 0 = x$ \quad (\nameref*{int2:d:oid:identity_add}).
+		      $x + 0 = x$ \quad (\nameref*{int2:d:oid:identity_add}).
 		\item \xlabel[Inverses Law for Addition]{int2:d:oid:inverses_add}
-		$x + (-x) = 0$ \quad (\nameref*{int2:d:oid:inverses_add}).
+		      $x + (-x) = 0$ \quad (\nameref*{int2:d:oid:inverses_add}).
 		\item \xlabel[Associative Law for Multiplication]{int2:d:oid:associative_mult}
-		$(x y) z = x (y z)$ \quad (\nameref*{int2:d:oid:associative_mult}).
+		      $(x y) z = x (y z)$ \quad (\nameref*{int2:d:oid:associative_mult}).
 		\item \xlabel[Commutative Law for Multiplication]{int2:d:oid:commutative_mult}
-		$x y = y x$ \quad (\nameref*{int2:d:oid:commutative_mult}).
+		      $x y = y x$ \quad (\nameref*{int2:d:oid:commutative_mult}).
 		\item \xlabel[Identity Law for Multiplication]{int2:d:oid:identity_mult}
-		$x \cdot 1 = x$ \quad (\nameref*{int2:d:oid:identity_mult}).
+		      $x \cdot 1 = x$ \quad (\nameref*{int2:d:oid:identity_mult}).
 		\item \xlabel[Distributive Law]{int2:d:oid:distributive}
-		$x (y + z) = x y + x z$ \quad (\nameref*{int2:d:oid:distributive}).
+		      $x (y + z) = x y + x z$ \quad (\nameref*{int2:d:oid:distributive}).
 		\item \xlabel[No Zero Divisors Law]{int2:d:oid:no_zero_divisors}
-		If $x y = 0$, then $x = 0$ or $y = 0$ \quad (\nameref*{int2:d:oid:no_zero_divisors}).
+		      If $x y = 0$, then $x = 0$ or $y = 0$ \quad (\nameref*{int2:d:oid:no_zero_divisors}).
 		\item \xlabel[Trichotomy Law]{int2:d:oid:trichotomy}
-		Precisely one of $x < y$ or $x = y$ or $x > y$ holds \quad (\nameref*{int2:d:oid:trichotomy}).
+		      Precisely one of $x < y$ or $x = y$ or $x > y$ holds \quad (\nameref*{int2:d:oid:trichotomy}).
 		\item \xlabel[Transitive Law]{int2:d:oid:transitive}
-		If $x < y$ and $y < z$, then $x < z$ \quad (\nameref*{int2:d:oid:transitive}).
+		      If $x < y$ and $y < z$, then $x < z$ \quad (\nameref*{int2:d:oid:transitive}).
 		\item \xlabel[Addition Law for Order]{int2:d:oid:addition_order}
-		If $x < y$ then $x + z < y + z$ \quad (\nameref*{int2:d:oid:addition_order}).
+		      If $x < y$ then $x + z < y + z$ \quad (\nameref*{int2:d:oid:addition_order}).
 		\item \xlabel[Multiplication Law for Order]{int2:d:oid:multiplication_order}
-		If $x < y$ and $z > 0$, then $x z < y z$ \quad (\nameref*{int2:d:oid:multiplication_order}).
+		      If $x < y$ and $z > 0$, then $x z < y z$ \quad (\nameref*{int2:d:oid:multiplication_order}).
 		\item \xlabel[Non-Triviality]{int2:d:oid:non_triviality}
-		$0 \neq \hat{1}$ \quad (\nameref*{int2:d:oid:non_triviality}).
+		      $0 \neq \hat{1}$ \quad (\nameref*{int2:d:oid:non_triviality}).
 	\end{lenumerate}
 \end{definition}
 
@@ -109,9 +109,22 @@
 		\item There is no $n \in \mathbb{N}$ such that $s(n) = 1$.
 		\item The function $s$ is injective.
 		\item Let $G \subseteq \mathbb{N}$ be a set. Suppose that $1 \in G$, and that if $g \in G$ then $s(g) \in G$. Then
-		$G = \mathbb{N}$. \label{int2:t:peano:induction}
+		      $G = \mathbb{N}$. \label{int2:t:peano:induction}
 	\end{lenumerate}
 \end{theorem}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{restatable}[Not in the book]{lemma}{intiiLessRelL} %% 1.4.9
+	\label{int2:l:less_relation}
+	Let $a, b \in \mathbb{Z}$. Suppose that $a < b$. Then there is some $k \in \mathbb{N}$ such that $a + k = b$.
+\end{restatable}
+
+\begin{proof}
+	Let $k = b + (-a)$. By the \nameref{int2:d:oid:addition_order} we have ${b + (-a) > a + (-a)}$, and by the \nameref{int2:d:oid:inverses_add} we deduce that $k = b + (-a) > 0$. Hence, $k \in \mathbb{N}$. Now adding $a$ to both sides of the equation $k = b + (-a)$ we obtain $k + a = b + (-a) + a$. Using the \hyperref[int2:d:oid:associative_add]{Associative} and \hyperref[int2:d:oid:commutative_add]{Commutative} Laws for Addition it follows that $a + k = b + [a + (-a)]$, and hence by the \hyperref[int2:d:oid:inverses_add]{Inverses} and \hyperref[int2:d:oid:identity_add]{Identity} Laws for Addition we see that $a + k = b$.
+\end{proof}
+
 
 \addtocounter{exercise}{1}
 %-------------------------------------------------------------------------------------------------------------
@@ -123,6 +136,7 @@
 \begin{proof}
 	Suppose that $n \in \mathbb{N}$. Then $n \in \mathbb{Z}$ and $n > 0$. Using the \nameref{int2:d:oid:addition_order} we obtain $n + 1 > 0 + 1$. By the \hyperref[int2:d:oid:commutative_add]{Commutative} and \hyperref[int2:d:oid:identity_add]{Identity} Laws for Addition we deduce that $n + 1 > 1$. Also, we know by Part (\ref{int2:l:props:9}) of Lemma\,\ref{int2:l:props} that $0 < 1$. Then applying the \nameref{int2:d:oid:transitive} we get $n + 1 > 0$, and hence by the definition of $\mathbb{N}$ we see that $n + 1 \in \mathbb{N}$.
 \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -140,6 +154,7 @@
 	Thus, $-x \geq -y$. This process can be done backwards, and hence $x \leq y$ if and only if $-x \geq -y$.
 \end{proof}
 
+
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
 \begin{exercise}[Used in Exercise \ref{int2:e:6}, Exercise \ref{int2:e:8} and Exercise \ref{rat:e:9}] %% 1.4.4
@@ -152,6 +167,7 @@
 
 \end{proof}
 
+
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
 \begin{exercise} %% 1.4.5
@@ -161,6 +177,7 @@
 \begin{proof}
 	If $a < b$ then by the \nameref{int2:d:wop} it follows that $a + 1 \leq b$.
 \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -176,17 +193,37 @@
 	We have $b + 1 = n + (-1) + 1$. By the \hyperref[int2:d:oid:commutative_add]{Commutative} and \hyperref[int2:d:oid:inverses_add]{Inverses} Laws for Addition we see that $(-1) + 1 = 1 + (-1) = 0$. Then applying the \nameref{int2:d:oid:associative_add} we deduce that $n + [(-1) + 1] = n + 0$, and hence by the \nameref{int2:d:oid:identity_add} we can conclude that $b + 1 = n$.
 \end{proof}
 
-\addtocounter{exercise}{1}
+
+\Newpage
+%-------------------------------------------------------------------------------------------------------------
+\begin{exercise}[Used in Section \ref{int2}] %% 1.4.7
+	Let $\mathbb{Z}[x]$ denote the set of polynomials with integer coefficients and variable $x$. This set has binary operations $+$ and $\cdot$ as usual for polynomials. The relation $<$, called the \emph{dictionary order} on $\mathbb{Z}[x]$, is defined by $f < g$ if and only if either the degree of $f$ is less than the degree of $g$, or if the degrees of $f$ and $g$ are equal and if $f \neq g$ and if the highest degree coefficient which differs for $f$ and $g$ is smaller for $f$, for all $f, g \in \mathbb{Z}[x]$. Let $0, 1 \in \mathbb{Z}[x]$ be the polynomials that are constantly $0$ and $1$, respectively.
+	\begin{enumerate}
+		\item \label{int2:e:7:1}
+		      Prove that $\mathbb{Z}[x]$, with $+$, $\cdot$, $<$, $0$ and $1$ as defined above, is an \nameref{int2:d:oid}.
+		\item \label{int2:e:7:2}
+		      Let $f \in \mathbb{Z}[x]$. Prove that there is no $g \in \mathbb{Z}[x]$ such that $f < g < f + 1$.
+		\item \label{int2:e:7:3}
+		      Prove that $\mathbb{Z}[x]$ does not satisfy the \nameref{int2:d:wop}.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{int2:e:7:1})]
+	\TBD
+\end{proof}
+
+% \begin{proof}[(\ref{int2:e:7:2})]
+% 	\TBD
+% \end{proof}
+
+% \begin{proof}[(\ref{int2:e:7:3})]
+% 	\TBD
+% \end{proof}
+
+
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
-\begin{lemma}
-	\label{int2:e:8:l}
-	Let $a, b \in \mathbb{Z}$. Suppose that $a < b$. Then there is some $k \in \mathbb{N}$ such that $a + k = b$.
-\end{lemma}
-
-\begin{proof}
-	Let $k = b + (-a)$. By the \nameref{int2:d:oid:addition_order} we have ${b + (-a) > a + (-a)}$, and by the \nameref{int2:d:oid:inverses_add} we deduce that $k = b + (-a) > 0$. Hence, $k \in \mathbb{N}$. Now adding $a$ to both sides of the equation $k = b + (-a)$ we obtain $k + a = b + (-a) + a$. Using the \hyperref[int2:d:oid:associative_add]{Associative} and \hyperref[int2:d:oid:commutative_add]{Commutative} Laws for Addition it follows that $a + k = b + [a + (-a)]$, and hence by the \hyperref[int2:d:oid:inverses_add]{Inverses} and \hyperref[int2:d:oid:identity_add]{Identity} Laws for Addition we see that $a + k = b$.
-\end{proof}
+\intiiLessRelL*
 
 \begin{exercise} %% 1.4.8
 	\label{int2:e:8}
@@ -203,7 +240,7 @@
 \end{exercise}
 
 \begin{proof}[(\ref{int2:e:8:1})]
-	Let $y \in \mathbb{Z}$, and suppose that $y \geq a$. If $y = a$, then clearly $y \in G$. Now suppose that $y \not= a$, so $y > a$. Then according to Lemma\,\ref{int2:e:8:l} we can choose some $k \in \mathbb{N}$ such that $y = a + k$.
+	Let $y \in \mathbb{Z}$, and suppose that $y \geq a$. If $y = a$, then clearly $y \in G$. Now suppose that $y \not= a$, so $y > a$. Then according to Lemma\,\ref{int2:l:less_relation} we can choose some $k \in \mathbb{N}$ such that $y = a + k$.
 
 	Let $I = \{ n \in \mathbb{N} \mid a + n \in G \}$. Clearly $I \subseteq \mathbb{N}$. Because $a \in G$ it follows that $a + 1 \in G$, and therefore $1 \in I$. Now suppose that $n \in I$, which means that $a + n \in G$. Then $(a + n) + 1 \in G$. By the \nameref{int2:d:oid:associative_add} we have $a + (n + 1) \in G$. Hence $n + 1 \in I$, and using Part (\ref{int2:t:peano:induction}) of the \nameref{int2:t:peano} we deduce that $I = \mathbb{N}$. Hence, $y = a + k \in G$.
 \end{proof}
@@ -211,7 +248,7 @@
 \begin{proof}[(\ref{int2:e:8:2})]
 	Let $y \in \mathbb{Z}$, and suppose that $y \leq a$. By Exercise \ref{int2:e:3} it follows that ${-y \geq -a}$, which means that either $-y = -a$ or $-y > -a$. Suppose that $-y = -a$. Then by the \nameref{int2:d:oid:identity_mult} we have $-(y \cdot 1) = -(a \cdot 1)$. By Lemma \ref{int2:l:props} (\ref{int2:l:props:6}) and the \nameref{int2:l:props:cancellation_mult} we deduce that $y = a$. Hence, $y \in H$.
 
-	Now suppose that $-y > -a$. It follows from Lemma \ref{int2:e:8:l} that there is some ${k \in \mathbb{N}}$ such that $-y = (-a) + k$. Multiplying both sides of this equation by $-1$ we obtain ${(-1)(-y) = (-1)[(-a) + k]}$. According to Lemma \ref{int2:l:props} (\ref{int2:l:props:6}) and the \nameref{int2:d:oid:commutative_mult} we obtain $[-(-y)] \cdot 1 = [-(-a)] \cdot 1 + (-k) \cdot 1$, and by Lemma \ref{int2:l:props} (\ref{int2:l:props:2}) and the \nameref{int2:d:oid:identity_mult} we see that $y = a + (-k)$.
+	Now suppose that $-y > -a$. It follows from Lemma \ref{int2:l:less_relation} that there is some ${k \in \mathbb{N}}$ such that $-y = (-a) + k$. Multiplying both sides of this equation by $-1$ we obtain ${(-1)(-y) = (-1)[(-a) + k]}$. According to Lemma \ref{int2:l:props} (\ref{int2:l:props:6}) and the \nameref{int2:d:oid:commutative_mult} we obtain $[-(-y)] \cdot 1 = [-(-a)] \cdot 1 + (-k) \cdot 1$, and by Lemma \ref{int2:l:props} (\ref{int2:l:props:2}) and the \nameref{int2:d:oid:identity_mult} we see that $y = a + (-k)$.
 
 	Let $I = \{ n \in \mathbb{N} \mid a + (-n) \in H \}$. Clearly $I \subseteq H$. Because $a \in G$ it follows that $a + (-1) \in G$, and therefore $1 \in I$. Now suppose that $n \in I$. Then $a + (-n) \in H$, so $[a + (-n)] + (-1) \in H$. Using the \nameref{int2:d:oid:associative_add} we get $a + [(-n) + (-1)]$, and using Part (\ref{int2:l:props:3}) of Lemma \ref{int2:l:props} we get $a + [-(n + 1)] \in H$. Thus, $n + 1 \in I$, and by Part (\ref{int2:t:peano:induction}) of the \nameref{int2:t:peano} we deduce that $I = \mathbb{N}$. Hence, $y = a + (-k) \in H$.
 \end{proof}

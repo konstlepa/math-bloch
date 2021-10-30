@@ -14,6 +14,7 @@
 \end{lemma}
 
 \begin{definition} %% 1.5.3
+	\label{rat:d:rat}
 	The set of \emph{rational numbers}, denoted $\mathbb{Q}$, is the set of equivalence classes of $\mathbb{Z} \times \mathbb{Z}^{*}$ with respect to the equivalence relation $\asymp$.
 
 	The elements $\overline{0}, \overline{1} \in \mathbb{Q}$ are defined by $\overline{0} = [(0, 1)]$ and $\overline{1} = [(1, 1)] .$ Let $\mathbb{Q}^{*} = \mathbb{Q} - \{\overline{0}\}$. The binary operations $+$ and $\cdot$ on $\mathbb{Q}$ are defined by
@@ -83,6 +84,93 @@
 	\end{enumerate}
 \end{lemma}
 
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{restatable}[Not in the book]{lemma}{ratLessRelL} %% 1.5.9
+	\label{rat:l:less_relation}
+	Let
+	\[
+		P = \{ (x, y) \in \mathbb{Q} \mid \text{there is either $x > 0$ and $y > 0$ or $x < 0$ and $y < 0$} \}.
+	\]
+	Let $r, s \in \mathbb{Q}$.
+	\begin{enumerate}
+		\item \label{rat:l:less_relation:1}
+		      $r < s$ if and only if $(-r) + s \in P$.
+		\item \label{rat:l:less_relation:2}
+		      if $r, s \in P$, then $r + s \in P$ and $r s \in P$.
+		\item \label{rat:l:less_relation:3}
+		      if $r \in \mathbb{Q}^{*}$, then precisely one of $r \in P$ or $-r \in P$ holds.
+	\end{enumerate}
+\end{restatable}
+
+\begin{proof}
+	Suppose that $r = [(x, y)]$ and that $s = [(z, w)]$.
+
+	\PartProof{rat:l:less_relation:1}
+	Suppose that $r < s$. Then $[(x, y)] < [(z, w)]$. We consider the following two cases.
+	\begin{bycases}
+		\item There is either $y > 0$ and $w > 0$ or $y < 0$ and $w < 0$. Without loss of generality, suppose that $y > 0$ and $w > 0$. Then $x w < y z$. Adding $-x w$ to both sides of this inequality we obtain
+		      \[
+			      y z + (-x w) > x w + (-x w) = 0,
+		      \]
+		      so $(-x w) + y z > 0$. Also, $y > 0$ and $w > 0$ imply $y w > 0$. Hence,
+		      \[
+			      [([-x w] + y z, y w)] = (-r) + s \in P.
+		      \]
+		\item There is either $y < 0$ and $w > 0$ or $y > 0$ and $w < 0$. A similar argument shows that $(-x w) + yz < 0$ and $y w < 0$, and hence
+		      \[
+			      [([-x w] + y z, y w)] = (-r) + s \in P.
+		      \]
+	\end{bycases}
+
+	Now suppose that $(-r) + s \in P$, which means that $[([-x w] + y z, y w)] \in P$. From the definition of $P$ this implies the following two cases.
+	\begin{bycases}
+		\item $(-x w) + y z > 0$ and $y w > 0$. Adding $x w$ to the inequality $(-x w) + y z > 0$ and doing some rearranging we obtain $x w < y z$. Next suppose to the contrary that either $y > 0$ and $w < 0$ or $y < 0$ and $w > 0$, or in other words there is either $y > 0$ and $-w > 0$ or $-y > 0$ and $w > 0$. Then
+		      \[
+			      y(-w) = (-y)w = -yw > 0,
+		      \]
+		      so $y w < 0$, which is a contradiction to hypothesis on $y w$. Hence either $y > 0$ and $w > 0$ or $y < 0$ and $w < 0$. By Definition \ref{rat:d:rat} we can conclude that $[(x, y)] = r < s = [(z, w)]$.
+		\item $(-x w) + y z < 0$ and $y w < 0$. A similar argument shows that $r < s$.
+	\end{bycases}
+
+	\PartProof{rat:l:less_relation:2}
+	Suppose that $r, s \in P$, which means that $[(x, y)] \in P$ and $[(z, w)] \in P$. We consider the following four cases.
+	\begin{bycases}
+		\item $x > 0$, $y > 0$, $z > 0$, and $w > 0$. Then $x w > 0$, $y z > 0$, $x z > 0$, and $y w > 0$, and as a result $x w + y z > 0$. Hence, $r + s = [(x w + y z, y w)] \in P$ and $rs = [(x z, y w)] \in P$.
+		\item $x < 0$, $y < 0$, $z < 0$, and $w < 0$. Then $-x > 0$, $-y > 0$, $-z > 0$, and $-w > 0$. Because $(-a)(-b) = a b$ for all $a, b \in \mathbb{Z}$ this case is similar to the previous case. Hence, $r + s \in P$ and $rs \in P$.
+		\item $x > 0$, $y > 0$, $z < 0$, and $w < 0$. Then $x w < 0$, $y z < 0$, $x z < 0$ and $y w < 0$. It then follows that $x w + y z < 0$. Hence, $r + s = [(x w + y z, y w)] \in P$ and $rs = [(x z, y w)] \in P$.
+		\item $x < 0$, $y < 0$, $z > 0$, and $w > 0$. A similar argument shows that $r + s \in P$ and $rs \in P$.
+	\end{bycases}
+
+	\PartProof{rat:l:less_relation:3}
+	Suppose that $r \in \mathbb{Q}^{*}$, or in other words $r \in \mathbb{Q}$ and $r \not= 0$. Suppose that $r \notin P$. Then either $x > 0$ and $y < 0$ or $x < 0$ and $y > 0$. It then follows either $-x < 0$ and $y < 0$ or $-x > 0$ and $y > 0$. Hence, $[(-x, y)] = -r \in P$.
+
+	Now suppose to the contrary that $r \in P$ and $-r \in P$. Because $r \in P$ there is either $x > 0$ and $y > 0$ or $x < 0$ and $y < 0$. Without loss of generality, suppose that $x > 0$ and $y > 0$. Because $-r \in P$ we consider the following two cases.
+	\begin{bycases}
+		\item $-x > 0$ and $y > 0$. Then $-x > 0$ implies $x < 0$, which is a contradiction to the fact that $x > 0$. Hence, $-r \notin P$.
+		\item $-x < 0$ and $y < 0$. Then there is a contradiction to the fact that $y > 0$, and hence $-r \notin P$.
+	\end{bycases}
+
+	Thus, we can conclude that precisely one of $r \in P$ or $-r \in P$ holds.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{restatable}[Not in the book]{lemma}{ratNegationL} %% 1.5.9
+	\label{rat:l:negation}
+	Let $r, s \in \mathbb{Q}$. Then $(-r) + (-s) = -(r + s)$.
+\end{restatable}
+
+\begin{proof}
+	By the \nameref{rat:t:props:inverses_add} we know that $(r + s) + [-(r + s)] = \overline{0}$. Adding $(-r) + (-s)$ to both sides of this equation we obtain
+	\[
+		(r + s) + [-(r + s)] + (-r) + (-s) = (-r) + (-s).
+	\]
+	Then by repeated use of the \hyperref[rat:t:props:associative_add]{Associative}, \hyperref[rat:t:props:commutative_add]{Commutative}, \hyperref[rat:t:props:inverses_add]{Inverses}, and \hyperref[rat:t:props:identity_add]{Identity} Laws for Addition we can conclude that $-(r + s) = (-r) + (-s)$.
+\end{proof}
+
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
 \begin{exercise}[Used in Lemma \ref{rat:l:equiv}] %% 1.5.1
@@ -96,8 +184,11 @@
 	Since $x y = y x$, it follows that $(x, y) \asymp (x, y)$, and hence $\asymp$ is reflexive. Now to see that $\asymp$ is symmetric, suppose that $(x, y) \asymp (z, w)$. Then $x w = y z$. This implies that $y z = x w$, which implies that $z y = w x$. Hence, $(z, w) \asymp (x, y)$.
 \end{proof}
 
+
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
+\ratLessRelL*
+
 \begin{exercise}[Used in Lemma \ref{rat:l:ops}] %% 1.5.2
 	Complete the proof of Lemma \ref{rat:l:ops}. That is, prove that the binary operation $+$, the unary operation $^{-1}$ and the relation $<$, all on $\mathbb{Q}$, are well-defined.
 \end{exercise}
@@ -109,78 +200,172 @@
 		By hypothesis we know that $(x, y) \asymp (a, b)$ and $(z, w) \asymp (c, d)$. Hence $x b = y a$ and $z d = w c$. By multiplying these two equations and doing some rearranging we obtain $(x z)(b d) = (y w)(a c)$, and this implies that $[(x z, y w)] = [(a c, b d)]$. Therefore $\cdot$ is well-defined. Also, from $x b = y a$ we deduce that $(-x)b = y(-a)$, and hence $[(-x, y)] = [(-a, b)]$. Therefore $-$ is well-defined.
 	\end{notmine}
 
-	\TODO
+	Multiplying the equation $x b = y a$ by $w d$ we get $(x b)(w d) = (y a)(w d)$, and multiplying the equation $z d = w c$ by $y b$ we get $(z d)(y b) = (w c)(y b)$. By adding these two equations we obtain $(x b)(w d) + (z d)(y b) = (y a)(w d) + (w c)(y b)$, and doing some rearranging we have $(x w + y z)(b d) = (a d + b c)(y w)$, which implies that $[(x w + yz, y w)] = [(a d + b c, b d)]$. Therefore $+$ is well-defined. From $x b = y a$ it follows that $y a = x b$, so $[(y, x)] = [(b, a)]$. Hence, $^{-1}$ is well-defined.
+
+	To see that $<$ is well-defined, suppose that $[(x, y)] < [(z, w)]$. From Part (\ref{rat:l:less_relation:2}) of Lemma \ref{rat:l:less_relation} it follows that $[(-x, y)] + [(z, w)] \in P$, so $[([-x w] + y z, y w)] \in P$. Then there is either $(-x w) + y z > 0$ and $y w > 0$ or $(-x w) + y z < 0$ and $y w < 0$. Without loss of generality, suppose that $(-x w) + y z > 0$ and $y w > 0$. Adding $x w$ to both sides of the inequality $(-x w) + y z > 0$ we get
+	\[
+		x w + (-x w) + y z = 0 + y z > x w + 0,
+	\]
+	and as a result ${x w < y z}$. We know that $b d = y w > 0$, so multiplying both sides of the inequality ${x w < y z}$ by $b d$ and doing some rearranging we obtain ${(x b)(w d) < (z d)(y b)}$. Because $x b = y a$ and $z d = w c$ we have ${(y a)(w d) < (w c)(y b)}$. Doing some rearranging again we get $(a d)(y w) < (b c)(y w)$. We have $y \not= 0$ and $w \not= 0$, so canceling yields $a d < b c$, and hence $[(a, b)] < [(c, d)]$.
 \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
+\ratLessRelL*
+
 \begin{exercise}[Used in Theorem \ref{rat:t:props} and Theorem \ref{rat:t:int}] %% 1.5.3
 	\label{rat:e:3}
 	Let $x \in \mathbb{Z}$ and $y \in \mathbb{Z}^{*}$.
 	\begin{enumerate}
-		\item Prove that $[(x, y)] = \overline{0}$ if and only if $x = 0$. \label{rat:e:3:1}
-		\item Prove that $[(x, y)] = \overline{1}$ if and only if $x = y$. \label{rat:e:3:2}
-		\item Prove that $\overline{0} < [(x, y)]$ if and only if $0 < x y$. \label{rat:e:3:3}
+		\item \label{rat:e:3:1}
+		      Prove that $[(x, y)] = \overline{0}$ if and only if $x = 0$.
+		\item \label{rat:e:3:2}
+		      Prove that $[(x, y)] = \overline{1}$ if and only if $x = y$.
+		\item \label{rat:e:3:3}
+		      Prove that $\overline{0} < [(x, y)]$ if and only if $0 < x y$.
 	\end{enumerate}
 \end{exercise}
 
 \begin{proof}[(\ref{rat:e:3:1})]
-	\TODO
+	Suppose that $[(x, y)] = \overline{0}$. Then,
+	\begin{align*}
+		[(x, y)] = \overline{0} & \iff [(x, y)] = [(0, 1)]   \\
+		                        & \iff (x, y) \asymp (0, 1)  \\
+		                        & \iff x \cdot 1 = y \cdot 0 \\
+		                        & \iff x = 0.
+	\end{align*}
 \end{proof}
 
-% \begin{proof}[(\ref{rat:e:3:2})]
-% 	\TODO
-% \end{proof}
+\begin{proof}[(\ref{rat:e:3:2})]
+	Suppose that $[(x, y)] = \overline{1}$. Then,
+	\begin{align*}
+		[(x, y)] = \overline{1} & \iff [(x, y)] = [(1, 1)]   \\
+		                        & \iff (x, y) \asymp (1, 1)  \\
+		                        & \iff x \cdot 1 = y \cdot 1 \\
+		                        & \iff x = y.
+	\end{align*}
+\end{proof}
 
-% \begin{proof}[(\ref{rat:e:3:3})]
-% 	\TODO
-% \end{proof}
+\begin{proof}[(\ref{rat:e:3:3})]
+	Suppose that $\overline{0} < [(x, y)]$. Using Part (\ref{rat:l:less_relation:1}) of Lemma \ref{rat:l:less_relation}  we have
+	\begin{align*}
+		\overline{0} < [(x, y)] & \iff [(0, 1)] < [(x, y)]                         \\
+		                        & \iff (-[(0, 1)]) + [(x, y)] \in P                \\
+		                        & \iff [(-0, 1)] + [(x, y)] \in P                  \\
+		                        & \iff [(0, 1)] + [(x, y)] \in P                   \\
+		                        & \iff [(0 \cdot y + x \cdot 1, 1 \cdot y )] \in P \\
+		                        & \iff [(y \cdot 0 + x \cdot 1, y \cdot 1)] \in P  \\
+		                        & \iff [(0 + x, y)] \in P                          \\
+		                        & \iff [(x, y)] \in P.
+	\end{align*}
+	This implies that there is either $x > 0$ and $y > 0$ or $x < 0$ and $y < 0$. If $x > 0$ and $y > 0$ then clearly $0 < x y$. Now suppose that $x < 0$ and $y < 0$. Then $-x > 0$ and $-y > 0$, and we can conclude that $0 < (-x)(-y) = -(-x y) = x y$. This process can be done backwards, and hence $\overline{0} < [(x, y)]$ if and only if $0 < x y$.
+\end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
+\ratLessRelL*
+
+\ratNegationL*
+
 \begin{exercise}[Used in Theorem \ref{rat:t:props}] %% 1.5.4
 	Prove Theorem \ref{rat:t:props} (\ref{rat:t:props:associative_add}) (\ref{rat:t:props:commutative_add}) (\ref{rat:t:props:identity_add}) (\ref{rat:t:props:associative_mult}) (\ref{rat:t:props:commutative_mult}) (\ref{rat:t:props:inverses_mult}) (\ref{rat:t:props:distributive}) (\ref{rat:t:props:transitive}) (\ref{rat:t:props:addition_order}) (\ref{rat:t:props:non_triviality}).
 \end{exercise}
 
-\begin{proof}[Part (\ref{rat:t:props:associative_add})]
-	\TODO
+\begin{proof}
+	Suppose that $r = [(x, y)]$, that $s = [(z, w)]$ and that $t = [(u, v)]$ for some $x, z, u \in \mathbb{Z}$ and $y, w, v \in \mathbb{Z}^{*}$.
+
+	% \PartProof{rat:t:props:associative_add}
+	% We have
+	% \begin{align*}
+	% 	(r + s) + t & = ([(x, y)] + [(z, w)]) + [(u, v)]     \\
+	% 	            & = [(x w + y z, y w)] + [(u, v)]        \\
+	% 	            & = [((x w + y z)v + (y w)u, (y w)v)]    \\
+	% 	            & = [((x w)v + (y z)v + (y w)u, (y w)v)  \\
+	% 	            & = [(x(w v) + y(z v) + y(w u), y(w v))] \\
+	% 	            & = [(x(w v) + y(z v + w u), y(w v))]    \\
+	% 	            & = [(x, y)] + [(z v + w u, w v)]        \\
+	% 	            & = [(x, y)] + ([(z, w)] + [(u, v)])     \\
+	% 	            & = r + (s + t).
+	% \end{align*}
+
+	% \PartProof{rat:t:props:commutative_add}
+	% We have
+	% \begin{align*}
+	% 	r + s & = [(x, y)] + [(z, w)]                     \\
+	% 	      & = [(x w + y z, y w)] = [(y z + x w, y w)] \\
+	% 	      & = [(z y + w x, w y)] = s + r.
+	% \end{align*}
+
+	% \PartProof{rat:t:props:identity_add}
+	% We have
+	% \begin{align*}
+	% 	r + \overline{0} & = [(x, y)] + [(0, 1)]                                 \\
+	% 	                 & = [(x \cdot 1 + y \cdot 0, y \cdot 1)] = [(x + 0, y)] \\
+	% 	                 & = [(x, y)] = r.
+	% \end{align*}
+
+	% \PartProof{rat:t:props:associative_mult}
+	% We have
+	% \begin{align*}
+	% 	(r s)t & = ([(x, y)] \cdot [(z, w)]) \cdot [(u, v)]         \\
+	% 	       & = [(x z, y w)] \cdot [(u, v)] = [((x z)u, (y w)v)] \\
+	% 	       & = [(x(z u), y(w v))] = [(x, y)] \cdot [(z u, w v)] \\
+	% 	       & = [(x, y)] \cdot ([z, w] \cdot [(u, v)]) = r(s t).
+	% \end{align*}
+
+	% \PartProof{rat:t:props:commutative_mult}
+	% We have
+	% \begin{align*}
+	% 	r s & = [(x, y)] \cdot [(z, w)]         \\
+	% 	    & = [(x z, y w)] \cdot [(z x, w y)] \\
+	% 	    & = [(z, w)] \cdot [(x, y)] = s r.
+	% \end{align*}
+
+	% \PartProof{rat:t:props:inverses_mult}
+	% Suppose that $r \not= \overline{0}$, which means that $r \in \mathbb{Q}^{*}$. Then,
+	% \begin{align*}
+	% 	r \cdot r^{-1} & = [(x, y)] \cdot [(x, y)]^{-1} = [(x, y)] \cdot [(y, x)] \\
+	% 	               & = [(x y, y x)] = [(x y, x y)] = \overline{1},
+	% \end{align*}
+	% where the last equality holds by Exercise \ref{rat:e:3} (\ref{rat:e:3:2}).
+
+	% \PartProof{rat:t:props:distributive}
+	% Using Exercise \ref{rat:e:3} (\ref{rat:e:3:2}) we note that $[(y, y)] = \overline{1}$. By Part (\ref{rat:t:props:identity_mult}) of this theorem we know that $r(s + t) = r(s + t) \cdot \overline{1}$. Then,
+	% \begin{align*}
+	% 	r(s + t) & = r(s + t) \cdot \overline{1}                         \\
+	% 	         & = [(x, y)] \cdot ([(z, w)] + [(u, v)]) \cdot [(y, y)] \\
+	% 	         & = [(x, y)] \cdot [(z v + w u, w v)] \cdot [(y, y)]    \\
+	% 	         & = [(x(z v + w u), y(w v))] \cdot [(y, y)]             \\
+	% 	         & = [(x(z v + w u)y, y(w v)y)]                          \\
+	% 	         & = [([x(z v) + x(w u)]y, y (w v) y)]                   \\
+	% 	         & = [(x(z v)y + x(w u)y, y (w v) y)]                    \\
+	% 	         & = [(x z v y + x w u y, y w v y)]                      \\
+	% 	         & = [(x z y v + y w x u, y w y v)]                      \\
+	% 	         & = [([x z] [y v] + [y w] [x u], [y w] [y v])]          \\
+	% 	         & = [(x z, y w)] + [(x u, y v)]                         \\
+	% 	         & = rs + rt.
+	% \end{align*}
+
+	% \PartProof{rat:t:props:transitive}
+	% Suppose that $r < s$ and $s < t$. According to Part (\ref{rat:l:less_relation:1}) of Lemma \ref{rat:l:less_relation} we see that $(-r) + s \in P$ and $(-s) + t \in P$, so using Part (\ref{rat:l:less_relation:2}) of Lemma \ref{rat:l:less_relation} we deduce that $(-r) + s + (-s) + t \in P$. Then by repeated use of the \hyperref[rat:t:props:associative_add]{Associative}, \hyperref[rat:t:props:inverses_add]{Inverses}, and \hyperref[rat:t:props:identity_add]{Identity} Laws for Addition we obtain $(-r) + t \in P$. Hence, $r < t$.
+
+	\PartProof{rat:t:props:addition_order}
+	Suppose that $r < s$. By Part (\ref{rat:l:less_relation:1}) of Lemma \ref{rat:l:less_relation} we know that $(-r) + s \in P$, and using the \hyperref[rat:t:props:identity_add]{Identity} and \hyperref[rat:t:props:inverses_add]{Inverses} Laws for Addition we observe that
+	\[
+		(-r) + s = (-r) + s + \overline{0} = (-r) + s + t + (-t) \in P.
+	\]
+	By repeated use of the \hyperref[rat:t:props:associative_add]{Associative} and \hyperref[rat:t:props:commutative_add]{Commutative} for Addition we obtain
+	\[
+		([-r] + [-t]) + (s + t) \in P.
+	\]
+	By Lemma \ref{rat:l:negation} we see that $(-r) + (-t) = -(r + t)$. Then $[-(r + t)] + (s + t) \in P$, and hence $r + t < s + t$.
+
+	\PartProof{rat:t:props:non_triviality}
+	Suppose to the contrary that $\overline{0} = \overline{1}$. Then $[(0, 1)] = [(1, 1)]$, which means that $(0, 1) \asymp (1, 1)$. But then $0 \cdot 1 = 1 \cdot 1$, and by the \nameref{rat:t:props:identity_mult} it follows that $0 = 1$, which contradicts \nameref{int2:d:oid:non_triviality} for integer numbers. Hence, $\overline{0} \not= \overline{1}$.
 \end{proof}
 
-% \begin{proof}[Part (\ref{rat:t:props:commutative_add})]
-% 	\TODO
-% \end{proof}
-
-% \begin{proof}[Part (\ref{rat:t:props:identity_add})]
-% 	\TODO
-% \end{proof}
-
-% \begin{proof}[Part (\ref{rat:t:props:associative_mult})]
-% 	\TODO
-% \end{proof}
-
-% \begin{proof}[Part (\ref{rat:t:props:commutative_mult})]
-% 	\TODO
-% \end{proof}
-
-% \begin{proof}[Part (\ref{rat:t:props:inverses_mult})]
-% 	\TODO
-% \end{proof}
-
-% \begin{proof}[Part (\ref{rat:t:props:distributive})]
-% 	\TODO
-% \end{proof}
-
-% \begin{proof}[Part (\ref{rat:t:props:transitive})]
-% 	\TODO
-% \end{proof}
-
-% \begin{proof}[Part (\ref{rat:t:props:addition_order})]
-% 	\TODO
-% \end{proof}
-
-% \begin{proof}[Part (\ref{rat:t:props:non_triviality})]
-% 	\TODO
-% \end{proof}
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -188,17 +373,19 @@
 	Prove Theorem \ref{rat:t:int} (\ref{rat:t:int:injective}) (\ref{rat:t:int:zero_one}) (\ref{rat:t:int:props}).
 \end{exercise}
 
-\begin{proof}[Part (\ref{rat:t:int:injective})]
-	\TODO
+\begin{proof}
+	\hfill
+
+	\PartProof{rat:t:int:injective}
+	\TBD
+
+	% \PartProof{rat:t:int:zero_one}
+	% \TBD
+
+	% \PartProof{rat:t:int:props}
+	% \TBD
 \end{proof}
 
-% \begin{proof}[Part (\ref{rat:t:int:zero_one})]
-% 	\TODO
-% \end{proof}
-
-% \begin{proof}[Part (\ref{rat:t:int:props})]
-% 	\TODO
-% \end{proof}
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -217,32 +404,33 @@
 \end{exercise}
 
 \begin{proof}[(\ref{rat:e:6:1})]
-	\TODO
+	\TBD
 \end{proof}
 
 % \begin{proof}[(\ref{rat:e:6:2})]
-% 	\TODO
+% 	\TBD
 % \end{proof}
 
 % \begin{proof}[(\ref{rat:e:6:3})]
-% 	\TODO
+% 	\TBD
 % \end{proof}
 
 % \begin{proof}[(\ref{rat:e:6:4})]
-% 	\TODO
+% 	\TBD
 % \end{proof}
 
 % \begin{proof}[(\ref{rat:e:6:5})]
-% 	\TODO
+% 	\TBD
 % \end{proof}
 
 % \begin{proof}[(\ref{rat:e:6:6})]
-% 	\TODO
+% 	\TBD
 % \end{proof}
 
 % \begin{proof}[(\ref{rat:e:6:7})]
-% 	\TODO
+% 	\TBD
 % \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -256,12 +444,13 @@
 \end{exercise}
 
 \begin{proof}[(\ref{rat:e:7:1})]
-	\TODO
+	\TBD
 \end{proof}
 
 % \begin{proof}[(\ref{rat:e:7:2})]
-% 	\TODO
+% 	\TBD
 % \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -275,12 +464,13 @@
 \end{exercise}
 
 \begin{proof}[(\ref{rat:e:8:1})]
-	\TODO
+	\TBD
 \end{proof}
 
 % \begin{proof}[(\ref{rat:e:8:2})]
-% 	\TODO
+% 	\TBD
 % \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -295,18 +485,18 @@
 		\item \label{rat:e:9:2}
 		      Suppose that $r > 0$. Prove that there is some $m \in \mathbb{N}$ such that $\frac{1}{m} < r$.
 		\item \label{rat:e:9:3}
-		      For each $x \in \mathbb{Q}$, let $x^{2}$ denote $x \cdot x$. Suppose that $r > 0$ and $s > 0$. Prove that if $r^{2} < p$, then there is some $k \in \mathbb{N}$ such that $\left( r + \frac{1}{k} \right)^{2} < s$.
+		      For each $x \in \mathbb{Q}$, let $x^{2}$ denote $x \cdot x$. Suppose that $r > 0$ and $s > 0$. Prove that if $r^{2} < s$, then there is some $k \in \mathbb{N}$ such that $\left( r + \frac{1}{k} \right)^{2} < s$.
 	\end{enumerate}
 \end{exercise}
 
 \begin{proof}[(\ref{rat:e:9:1})]
-	\TODO
+	\TBD
 \end{proof}
 
 % \begin{proof}[(\ref{rat:e:9:2})]
-% 	\TODO
+% 	\TBD
 % \end{proof}
 
 % \begin{proof}[(\ref{rat:e:9:3})]
-% 	\TODO
+% 	\TBD
 % \end{proof}
