@@ -4,18 +4,156 @@
 \section{Dedekind Cuts}
 \label{cuts}
 
-\addtocounter{theorem}{8}
+\begin{definition} %% 1.6.1
+	\xlabel[Dedekind cut]{cuts:d:cut}
+	Let $A \subseteq \mathbb{Q}$ be a set. The set $A$ is a \emph{\nameref*{cuts:d:cut}} if the following three properties hold.
+	\begin{lenumerate}
+		\item $A \neq \emptyset$ and $A \neq \mathbb{Q}$.
+		\item Let $x \in A$. If $y \in \mathbb{Q}$ and $y \geq x$, then $y \in A$.
+		\item Let $x \in A$. Then there is some $y \in A$ such that $y < x$.
+	\end{lenumerate}
+\end{definition}
+
+\begin{lemma} %% 1.6.2
+	Let $r \in \mathbb{Q}$. Then the set
+	\[
+		\{ x \in \mathbb{Q} \mid x > r \}
+	\]
+	is a Dedekind cut.
+\end{lemma}
+
+\addtocounter{theorem}{1}
+\begin{definition} %% 1.6.4
+	Let $r \in \mathbb{Q}$. The \emph{rational cut} at $r$, denoted $D_{r}$, is the Dedekind cut
+	\[
+		D_{r} = \{ x \in \mathbb{Q} \mid x > r \}.
+	\]
+	An \emph{irrational cut} is a Dedekind cut that is not a rational cut at any rational number.
+\end{definition}
+
+\begin{lemma} %% 1.6.5
+	Let $A \subseteq \mathbb{Q}$ be a Dedekind cut.
+	\begin{enumerate}
+		\item $\mathbb{Q} - A = \{ x \in \mathbb{Q} \mid x < a \text{ for all } a \in A \}$.
+		\item Let $x \in \mathbb{Q} - A$. If $y \in \mathbb{Q}$ and $y \leq x$, then $y \in \mathbb{Q} - A$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{lemma} %% 1.6.6
+	Let $A, B \subseteq \mathbb{Q}$ be Dedekind cuts. Then precisely one of $A \subsetneq B$ or $A = B$ or $B \subsetneq A$ holds.
+\end{lemma}
+
+\begin{lemma} %% 1.6.7
+	Let A be a non-empty family of subsets of $\mathbb{Q}$. Suppose that $X$ is a Dedekind cut for all $X \in A$. If $\bigcup_{X \in A} X \neq \mathbb{Q}$, then $\bigcup_{X \in A} X$ is a Dedekind cut.
+\end{lemma}
+
+\begin{lemma} %% 1.6.8
+	\label{cuts:l:real_req}
+	Let $A, B \subseteq \mathbb{Q}$ be Dedekind cuts.
+	\begin{enumerate}
+		\item \label{cuts:l:real_req:1}
+		      The set
+		      \[
+			      \{ r \in \mathbb{Q} \mid r=a + b \text{ for some } a \in A \text{ and } b \in B \}
+		      \]
+		      is a Dedekind cut.
+		\item \label{cuts:l:real_req:2}
+		      The set
+		      \[
+			      \{ r \in \mathbb{Q} \mid -r < c \text{ for some } c \in \mathbb{Q} - A \}
+		      \]
+		      is a Dedekind cut.
+		\item \label{cuts:l:real_req:3}
+		      Suppose that $0 \in \mathbb{Q} - A$ and $0 \in \mathbb{Q} - B$. The set
+		      \[
+			      \{ r \in \mathbb{Q} \mid r = a b \text{ for some } a \in A \text{ and } b \in B \}
+		      \]
+		      is a Dedekind cut.
+		\item \label{cuts:l:real_req:4}
+		      Suppose that there is some $q \in \mathbb{Q} - A$ such that $q > 0$. The set
+		      \[
+			      \{ r \in \mathbb{Q} \mid r > 0 \text{ and } \frac{1}{r} < c \text{ for some } c \in \mathbb{Q} - A \}
+		      \]
+		      is a Dedekind cut.
+	\end{enumerate}
+\end{lemma}
 
 \begin{lemma} %% 1.6.9
 	\label{cuts:l:aprops}
-	\TBD
+	Let $A \subseteq \mathbb{Q}$ be a Dedekind cut. Let $y \in \mathbb{Q}$.
+	\begin{enumerate}
+		\item Suppose that $y > 0$. Then there are $u \in A$ and $v \in \mathbb{Q}-A$ such that $y = u - v$, and $v < e$ for some $e \in \mathbb{Q} - A$.
+		\item Suppose that $y > 1$, and that there is some $q \in \mathbb{Q} - A$ such that $q > 0$. Then there are $r \in A$ and $s \in \mathbb{Q} - A$ such that $s > 0$, and $y > \frac{r}{s}$, and $s < g$ for some $g \in \mathbb{Q} - A$.
+	\end{enumerate}
 \end{lemma}
 
 
-\addtocounter{exercise}{1}
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise} %% 1.6.1
+	Let $A, B \subseteq \mathbb{Q}$ be Dedekind cuts. Suppose that $A \subsetneq B$. Prove that $B - A$ has more than one element. If you are familiar with the cardinality of sets, prove that $B - A$ is countably infinite.
+\end{exercise}
+
+\begin{proof}
+	\TBD
+\end{proof}
+
+
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
 \begin{exercise} %% 1.6.2
 	\label{cuts:e:2}
-	\TBD
+	Let
+	\[
+		T = \{ x \in \mathbb{Q} \mid x > 0 \text{ and } x^2 > 2 \}.
+	\]
+	\begin{enumerate}
+		\item \label{cuts:e:2:1}
+		      Prove that $T$ is a Dedekind cut.
+		\item \label{cuts:e:2:2}
+		      Prove that if $T = D_r$ for some $r \in \mathbb{Q}$, then $r^2 = 2$.
+
+		      \hfill [Use Exercise \ref{rat:e:6}, Exercise \ref{rat:e:7} and Exercise \ref{rat:e:9} (\ref{rat:e:9:3}).]
+	\end{enumerate}
 \end{exercise}
+
+\begin{proof}[(\ref{cuts:e:2:1})]
+	\TBD
+\end{proof}
+
+% \begin{proof}[(\ref{cuts:e:2:2})]
+% 	\TBD
+% \end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{cuts:l:real_req}] %% 1.6.3
+	Prove Lemma \ref{cuts:l:real_req} (\ref{cuts:l:real_req:3}).
+\end{exercise}
+
+\begin{proof}
+	\TBD
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{real:l:mult_req}] %% 1.6.4
+	\label{cuts:e:4}
+	Let $A \subseteq \mathbb{Q}$ be a Dedekind cut, and let $r \in \mathbb{Q}$.
+	\begin{enumerate}
+		\item \label{cuts:e:4:1}
+		      Prove that $A \subsetneq D_r$ if and only if there is some $q \in \mathbb{Q} - A$ such that $r < q$.
+		\item \label{cuts:e:4:2}
+		      Prove that $A \subseteq D_r$ if and only if $r \in \mathbb{Q} - A$ if and only if $r < a$ for all $a \in A$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{cuts:e:4:1})]
+	\TBD
+\end{proof}
+
+% \begin{proof}[(\ref{cuts:e:4:2})]
+% 	\TBD
+% \end{proof}

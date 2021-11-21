@@ -1,25 +1,15 @@
 {
 	"name": "math-bloch",
-	"dockerComposeFile": [
-		"docker-compose.yml"
-	],
-	"service": "vscode",
-	"runServices": [
-		"vscode"
-	],
-	"shutdownAction": "stopCompose",
-	"workspaceFolder": "/workspace",
-	"postCreateCommand": "rm -rf .vscode && cp -r .devcontainer/vscode-config .vscode",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	"remoteUser": "vscode",
 	"extensions": [
 		"james-yu.latex-workshop",
-		// Other helpers
-		"spadin.memento-inputs",
-		"ban.spellright",
+		"spadin.memento-inputs"
 	],
 	"settings": {
-		// General settings
 		"files.eol": "\n",
-		// Latex settings
 		"latex-workshop.latex.clean.subfolder.enabled": true,
 		"latex-workshop.synctex.afterBuild.enabled": true,
 		"latex-workshop.latex.autoClean.run": "onBuilt",
@@ -42,9 +32,6 @@
 					"latexmk"
 				]
 			}
-		],
-		"spellright.language": [
-			"en_US"
 		]
 	}
 }

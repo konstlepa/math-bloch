@@ -35,7 +35,7 @@
 		\item \xlabel[Multiplication Law for Order]{int2:d:oid:multiplication_order}
 		      If $x < y$ and $z > 0$, then $x z < y z$ \quad (\nameref*{int2:d:oid:multiplication_order}).
 		\item \xlabel[Non-Triviality]{int2:d:oid:non_triviality}
-		      $0 \neq \hat{1}$ \quad (\nameref*{int2:d:oid:non_triviality}).
+		      $0 \neq 1$ \quad (\nameref*{int2:d:oid:non_triviality}).
 	\end{lenumerate}
 \end{definition}
 
@@ -88,6 +88,7 @@
 \end{lemma}
 
 \begin{theorem} %% 1.4.6
+	\label{int2:t:discrete}
 	Let $x \in \mathbb{Z}$. Then there is no $y \in \mathbb{Z}$ such that $x < y < x + 1$.
 \end{theorem}
 
@@ -208,17 +209,226 @@
 	\end{enumerate}
 \end{exercise}
 
+\begin{definition}
+	The set of \emph{polynomials with variable $x$}, denoted $\mathbb{Z}[x]$, is the set of infinite sequences with integer coefficients in ascending order of degrees.
+
+	The elements $\widetilde{0}, \widetilde{1} \in \mathbb{Z}[x]$ are defined by $\widetilde{0} = (0, 0, 0, \ldots)$ and $\widetilde{1} = (1, 0,0, \ldots)$. The binary operations $+$ and $\cdot$ on $\mathbb{Z}[x]$ are defined by
+	\begin{align*}
+		(a_0, a_1, a_2, \ldots) + (b_0, b_1, b_2, \ldots)     & = (a_0 + b_0,\; a_1 + b_1,\; a_2 + b_2,\; \ldots) \\
+		(a_0, a_1, a_2, \ldots) \cdot (b_0, b_1, b_2, \ldots) & = (c_0, c_1, c_2, \ldots)
+	\end{align*}
+	for all $(a_0, a_1, a_2, \ldots), (b_0, b_1, b_2, \ldots) \in \mathbb{Z}[x]$ where $c_n = \sum_{k = 0}^n a_k b_{n - k}$ for all $n \in \mathbb{Z}^{+}$. The unary operation $-$ on $\mathbb{Z}[x]$ is defined by $-(a_0, a_1, a_2, \ldots) = (-a_0, -a_1, -a_2, \ldots)$.
+
+	The sequence $(a_0, a_1, a_2, \ldots)$ is also denoted $(a_n)_{n=0}^\infty$.
+\end{definition}
+
+\begin{definition}
+	\xlabel[greatest element]{int2:e:7:d:greatest_element}
+	Let $R$ be an \nameref{int2:d:oid}, and let $A \subseteq R$ be a set.
+	The set $A$ has a \emph{\nameref*{int2:e:7:d:greatest_element}} if there is some $a \in A$ such that $a \geq x$ for all $x \in A$.
+\end{definition}
+
+\begin{definition}
+	\xlabel[degree]{int2:e:7:d:degree}
+	The \emph{\nameref*{int2:e:7:d:degree}} of $a \in \mathbb{Z}[x]$, denoted $\deg(a)$, is either $0$ if $a = \widetilde{0}$ or the greatest integer $n \in \mathbb{Z}^{+}$ such that $a_n \not= 0$.
+\end{definition}
+
+\begin{definition}
+	\xlabel[dictionary order]{int2:e:7:d:dictionary_order}
+	The relation $<$, called the \emph{\nameref*{int2:e:7:d:dictionary_order}} on $\mathbb{Z}[x]$, is defined by $a < b$ if and only if either $\deg(a) < \deg(b)$ or $\deg(a) = \deg(b)$ and there is the greatest ${n \leq \deg(a) = \deg(b)}$ such that $a_n < b_n$ for all $a, b \in \mathbb{Z}[x]$.
+\end{definition}
+
 \begin{proof}[(\ref{int2:e:7:1})]
-	\TBD
+	Let $a, b, c \in \mathbb{Z}[x]$. We will prove that $\mathbb{Z}[x]$ satisfies the following properties, which will imply that $\mathbb{Z}[x]$ is an \nameref{int2:d:oid}.
+	\begin{enumerate}
+		\item \xlabel[Associative Law for Addition]{int2:e:7:oid:associative_add}
+		      $(a + b) + c = a + (b + c)$ \quad (\nameref*{int2:e:7:oid:associative_add}).
+		\item \xlabel[Commutative Law for Addition]{int2:e:7:oid:commutative_add}
+		      $a + b = b + a$ \quad (\nameref*{int2:e:7:oid:commutative_add}).
+		\item \xlabel[Identity Law for Addition]{int2:e:7:oid:identity_add}
+		      $a + \widetilde{0} = a$ \quad (\nameref*{int2:e:7:oid:identity_add}).
+		\item \xlabel[Inverses Law for Addition]{int2:e:7:oid:inverses_add}
+		      $a + (-a) = \widetilde{0}$ \quad (\nameref*{int2:e:7:oid:inverses_add}).
+		\item \xlabel[Associative Law for Multiplication]{int2:e:7:oid:associative_mult}
+		      $(a b) c = a (b c)$ \quad (\nameref*{int2:e:7:oid:associative_mult}).
+		\item \xlabel[Commutative Law for Multiplication]{int2:e:7:oid:commutative_mult}
+		      $a b = b a$ \quad (\nameref*{int2:e:7:oid:commutative_mult}).
+		\item \xlabel[Identity Law for Multiplication]{int2:e:7:oid:identity_mult}
+		      $a \cdot \widetilde{1} = a$ \quad (\nameref*{int2:e:7:oid:identity_mult}).
+		\item \xlabel[Distributive Law]{int2:e:7:oid:distributive}
+		      $a (b + c) = a b + a c$ \quad (\nameref*{int2:e:7:oid:distributive}).
+		\item \xlabel[No Zero Divisors Law]{int2:e:7:oid:no_zero_divisors}
+		      If $a b = \widetilde{0}$, then $a = \widetilde{0}$ or $b = \widetilde{0}$ \quad (\nameref*{int2:e:7:oid:no_zero_divisors}).
+		\item \xlabel[Trichotomy Law]{int2:e:7:oid:trichotomy}
+		      Precisely one of $a < b$ or $a = b$ or $a > b$ holds \quad (\nameref*{int2:e:7:oid:trichotomy}).
+		\item \xlabel[Transitive Law]{int2:e:7:oid:transitive}
+		      If $a < b$ and $b < c$, then $a < c$ \quad (\nameref*{int2:e:7:oid:transitive}).
+		\item \xlabel[Addition Law for Order]{int2:e:7:oid:addition_order}
+		      If $a < b$ then $a + c < b + c$ \quad (\nameref*{int2:e:7:oid:addition_order}).
+		\item \xlabel[Multiplication Law for Order]{int2:e:7:oid:multiplication_order}
+		      If $a < b$ and $c > \widetilde{0}$, then $a c < b c$ \quad (\nameref*{int2:e:7:oid:multiplication_order}).
+		\item \xlabel[Non-Triviality]{int2:e:7:oid:non_triviality}
+		      $\widetilde{0} \neq \widetilde{1}$ \quad (\nameref*{int2:e:7:oid:non_triviality}).
+	\end{enumerate}
+
+	\PartProof{int2:e:7:oid:associative_add}
+	Using the \nameref{int2:d:oid:associative_add} for the integers we obtain
+	\begin{align*}
+		(a + b) + c & = [(a_0, a_1, a_2, \ldots) + (b_0, b_1, b_2, \ldots)] + (c_0, c_1, c_2, \ldots) \\
+		            & = (a_0 + b_0, a_1 + b_1, a_2 + b_2, \ldots) + (c_0, c_1, c_2, \ldots)           \\
+		            & = ([a_0 + b_0] + c_0,\; [a_1 + b_1] + c_1,\; [a_2 + b_2] + c_2,\; \ldots)       \\
+		            & = (a_0 + [b_0 + c_0],\; a_1 + [b_1 + c_1],\; a_2 + [b_2 + c_2],\; \ldots)       \\
+		            & = (a_0, a_1, a_2, \ldots) + (b_0 + c_0, b_1 + c_1, b_2 + c_2, \ldots)           \\
+		            & = (a_0, a_1, a_2, \ldots) + [(b_0, b_1, b_2, \ldots) + (c_0, c_1, c_2, \ldots)] \\
+		            & = a + (b + c).
+	\end{align*}
+
+	\PartProof{int2:e:7:oid:commutative_add}
+	Using the \nameref{int2:d:oid:commutative_add} for the integers we obtain
+	\begin{align*}
+		a + b & = (a_0, a_1, a_2, \ldots) + (b_0, b_1, b_2, \ldots) \\
+		      & = (a_0 + b_0,\; a_1 + b_1,\; a_2 + b_2,\; \ldots)   \\
+		      & = (b_0 + a_0,\; b_1 + a_1,\; b_2 + a_2,\; \ldots)   \\
+		      & = (b_0, b_1, b_2, \ldots) + (a_0, a_1, a_2, \ldots) \\
+		      & = b + a.
+	\end{align*}
+
+	\PartProof{int2:e:7:oid:identity_add}
+	Using the \nameref{int2:d:oid:identity_add} for the integers it follows that
+	\begin{align*}
+		a + \widetilde{0} & = (a_0, a_1, a_2, \ldots) + (0, 0, 0, \ldots) \\
+		                  & = (a_0 + 0,\; a_1 + 0,\; a_2 + 0,\; \ldots)   \\
+		                  & = (a_0, a_1, a_2, \ldots) = a.
+	\end{align*}
+
+	\PartProof{int2:e:7:oid:inverses_add}
+	Using the \nameref{int2:d:oid:inverses_add} for the integers we get
+	\begin{align*}
+		a + (-a) & = (a_0, a_1, a_2, \ldots) + [-(a_0, a_1, a_2, \ldots)]     \\
+		         & = (a_0, a_1, a_2, \ldots) + (-a_0, -a_1, -a_2, \ldots)     \\
+		         & = (a_0 + [-a_0],\; a_1 + [-a_1],\; a_2 + [-a_2],\; \ldots) \\
+		         & = (0, 0, 0, \ldots) = \widetilde{0}.
+	\end{align*}
+
+	\PartProof{int2:e:7:oid:associative_mult}
+	Using the \nameref{int2:d:oid:distributive} for the integers we obtain
+	\begin{align*}
+		(a b) c & = \left( \sum_{i=0}^{n}(a b)_{i} c_{n-i} \right)_{n=0}^\infty = \left( \sum_{i=0}^{n} \sum_{j=0}^{i} a_{j} b_{i-j} c_{n-i}  \right)_{n=0}^\infty                    \\
+		        & = \left( \sum_{j=0}^{n} \sum_{i=j}^{n} a_{j} b_{i-j} c_{n-i} \right)_{n=0}^\infty = \left( \sum_{j=0}^{n} a_{j} \sum_{i=j}^{n} b_{i-j} c_{n-i} \right)_{n=0}^\infty \\
+		        & = \left( \sum_{j=0}^{n} a_{j} \sum_{k=0}^{n-j} b_{k} c_{n-j-k} \right)_{n=0}^\infty = \left( \sum_{j=0}^{n} a_{j}(b c)_{n-j} \right)_{n=0}^\infty                   \\
+		        & = a(b c).
+	\end{align*}
+
+	\PartProof{int2:e:7:oid:commutative_mult}
+	Using the \nameref{int2:d:oid:commutative_mult} for the integers we get
+	\[
+		a b = \left( \sum_{i=0}^n a_{i} b_{n-i} \right)_{n=0}^\infty = \left( \sum_{j=0}^n a_{n-j} b_{j} \right)_{n=0}^\infty = \left( \sum_{j=0}^n b_{j} a_{n-j} \right)_{n=0}^\infty = b a.
+	\]
+
+
+	\PartProof{int2:e:7:oid:identity_mult}
+	By the definition of $\widetilde{1}$ we know that $\widetilde{1}_0 = 1$ and if $n \not= 0$ then $\widetilde{1}_n = 0$. Using Lemma \ref{int2:l:props} (\ref{int2:l:props:4}) and the \hyperref[int2:d:oid:identity_add]{Identity} and \hyperref[int2:d:oid:commutative_add]{Commutative} Laws for Addition for the integers it then follows that
+	\begin{align*}
+		a \cdot \widetilde{1} & = \left( \sum_{i=0}^n (a_i \cdot \widetilde{1}_{n-i}) \right)_{n=0}^\infty
+		= \left( \sum_{i=0}^{n-1} (a_i \cdot \widetilde{1}_{n-i}) + a_n \cdot \widetilde{1}_0 \right)_{n=0}^\infty \\
+		\
+		                      & = \left( \sum_{i=0}^{n-1} (a_i \cdot 0) + a_n \cdot 1 \right)_{n=0}^\infty
+		= \left( \sum_{i=0}^{n-1} 0 + a_n \right)_{n=0}^\infty                                                     \\
+		\
+		                      & = (0 + a_n)_{n=0}^\infty = (a_n + 0)_{n=0}^\infty = (a_n)_{n=0}^\infty = a.
+	\end{align*}
+
+	\PartProof{int2:e:7:oid:distributive}
+	Using the \nameref{int2:d:oid:distributive} for the integers we obtain
+	\begin{align*}
+		a(b + c) & = \left( \sum_{i=0}^n a_i(b + c)_{n-i} \right)_{n=0}^\infty = \left( \sum_{i=0}^n a_i(b_{n-i} + c_{n-i}) \right)_{n=0}^\infty                            \\
+		         & = \left( \sum_{i=0}^n (a_i b_{n-i} + a_i c_{n-i}) \right)_{n=0}^\infty = \left( \sum_{i=0}^n a_i b_{n-i} + \sum_{i=0}^n a_i c_{n-i} \right)_{n=0}^\infty \\
+		         & = \left( \sum_{i=0}^n a_i b_{n-i} \right)_{n=0}^\infty + \left( \sum_{i=0}^n a_i c_{n-i} \right)_{n=0}^\infty = a b + a c.
+	\end{align*}
+
+	\PartProof{int2:e:7:oid:no_zero_divisors}
+	Suppose that $a b = \widetilde{0}$, and suppose to the contrary that $a \not= \widetilde{0}$ and $b \not= \widetilde{0}$. By the definition of polynomial we know that there is some $p, q \in \mathbb{Z}^{+}$ such that $a_p$ and $b_q$ are \hyperref[int2:e:7:d:greatest_element]{greatest} nonzero elements of $a$ and $b$, respectively. This implies $a_x = 0 = b_y$ for all $x > p$ and $y > q$. Then,
+	\begin{align*}
+		\sum_{i=0}^{p+q} a_i b_{p+q-i} & = \sum_{i=0}^{p-1} a_i b_{p+q-i} + a_p b_q + \sum_{i=p+1}^{p+q-i} a_i b_{p+q-i}    \\
+		                               & = \sum_{i=0}^{p-1} a_i \cdot 0 + a_p b_q + \sum_{i=p+1}^{p+q-i} 0 \cdot b_{p+q-i}.
+	\end{align*}
+	By the \nameref{int2:d:oid:commutative_mult} for the integers we observe that
+	\[
+		\sum_{i=p+1}^{p+q-i} 0 \cdot b_{p+q-i} = \sum_{i=p+1}^{p+q-i} b_{p+q-i} \cdot 0,
+	\]
+	and from the \nameref{int2:d:oid:identity_mult} and the \nameref{int2:d:oid:identity_add} for the integers we deduce that
+	\[
+		\sum_{i=0}^{p-1} a_i \cdot 0 = \sum_{i=0}^{p-1} 0 = 0 = \sum_{i=p+1}^{p+q-i} 0 = \sum_{i=p+1}^{p+q-i} b_{p+q-i} \cdot 0.
+	\]
+	Finally, by repeated use of the \hyperref[int2:d:oid:commutative_add]{Commutative} and \hyperref[int2:d:oid:identity_add]{Identity} Laws for Addition for the integers we obtain
+	\[
+		\sum_{i=0}^{p+q} a_i b_{p+q-i} = 0 + a_p b_q + 0 = (a_p b_q + 0) + 0 = a_p b_q + 0 = a_p b_q.
+	\]
+	Since $a_p \not= 0$ and $b_q \not= 0$, the \nameref{int2:d:oid:no_zero_divisors} for the integers implies that $a_p b_q \not= 0$. Hence, $\sum_{i=0}^{p+q} a_i b_{p+q-i} \not= 0$. But then $\left( \sum_{i=0}^n a_i b_{n-i} \right)_{n=0}^\infty \not= \widetilde{0}$, which is a contradiction to the fact that $a b = \widetilde{0}$. Hence, there is either $a = \widetilde{0}$ or $b = \widetilde{0}$.
+
+	\PartProof{int2:e:7:oid:trichotomy}
+	Suppose that $a = b$. Then $(a_n)_{n=0}^\infty = (b_n)_{n=0}^\infty$. Because of the \nameref{int2:d:oid:trichotomy} for the integers we deduce that $a_n \not< b_n$ and $a_n \not> b_n$ for all $n \in \mathbb{Z}^{+}$. Hence, $a \not< b$ and $a \not> b$.
+
+	Now let $n = \deg(a)$ and $m = \deg(b)$. Without loss of generality, suppose that $a < b$. Suppose that $n < m$. By the \nameref{int2:d:oid:trichotomy} for the integers it follows that $n \not= m$ and $n \not> m$, and hence by the definition of dictionary order we can conclude that $a \not= b$ and $a \not> b$. We consider the following two cases.
+	\begin{bycases}
+		\item $n < m$. By the \nameref{int2:d:oid:trichotomy} for the integers it follows that $n \not= m$ and $n \not> m$, and hence by the definition of dictionary order we can conclude that $a \not= b$ and $a \not> b$.
+		\item $n \not> m$. Then $n = m$ and there is the greatest $p \leq n = m$ such that $a_p < b_p$. By the \nameref{int2:d:oid:trichotomy} for the integers we see that $a_p \not= b_p$ and $a_p \not> b_p$. Hence by the definition of dictionary order we have shown that $a \not= b$ and $a \not> b$.
+	\end{bycases}
+
+	Finally, suppose to the contrary that $a \not= b$ and $a \not< b$ and $a \not> b$. Then $n \not< m$ and $n \not= m$ and $n \not> m$, which is a contradiction to the \nameref{int2:d:oid:trichotomy} for the integers. Hence, precisely one of $a < b$ or $a = b$ or $a > b$ holds.
+
+	\PartProof{int2:e:7:oid:transitive}
+	Let $p$, $q$, and $r$ be the \hyperref[int2:e:7:d:degree]{degrees} of $a$, $b$, and $c$, respectively. If $p < q$ and $q < r$, then by the \nameref{int2:d:oid:trichotomy} for the integers we get $p < r$, and hence $a < c$. Suppose that $p = q = r$. There is the greatest $s \leq p = q = r$ and $t \leq p = q = r$ such that $a_{s} < b_{s}$ and $b_{t} < c_{t}$. We consider the following three cases.
+	\begin{bycases}
+		\item $s < t$. Then $a_s < b_s = c_s$, and hence $a < c$.
+		\item $s > t$. Then $a_t = b_t < c_t$, and hence $a < c$.
+		\item $s = t$. Then $a_s < b_s < c_s$, and by the \nameref{int2:d:oid:trichotomy} for the integers we deduce that $a_s < c_s$. Hence, $a < c$.
+	\end{bycases}
+
+	Now suppose, without loss of generality, that $p < q$ and $q = r$. Then clearly $p < r$, and as a result $a < c$.
+
+	\PartProof{int2:e:7:oid:addition_order}
+	Let $d_a, d_b, d_c, d_{a+c}, d_{b+c} \in \mathbb{Z}^{+}$ be the degrees of $a, b, c, a+c, b+c \in \mathbb{Z}[x]$, respectively. We note that $d_{a+c} = \max(d_a, d_c)$ and $d_{b+c} = \max(d_b, d_c)$. Suppose that $d_a = d_b$. Then $\max(d_a, d_c) = \max(d_b, d_c)$, and then $d_{a+c} = d_{b+c}$. Also, we observe that there is the greatest $p \leq d_a = d_b$ such that $a_p < b_p$. By \nameref{int2:d:oid:addition_order} for the integers it follows that $a_p + c_p < b_p + c_p$. Hence, $a + c < b + c$.
+
+	Now suppose that $d_a < d_b$. We consider the following three cases.
+	\begin{bycases}
+		\item $d_a < d_b < d_c$. Then $\max(d_a, d_c) = d_c$ and $\max(d_b, d_c) = d_c$, and then $d_{a+c} = d_{b+c}$. Let $p = d_b$. Because $d_a < d_b$ we see that $p \leq d_{a+c} = d_{b+c}$ is the greatest element of $\mathbb{Z}^{+}$ such that $a_p < b_p$.  By \nameref{int2:d:oid:addition_order} for the integers it follows that $a_p + c_p < b_p + c_p$, and hence $a + c < b + c$.
+		\item $d_c \leq d_a < d_b$. Then $\max(d_a, d_c) = d_a$ and $\max(d_b, d_c) = d_b$, and then $d_{a+c} < d_{b+c}$. Hence $a + c < b + c$.
+		\item $d_a < d_c \leq d_b$. A similar argument shows that $a + c < b + c$.
+	\end{bycases}
+
+	\PartProof{int2:e:7:oid:multiplication_order}
+	We note that $\deg(a b) = \deg(a) + \deg(b)$ for all $a, b \in \mathbb{Z}[x]$. Suppose that $a < b$ and $c > \widetilde{0}$. Suppose further that $\deg(a) < \deg(b)$. Because $c > \widetilde{0}$ it follows that $\deg(c) > 0$. We then deduce from the \nameref{int2:d:oid:addition_order} for the integers that $\deg(a) + \deg(c) < \deg(b) + \deg(c)$. Then $\deg(a c) < \deg(b c)$, and hence $a c < b c$.
+
+	Now suppose that $\deg(a) = \deg(b)$. Then there is the greatest $p \leq \deg(a) = \deg(b)$ such that $a_p < b_p$. Then $\deg(a c) = \deg(b c)$, and because $c > \widetilde{0}$ we have $p \leq \deg(a c) = \deg(b c)$. Also, by the \nameref{int2:d:oid:multiplication_order} for the integers we see that $a_p c_p < b_p c_p$, and hence $a c < b c$.
+
+	\PartProof{int2:e:7:oid:non_triviality}
+	Because $\widetilde{0}_0 \not= \widetilde{1}_0$ we can conclude that $\widetilde{0} \not= \widetilde{1}$.
 \end{proof}
 
-% \begin{proof}[(\ref{int2:e:7:2})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{int2:e:7:2})]
+	Suppose to the contrary that $g \in \mathbb{Z}[x]$ such that $f < g < f + \widetilde{1}$. Suppose that $\deg(f) < \deg(g) < \deg(f + \widetilde{1})$. We can notice that $\deg(f + \widetilde{1}) = \deg(f)$, so $\deg(f) < \deg(g)$ and $\deg(g) < \deg(f)$, which is a contradiction to \nameref{int2:d:oid:trichotomy} for the integers. Hence, either $f \not< g$ or $g \not< f + \widetilde{1}$.
 
-% \begin{proof}[(\ref{int2:e:7:3})]
-% 	\TBD
-% \end{proof}
+	Now suppose that $\deg(f) = \deg(g) = \deg(f + \widetilde{1})$. Then there is the greatest
+	\[
+		p \leq \deg(f) = \deg(g) = \deg(f + \widetilde{1})
+	\]
+	such that
+	\[
+		f_p < g_p < (f + \widetilde{1})_p = f_p + \widetilde{1}_p.
+	\]
+	If $p = 0$ then $f_0 < g_0 < f_0 + 1$, which is a contradiction to Theorem \ref{int2:t:discrete}. But if $p > 0$ then $f_p < g_p$ and $g_p < f_p$, which is a contradiction to the \nameref{int2:d:oid:trichotomy} for the integers. Hence, either $f \not< g$ or $g \not< f + \widetilde{1}$.
+
+	Finally, suppose that either
+	\[
+		\deg(f) < \deg(g) = \deg(f + \widetilde{1}) \text{ or } \deg(f) = \deg(g) < \deg(f + \widetilde{1}).
+	\]
+	But we know that ${\deg(f) = \deg(f + \widetilde{{1}}})$, so this implies that either $\deg(f) < \deg(g)$ and $\deg(f) = \deg(g)$ or $\deg(f) = \deg(g)$ and $\deg(g) < \deg(f)$, which is a contradiction to the \nameref{int2:d:oid:trichotomy} for the integers. Hence, either $f \not< g$ or $g \not< f + \widetilde{1}$.
+\end{proof}
+
+\begin{proof}[(\ref{int2:e:7:3})]
+	Let $A = \{ a \in \mathbb{Z}[x] \mid \deg(a) = 1 \}$. Clearly, $A$ is nonempty, and since $\deg(0) = 0$ we see that $a > \widetilde{0}$ for all $a \in A$. Suppose to the contrary that there is some $a' \in A$ such that $a' \leq a$ for all $a \in A$. Because $\deg(a) = 1$ for all $a \in A$, there is the greatest $p \in \mathbb{Z}^{+}$ such that $a'_p \leq a_p$ for all $a \in A$. Let $b = a' + [(-a'_p) + (-a'_p)]x$, and as a result $b_p = a'_p + [(-a'_p) + (-a'_p)]$. By repeated use of the \hyperref[int2:d:oid:inverses_add]{Inverses} and \hyperref[int2:d:oid:identity_add]{Identity} Laws for Addition for the integers we obtain $b_p = -a'_p$. Then $\deg(b_p) = 1$, and hence $b \in A$. By \nameref{int2:d:oid:transitive} for the integers, $-a'_p < 0 < a_p$ implies $-a'_p = b_p < a'_p$. From the \nameref{int2:d:oid:trichotomy} for the integers we then deduce that $a' \not\leq b$, which is a contradiction to the fact that $a' \leq a$ for all $a \in A$. Hence, $\mathbb{Z}[x]$ does not satisfy the \nameref{int2:d:wop}.
+\end{proof}
 
 
 %-------------------------------------------------------------------------------------------------------------

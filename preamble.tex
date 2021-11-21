@@ -9,6 +9,7 @@
 \usepackage{hyperref}
 \usepackage{thmtools}
 \usepackage{thm-restate}
+\usepackage{stackengine}
 \usepackage[active,tightpage]{preview}
 
 \mdfsetup{
@@ -111,10 +112,9 @@
 
 \newenvironment{notmine}[1][]{\color{gray}}{}
 \newenvironment{done}[1][]{\color{gray}}{}
+\newenvironment{changed}[1][]{\color{blue}}{}
 
 \let\emph\relax
 \DeclareTextFontCommand{\emph}{\bfseries}
 
 \newcommand{\PartProof}[1]{\bigskip\emph{(\ref{#1})}\enspace}
-
-\def\preambleloaded{Precompiled preamble loaded.}

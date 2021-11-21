@@ -55,32 +55,48 @@
 	\label{rat:t:int}
 	Let $i: \mathbb{Z} \to \mathbb{Q}$ be defined by $i(x) = [(x, 1)]$ for all $x \in \mathbb{Z}$.
 	\begin{enumerate}
-		\item The function $i: \mathbb{Z} \to \mathbb{Q}$ is injective. \label{rat:t:int:injective}
-		\item $i(0) = \overline{0}$ and $i(1) = \overline{1}$. \label{rat:t:int:zero_one}
-		\item Let $x, y \in \mathbb{Z}$. Then
+		\item \label{rat:t:int:injective}
+		      The function $i: \mathbb{Z} \to \mathbb{Q}$ is injective.
+		\item \label{rat:t:int:zero_one}
+		      $i(0) = \overline{0}$ and $i(1) = \overline{1}$.
+		\item \label{rat:t:int:props}
+		      Let $x, y \in \mathbb{Z}$. Then
 		      \begin{enumerate}
-			      \item $i(x + y) = i(x) + i(y)$;
-			      \item $i(-x) = -i(x)$;
-			      \item $i(x y) = i(x) i(y)$;
-			      \item $x < y$ if and only if $i(x) < i(y)$.
-		      \end{enumerate} \label{rat:t:int:props}
-		\item For each $r \in \mathbb{Q}$ there are $x, y \in \mathbb{Z}$ such that $y \neq 0$ and $r = i(x)(i(y))^{-1}$.
+			      \item \label{rat:t:int:props:add}
+			            $i(x + y) = i(x) + i(y)$;
+			      \item \label{rat:t:int:props:neg}
+			            $i(-x) = -i(x)$;
+			      \item \label{rat:t:int:props:mult}
+			            $i(x y) = i(x) i(y)$;
+			      \item \label{rat:t:int:props:less}
+			            $x < y$ if and only if $i(x) < i(y)$.
+		      \end{enumerate}
+		\item \label{rat:t:int:div}
+		      For each $r \in \mathbb{Q}$ there are $x, y \in \mathbb{Z}$ such that $y \neq 0$ and $r = i(x)(i(y))^{-1}$.
 	\end{enumerate}
 \end{theorem}
 
 \begin{definition} %% 1.5.7
-	The binary operation $-$ on $\mathbb{Q}$ is defined by $r - s = r + (-s)$ for all $r, s \in \mathbb{Q}$. The binary operation $\div$ on $\mathbb{Q}^{*}$ is defined by $r \div s = r s^{-1}$ for all $r, s \in \mathbb{Q}^{*}$; we also let $0 \div s = 0 \cdot s^{-1} = 0$ for all $s \in \mathbb{Q}^{*}$. The number $r \div s$ is also denoted $\frac{r}{s}$.
+	\label{rat:d:div}
+	The binary operation $-$ on $\mathbb{Q}$ is defined by $r - s = r + (-s)$ for all $r, s \in \mathbb{Q}$. The binary operation $\div: \mathbb{Q} \times \mathbb{Q}^{*} \to \mathbb{Q}$ is defined by $r \div s = r s^{-1}$ for all $(r, s) \in \mathbb{Q} \times \mathbb{Q}^{*}$; we also let $0 \div s = 0 \cdot s^{-1} = 0$ for all $s \in \mathbb{Q}^{*}$. The number $r \div s$ is also denoted $\frac{r}{s}$.
 \end{definition}
 
 \begin{lemma} %% 1.5.8
+	\label{rat:l:alt_def}
 	Let $a, c \in \mathbb{Z}$ and $b, d \in \mathbb{Z}^{*}$.
 	\begin{enumerate}
-		\item $\frac{a}{b} = \frac{c}{d}$ if and only if $a d = b c$.
-		\item $\frac{a}{b} + \frac{c}{d} = \frac{a d + b c}{b d}$.
-		\item $-\frac{a}{b} = \frac{-a}{b}$.
-		\item $\frac{a}{b} \cdot \frac{c}{d} = \frac{a c}{b d}$.
-		\item If $a \neq 0$, then $\left( \frac{a}{b} \right)^{-1} = \frac{b}{a}$.
-		\item If $b > 0$ and $d > 0$, or if $b < 0$ and $d < 0$, then $\frac{a}{b} < \frac{c}{d}$ if and only if $a d < b c$; if $b > 0$ and $d < 0$, or if $b < 0$ and $d > 0$, then $\frac{a}{b} < \frac{c}{d}$ if and only if $a d > b c$.
+		\item \label{rat:l:alt_def:1}
+		      $\frac{a}{b} = \frac{c}{d}$ if and only if $a d = b c$.
+		\item \label{rat:l:alt_def:2}
+		      $\frac{a}{b} + \frac{c}{d} = \frac{a d + b c}{b d}$.
+		\item \label{rat:l:alt_def:3}
+		      $-\frac{a}{b} = \frac{-a}{b}$.
+		\item \label{rat:l:alt_def:4}
+		      $\frac{a}{b} \cdot \frac{c}{d} = \frac{a c}{b d}$.
+		\item \label{rat:l:alt_def:5}
+		      If $a \neq 0$, then $\left( \frac{a}{b} \right)^{-1} = \frac{b}{a}$.
+		\item \label{rat:l:alt_def:6}
+		      If $b > 0$ and $d > 0$, or if $b < 0$ and $d < 0$, then $\frac{a}{b} < \frac{c}{d}$ if and only if $a d < b c$; if $b > 0$ and $d < 0$, or if $b < 0$ and $d > 0$, then $\frac{a}{b} < \frac{c}{d}$ if and only if $a d > b c$.
 	\end{enumerate}
 \end{lemma}
 
@@ -170,6 +186,7 @@
 	\]
 	Then by repeated use of the \hyperref[rat:t:props:associative_add]{Associative}, \hyperref[rat:t:props:commutative_add]{Commutative}, \hyperref[rat:t:props:inverses_add]{Inverses}, and \hyperref[rat:t:props:identity_add]{Identity} Laws for Addition we can conclude that $-(r + s) = (-r) + (-s)$.
 \end{proof}
+
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
@@ -276,80 +293,80 @@
 \begin{proof}
 	Suppose that $r = [(x, y)]$, that $s = [(z, w)]$ and that $t = [(u, v)]$ for some $x, z, u \in \mathbb{Z}$ and $y, w, v \in \mathbb{Z}^{*}$.
 
-	% \PartProof{rat:t:props:associative_add}
-	% We have
-	% \begin{align*}
-	% 	(r + s) + t & = ([(x, y)] + [(z, w)]) + [(u, v)]     \\
-	% 	            & = [(x w + y z, y w)] + [(u, v)]        \\
-	% 	            & = [((x w + y z)v + (y w)u, (y w)v)]    \\
-	% 	            & = [((x w)v + (y z)v + (y w)u, (y w)v)  \\
-	% 	            & = [(x(w v) + y(z v) + y(w u), y(w v))] \\
-	% 	            & = [(x(w v) + y(z v + w u), y(w v))]    \\
-	% 	            & = [(x, y)] + [(z v + w u, w v)]        \\
-	% 	            & = [(x, y)] + ([(z, w)] + [(u, v)])     \\
-	% 	            & = r + (s + t).
-	% \end{align*}
+	\PartProof{rat:t:props:associative_add}
+	We have
+	\begin{align*}
+		(r + s) + t & = ([(x, y)] + [(z, w)]) + [(u, v)]     \\
+		            & = [(x w + y z, y w)] + [(u, v)]        \\
+		            & = [((x w + y z)v + (y w)u, (y w)v)]    \\
+		            & = [((x w)v + (y z)v + (y w)u, (y w)v)  \\
+		            & = [(x(w v) + y(z v) + y(w u), y(w v))] \\
+		            & = [(x(w v) + y(z v + w u), y(w v))]    \\
+		            & = [(x, y)] + [(z v + w u, w v)]        \\
+		            & = [(x, y)] + ([(z, w)] + [(u, v)])     \\
+		            & = r + (s + t).
+	\end{align*}
 
-	% \PartProof{rat:t:props:commutative_add}
-	% We have
-	% \begin{align*}
-	% 	r + s & = [(x, y)] + [(z, w)]                     \\
-	% 	      & = [(x w + y z, y w)] = [(y z + x w, y w)] \\
-	% 	      & = [(z y + w x, w y)] = s + r.
-	% \end{align*}
+	\PartProof{rat:t:props:commutative_add}
+	We have
+	\begin{align*}
+		r + s & = [(x, y)] + [(z, w)]                     \\
+		      & = [(x w + y z, y w)] = [(y z + x w, y w)] \\
+		      & = [(z y + w x, w y)] = s + r.
+	\end{align*}
 
-	% \PartProof{rat:t:props:identity_add}
-	% We have
-	% \begin{align*}
-	% 	r + \overline{0} & = [(x, y)] + [(0, 1)]                                 \\
-	% 	                 & = [(x \cdot 1 + y \cdot 0, y \cdot 1)] = [(x + 0, y)] \\
-	% 	                 & = [(x, y)] = r.
-	% \end{align*}
+	\PartProof{rat:t:props:identity_add}
+	We have
+	\begin{align*}
+		r + \overline{0} & = [(x, y)] + [(0, 1)]                                 \\
+		                 & = [(x \cdot 1 + y \cdot 0, y \cdot 1)] = [(x + 0, y)] \\
+		                 & = [(x, y)] = r.
+	\end{align*}
 
-	% \PartProof{rat:t:props:associative_mult}
-	% We have
-	% \begin{align*}
-	% 	(r s)t & = ([(x, y)] \cdot [(z, w)]) \cdot [(u, v)]         \\
-	% 	       & = [(x z, y w)] \cdot [(u, v)] = [((x z)u, (y w)v)] \\
-	% 	       & = [(x(z u), y(w v))] = [(x, y)] \cdot [(z u, w v)] \\
-	% 	       & = [(x, y)] \cdot ([z, w] \cdot [(u, v)]) = r(s t).
-	% \end{align*}
+	\PartProof{rat:t:props:associative_mult}
+	We have
+	\begin{align*}
+		(r s)t & = ([(x, y)] \cdot [(z, w)]) \cdot [(u, v)]         \\
+		       & = [(x z, y w)] \cdot [(u, v)] = [((x z)u, (y w)v)] \\
+		       & = [(x(z u), y(w v))] = [(x, y)] \cdot [(z u, w v)] \\
+		       & = [(x, y)] \cdot ([z, w] \cdot [(u, v)]) = r(s t).
+	\end{align*}
 
-	% \PartProof{rat:t:props:commutative_mult}
-	% We have
-	% \begin{align*}
-	% 	r s & = [(x, y)] \cdot [(z, w)]         \\
-	% 	    & = [(x z, y w)] \cdot [(z x, w y)] \\
-	% 	    & = [(z, w)] \cdot [(x, y)] = s r.
-	% \end{align*}
+	\PartProof{rat:t:props:commutative_mult}
+	We have
+	\begin{align*}
+		r s & = [(x, y)] \cdot [(z, w)]         \\
+		    & = [(x z, y w)] \cdot [(z x, w y)] \\
+		    & = [(z, w)] \cdot [(x, y)] = s r.
+	\end{align*}
 
-	% \PartProof{rat:t:props:inverses_mult}
-	% Suppose that $r \not= \overline{0}$, which means that $r \in \mathbb{Q}^{*}$. Then,
-	% \begin{align*}
-	% 	r \cdot r^{-1} & = [(x, y)] \cdot [(x, y)]^{-1} = [(x, y)] \cdot [(y, x)] \\
-	% 	               & = [(x y, y x)] = [(x y, x y)] = \overline{1},
-	% \end{align*}
-	% where the last equality holds by Exercise \ref{rat:e:3} (\ref{rat:e:3:2}).
+	\PartProof{rat:t:props:inverses_mult}
+	Suppose that $r \not= \overline{0}$, which means that $r \in \mathbb{Q}^{*}$. Then,
+	\begin{align*}
+		r \cdot r^{-1} & = [(x, y)] \cdot [(x, y)]^{-1} = [(x, y)] \cdot [(y, x)] \\
+		               & = [(x y, y x)] = [(x y, x y)] = \overline{1},
+	\end{align*}
+	where the last equality holds by Exercise \ref{rat:e:3} (\ref{rat:e:3:2}).
 
-	% \PartProof{rat:t:props:distributive}
-	% Using Exercise \ref{rat:e:3} (\ref{rat:e:3:2}) we note that $[(y, y)] = \overline{1}$. By Part (\ref{rat:t:props:identity_mult}) of this theorem we know that $r(s + t) = r(s + t) \cdot \overline{1}$. Then,
-	% \begin{align*}
-	% 	r(s + t) & = r(s + t) \cdot \overline{1}                         \\
-	% 	         & = [(x, y)] \cdot ([(z, w)] + [(u, v)]) \cdot [(y, y)] \\
-	% 	         & = [(x, y)] \cdot [(z v + w u, w v)] \cdot [(y, y)]    \\
-	% 	         & = [(x(z v + w u), y(w v))] \cdot [(y, y)]             \\
-	% 	         & = [(x(z v + w u)y, y(w v)y)]                          \\
-	% 	         & = [([x(z v) + x(w u)]y, y (w v) y)]                   \\
-	% 	         & = [(x(z v)y + x(w u)y, y (w v) y)]                    \\
-	% 	         & = [(x z v y + x w u y, y w v y)]                      \\
-	% 	         & = [(x z y v + y w x u, y w y v)]                      \\
-	% 	         & = [([x z] [y v] + [y w] [x u], [y w] [y v])]          \\
-	% 	         & = [(x z, y w)] + [(x u, y v)]                         \\
-	% 	         & = rs + rt.
-	% \end{align*}
+	\PartProof{rat:t:props:distributive}
+	Using Exercise \ref{rat:e:3} (\ref{rat:e:3:2}) we note that $[(y, y)] = \overline{1}$. By Part (\ref{rat:t:props:identity_mult}) of this theorem we know that $r(s + t) = r(s + t) \cdot \overline{1}$. Then,
+	\begin{align*}
+		r(s + t) & = r(s + t) \cdot \overline{1}                         \\
+		         & = [(x, y)] \cdot ([(z, w)] + [(u, v)]) \cdot [(y, y)] \\
+		         & = [(x, y)] \cdot [(z v + w u, w v)] \cdot [(y, y)]    \\
+		         & = [(x(z v + w u), y(w v))] \cdot [(y, y)]             \\
+		         & = [(x(z v + w u)y, y(w v)y)]                          \\
+		         & = [([x(z v) + x(w u)]y, y (w v) y)]                   \\
+		         & = [(x(z v)y + x(w u)y, y (w v) y)]                    \\
+		         & = [(x z v y + x w u y, y w v y)]                      \\
+		         & = [(x z y v + y w x u, y w y v)]                      \\
+		         & = [([x z] [y v] + [y w] [x u], [y w] [y v])]          \\
+		         & = [(x z, y w)] + [(x u, y v)]                         \\
+		         & = rs + rt.
+	\end{align*}
 
-	% \PartProof{rat:t:props:transitive}
-	% Suppose that $r < s$ and $s < t$. According to Part (\ref{rat:l:less_relation:1}) of Lemma \ref{rat:l:less_relation} we see that $(-r) + s \in P$ and $(-s) + t \in P$, so using Part (\ref{rat:l:less_relation:2}) of Lemma \ref{rat:l:less_relation} we deduce that $(-r) + s + (-s) + t \in P$. Then by repeated use of the \hyperref[rat:t:props:associative_add]{Associative}, \hyperref[rat:t:props:inverses_add]{Inverses}, and \hyperref[rat:t:props:identity_add]{Identity} Laws for Addition we obtain $(-r) + t \in P$. Hence, $r < t$.
+	\PartProof{rat:t:props:transitive}
+	Suppose that $r < s$ and $s < t$. According to Part (\ref{rat:l:less_relation:1}) of Lemma \ref{rat:l:less_relation} we see that $(-r) + s \in P$ and $(-s) + t \in P$, so using Part (\ref{rat:l:less_relation:2}) of Lemma \ref{rat:l:less_relation} we deduce that $(-r) + s + (-s) + t \in P$. Then by repeated use of the \hyperref[rat:t:props:associative_add]{Associative}, \hyperref[rat:t:props:inverses_add]{Inverses}, and \hyperref[rat:t:props:identity_add]{Identity} Laws for Addition we obtain $(-r) + t \in P$. Hence, $r < t$.
 
 	\PartProof{rat:t:props:addition_order}
 	Suppose that $r < s$. By Part (\ref{rat:l:less_relation:1}) of Lemma \ref{rat:l:less_relation} we know that $(-r) + s \in P$, and using the \hyperref[rat:t:props:identity_add]{Identity} and \hyperref[rat:t:props:inverses_add]{Inverses} Laws for Addition we observe that
@@ -377,18 +394,38 @@
 	\hfill
 
 	\PartProof{rat:t:int:injective}
-	\TBD
+	Let $a, b \in \mathbb{Z}$, and suppose that $i(a) = i(b)$. From the definition of $i: \mathbb{Z} \to \mathbb{Q}$, it follows that $[(a, 1)] = [(b, 1)]$, which means that $(a, 1) \asymp (b, 1)$. Then $a \cdot 1 = 1 \cdot b$, and hence $a = b$.
 
-	% \PartProof{rat:t:int:zero_one}
-	% \TBD
+	\PartProof{rat:t:int:zero_one}
+	By the definition of $i: \mathbb{Z} \to \mathbb{Q}$ we have $i(0) = [(0, 1)]$ and $i(1) = [(1, 1)]$, and from Definition \ref{rat:d:rat} we obtain $i(0) = \overline{0}$ and $i(1) = \overline{1}$, as required.
 
-	% \PartProof{rat:t:int:props}
-	% \TBD
+	\PartProof{rat:t:int:props:add}
+	We have
+	\begin{align*}
+		i(x + y) & = [(x + y, 1)] = [(x \cdot 1 + 1 \cdot y, 1 \cdot 1)] \\
+		         & = [(x, 1)] + [(y, 1)] = i(x) + i(y).
+	\end{align*}
+
+	\PartProof{rat:t:int:props:neg}
+	We have
+	\[
+		i(-x) = [(-x, 1)] = -[(x, 1)] = -i(x).
+	\]
+
+	\PartProof{rat:t:int:props:mult}
+	We have
+	\[
+		i(xy) = [(xy, 1)] = [(xy, 1 \cdot 1)] = [(x, 1)] \cdot [(y, 1)] = i(x)i(y).
+	\]
+
+	\PartProof{rat:t:int:props:less}
+	Suppose that $x < y$. From Lemma \ref{int2:l:props} (\ref{int2:l:props:9}) we know that $1 > 0$, so ${x \cdot 1 < y \cdot 1}$. Then $x \cdot 1 < 1 \cdot y$, which means that $[(x, 1)] < [(y, 1)]$, or in other words $i(x) < i(y)$. This process can be done backwards, and hence $x < y$ if and only if $i(x) < i(y)$.
 \end{proof}
 
 
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
+
 \begin{exercise}[Used in Exercise \ref{cuts:e:2}, Theorem \ref{real:t:props} and Exercise \ref{real:e:3}] %% 1.5.6
 	\label{rat:e:6}
 	Let ${r, s, p, q \in \mathbb{Q}}$.
@@ -404,32 +441,47 @@
 \end{exercise}
 
 \begin{proof}[(\ref{rat:e:6:1})]
-	\TBD
+	From Lemma \ref{int2:l:props} (\ref{int2:l:props:9}) we know that $0 < 1$ for $0,1 \in \mathbb{Z}$. Adding $-1$ to this inequality we obtain $-1 < 1 + (-1) = 0$, so $-1 < 0 < 1$ for $-1,0,1 \in \mathbb{Z}$. By Theorem\,\ref{rat:t:int} (\ref{rat:t:int:props:less}) it follows that $i(-1) < i(0) < i(1)$. Because of Theorem \ref{rat:t:int} (\ref{rat:t:int:props:neg}) we see that $i(-1) = -i(1)$, and hence by Theorem \ref{rat:t:int} (\ref{rat:t:int:zero_one}) we deduce that $-1 < 0 < 1$.
 \end{proof}
 
-% \begin{proof}[(\ref{rat:e:6:2})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{rat:e:6:2})]
+	Suppose that $r < s$. By the \nameref{rat:t:props:addition_order} we obtain
+	\[
+		r + [(-r) + (-s)] < s + [(-r) + (-s)].
+	\]
+	By repeated use of the \hyperref[rat:t:props:associative_add]{Associative} and \hyperref[rat:t:props:commutative_add]{Commutative} Laws for Addition we deduce that
+	\[
+		(-s) + [r + (-r)] < (-r) + [s + (-s)].
+	\]
+	Because of the \nameref{rat:t:props:inverses_add} we see that $r + (-r) = 0$ and $s + (-s) = 0$, so $(-s) + 0 < (-r) + 0$, and hence by the \nameref{rat:t:props:identity_add} we can conclude that $-s < -r$.
+\end{proof}
 
-% \begin{proof}[(\ref{rat:e:6:3})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{rat:e:6:3})]
+	Let $r = \frac{x}{y}$ for $x,y \in \mathbb{Z}$. Then $r \cdot 0 = \frac{x}{y} \cdot \frac{0}{1}$. By Lemma \ref{rat:l:alt_def} (\ref{rat:l:alt_def:4}) we obtain
+	\[
+		\frac{x}{y} \cdot \frac{0}{1} = \frac{x \cdot 0}{y \cdot 1} = \frac{0}{y},
+	\]
+	and from Definition \ref{rat:d:div} we see that $\frac{0}{y} = 0$. Hence, $r \cdot 0 = 0$.
 
-% \begin{proof}[(\ref{rat:e:6:4})]
-% 	\TBD
-% \end{proof}
+\end{proof}
 
-% \begin{proof}[(\ref{rat:e:6:5})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{rat:e:6:4})]
+	Suppose that $r > 0$ and $s > 0$. By the \nameref{rat:t:props:addition_order} we obtain $r + s > 0 + s$. Using the \hyperref[rat:t:props:commutative_add]{Commutative} and \hyperref[rat:t:props:identity_add]{Identity} we observe that $0 + s = s + 0 = s$, so $r + s > s$. By hypothesis on $s$ and the \nameref{rat:t:props:transitive} we deduce that $r + s > 0$.
 
-% \begin{proof}[(\ref{rat:e:6:6})]
-% 	\TBD
-% \end{proof}
+	Now using the \nameref{rat:t:props:multiplication_order} we get $rs > 0 \cdot s$. From Part (\ref{rat:e:6:3}) of this exercise and the \nameref{rat:t:props:commutative_mult} we see that $0 \cdot s = s \cdot 0 = 0$, and hence $rs > 0$.
+\end{proof}
 
-% \begin{proof}[(\ref{rat:e:6:7})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{rat:e:6:5})]
+	Suppose that $r > 0$. By Part (\ref{rat:e:6:1}) of this exercise we know that $0 < 1$. From the \nameref{rat:t:props:multiplication_order} it follows that $0 \cdot r < 1 \cdot r$. Because of the \nameref{rat:t:props:commutative_mult} we see that $1 \cdot r = r \cdot 1$, so $0 \cdot r < r \cdot 1$. But then from hypothesis on $r$ and the Lemma \ref{rat:l:alt_def} (\ref{rat:l:alt_def:6}) we deduce that $\frac{0}{r} < \frac{1}{r}$. Finally, by Definition \ref{rat:d:div} we observe that $\frac{0}{r} = 0$, and hence $\frac{1}{r} > 0$.
+\end{proof}
+
+\begin{proof}[(\ref{rat:e:6:6})]
+	Suppose that $0 < r < s$. From the \nameref{rat:t:props:transitive} we see that $s > 0$. By Part (\ref{rat:e:6:5}) of this exercise we deduce that $r^{-1} > 0$ and $s^{-1} > 0$. By repeated use of the \nameref{rat:t:props:multiplication_order} we obtain $r r^{-1} s^{-1} < s r^{-1} s^{-1}$. From the \nameref{rat:t:props:commutative_mult} we observe that $s r^{-1} = r^{-1} s$, so using the \hyperref[rat:t:props:associative_mult]{Associative} and \hyperref[rat:t:props:inverses_mult]{Inverses} Laws for Multiplication we get $1 \cdot s^{-1} < r^{-1} \cdot 1$. Finally, by the \hyperref[rat:t:props:commutative_mult]{Commutative} and \hyperref[rat:t:props:identity_mult]{Identity} Laws for Multiplication we can conclude that $\frac{1}{s} < \frac{1}{r}$.
+\end{proof}
+
+\begin{proof}[(\ref{rat:e:6:7})]
+	Suppose that $0 < r < p$ and $0 < s < q$. We note that $p > 0$ because of the \nameref{rat:t:props:transitive}. Now we obtain $r s < p s$ and $s p < q p$ according to the \nameref{rat:t:props:multiplication_order}. From the \nameref{rat:t:props:commutative_mult} we deduce that $p s < p q$. But then $r s < p s < p q$, and hence by the \nameref{rat:t:props:transitive} we can conclude that $r s < p q$.
+\end{proof}
 
 
 %-------------------------------------------------------------------------------------------------------------
@@ -444,12 +496,18 @@
 \end{exercise}
 
 \begin{proof}[(\ref{rat:e:7:1})]
-	\TBD
+	By Exercise \ref{rat:e:6} (\ref{rat:e:6:1}) we have $0 < 1$. Because of the \nameref{rat:t:props:addition_order} we obtain $0 + 1 < 1 + 1 = 2$. Using the \hyperref[rat:t:props:commutative_add]{Commutative} and \hyperref[rat:t:props:identity_add]{Identity} Laws for Addition we see that $0 + 1 = 1 + 0 = 1$, and hence $1 < 2$.
 \end{proof}
 
-% \begin{proof}[(\ref{rat:e:7:2})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{rat:e:7:2})]
+	By Exercise \ref{rat:e:6} (\ref{rat:e:6:1}) and Part (\ref{rat:e:7:1}) of this exercise we know that ${0 < 1 < 2}$, so using the \nameref{rat:t:props:transitive} we deduce that $2 > 0$, and as a result $2 \in \mathbb{Q}^{*}$. Hence, ${\frac{s + t}{2} \in \mathbb{Q}}$.
+
+	It follows from Exercise \ref{rat:e:6} (\ref{rat:e:6:5}) that $2^{-1} > 0$, and from the \nameref{rat:t:props:multiplication_order} we can conclude that $s \cdot 2^{-1} < t \cdot 2^{-1}$.
+
+	From the \nameref{rat:t:props:addition_order} we get $s \cdot 2^{-1} + s \cdot 2^{-1} < t \cdot 2^{-1} + s \cdot 2^{-1}$. Because of the \nameref{rat:t:props:identity_mult} we observe that $s \cdot 2^{-1} + s \cdot 2^{-1} = (s \cdot 2^{-1}) \cdot 1 + (s \cdot 2^{-1}) \cdot 1$. Also, from the \nameref{rat:t:props:associative_add} and the \nameref{rat:t:props:commutative_mult} we observe that $t \cdot 2^{-1} + s \cdot 2^{-1} = 2^{-1} \cdot s + 2^{-1} \cdot t$, so using the \nameref{rat:t:props:distributive} we deduce that $s \cdot 2^{-1}(1 + 1) = s \cdot 2^{-1} \cdot 2 < 2^{-1}(s + t) = (s + t)2^{-1}$. From the \hyperref[rat:t:props:commutative_mult]{Commutative} and  \hyperref[rat:t:props:inverses_mult]{Inverses} Laws for Multiplication it follows that $2^{-1} \cdot 2 = 2 \cdot 2^{-1} = 1$. By the \hyperref[rat:t:props:associative_mult]{Associative} and \hyperref[rat:t:props:identity_mult]{Identity} Laws for Multiplication it follows that $s \cdot 2^{-1} \cdot 2 = s \cdot (2^{-1} \cdot 2) = s \cdot 1 = s$. Hence, $s < \frac{s + t}{2}$.
+
+	By the \nameref{rat:t:props:addition_order} we obtain $s \cdot 2^{-1} + t \cdot 2^{-1} < t \cdot 2^{-1} + t \cdot 2^{-1}$. From the \nameref{rat:t:props:commutative_mult} and the \nameref{rat:t:props:distributive} we deduce that ${(s + t)2^{-1} < t (1 + 1)2^{-1} = t \cdot 2 \cdot 2^{-1}}$. We already know that $2 \cdot 2^{-1} = 1$, so using the \hyperref[rat:t:props:associative_mult]{Associative} and \hyperref[rat:t:props:identity_mult]{Identity} Laws for Multiplication we get $t \cdot 2 \cdot 2^{-1} = t(2 \cdot 2^{-1}) = t \cdot 1 = t$. Hence, $s < \frac{s + t}{2} < t$.
+\end{proof}
 
 
 %-------------------------------------------------------------------------------------------------------------
@@ -464,12 +522,20 @@
 \end{exercise}
 
 \begin{proof}[(\ref{rat:e:8:1})]
-	\TBD
+	Suppose that $r = \frac{a}{b}$ for some $(a, b) \in \mathbb{Z} \times \mathbb{Z}^{*}$. Because of Exercise\,\ref{rat:e:6}\,(\ref{rat:e:6:1}) we know that $1 > 0$, and we note that $\frac{0}{1} = 0$ according to Definition \ref{rat:d:div}. Taking into account Lemma \ref{rat:l:alt_def} (\ref{rat:l:alt_def:6}) we consider the following two cases.
+	\begin{bycases}
+		\item $b < 0$. Then $\frac{0}{1} < \frac{a}{b}$ implies $0 \cdot b > 1 \cdot a$, and hence $a < 0$.
+		\item $b > 0$. Then $\frac{0}{1} < \frac{a}{b}$ implies $0 \cdot b < 1 \cdot a$, and hence $a > 0$.
+	\end{bycases}
 \end{proof}
 
-% \begin{proof}[(\ref{rat:e:8:2})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{rat:e:8:2})]
+	From Definition \ref{rat:d:div} and Theorem \ref{rat:t:int} (\ref{rat:t:int:div}) we observe that there is ${(a, b) \in \mathbb{Z} \times \mathbb{Z}^{*}}$ such that $r = \frac{a}{b}$. By Part (\ref{rat:e:8:1}) of this exercise we deduce that $a$ and $b$ are either both positive or both negative. If $a$ and $b$ are both positive then we will clearly reach the desired result. Now suppose that $a < 0$ and $b < 0$. Let $m = -a$ and $n = -b$, which means that $m$ and $n$ are both positive. Using Exercise \ref{rat:e:3} (\ref{rat:e:3:2}) we can notice that $1 = \frac{-1}{-1}$. Then,
+	\[
+		r = \frac{a}{b} = \frac{a}{b} \cdot 1 = \frac{a}{b} \cdot \frac{-1}{-1} = \frac{a(-1)}{b(-1)} = \frac{-a}{-b} = \frac{m}{n},
+	\]
+	as required.
+\end{proof}
 
 
 %-------------------------------------------------------------------------------------------------------------
@@ -490,13 +556,30 @@
 \end{exercise}
 
 \begin{proof}[(\ref{rat:e:9:1})]
-	\TBD
+	Using Exercise \ref{rat:e:8} (\ref{rat:e:8:2}) we then deduce that $r = \frac{a}{b}$ and $s = \frac{c}{d}$ for some ${a, b, c, d \in \mathbb{Z}^{+} - \{ 0 \}}$. Then $a d > 0$ and $b c > 0$ because of Exercise \ref{rat:e:6} (\ref{rat:e:6:4}), and then $a d \geq 1$ and $b c \geq 1$ because of Exercise \ref{int:e:8}. This means that $b c \in \mathbb{N}$ according to Exercise \ref{int2:e:4}.
+
+	By Exercise \ref{rat:e:6} (\ref{rat:e:6:1}) we know that $0 < 1$, so we obtain $b c < b c + 1$. Let $n = b c + 1$. Then $n \in \mathbb{N}$ and $b c < n$. If $a d = 1$ then $b c < n \cdot 1 = n (a d)$, and by Lemma\,\ref{rat:l:alt_def}\,(\ref{rat:l:alt_def:1}) we have $s = \frac{c}{d} < n \cdot \frac{a}{b} = n r$, as required. Now suppose that $a d > 1$. From Exercise \ref{rat:e:6} (\ref{rat:e:6:7}) it then follows that $1 \cdot b c < a d (b c + 1)$, so $b c < n (a d)$. Using Lemma \ref{rat:l:alt_def} (\ref{rat:l:alt_def:1}) we see that $\frac{c}{d} < n \cdot \frac{a}{b}$, and hence $s < n r$.
 \end{proof}
 
-% \begin{proof}[(\ref{rat:e:9:2})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{rat:e:9:2})]
+	Because of Exercise \ref{rat:e:8} (\ref{rat:e:8:2}) we have $r = \frac{a}{b}$ for some $a, b \in \mathbb{Z}$ such that $a > 0$ and $b > 0$. We know that $a, b \in \mathbb{Q}$, so using Part (\ref{rat:e:9:1}) of this exercise we can find some $m \in \mathbb{N}$ such that $b < m a$. Then $1 \cdot b < m a$, and hence by Lemma \ref{rat:l:alt_def} (\ref{rat:l:alt_def:1}) we deduce that $\frac{1}{m} < \frac{a}{b} = r$.
+\end{proof}
 
-% \begin{proof}[(\ref{rat:e:9:3})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{rat:e:9:3})]
+	Suppose that $r^2 < s$. Then $s - r^2 > 0$. From Exercise \ref{rat:e:6} (\ref{rat:e:6:1}) we know that $1 > 0$. By repeated use of Exercise \ref{rat:e:6} (\ref{rat:e:6:4}) we see that $r + r + 1 = 2r + 1 > 0$. It then follows from Exercise \ref{rat:e:6} (\ref{rat:e:6:5}) that $\frac{1}{2r + 1} > 0$, and hence by Exercise \ref{rat:e:6} (\ref{rat:e:6:4}) we deduce that $\frac{s - r^2}{2r + 1} > 0$.
+
+	By Part (\ref{rat:e:9:2}) of this exercise we can find some $k \in \mathbb{N}$ such that $\frac{1}{k} < \frac{s - r^2}{2r + 1}$. We note that $k \in \mathbb{Z}$ and $\frac{1}{k} > 0$ according to Exercise \ref{int2:e:4} and Exercise \ref{rat:e:6} (\ref{rat:e:6:5}). Because of Lemma\,\ref{rat:l:alt_def}\,(\ref{rat:l:alt_def:6}) we have $1 \cdot (2r + 1) = 2r + 1 < k(s - r^2)$. Multiplying both sides of this inequality by $\frac{1}{k}$ it follows that
+	\[
+		\frac{1}{k}(2r + 1) = 2r \frac{1}{k} + \frac{1}{k} < s - r^2 = \frac{1}{k} k (s - r^2).
+	\]
+
+	By Exercise \ref{int:e:8} we observe that $k \geq 1$, so $k^2 \geq k$. Using Exercise \ref{rat:e:6} (\ref{rat:e:6:6}) we get $\frac{1}{k^2} = \left( \frac{1}{k} \right)^2 \leq \frac{1}{k}$. Then
+	\[
+		2r \frac{1}{k} + \left( \frac{1}{k} \right)^2 \leq 2r \frac{1}{k} + \frac{1}{k} < s - r^2,
+	\]
+	and then $2r \frac{1}{k} + \left( \frac{1}{k} \right)^2 < s - r^2$. Finally, adding $r^2$ to this inequality and doing some rearranging we obtain
+	\[
+		r^2 + 2 \frac{1}{k} r + \left( \frac{1}{k} \right)^2 = \left( r + \frac{1}{k} \right)^2 < s,
+	\]
+	as required.
+\end{proof}

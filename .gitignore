@@ -9,5 +9,5 @@ __latexindent_temp.tex
 *.thm
 *.out
 *.synctex
-/.vscode/
-snapshot.jpg
+/out/
+.DS_Store
