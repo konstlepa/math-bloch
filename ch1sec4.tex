@@ -97,9 +97,9 @@
 	\begin{enumerate}
 		\item Let $x \in \mathbb{Z}$. The number $x$ is positive if $x > 0$, and the number $x$ is negative if $x < 0$.
 		\item The set of natural numbers, denoted $\mathbb{N}$, is defined by
-		      \[
+		      $$
 			      \mathbb{N} = \{ x \in \mathbb{Z} \mid x > 0 \}.
-		      \]
+		      $$
 	\end{enumerate}
 \end{definition}
 
@@ -321,9 +321,9 @@
 
 	\PartProof{int2:e:7:oid:commutative_mult}
 	Using the \nameref{int2:d:oid:commutative_mult} for the integers we get
-	\[
+	$$
 		a b = \left( \sum_{i=0}^n a_{i} b_{n-i} \right)_{n=0}^\infty = \left( \sum_{j=0}^n a_{n-j} b_{j} \right)_{n=0}^\infty = \left( \sum_{j=0}^n b_{j} a_{n-j} \right)_{n=0}^\infty = b a.
-	\]
+	$$
 
 
 	\PartProof{int2:e:7:oid:identity_mult}
@@ -353,17 +353,17 @@
 		                               & = \sum_{i=0}^{p-1} a_i \cdot 0 + a_p b_q + \sum_{i=p+1}^{p+q-i} 0 \cdot b_{p+q-i}.
 	\end{align*}
 	By the \nameref{int2:d:oid:commutative_mult} for the integers we observe that
-	\[
+	$$
 		\sum_{i=p+1}^{p+q-i} 0 \cdot b_{p+q-i} = \sum_{i=p+1}^{p+q-i} b_{p+q-i} \cdot 0,
-	\]
+	$$
 	and from the \nameref{int2:d:oid:identity_mult} and the \nameref{int2:d:oid:identity_add} for the integers we deduce that
-	\[
+	$$
 		\sum_{i=0}^{p-1} a_i \cdot 0 = \sum_{i=0}^{p-1} 0 = 0 = \sum_{i=p+1}^{p+q-i} 0 = \sum_{i=p+1}^{p+q-i} b_{p+q-i} \cdot 0.
-	\]
+	$$
 	Finally, by repeated use of the \hyperref[int2:d:oid:commutative_add]{Commutative} and \hyperref[int2:d:oid:identity_add]{Identity} Laws for Addition for the integers we obtain
-	\[
+	$$
 		\sum_{i=0}^{p+q} a_i b_{p+q-i} = 0 + a_p b_q + 0 = (a_p b_q + 0) + 0 = a_p b_q + 0 = a_p b_q.
-	\]
+	$$
 	Since $a_p \not= 0$ and $b_q \not= 0$, the \nameref{int2:d:oid:no_zero_divisors} for the integers implies that $a_p b_q \not= 0$. Hence, $\sum_{i=0}^{p+q} a_i b_{p+q-i} \not= 0$. But then $\left( \sum_{i=0}^n a_i b_{n-i} \right)_{n=0}^\infty \not= \widetilde{0}$, which is a contradiction to the fact that $a b = \widetilde{0}$. Hence, there is either $a = \widetilde{0}$ or $b = \widetilde{0}$.
 
 	\PartProof{int2:e:7:oid:trichotomy}
@@ -410,19 +410,19 @@
 	Suppose to the contrary that $g \in \mathbb{Z}[x]$ such that $f < g < f + \widetilde{1}$. Suppose that $\deg(f) < \deg(g) < \deg(f + \widetilde{1})$. We can notice that $\deg(f + \widetilde{1}) = \deg(f)$, so $\deg(f) < \deg(g)$ and $\deg(g) < \deg(f)$, which is a contradiction to \nameref{int2:d:oid:trichotomy} for the integers. Hence, either $f \not< g$ or $g \not< f + \widetilde{1}$.
 
 	Now suppose that $\deg(f) = \deg(g) = \deg(f + \widetilde{1})$. Then there is the greatest
-	\[
+	$$
 		p \leq \deg(f) = \deg(g) = \deg(f + \widetilde{1})
-	\]
+	$$
 	such that
-	\[
+	$$
 		f_p < g_p < (f + \widetilde{1})_p = f_p + \widetilde{1}_p.
-	\]
+	$$
 	If $p = 0$ then $f_0 < g_0 < f_0 + 1$, which is a contradiction to Theorem \ref{int2:t:discrete}. But if $p > 0$ then $f_p < g_p$ and $g_p < f_p$, which is a contradiction to the \nameref{int2:d:oid:trichotomy} for the integers. Hence, either $f \not< g$ or $g \not< f + \widetilde{1}$.
 
 	Finally, suppose that either
-	\[
+	$$
 		\deg(f) < \deg(g) = \deg(f + \widetilde{1}) \text{ or } \deg(f) = \deg(g) < \deg(f + \widetilde{1}).
-	\]
+	$$
 	But we know that ${\deg(f) = \deg(f + \widetilde{{1}}})$, so this implies that either $\deg(f) < \deg(g)$ and $\deg(f) = \deg(g)$ or $\deg(f) = \deg(g)$ and $\deg(g) < \deg(f)$, which is a contradiction to the \nameref{int2:d:oid:trichotomy} for the integers. Hence, either $f \not< g$ or $g \not< f + \widetilde{1}$.
 \end{proof}
 

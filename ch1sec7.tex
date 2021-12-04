@@ -4,23 +4,278 @@
 \section{Constructing the Real Numbers}
 \label{real}
 
-\addtocounter{theorem}{3}
+\begin{definition} %% 1.7.1
+	The set of \emph{real numbers}, denoted $\mathbb{R}$, is defined by
+	$$
+		\mathbb{R} = \{ A \subseteq \mathbb{Q} \mid A \text { is a Dedekind cut } \}.
+	$$
+\end{definition}
+
+\begin{definition} %% 1.7.2
+	The relation $<$ on $\mathbb{R}$ is defined by $A < B$ if and only if $A \supsetneq B$, for all $A, B \in \mathbb{R}$. The relation $\leq$ on $\mathbb{R}$ is defined by $A \leq B$ if and only if $A \supseteq B$, for all $A, B \in \mathbb{R}$.
+\end{definition}
+
+\begin{definition} %% 1.7.3
+	\label{real:d:add}
+	The binary operation $+$ on $\mathbb{R}$ is defined by
+	$$
+		A + B = \{ r \in \mathbb{Q} \mid r = a + b \text { for some } a \in A \text { and } b \in B \}
+	$$
+	for all $A, B \in \mathbb{R}$. The unary operation $-$ on $\mathbb{R}$ is defined by
+	$$
+		-A = \{ r \in \mathbb{Q} \mid -r < c \text { for some } c \in \mathbb{Q}-A \}
+	$$
+	for all $A \in \mathbb{R}$.
+\end{definition}
+
 \begin{lemma} %% 1.7.4
 	\label{real:l:mult_req}
-	\TBD
+	Let $A \in \mathbb{R}$, and let $r \in \mathbb{Q}$.
+	\begin{enumerate}
+		\item \label{real:l:mult_req:1}
+		      $A > D_r$ if and only if there is some $q \in \mathbb{Q}-A$ such that $q > r$.
+		\item \label{real:l:mult_req:2}
+		      $A \geq D_r$ if and only if $r \in \mathbb{Q}-A$ if and only if $a > r$ for all $a \in A$.
+		\item \label{real:l:mult_req:3}
+		      If $A < D_0$ then $-A \geq D_0$.
+	\end{enumerate}
 \end{lemma}
 
-\addtocounter{theorem}{1}
+\begin{definition} %% 1.7.5
+	\label{real:d:mult}
+	The binary operation $\cdot$ on $\mathbb{R}$ is defined by
+	$$
+		A \cdot B =
+		\begin{cases}
+			\{ r \in \mathbb{Q} \mid r = a b \text { for some } a \in A \text { and } b \in B \}, & \text{ if } A \geq D_0 \text { and } B \geq D_0 \\
+			-[(-A) \cdot B],                                                                      & \text{ if } A < D_0 \text { and } B \geq D_0    \\
+			-[A \cdot(-B)],                                                                       & \text{ if } A \geq D_0 \text { and } B < D_0    \\
+			(-A) \cdot(-B),                                                                       & \text{ if } A < D_0 \text { and } B < D_0.
+		\end{cases}
+	$$
+	The unary operation ${ }^{-1}$ on $\mathbb{R}-\left\{ D_0 \right\}$ is defined by
+	$$
+		A^{-1} =
+		\begin{cases}
+			\{ r \in \mathbb{Q} \mid r > 0 \text { and } \frac{1}{r} < c \text { for some } c \in \mathbb{Q}-A \}, & \text { if } A > D_0  \\
+			-(-A)^{-1},                                                                                            & \text { if } A < D_0.
+		\end{cases}
+	$$
+\end{definition}
+
 \begin{theorem} %% 1.7.6
 	\label{real:t:props}
-	\TBD
+	Let $A, B, C \in \mathbb{R}$.
+	\begin{enumerate}
+		\item $(A + B) + C = A + (B + C)$ \quad (\nameref*{real:t:props:associative_add}). \xlabel[Associative Law for Addition]{real:t:props:associative_add}
+		\item $A + B = B + A$ \quad (\nameref*{real:t:props:commutative_add}). \xlabel[Commutative Law for Addition]{real:t:props:commutative_add}
+		\item $A + D_0 = A$ \quad (\nameref*{real:t:props:identity_add}). \xlabel[Identity Law for Addition]{real:t:props:identity_add}
+		\item $A + (-A) = D_0$ \quad (\nameref*{real:t:props:inverses_add}). \xlabel[Inverses Law for Addition]{real:t:props:inverses_add}
+		\item $(AB)C = A(BC)$ \quad (\nameref*{real:t:props:associative_mult}). \xlabel[Associative Law for Multiplication]{real:t:props:associative_mult}
+		\item $A B = B A$ \quad (\nameref*{real:t:props:commutative_mult}). \xlabel[Commutative Law for Multiplication]{real:t:props:commutative_mult}
+		\item $A \cdot D_1 = A$ \quad (\nameref*{real:t:props:identity_mult}). \xlabel[Identity Law for Multiplication]{real:t:props:identity_mult}
+		\item If $A \neq D_0$, then $A A^{-1} = D_1$ \quad (\nameref*{real:t:props:inverses_mult}). \xlabel[Inverses Law for Multiplication]{real:t:props:inverses_mult}
+		\item $A(B + C) = A B + A C$ \quad (\nameref*{real:t:props:distributive}). \xlabel[Distributive Law]{real:t:props:distributive}
+		\item Precisely one of $A < B$ or $A = B$ or $A > B$ holds \quad (\nameref*{real:t:props:trichotomy}). \xlabel[Trichotomy Law]{real:t:props:trichotomy}
+		\item If $A < B$ and $B < C$, then $A < C$ \quad (\nameref*{real:t:props:transitive}). \xlabel[Transitive Law]{real:t:props:transitive}
+		\item If $A < B$ then $A + C < B + C$ \quad (\nameref*{real:t:props:addition_order}). \xlabel[Addition Law for Order]{real:t:props:addition_order}
+		\item If $A < B$ and $C > D_0$, then $A C < B C$ \quad (\nameref*{real:t:props:multiplication_order}). \xlabel[Multiplication Law for Order]{real:t:props:multiplication_order}
+		\item $D_0 < D_1$ \quad (\nameref*{real:t:props:non_triviality}). \xlabel[Non-Triviality]{real:t:props:non_triviality}
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition} %% 1.7.7
+	Let $A \subseteq \mathbb{R}$ be a set.
+	\begin{enumerate}
+		\item The set $A$ is \emph{bounded above} if there is some $M \in \mathbb{R}$ such that $X \leq M$ for all $X \in A$. The number $M$ is called an \emph{upper bound} of $A$.
+		\item The set $A$ is \emph{bounded below} if there is some $P \in \mathbb{R}$ such that $X \geq P$ for all $X \in A$. The number $P$ is called a \emph{lower bound} of $A$.
+		\item The set $A$ is \emph{bounded} if it is bounded above and bounded below.
+		\item Let $M \in \mathbb{R}$. The number $M$ is a \emph{least upper bound} (also called a \emph{supremum}) of $A$ if $M$ is an upper bound of $A$, and if $M \leq T$ for all upper bounds $T$ of $A .$
+		\item Let $P \in \mathbb{R}$. The number $P$ is a \emph{greatest lower bound} (also called an \emph{infimum}) of $A$ if $P$ is a lower bound of $A$, and if $P \geq V$ for all lower bounds $V$ of $A$.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Greatest Lower Bound Property] %% 1.7.8
+	Let $A \subseteq \mathbb{R}$ be a set. If $A$ is non-empty and bounded below, then $A$ has a greatest lower bound.
+\end{theorem}
+
+\begin{theorem}[Least Upper Bound Property] %% 1.7.9
+	Let $A \subseteq \mathbb{R}$ be a set. If $A$ is nonempty and bounded above, then A has a least upper bound.
+\end{theorem}
+
+\begin{theorem} %% 1.7.10
+	\label{real:t:rat}
+	Let $i: \mathbb{Q} \to \mathbb{R}$ be defined by $i(r) = D_r$ for all $r \in \mathbb{R}$.
+	\begin{enumerate}
+		\item The function $i: \mathbb{Q} \to \mathbb{R}$ is injective.
+		\item $i(0) = D_0$ and $i(1) = D_1$.
+		\item Let $r, s \in \mathbb{Q}$. Then
+		      \begin{enumerate}
+			      \item $i(r + s)=i(r) + i(s)$;
+			      \item $i(-r) = -i(r)$;
+			      \item $i(r s) = i(r) i(s)$;
+			      \item if $r \neq 0$ then $i(r^{-1}) = [i(r)]^{-1}$;
+			      \item $r < s$ if and only if $i(r) < i(s)$.
+		      \end{enumerate}
+	\end{enumerate}
 \end{theorem}
 
 
-\addtocounter{exercise}{2}
 %-------------------------------------------------------------------------------------------------------------
 \Newpage
-\begin{exercise} %% 1.7.3
-	\label{real:e:3}
-	\TBD
+\begin{exercise}[Used in Exercise \ref{real:e:7}] %% 1.7.1
+	\label{real:e:1}
+	Let $r \in \mathbb{Q}$.
+	\begin{enumerate}
+		\item \label{real:e:1:1}
+		      Prove that $D_{-r} = -D_r$, using only Definition \ref{cuts:d:rat_irrat} and Definition \ref{real:d:add}.
+		\item \label{real:e:1:2}
+		      Prove that $D_{r^{-1}} = [D_r]^{-1}$, using only Definition \ref{real:d:mult} and Definition \ref{real:d:add}.
+	\end{enumerate}
 \end{exercise}
+
+\begin{proof}[(\ref{real:e:1:1})]
+	Let $x \in \mathbb{Q}$. By the definition of $D_{-r}$ we see that $-x < r$. Because $r \notin D_r$ we get $r \in \mathbb{Q} - D_{r}$, and by the definition of $-D_r$ we deduce that $x \in -D_r$. Hence, $D_{-r} \subseteq -D_r$. This process can be done backwards, and hence $D_{-r} = -D_r$.
+\end{proof}
+
+\begin{proof}[(\ref{real:e:1:2})]
+	We note that $r \neq 0$ because of the definition of ${ }^{-1}$ on $\mathbb{R} - \{ D_0 \}$. Suppose that $D_r > D_0$. Let $x \in \mathbb{Q}$. From the definition of $D_{r^{-1}}$ we observe that $x > r^{-1} = \frac{1}{r}$. Since $D_r > D_0$, from Lemma \ref{real:l:mult_req} (\ref{real:l:mult_req:2}) we see that $0 \in \mathbb{Q} - D_0$ implies $r > 0$. Then $x > 0$ and $\frac{1}{x} < r$. Hence, $x \in [D_r]^{-1}$. Thus, $D_{r^{-1}} \subseteq [D_r]^{-1}$, and because this process can be done backwards we deduce that $D_{r^{-1}} = [D_r]^{-1}$. Since $r$ was arbitrary, we can conclude that $D_{q^{-1}} = [D_q]^{-1}$ if $D_q > D_0$ for all $q \in \mathbb{Q}$.
+
+	Now suppose that $D_r < D_0$. By Lemma \ref{real:l:mult_req} (\ref{real:l:mult_req:3}) it follows that $-D_r > D_0$. From Part\,(\ref{real:e:1:1}) of this exercise we know that $-D_q = D_{-q}$ for all $q \in \mathbb{Q}$, so $D_{-r} > D_0$. Then
+	$$
+		D_{r^{-1}} = D_{-[-(r^{-1})]} = -D_{-(-r^{-1})} = -D_{(-r)^{-1}} = -[D_{-r}]^{-1} = -(-D_r)^{-1} = [D_r]^{-1},
+	$$
+	as required.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{real:t:props}] %% 1.7.2
+	\label{real:e:2}
+	Let $A, B \in \mathbb{R}$. Suppose that $A > D_0$ and $B > D_0$. For this exercise, you may use only results prior to Theorem \ref{real:t:props}.
+	\begin{enumerate}
+		\item \label{real:e:2:1}
+		      Prove that $A B > D_0$.
+		\item \label{real:e:2:2}
+		      Prove that $A^{-1} > D_0$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{real:e:2:1})]
+	Because $D_0 - A \neq \emptyset$ and $D_0 - B \neq \emptyset$, it follows from the definition of $A B$ that $A B \neq D_0$. Now let $r \in A B$. Then $r = a b$ for some $a \in A$ and $b \in B$. Since $A > D_0$ and $B > D_0$, we deduce that $a > 0$ and $b > 0$. But then $r = a b > 0$. Hence $A B \subsetneq D_0$, or in other words $A B > D_0$.
+\end{proof}
+
+\begin{proof}[(\ref{real:e:2:2})]
+	We note that $A^{-1} \neq D_0$ by the definition of $A^{-1}$. Let $r \in A^{-1}$. Then $r > 0$, and as a result $r \in D_0$. Hence $A^{-1} \subsetneq D_0$, or in other words $A^{-1} > D_0$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{real:t:props}] %% 1.7.3
+	\label{real:e:3}
+	Prove Theorem \ref{real:t:props} (\ref{real:t:props:non_triviality}). For this exercise, you may use only results prior to Theorem \ref{real:t:props}.
+
+	\hfill [Use Exercise \ref{rat:e:6} (\ref{rat:e:6:1}).]
+\end{exercise}
+
+\begin{proof}
+	We note that $D_0 \neq D_1$ because $1 \in D_0$ and $1 \notin D_1$. Let $x \in D_0$. Then $x > 1$. From Exercise \ref{rat:e:6} (\ref{rat:e:6:1}) we see that $x > 1 > 0$. Then $x > 0$, and as a result $x \in D_0$. Hence $D_1 \subsetneq D_0$, or in other words $D_0 < D_1$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{real:t:props}, Exercise \ref{real:e:5} and Exercise \ref{real:e:6}] %% 1.7.4
+	\label{real:e:4}
+	For this exercise, use only the properties of real numbers stated in Theorem \ref{real:t:props} (\ref{real:t:props:associative_add}) (\ref{real:t:props:commutative_add}) (\ref{real:t:props:identity_add}) (\ref{real:t:props:inverses_add}) (\ref{real:t:props:trichotomy}) (\ref{real:t:props:transitive}) (\ref{real:t:props:addition_order}) (\ref{real:t:props:non_triviality}); it is not necessary to use the definition of real numbers as \nameref{cuts:d:cuts}. Let $A, B \in \mathbb{R}$.
+	\begin{enumerate}
+		\item \label{real:e:4:1}
+		      Prove that $A > D_0$ if and only if $-A < D_0$, and that $A < D_0$ if and only if $-A > D_0$.
+		\item \label{real:e:4:2}
+		      Prove that $-(-A) = A$.
+		\item \label{real:e:4:3}
+		      Prove that $-(A + B) = (-A) + (-B)$.
+		\item \label{real:e:4:4}
+		      Prove that if $A > D_0$ and $B > D_0$, then $A + B > D_0$, and that if $A < D_0$ and $B < D_0$, then $A + B < D_0$.
+		\item \label{real:e:4:5}
+		      Prove that $A = (-B) + (A + B) = B + [A + (-B)]$ and $-A = B + [-(B + A)]$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{real:e:4:1})]
+	Suppose that $A > D_0$. Let $x \in D_0$. By the definition of $D_0$, we see that $-x < 0$. From Lemma \ref{real:l:mult_req} (\ref{real:l:mult_req:2}) it follows that $0 \in \mathbb{Q} - A$, and hence $x \in -A$, which means that $D_0 \subseteq -A$. Because $D_0 - A \not= \emptyset$ we can find some $c \in D_0$ such that $c \notin A$. Then $c \in \mathbb{Q} - A$ and $0 = -0 < c$, and as a result $0 \in -A$. But we know that $0 \notin D_0$, so $-A \neq D_0$, and hence $-A < D_0$.
+
+	Now we will prove that if $-A < D_0$, then $A > D_0$. Taking the contrapositive, suppose that $A \leq D_0$. If $A < D_0$ then from Lemma\,\ref{real:l:mult_req}\,(\ref{real:l:mult_req:3}) we deduce that $-A \geq D_0$. Suppose further that $A = D_0$. Then,
+	\begin{align*}
+		-A & = \{ r \in \mathbb{Q} \mid -r < c \text{ for some } c \in \mathbb{Q} - A \}                 \\
+		   & = \{ r \in \mathbb{Q} \mid -r < 0 \text{ where } 0 \in \mathbb{Q} - D_0 = \mathbb{Q} - A \} \\
+		   & = -D_0.
+	\end{align*}
+	Using Exercise \ref{real:e:1} (\ref{real:e:1:1}) we obtain $-A = -D_0 = D_{-0} = D_0$, and hence $-A \geq D_0$.
+
+	A similar argument shows that $A < D_0$ if and only if $-A > D_0$.
+\end{proof}
+
+\begin{proof}[(\ref{real:e:4:2})]
+	\TBD
+\end{proof}
+
+% \begin{proof}[(\ref{real:e:4:3})]
+% 	\TBD
+% \end{proof}
+
+% \begin{proof}[(\ref{real:e:4:4})]
+% 	\TBD
+% \end{proof}
+
+% \begin{proof}[(\ref{real:e:4:5})]
+% 	\TBD
+% \end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{real:t:props}] %% 1.7.5
+	\label{real:e:5}
+	Prove Theorem \ref{real:t:props} (\ref{real:t:props:associative_mult}) (\ref{real:t:props:identity_mult}). For this exercise, you may use only Parts (\ref{real:t:props:associative_add}), (\ref{real:t:props:commutative_add}), (\ref{real:t:props:identity_add}), (\ref{real:t:props:inverses_add}), (\ref{real:t:props:trichotomy}), (\ref{real:t:props:transitive}), (\ref{real:t:props:addition_order}) and (\ref{real:t:props:non_triviality}) of the theorem, and anything prior to the theorem.
+
+	\hfill [Use Exercise \ref{real:e:4}.]
+\end{exercise}
+
+\begin{proof}
+	\PartProof{real:t:props:associative_mult}
+	\TBD
+
+	% PartProof{real:t:props:identity_mult}
+	% \TBD
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{real:t:props}] %% 1.7.6
+	\label{real:e:6}
+	Prove the remaining four cases in the proof of Theorem \ref{real:t:props} (\ref{real:t:props:distributive}).
+
+	\hfill [Use Exercise \ref{real:e:4}.]
+\end{exercise}
+
+\begin{proof}
+	\TBD
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{real:t:rat}] %% 1.7.7
+	\label{real:e:7}
+	Prove Theorem \ref{real:t:rat}.
+
+	\hfill [Use Exercise \ref{real:e:1}.]
+\end{exercise}
+
+\begin{proof}
+	\TBD
+\end{proof}

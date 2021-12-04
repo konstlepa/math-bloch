@@ -6,40 +6,49 @@
 
 \begin{definition} %% 1.6.1
 	\xlabel[Dedekind cut]{cuts:d:cut}
+	\xlabel[Dedekind cuts]{cuts:d:cuts}
 	Let $A \subseteq \mathbb{Q}$ be a set. The set $A$ is a \emph{\nameref*{cuts:d:cut}} if the following three properties hold.
 	\begin{lenumerate}
-		\item $A \neq \emptyset$ and $A \neq \mathbb{Q}$.
-		\item Let $x \in A$. If $y \in \mathbb{Q}$ and $y \geq x$, then $y \in A$.
-		\item Let $x \in A$. Then there is some $y \in A$ such that $y < x$.
+		\item \label{cuts:d:cut:a}
+		      $A \neq \emptyset$ and $A \neq \mathbb{Q}$.
+		\item \label{cuts:d:cut:b}
+		      Let $x \in A$. If $y \in \mathbb{Q}$ and $y \geq x$, then $y \in A$.
+		\item \label{cuts:d:cut:c}
+		      Let $x \in A$. Then there is some $y \in A$ such that $y < x$.
 	\end{lenumerate}
 \end{definition}
 
 \begin{lemma} %% 1.6.2
 	Let $r \in \mathbb{Q}$. Then the set
-	\[
+	$$
 		\{ x \in \mathbb{Q} \mid x > r \}
-	\]
+	$$
 	is a Dedekind cut.
 \end{lemma}
 
 \addtocounter{theorem}{1}
 \begin{definition} %% 1.6.4
+	\label{cuts:d:rat_irrat}
 	Let $r \in \mathbb{Q}$. The \emph{rational cut} at $r$, denoted $D_{r}$, is the Dedekind cut
-	\[
+	$$
 		D_{r} = \{ x \in \mathbb{Q} \mid x > r \}.
-	\]
+	$$
 	An \emph{irrational cut} is a Dedekind cut that is not a rational cut at any rational number.
 \end{definition}
 
 \begin{lemma} %% 1.6.5
+	\label{cuts:l:diff}
 	Let $A \subseteq \mathbb{Q}$ be a Dedekind cut.
 	\begin{enumerate}
-		\item $\mathbb{Q} - A = \{ x \in \mathbb{Q} \mid x < a \text{ for all } a \in A \}$.
-		\item Let $x \in \mathbb{Q} - A$. If $y \in \mathbb{Q}$ and $y \leq x$, then $y \in \mathbb{Q} - A$.
+		\item \label{cuts:l:diff:1}
+		      $\mathbb{Q} - A = \{ x \in \mathbb{Q} \mid x < a \text{ for all } a \in A \}$.
+		\item \label{cuts:l:diff:2}
+		      Let $x \in \mathbb{Q} - A$. If $y \in \mathbb{Q}$ and $y \leq x$, then $y \in \mathbb{Q} - A$.
 	\end{enumerate}
 \end{lemma}
 
 \begin{lemma} %% 1.6.6
+	\label{cuts:l:trichotomy}
 	Let $A, B \subseteq \mathbb{Q}$ be Dedekind cuts. Then precisely one of $A \subsetneq B$ or $A = B$ or $B \subsetneq A$ holds.
 \end{lemma}
 
@@ -53,27 +62,27 @@
 	\begin{enumerate}
 		\item \label{cuts:l:real_req:1}
 		      The set
-		      \[
+		      $$
 			      \{ r \in \mathbb{Q} \mid r=a + b \text{ for some } a \in A \text{ and } b \in B \}
-		      \]
+		      $$
 		      is a Dedekind cut.
 		\item \label{cuts:l:real_req:2}
 		      The set
-		      \[
+		      $$
 			      \{ r \in \mathbb{Q} \mid -r < c \text{ for some } c \in \mathbb{Q} - A \}
-		      \]
+		      $$
 		      is a Dedekind cut.
 		\item \label{cuts:l:real_req:3}
 		      Suppose that $0 \in \mathbb{Q} - A$ and $0 \in \mathbb{Q} - B$. The set
-		      \[
+		      $$
 			      \{ r \in \mathbb{Q} \mid r = a b \text{ for some } a \in A \text{ and } b \in B \}
-		      \]
+		      $$
 		      is a Dedekind cut.
 		\item \label{cuts:l:real_req:4}
 		      Suppose that there is some $q \in \mathbb{Q} - A$ such that $q > 0$. The set
-		      \[
+		      $$
 			      \{ r \in \mathbb{Q} \mid r > 0 \text{ and } \frac{1}{r} < c \text{ for some } c \in \mathbb{Q} - A \}
-		      \]
+		      $$
 		      is a Dedekind cut.
 	\end{enumerate}
 \end{lemma}
@@ -95,7 +104,7 @@
 \end{exercise}
 
 \begin{proof}
-	\TBD
+	Because of Part (\ref{cuts:d:cut:a}) of the definition of \nameref{cuts:d:cuts} we see that $A \not= \emptyset$ and $B \not= \emptyset$, so since $A \not= B$ we then deduce that $B - A \not= \emptyset$. There is some $x \in \mathbb{Q}$ such that $x \in B$ and $x \notin A$. By Part (\ref{cuts:d:cut:c}) of the definition of \nameref{cuts:d:cuts} we can find some $y \in B$ such that $y < x$. Suppose to the contrary that $y \notin B - A$. Then $y \in A$. Because of Part\,(\ref{cuts:d:cut:b}) of the definition of \nameref{cuts:d:cuts}, $x > y$ implies $x \in A$, which is a contradiction to the fact that $x \in B - A$. Hence $y \in B - A$, and since $x, y \in B - A$ we can conclude that $B - A$ has more than one element.
 \end{proof}
 
 
@@ -104,9 +113,9 @@
 \begin{exercise} %% 1.6.2
 	\label{cuts:e:2}
 	Let
-	\[
+	$$
 		T = \{ x \in \mathbb{Q} \mid x > 0 \text{ and } x^2 > 2 \}.
-	\]
+	$$
 	\begin{enumerate}
 		\item \label{cuts:e:2:1}
 		      Prove that $T$ is a Dedekind cut.
@@ -118,12 +127,30 @@
 \end{exercise}
 
 \begin{proof}[(\ref{cuts:e:2:1})]
-	\TBD
+	Clearly $T \subseteq \mathbb{Q}$. Now we will show that $T$ satisfies the three parts of the definition of \nameref{cuts:d:cuts}.
+
+	\PartProof{cuts:d:cut:a} We note that $0, 1 \in \mathbb{Q}$. By Exercise \ref{rat:e:7} (\ref{rat:e:7:1}) we have $1 < 2$, which means that $1 \notin T$, and hence $T \not= \mathbb{Q}$. To see that $T \not= \emptyset$, we will prove that $2 \in T$. We have $2^2 = (1 + 1)^2 = 1 + 2 + 1 = 2 + (1 + 1) = 2 + 2$. From Exercise \ref{rat:e:6} (\ref{rat:e:6:1}) we know that $0 < 1$, so $0 < 2$. Then $2 + 2 > 2 + 0 = 2$, and as a result $2^2 > 2$. Hence, $2 \in T$.
+
+	\PartProof{cuts:d:cut:b} Let $x \in T$, and let $y \in \mathbb{Q}$. Suppose that $y \geq x$. By hypothesis on $x$ we know that $x > 0$ and $x^2 > 2$. Then $y > 0$ and $y^2 \geq x y$. We also see that $2 < x^2 < x y$, and as a result we can conclude that $y^2 > 2$. Hence, $y \in T$.
+
+	\PartProof{cuts:d:cut:c} Let $x \in T$. Then $x > 0$ and $x^2 > 2$. Suppose to the contrary that $x \leq 1$. If $x = 1$ then using Exercise \ref{rat:e:7} (\ref{rat:e:7:1}) we get $x^2 = 1^2 = 1 < 2$, which is a contradiction. If $x < 1$ then from Exercise \ref{rat:e:6} (\ref{rat:e:6:7}) we obtain $x^2 < 1$, which is a contradiction again. Hence, $x > 1$.
+
+	Let $y = \frac{1}{2} x + 1$. By Exercise \ref{rat:e:7} (\ref{rat:e:7:2}) it follows that $2  < \frac{1}{2} x + 1  = \frac{2 + x}{2} < x$, so $y < x$. We have
+	$$
+		\left( \frac{1}{2} x + 1 \right)^2 = \frac{1}{4} x^2 + x + 1.
+	$$
+	By Exercise \ref{rat:e:6} (\ref{rat:e:6:4}) we deduce that $\frac{1}{4} x^2 > 0$. Because $x > 1$ we see that $x + 1 > 1 + 1 = 2$, or in other words $x + 1 - 2 > 0$. Using Exercise \ref{rat:e:6} (\ref{rat:e:6:4}) again, we get $\frac{1}{4} x^2 + (x + 1 - 2) > 0$. But then $\frac{1}{4} x^2 + x + 1 > 2$, and then $y^2 > 2$. Hence, $y \in T$.
 \end{proof}
 
-% \begin{proof}[(\ref{cuts:e:2:2})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{cuts:e:2:2})]
+	Suppose that $T = D_r$ for some $r \in \mathbb{Q}$, and suppose to the contrary that $r^2 \not= 2$. There is either $r^2 < 2$ or $r^2 > 2$.
+	\begin{bycases}
+		\item $r^2 < 2$. Because of Exercise \ref{rat:e:9} (\ref{rat:e:9:3}) we can find some $k \in \mathbb{N}$ such that $\left( r + \frac{1}{k} \right)^2 < 2$. From Exercise \ref{rat:e:6} (\ref{rat:e:6:5}) it follows that $\frac{1}{k} > 0$. Then ${r + \frac{1}{k} > r}$, which means that $r + \frac{1}{k} \in D_r$. But then $r + \frac{1}{k} \in T$, and as a result $\left( r + \frac{1}{k} \right)^2 > 2$, which is a contradiction.
+		\item $r^2 > 2$. Since $x > 0$ and $x > r$ for all $x \in T=D_r$, we deduce that $r > 0$, and then $r \in T$. But this implies that $r \in D_r$, which is a contradiction because $r \not> r$.
+	\end{bycases}
+
+	Because we have reached a contradiction in the both cases, we can conclude that ${r^2 = 2}$.
+\end{proof}
 
 
 %-------------------------------------------------------------------------------------------------------------
@@ -133,7 +160,17 @@
 \end{exercise}
 
 \begin{proof}
-	\TBD
+	Let
+	$$
+		P = \{ r \in \mathbb{Q} \mid r = a b \text{ for some } a \in A \text{ and } b \in B \}.
+	$$
+	We will show that $P$ satisfies the three parts of the definition of \nameref{cuts:d:cuts}.
+
+	\PartProof{cuts:d:cut:a} Clearly $0 \notin P$, so $P \not= \mathbb{Q}$. We know that $A \not= \emptyset$ and $B \not= \emptyset$. Then there is some $a \in A$ and $b \in B$, and then $ab \in P$. Hence, $P \not= \emptyset$.
+
+	\PartProof{cuts:d:cut:b} Let $x \in A$, and let $y \in \mathbb{Q}$. Suppose that $y \geq x$. We know that $x = a b$ for some $a \in A$ and $b \in B$. Then $y = \left( \frac{y a}{x} \right)  b$. Because $y \geq x$ and $x \not= 0$ we have $\frac{ya}{x} \geq a$, which means that $\frac{ya}{x} \in A$, and hence $y \in P$.
+
+	\PartProof{cuts:d:cut:c} Let $x \in P$. Applying Part (\ref{cuts:d:cut:c}) of the definition of \nameref{cuts:d:cuts} to $A$, we see that there is some $a_\circ \in A$ such that $a_\circ < a$. Then $a_\circ b \in P$ and $a_\circ b < a b = x$, as required.
 \end{proof}
 
 
@@ -151,9 +188,11 @@
 \end{exercise}
 
 \begin{proof}[(\ref{cuts:e:4:1})]
-	\TBD
+	Suppose that $A \subsetneq D_r$. Then there is some $q \in D_r$ such that $q \notin A$, which implies that $q \in \mathbb{Q} - A$ and $r < q$.
+
+	Now suppose that $r < q$ for some $q \in \mathbb{Q} - A$. This means that $q \in \mathbb{Q}$ and $q \notin A$. Then by the definition of $D_r$ we deduce that $q \in D_r$, and as a result $D_r - A \not= \emptyset$. Hence $D_r \not\subseteq A$, and hence by Lemma \ref{cuts:l:trichotomy} we conclude that $A \subsetneq D_r$.
 \end{proof}
 
-% \begin{proof}[(\ref{cuts:e:4:2})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{cuts:e:4:2})]
+	Lemma \ref{cuts:l:diff} (\ref{cuts:l:diff:1}) implies that $r \in \mathbb{Q} - A$ if and only if $r < a$ for all $a \in A$. From the definition of $D_r$ we see that $r \notin D_r$, and if $A \subseteq D_r$ then $r \in \mathbb{Q} - A$. If $r \in \mathbb{Q} - A$, or in other words $r < a$ for all $a \in A$, then using the definition of $D_r$ again we obtain $a \in D_r$, which means that $A \subseteq D_r$.
+\end{proof}

@@ -137,13 +137,13 @@
 
 \begin{proof}
 	To prove uniqueness, suppose that there are two binary operations $\cdot: \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ and $\odot: \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ that satisfy the two properties of the theorem. Let
-	\[
+	$$
 		G = \{ x \in \mathbb{N} \mid n \cdot x = n \odot x \text{ for all } n \in \mathbb{N}\}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will imply that $\cdot$ and $\odot$ are the same operation. Clearly, $G \subseteq \mathbb{N}$. Also, $1 \in G$ because $n \cdot 1 = n = n \odot 1$ for all $n \in \mathbb{N}$. Now let $g \in G$, and let $n \in \mathbb{N}$. By hypothesis on $g$, we have $n \cdot g = n \odot g$. Then,
-	\[
+	$$
 		n \cdot s(g) = (n \cdot g) + n = (n \odot g) + n = n \odot s(g).
-	\]
+	$$
 	Therefore $s(g) \in G$, and hence by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano} it follows that $G = \mathbb{N}$.
 
 	\begin{notmine}
@@ -169,13 +169,13 @@
 	\hfill
 
 	\PartProof{nat:t:props:associative_add} Let
-	\[
+	$$
 		G = \{ z \in \mathbb{N} \mid (x + y) + z = x + (y + z) \text{ for all } x, y \in \mathbb{N} \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will immediately imply the \nameref{nat:t:props:associative_add}. Clearly $G \subseteq \mathbb{N}$. Using both parts of Theorem \ref{nat:t:add} we have
-	\[
+	$$
 		(a + b) + 1 = s(a + b) = a + s(b) = a + (b + 1).
-	\]
+	$$
 	Hence, $1 \in G$. Now let $c \in G$. By hypothesis on $c$, we know that $(a + b) + c = a + (b + c)$, so by Part (\ref{nat:t:add:n}) of Theorem \ref{nat:t:add} it follows that
 	\begin{align*}
 		(a + b) + s(c) & = s((a + b) + c) = s(a + (b + c)) \\
@@ -184,9 +184,9 @@
 	Therefore $s(c) \in G$, and hence $G = \mathbb{N}$ by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}.
 
 	\PartProof{nat:t:props:3} Let
-	\[
+	$$
 		G = \{ 1 + n = s(n) \text{ for all } n \in \mathbb{N} \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will immediately imply Part (\ref{nat:t:props:3}). Clearly $G \subseteq \mathbb{N}$, and $1 \in G$ because by Part (\ref{nat:t:add:1}) of Theorem \ref{nat:t:add} we have $1 + 1 = s(1)$. Now let $a \in G$. Using the \nameref{nat:t:props:associative_add} and Theorem \ref{nat:t:add}, it then follows that
 	\begin{align*}
 		1 + s(a) & = s(1 + a) = s(a + 1) = a + s(1)       \\
@@ -196,9 +196,9 @@
 	Therefore $s(a) \in G$, and hence $G = \mathbb{N}$ by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}.
 
 	\PartProof{nat:t:props:commutative_add} Let
-	\[
+	$$
 		G = \{ x \in \mathbb{N} \mid x + y = y + x \text{ for all } y \in \mathbb{N} \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will immediately imply the \nameref{nat:t:props:commutative_add}. Clearly $G \subseteq \mathbb{N}$. By Part (\ref{nat:t:props:3}) we also have $1 + y = y + 1$ for all $y \in \mathbb{N}$, so $1 \in G$. Now let $a \in G$. Then,
 	\begin{align*}
 		s(a) + b & = (a + 1) + b                           & \text{(Part (a) of Theorem 1.2.5)}             \\
@@ -210,19 +210,19 @@
 	Hence, $s(a) \in G$. We deduce that $G = \mathbb{N}$ by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}.
 
 	\PartProof{nat:t:props:identity_mult} Let
-	\[
+	$$
 		G = \{ 1 \cdot x = x \text{ for all x } \in \mathbb{N} \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will immediately imply the \nameref{nat:t:props:identity_mult}. Clearly $G \subseteq \mathbb{N}$. By Theorem \ref{nat:t:mult} (\ref{nat:t:mult:1}), it follows that $1 \cdot 1 = 1$, so $1 \in G$. Now let $a \in G$. Using Theorem \ref{nat:t:mult} (\ref{nat:t:mult:n}), hypothesis on $a$, and Theorem \ref{nat:t:add:1}, it then follows that
-	\[
+	$$
 		1 \cdot s(a) = 1 \cdot a + 1 = a + 1 = s(a).
-	\]
+	$$
 	Hence $s(a) \in G$, and by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}, we deduce that $G = \mathbb{N}$.
 
 	\PartProof{nat:t:props:distributive_right} Let
-	\[
+	$$
 		G = \{ z \in \mathbb{N} \mid (x + y)z = x z + y z \text{ for all } x, y \in \mathbb{N} \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will immediately imply the \nameref{nat:t:props:distributive_right}. Clearly $G \subseteq \mathbb{N}$. Also, by Theorem \ref{nat:t:mult} (\ref{nat:t:mult:n}), it follows that $(a + b) \cdot 1 = a + b = a \cdot 1 + b \cdot 1$, and as a result $1 \in G$. Now let $c \in G$. Then,
 	\begin{align*}
 		(a + b)s(c) & = (a + b)c + (a + b)    & \text{(Part (\ref{nat:t:mult:n}) of Theorem \ref{nat:t:mult})} \\
@@ -238,9 +238,9 @@
 	Hence, $s(c) \in G$, and by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}, we can conclude that $G \in \mathbb{N}$.
 
 	\PartProof{nat:t:props:commutative_mult} Let
-	\[
+	$$
 		G = \{ x \in \mathbb{N} \mid x y = y x \text{ for all } y \in \mathbb{N} \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will immediately imply the \nameref{nat:t:props:commutative_mult}. Clearly $G \subseteq \mathbb{N}$. By the \nameref{nat:t:props:identity_mult}, $1 \in G$. Now let $a \in G$. Then,
 	\begin{align*}
 		s(a) b & = (a + 1) b & \text{(Part (\ref{nat:t:add:1}) of Theorem \ref{nat:t:add})} \\
@@ -251,14 +251,14 @@
 	Hence, $s(a) \in G$, and we deduce that $G = \mathbb{N}$ because of Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}.
 
 	\PartProof{nat:t:props:distributive_left} Using Part (\ref{nat:t:props:distributive_right}) (\nameref{nat:t:props:distributive_right}) and Part (\ref{nat:t:props:commutative_mult}) (\nameref{nat:t:props:commutative_mult}), it follows that
-	\[
+	$$
 		c(a + b) = (a + b)c = a c + b c = c a + c b.
-	\]
+	$$
 
 	\PartProof{nat:t:props:associative_mult} Let
-	\[
+	$$
 		G = \{ z \in \mathbb{N} \mid (x y)z = x(y z) \text{ for all } x, y \in \mathbb{N}  \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will immediately imply the \nameref{nat:t:props:associative_mult}. By Theorem \ref{nat:t:mult} (\ref{nat:t:mult:1}), it follows that $(a b) \cdot 1 = a b = a(b \cdot 1)$, and therefore $1 \in G$. Now let $a \in G$. Then,
 	\begin{align*}
 		(a b)s(c) & = (a b)c + a b & \text{(Part (b) of Theorem 1.2.6)}               \\
@@ -309,13 +309,13 @@
 
 	\PartProof{nat:t:relprops:5}
 	Let
-	\[
+	$$
 		G = \{ z \in \mathbb{N} \mid \text{ if } x < y \text{ then } x z < y z \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will imply this part of the theorem. Clearly $G \subseteq \mathbb{N}$. By Theorem \ref{nat:t:mult} (\ref{nat:t:mult:1}), it follows that if $a < b$ then $a = a \cdot 1 < b \cdot 1 = b$, and therefore $1 \in G$.  Now let $c \in G$. Suppose that $a < b$. By hypothesis on $c$, it then follows that $a c < b c$. Using the \nameref{nat:t:props:distributive_left}, Part (\ref{nat:t:relprops:4}), and the \nameref{nat:t:props:commutative_add}, we have
-	\[
+	$$
 		a(c + 1) = a c + a < b c + a = a + b c < b + b c = b c + b = b(c + 1).
-	\]
+	$$
 	Therefore $a(c + 1) < b(c + 1)$, and hence $c + 1 \in G$. By Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}, it follows that $G = \mathbb{N}$, or in other words if $a < b$ then $a c < b c$.
 
 	Now we will show that if $a c < b c$ then $a < b$. Suppose that $a c < b c$, and suppose to the contrary that $a \geq b$, which means either $a > b$ or $a = b$.
@@ -340,9 +340,9 @@
 
 \begin{proof}
 	Suppose that $a + a = b + b$. Using the \nameref{nat:t:props:distributive_left} and Theorem \ref{nat:t:mult} (\ref{nat:t:mult:n}), we have
-	\[
+	$$
 		a(1 + 1) = a \cdot 1 + a \cdot 1 = a + a = b + b = b \cdot 1 + b \cdot 1 = b(1 + 1).
-	\]
+	$$
 	Thus, $a(1 + 1) = b(1 + 1)$. Then by the \nameref{nat:t:props:cancellation_mult} we deduce that $a = b$.
 \end{proof}
 
@@ -359,9 +359,9 @@
 
 \begin{proof}
 	Let
-	\[
+	$$
 		G = \{n \in \mathbb{N} \mid 1 \leq n \leq b\} \cup\{n \in \mathbb{N} \mid b+1 \leq n\}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$. Clearly $G \subseteq \mathbb{N}$. By Theorem \ref{nat:t:relprops} (\ref{nat:t:relprops:1}) (\ref{nat:t:relprops:2}) it follows that $1 \leq 1 \leq b$. Hence, $1 \in G$. Now let $a \in G$. We consider the following three cases:
 	\begin{bycases}
 		\item $a < b$. By Theorem \ref{nat:t:relprops} (\ref{nat:t:relprops:4}) it then follows that $a + 1 < b + 1$, and by Definition \ref{nat:d:relation} it follows that $a + 1 \leq b$. Hence $a + 1 \in G$.
@@ -371,9 +371,9 @@
 	Thus, $a + 1 \in G$, and by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano} we deduce that $G = \mathbb{N}$.
 
 	Now let
-	\[
+	$$
 		M = \{n \in \mathbb{N} \mid 1 \leq n \leq b\} \cap\{n \in \mathbb{N} \mid b+1 \leq n\}.
-	\]
+	$$
 	Suppose to the contrary that $M \not= \emptyset$. We can choose some $a \in M$ such that $1 \leq a \leq b$ and $b + 1 \leq a$. Using Theorem \ref{nat:t:relprops} (\ref{nat:t:relprops:10}), we have $a < b + 1$ and $b + 1 < a + 1$, or in other words $a < b + 1 < a + 1$, which is a contradiction to Theorem \ref{nat:t:relprops} (\ref{nat:t:relprops:9}). Therefore $M = \emptyset$.
 \end{proof}
 
@@ -392,9 +392,9 @@
 
 \begin{proof}[(\ref{nat:e:7:1})]
 	Let
-	\[
+	$$
 		G = \{ n \in \mathbb{N} \mid \text{ if } a \in A \text{ then } a + n \in A \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will imply the desired result. Clearly $G \subseteq \mathbb{N}$. Because $A$ is closed, we deduce that $1 \in G$. Now let $a \in A$ and $n \in G$. Then $a + n \in A$, and since $A$ is closed, it follows that $(a + n) + 1 \in A$. Using the \nameref{nat:t:props:associative_add}, we obtain $(a + n) + 1 = a + (n + 1)$, and hence $n + 1 \in G$. Thus, by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano}, we can conclude that $G = \mathbb{N}$.
 \end{proof}
 
@@ -415,9 +415,9 @@
 	We will prove that $f$ is a bijective function. Because the set $\mathbb{N}'$ together with the element $1' \in \mathbb{N}'$ and the function $s': \mathbb{N}' \to \mathbb{N}'$ satisfies the \nameref{nat:a:peano}, we can imply Theorem \ref{nat:t:recusion} to the set $\mathbb{N}$, the element $1 \in \mathbb{N}$ and the function $s: \mathbb{N} \to \mathbb{N}$, to deduce that there is a unique function $g: \mathbb{N} \to \mathbb{N}'$ such that $g(1') = 1$ and $g \circ s'$ = $s \circ g$.
 
 	Let
-	\[
+	$$
 		G = \{ n \in \mathbb{N} \mid g(f(n)) = n \}.
-	\]
+	$$
 	We will show that $G = \mathbb{N}$, which will imply that $g(f(n)) = n$ for all $n \in \mathbb{N}$. Since ${g(f(1)) = g(1') = 1}$, it follows that $1 \in G$. Now let $n \in G$, which means that $g(f(n)) = n$. Then,
 	\begin{align*}
 		g(f(s(n))) & = (g \circ f \circ s)(n) = (g \circ (f \circ s))(n) = (g \circ (s' \circ f))(n) \\
@@ -438,12 +438,12 @@
 
 \subsection*{Example 1}
 Suppose that $n \in \mathbb{N}$. Let $A = \{ x \in \mathbb{N} \mid x \leq n \}$, and let $s: A \to A$ be a function that is defined by
-\[
+$$
 	s(x) = \begin{cases}
-		x + 1 & x < n            \\
-		1     & \text{otherwise}
-	\end{cases}.
-\]
+		x + 1, & x < n            \\
+		1,     & \text{otherwise}.
+	\end{cases}
+$$
 Then they satisfy the following two properties.
 \begin{lenumerate}
 	\item The function $s$ is injective.
@@ -454,12 +454,12 @@ But then $s(n) = 1$.
 
 \subsection*{Example 2}
 Suppose that $n \in \mathbb{N}$. Let $A = \{ x \in \mathbb{N} \mid x \leq n \}$, and let $s: A \to A$ be a function that is defined by
-\[
+$$
 	s(x) = \begin{cases}
-		x + 1 & x < n            \\
-		x     & \text{otherwise}
-	\end{cases}.
-\]
+		x + 1, & x < n            \\
+		x,     & \text{otherwise}.
+	\end{cases}
+$$
 Then they satisfy the following two properties.
 \begin{lenumerate}
 	\item There is no $n \in A$ such that $s(n) = 1$.
@@ -497,13 +497,13 @@ Let $G = \{ a \in A \mid  a \text{ is even } \}$. Clearly $G \subseteq A$ and $1
 
 \begin{proof}
 	To prove uniqueness, suppose that there are two binary operations $\boxdot: \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ and $\boxtimes: \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ that satisfy the two properties of this theorem. Let
-	\[
+	$$
 		G = \{ g \in \mathbb{N} \mid n \boxdot g = n \boxtimes g \text{ for all } n \in \mathbb{N} \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will imply that $\boxdot$ and $\boxtimes$ are the same opertion. Clearly $G \subseteq \mathbb{N}$. Because $n \boxdot 1 = n = n \boxtimes 1$ it follows that $1 \in G$. Now let $n \in \mathbb{N}$ and $g \in G$. This means that $n \boxdot g = n \boxtimes g$. Then,
-	\[
+	$$
 		n \boxdot s(g) = (n \boxdot g) \cdot n = (n \boxtimes g) \cdot n = n \boxtimes s(g).
-	\]
+	$$
 	Hence $s(g) \in G$, and by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano} we can conclude that $G = \mathbb{N}$.
 
 	For existence, let $p \in \mathbb{N}$, and let $k_{p}: \mathbb{N} \to \mathbb{N}$ be defined by $k_{p}(n) = p \cdot n$ for all $n \in \mathbb{N}$. We can apply Theorem \ref{nat:t:recusion} to the set $\mathbb{N}$, the element $p \in \mathbb{N}$ and the function $k_{p}: \mathbb{N} \to \mathbb{N}$, to deduce that there is a unique function $f_{p}: \mathbb{N} \to \mathbb{N}$ such that $f_{p}(1) = p$ and $f_{p} \circ s = k_{p} \circ f_{p}$. Let $\boxdot: \mathbb{N} \to \mathbb{N}$ be defined by $c \boxdot d = f_{c}(d)$ for all $(c, d) \in \mathbb{N}$. Let $n, m \in \mathbb{N}$. It then follows that $n \boxdot 1 = f_{n}(1) = n$, which is Part (\ref{nat:t:exp:1}), and also we have
@@ -532,13 +532,13 @@ Let $G = \{ a \in A \mid  a \text{ is even } \}$. Clearly $G \subseteq A$ and $1
 
 	\PartProof{nat:t:exp_props:1}
 	Let
-	\[
+	$$
 		G = \{ y \in \mathbb{N} \mid  a^{x + y} = a^x a^y \text{ for all } x \in \mathbb{N} \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will immediately imply that $a^{b + c} = a^b a^c$. Clearly $G \in \mathbb{N}$. By Theorem \ref{nat:t:exp} it follows that
-	\[
+	$$
 		a^{b + 1} = a^{s(b)} = a^b a = a^b a^1,
-	\]
+	$$
 	and hence $1 \in G$. Now let $c \in G$, or in other words $a^{b + c} = a^b a^c$. By repeated use of the \hyperref[nat:t:props:associative_add]{Associative} and \hyperref[nat:t:props:commutative_add]{Commutative} Laws for Addition and \nameref{nat:t:props:associative_mult} we obtain
 	\begin{align*}
 		a^{b + s(c)} & = a^{b + (c + 1)} = a^{b + (1 + c)} = a^{(b + 1) + c} = a^{s(b + c)} \\
@@ -548,13 +548,13 @@ Let $G = \{ a \in A \mid  a \text{ is even } \}$. Clearly $G \subseteq A$ and $1
 
 	\PartProof{nat:t:exp_props:2}
 	Let
-	\[
+	$$
 		G = \{ y \in \mathbb{N} \mid  a^{x y} = (a^x)^y \text{ for all } x \in \mathbb{N} \}.
-	\]
+	$$
 	We will prove that $G = \mathbb{N}$, which will immediately imply that $a^{b c} = (a^b)^c$. Clearly $G \in \mathbb{N}$. By Part (\ref{nat:t:exp:1}) of Theorem \ref{nat:t:exp} we deduce that $a^{b \cdot 1} = a^b = (a^b)^1$, and hence $1 \in G$. Now let $c \in G$. This means that $a^{b c} = (a^b)^c$. Using the \nameref{nat:t:props:distributive_left} we obtain
-	\[
+	$$
 		a^{b \cdot s(c)} = a^{b(c + 1)} = a^{b c + b} = a^{b c} a^b = (a^b)^c a^b = (a^b)^{s(c)}.
-	\]
+	$$
 	Therefore $s(c) \in G$, and hence by Part (\ref{nat:a:peano:induction}) of the \nameref{nat:a:peano} we can conclude that $G = \mathbb{N}$.
 
 	\PartProof{nat:t:exp_props:3}

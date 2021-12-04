@@ -171,9 +171,9 @@
 		                   & \iff [(b, a)] = [(y, x)].
 	\end{align*}
 	Because $-$ is a function, it follows that
-	\[
+	$$
 		[(a, b)] = -[(b, a)] = -[(y, x)] = [(x, y)].
-	\]
+	$$
 	Hence, $-$ is well-defined.
 
 	We know that $a + y = b + x$, so $(a + y)c = (b + x)c$ and $(b + x)d = (a + y)d$. Having $c + w = d + z$ and by adding these two equations we obtain
@@ -333,28 +333,28 @@
 	A similar argument shows that if $x > y$ then $x \not= y$ and $x \nless y$.  Thus, $x < y$ or $x = y$ or $x > y$.
 
 	Finally, suppose to the contrary that $x \nless y$ and $x \not= y$ and $x \ngtr y$. Then
-	\[
+	$$
 		[(a, b)] \nless [(c, d)] \text{ and } [(a, b)] \not= [(c, d)] \text{ and } [(a, b)] \ngtr [(c, d)].
-	\]
+	$$
 	This implies that
-	\[
+	$$
 		a + d \nless b + c \text{ and } a + d \not= b + c \text{ and } a + d \ngtr b + c,
-	\]
+	$$
 	which is a contradiction to the \nameref{int:t:props:trichotomy} of $\mathbb{N}$. Hence, precisely one of $x < y$ or $x = y$ or $x > y$ holds.
 
 	\PartProof{int:t:props:transitive}
 	Suppose that $x < y$ and $y < z$. Then
-	\[
+	$$
 		[(a, b)] < [(c, d)] \text{ and } [(c, d)] < [(e, f)],
-	\]
+	$$
 	and we obtain
-	\[
+	$$
 		a + d < b + c \text{ and } c + f < d + e.
-	\]
+	$$
 	Adding $f$ to the inequality $a + d < b + c$, we get $a + d + f < b + c + f$. Similarly, adding $b$ to the inequality $c + f < d + e$, we get $b + c + f < b + d + e$. Then
-	\[
+	$$
 		a + d + f < b + c + f < b + d + e,
-	\]
+	$$
 	which implies that $a + d + f < b + d + e$, so $a + f < b + e$. Therefore $[(a, b)] < [(e, f)]$, and hence $x < z$.
 
 	\PartProof{int:t:props:multiplication_order}
@@ -489,9 +489,9 @@
 
 \begin{proof}
 	Let
-	\[
+	$$
 		\mathbb{N}_{G} = \{ a \in \mathbb{N} \mid \text{there is some } g \in G \text{ such that } i(a) = g \}.
-	\]
+	$$
 	Then clearly $\mathbb{N}_{G} \subseteq \mathbb{N}$ and $G = i(\mathbb{N}_{G})$. The nonemptiness of $G$ implies the nonemptiness of $\mathbb{N}_{G}$, and by \nameref{nat:t:wop} of $\mathbb{N}$ there is some $n_{\circ} \in \mathbb{N}_{G}$ such that $n_{\circ} \leq n$ for all ${n \in \mathbb{N}_{G}}$. Let $m = i(n_{\circ})$, and let $g \in G$. By hypothesis on $G$ we know that ${G \subseteq \{ x \in \mathbb{Z} \mid x > 0 \}}$, so by Theorem \ref{int:t:nat_int} (\ref{int:t:nat_int:2}) it follows that $G = i(\mathbb{N}_{G}) \subseteq i(\mathbb{N})$. We can choose some $n \in \mathbb{N}_{G}$ such that $i(n) = g$. Then $n_{\circ} \leq n$, and by Theorem \ref{int:t:nat_int} (\ref{int:t:nat_int:4:3}) we can conclude that $m = i(n_{\circ}) \leq i(n) = g$.
 \end{proof}
 
@@ -511,9 +511,9 @@
 	Suppose that $x + z = y + z$. Adding $-z$ to both sides of this equation we obtain $x + z + (-z) = y + z + (-z)$. By the \nameref{int:t:props:associative_add} we get $x + [z + (-z)] = y + [z + (-z)]$. Because of \nameref{int:t:props:inverses_add} we see that $z + (-z) = 0$, so this implies that $x + 0 = y + 0$. But then by \nameref{int:t:props:identity_add} we can conclude that $x = y$.
 
 	\PartProof{int:t:neg_zero_props:3}
-	By the \nameref{int:t:props:inverses_add} we have $-(x + y) + (x + y) = 0$. Adding $(-x) + (-y)$ to both sides of this equation we obtain \[
+	By the \nameref{int:t:props:inverses_add} we have $-(x + y) + (x + y) = 0$. Adding $(-x) + (-y)$ to both sides of this equation we obtain $$
 		-(x + y) + (x + y) + (-x) + (-y) = (-x) + (-y).
-	\] By repeated use of the \hyperref[int:t:props:associative_add]{Associative}, \hyperref[int:t:props:commutative_add]{Commutative}, and \hyperref[int:t:props:identity_add]{Identity} Laws for Addition it follows that
+	$$ By repeated use of the \hyperref[int:t:props:associative_add]{Associative}, \hyperref[int:t:props:commutative_add]{Commutative}, and \hyperref[int:t:props:identity_add]{Identity} Laws for Addition it follows that
 	\begin{align*}
 		-(x + y) + (x + y) + (-x) + (-y) & = -(x + y) + [x + (-x)] + [y + (-y)] \\
 		                                 & = -(x + y) + 0 + 0                   \\
@@ -524,17 +524,17 @@
 
 	\PartProof{int:t:neg_zero_props:4}
 	By the \nameref{int:t:props:identity_add} we know that $0 + 0 = 0$, so using the \nameref{int:t:props:distributive} we obtain
-	\[
+	$$
 		x \cdot 0 = x \cdot (0 + 0) = x \cdot 0 + x \cdot 0.
-	\]
+	$$
 	Adding $-(x \cdot 0)$ to both sides of the equation $x \cdot 0 + x \cdot 0 = x \cdot 0$ we get
-	\[
+	$$
 		x \cdot 0 + x \cdot 0 + [-(x \cdot 0)] = x \cdot 0 + [-(x \cdot 0)].
-	\]
+	$$
 	Now by the \nameref{int:t:props:associative_add} we get
-	\[
+	$$
 		x \cdot 0 + (x \cdot 0 + ([-(x \cdot 0)])) = x \cdot 0 + [-(x \cdot 0)],
-	\]
+	$$
 	and by the \nameref{int:t:props:inverses_add} we see that $x \cdot 0 + 0 = 0$. Finally, by the \nameref{int:t:props:identity_add} it follows that $x \cdot 0 = 0$, as required.
 
 	\PartProof{int:t:neg_zero_props:cancellation_mult}

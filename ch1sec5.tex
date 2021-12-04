@@ -106,9 +106,9 @@
 \begin{restatable}[Not in the book]{lemma}{ratLessRelL} %% 1.5.9
 	\label{rat:l:less_relation}
 	Let
-	\[
+	$$
 		P = \{ (x, y) \in \mathbb{Q} \mid \text{there is either $x > 0$ and $y > 0$ or $x < 0$ and $y < 0$} \}.
-	\]
+	$$
 	Let $r, s \in \mathbb{Q}$.
 	\begin{enumerate}
 		\item \label{rat:l:less_relation:1}
@@ -127,25 +127,25 @@
 	Suppose that $r < s$. Then $[(x, y)] < [(z, w)]$. We consider the following two cases.
 	\begin{bycases}
 		\item There is either $y > 0$ and $w > 0$ or $y < 0$ and $w < 0$. Without loss of generality, suppose that $y > 0$ and $w > 0$. Then $x w < y z$. Adding $-x w$ to both sides of this inequality we obtain
-		      \[
+		      $$
 			      y z + (-x w) > x w + (-x w) = 0,
-		      \]
+		      $$
 		      so $(-x w) + y z > 0$. Also, $y > 0$ and $w > 0$ imply $y w > 0$. Hence,
-		      \[
+		      $$
 			      [([-x w] + y z, y w)] = (-r) + s \in P.
-		      \]
+		      $$
 		\item There is either $y < 0$ and $w > 0$ or $y > 0$ and $w < 0$. A similar argument shows that $(-x w) + yz < 0$ and $y w < 0$, and hence
-		      \[
+		      $$
 			      [([-x w] + y z, y w)] = (-r) + s \in P.
-		      \]
+		      $$
 	\end{bycases}
 
 	Now suppose that $(-r) + s \in P$, which means that $[([-x w] + y z, y w)] \in P$. From the definition of $P$ this implies the following two cases.
 	\begin{bycases}
 		\item $(-x w) + y z > 0$ and $y w > 0$. Adding $x w$ to the inequality $(-x w) + y z > 0$ and doing some rearranging we obtain $x w < y z$. Next suppose to the contrary that either $y > 0$ and $w < 0$ or $y < 0$ and $w > 0$, or in other words there is either $y > 0$ and $-w > 0$ or $-y > 0$ and $w > 0$. Then
-		      \[
+		      $$
 			      y(-w) = (-y)w = -yw > 0,
-		      \]
+		      $$
 		      so $y w < 0$, which is a contradiction to hypothesis on $y w$. Hence either $y > 0$ and $w > 0$ or $y < 0$ and $w < 0$. By Definition \ref{rat:d:rat} we can conclude that $[(x, y)] = r < s = [(z, w)]$.
 		\item $(-x w) + y z < 0$ and $y w < 0$. A similar argument shows that $r < s$.
 	\end{bycases}
@@ -181,9 +181,9 @@
 
 \begin{proof}
 	By the \nameref{rat:t:props:inverses_add} we know that $(r + s) + [-(r + s)] = \overline{0}$. Adding $(-r) + (-s)$ to both sides of this equation we obtain
-	\[
+	$$
 		(r + s) + [-(r + s)] + (-r) + (-s) = (-r) + (-s).
-	\]
+	$$
 	Then by repeated use of the \hyperref[rat:t:props:associative_add]{Associative}, \hyperref[rat:t:props:commutative_add]{Commutative}, \hyperref[rat:t:props:inverses_add]{Inverses}, and \hyperref[rat:t:props:identity_add]{Identity} Laws for Addition we can conclude that $-(r + s) = (-r) + (-s)$.
 \end{proof}
 
@@ -220,9 +220,9 @@
 	Multiplying the equation $x b = y a$ by $w d$ we get $(x b)(w d) = (y a)(w d)$, and multiplying the equation $z d = w c$ by $y b$ we get $(z d)(y b) = (w c)(y b)$. By adding these two equations we obtain $(x b)(w d) + (z d)(y b) = (y a)(w d) + (w c)(y b)$, and doing some rearranging we have $(x w + y z)(b d) = (a d + b c)(y w)$, which implies that $[(x w + yz, y w)] = [(a d + b c, b d)]$. Therefore $+$ is well-defined. From $x b = y a$ it follows that $y a = x b$, so $[(y, x)] = [(b, a)]$. Hence, $^{-1}$ is well-defined.
 
 	To see that $<$ is well-defined, suppose that $[(x, y)] < [(z, w)]$. From Part (\ref{rat:l:less_relation:2}) of Lemma \ref{rat:l:less_relation} it follows that $[(-x, y)] + [(z, w)] \in P$, so $[([-x w] + y z, y w)] \in P$. Then there is either $(-x w) + y z > 0$ and $y w > 0$ or $(-x w) + y z < 0$ and $y w < 0$. Without loss of generality, suppose that $(-x w) + y z > 0$ and $y w > 0$. Adding $x w$ to both sides of the inequality $(-x w) + y z > 0$ we get
-	\[
+	$$
 		x w + (-x w) + y z = 0 + y z > x w + 0,
-	\]
+	$$
 	and as a result ${x w < y z}$. We know that $b d = y w > 0$, so multiplying both sides of the inequality ${x w < y z}$ by $b d$ and doing some rearranging we obtain ${(x b)(w d) < (z d)(y b)}$. Because $x b = y a$ and $z d = w c$ we have ${(y a)(w d) < (w c)(y b)}$. Doing some rearranging again we get $(a d)(y w) < (b c)(y w)$. We have $y \not= 0$ and $w \not= 0$, so canceling yields $a d < b c$, and hence $[(a, b)] < [(c, d)]$.
 \end{proof}
 
@@ -370,13 +370,13 @@
 
 	\PartProof{rat:t:props:addition_order}
 	Suppose that $r < s$. By Part (\ref{rat:l:less_relation:1}) of Lemma \ref{rat:l:less_relation} we know that $(-r) + s \in P$, and using the \hyperref[rat:t:props:identity_add]{Identity} and \hyperref[rat:t:props:inverses_add]{Inverses} Laws for Addition we observe that
-	\[
+	$$
 		(-r) + s = (-r) + s + \overline{0} = (-r) + s + t + (-t) \in P.
-	\]
+	$$
 	By repeated use of the \hyperref[rat:t:props:associative_add]{Associative} and \hyperref[rat:t:props:commutative_add]{Commutative} for Addition we obtain
-	\[
+	$$
 		([-r] + [-t]) + (s + t) \in P.
-	\]
+	$$
 	By Lemma \ref{rat:l:negation} we see that $(-r) + (-t) = -(r + t)$. Then $[-(r + t)] + (s + t) \in P$, and hence $r + t < s + t$.
 
 	\PartProof{rat:t:props:non_triviality}
@@ -408,15 +408,15 @@
 
 	\PartProof{rat:t:int:props:neg}
 	We have
-	\[
+	$$
 		i(-x) = [(-x, 1)] = -[(x, 1)] = -i(x).
-	\]
+	$$
 
 	\PartProof{rat:t:int:props:mult}
 	We have
-	\[
+	$$
 		i(xy) = [(xy, 1)] = [(xy, 1 \cdot 1)] = [(x, 1)] \cdot [(y, 1)] = i(x)i(y).
-	\]
+	$$
 
 	\PartProof{rat:t:int:props:less}
 	Suppose that $x < y$. From Lemma \ref{int2:l:props} (\ref{int2:l:props:9}) we know that $1 > 0$, so ${x \cdot 1 < y \cdot 1}$. Then $x \cdot 1 < 1 \cdot y$, which means that $[(x, 1)] < [(y, 1)]$, or in other words $i(x) < i(y)$. This process can be done backwards, and hence $x < y$ if and only if $i(x) < i(y)$.
@@ -446,21 +446,21 @@
 
 \begin{proof}[(\ref{rat:e:6:2})]
 	Suppose that $r < s$. By the \nameref{rat:t:props:addition_order} we obtain
-	\[
+	$$
 		r + [(-r) + (-s)] < s + [(-r) + (-s)].
-	\]
+	$$
 	By repeated use of the \hyperref[rat:t:props:associative_add]{Associative} and \hyperref[rat:t:props:commutative_add]{Commutative} Laws for Addition we deduce that
-	\[
+	$$
 		(-s) + [r + (-r)] < (-r) + [s + (-s)].
-	\]
+	$$
 	Because of the \nameref{rat:t:props:inverses_add} we see that $r + (-r) = 0$ and $s + (-s) = 0$, so $(-s) + 0 < (-r) + 0$, and hence by the \nameref{rat:t:props:identity_add} we can conclude that $-s < -r$.
 \end{proof}
 
 \begin{proof}[(\ref{rat:e:6:3})]
 	Let $r = \frac{x}{y}$ for $x,y \in \mathbb{Z}$. Then $r \cdot 0 = \frac{x}{y} \cdot \frac{0}{1}$. By Lemma \ref{rat:l:alt_def} (\ref{rat:l:alt_def:4}) we obtain
-	\[
+	$$
 		\frac{x}{y} \cdot \frac{0}{1} = \frac{x \cdot 0}{y \cdot 1} = \frac{0}{y},
-	\]
+	$$
 	and from Definition \ref{rat:d:div} we see that $\frac{0}{y} = 0$. Hence, $r \cdot 0 = 0$.
 
 \end{proof}
@@ -531,9 +531,9 @@
 
 \begin{proof}[(\ref{rat:e:8:2})]
 	From Definition \ref{rat:d:div} and Theorem \ref{rat:t:int} (\ref{rat:t:int:div}) we observe that there is ${(a, b) \in \mathbb{Z} \times \mathbb{Z}^{*}}$ such that $r = \frac{a}{b}$. By Part (\ref{rat:e:8:1}) of this exercise we deduce that $a$ and $b$ are either both positive or both negative. If $a$ and $b$ are both positive then we will clearly reach the desired result. Now suppose that $a < 0$ and $b < 0$. Let $m = -a$ and $n = -b$, which means that $m$ and $n$ are both positive. Using Exercise \ref{rat:e:3} (\ref{rat:e:3:2}) we can notice that $1 = \frac{-1}{-1}$. Then,
-	\[
+	$$
 		r = \frac{a}{b} = \frac{a}{b} \cdot 1 = \frac{a}{b} \cdot \frac{-1}{-1} = \frac{a(-1)}{b(-1)} = \frac{-a}{-b} = \frac{m}{n},
-	\]
+	$$
 	as required.
 \end{proof}
 
@@ -569,17 +569,17 @@
 	Suppose that $r^2 < s$. Then $s - r^2 > 0$. From Exercise \ref{rat:e:6} (\ref{rat:e:6:1}) we know that $1 > 0$. By repeated use of Exercise \ref{rat:e:6} (\ref{rat:e:6:4}) we see that $r + r + 1 = 2r + 1 > 0$. It then follows from Exercise \ref{rat:e:6} (\ref{rat:e:6:5}) that $\frac{1}{2r + 1} > 0$, and hence by Exercise \ref{rat:e:6} (\ref{rat:e:6:4}) we deduce that $\frac{s - r^2}{2r + 1} > 0$.
 
 	By Part (\ref{rat:e:9:2}) of this exercise we can find some $k \in \mathbb{N}$ such that $\frac{1}{k} < \frac{s - r^2}{2r + 1}$. We note that $k \in \mathbb{Z}$ and $\frac{1}{k} > 0$ according to Exercise \ref{int2:e:4} and Exercise \ref{rat:e:6} (\ref{rat:e:6:5}). Because of Lemma\,\ref{rat:l:alt_def}\,(\ref{rat:l:alt_def:6}) we have $1 \cdot (2r + 1) = 2r + 1 < k(s - r^2)$. Multiplying both sides of this inequality by $\frac{1}{k}$ it follows that
-	\[
+	$$
 		\frac{1}{k}(2r + 1) = 2r \frac{1}{k} + \frac{1}{k} < s - r^2 = \frac{1}{k} k (s - r^2).
-	\]
+	$$
 
 	By Exercise \ref{int:e:8} we observe that $k \geq 1$, so $k^2 \geq k$. Using Exercise \ref{rat:e:6} (\ref{rat:e:6:6}) we get $\frac{1}{k^2} = \left( \frac{1}{k} \right)^2 \leq \frac{1}{k}$. Then
-	\[
+	$$
 		2r \frac{1}{k} + \left( \frac{1}{k} \right)^2 \leq 2r \frac{1}{k} + \frac{1}{k} < s - r^2,
-	\]
+	$$
 	and then $2r \frac{1}{k} + \left( \frac{1}{k} \right)^2 < s - r^2$. Finally, adding $r^2$ to this inequality and doing some rearranging we obtain
-	\[
+	$$
 		r^2 + 2 \frac{1}{k} r + \left( \frac{1}{k} \right)^2 = \left( r + \frac{1}{k} \right)^2 < s,
-	\]
+	$$
 	as required.
 \end{proof}
