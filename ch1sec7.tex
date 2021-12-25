@@ -90,7 +90,7 @@
 		\item The set $A$ is \emph{bounded above} if there is some $M \in \mathbb{R}$ such that $X \leq M$ for all $X \in A$. The number $M$ is called an \emph{upper bound} of $A$.
 		\item The set $A$ is \emph{bounded below} if there is some $P \in \mathbb{R}$ such that $X \geq P$ for all $X \in A$. The number $P$ is called a \emph{lower bound} of $A$.
 		\item The set $A$ is \emph{bounded} if it is bounded above and bounded below.
-		\item Let $M \in \mathbb{R}$. The number $M$ is a \emph{least upper bound} (also called a \emph{supremum}) of $A$ if $M$ is an upper bound of $A$, and if $M \leq T$ for all upper bounds $T$ of $A .$
+		\item Let $M \in \mathbb{R}$. The number $M$ is a \emph{least upper bound} (also called a \emph{supremum}) of $A$ if $M$ is an upper bound of $A$, and if $M \leq T$ for all upper bounds $T$ of $A$.
 		\item Let $P \in \mathbb{R}$. The number $P$ is a \emph{greatest lower bound} (also called an \emph{infimum}) of $A$ if $P$ is a lower bound of $A$, and if $P \geq V$ for all lower bounds $V$ of $A$.
 	\end{enumerate}
 \end{definition}
@@ -107,15 +107,23 @@
 	\label{real:t:rat}
 	Let $i: \mathbb{Q} \to \mathbb{R}$ be defined by $i(r) = D_r$ for all $r \in \mathbb{R}$.
 	\begin{enumerate}
-		\item The function $i: \mathbb{Q} \to \mathbb{R}$ is injective.
-		\item $i(0) = D_0$ and $i(1) = D_1$.
-		\item Let $r, s \in \mathbb{Q}$. Then
+		\item \label{real:t:rat:1}
+		      The function $i: \mathbb{Q} \to \mathbb{R}$ is injective.
+		\item \label{real:t:rat:2}
+		      $i(0) = D_0$ and $i(1) = D_1$.
+		\item \label{real:t:rat:3}
+		      Let $r, s \in \mathbb{Q}$. Then
 		      \begin{enumerate}
-			      \item $i(r + s)=i(r) + i(s)$;
-			      \item $i(-r) = -i(r)$;
-			      \item $i(r s) = i(r) i(s)$;
-			      \item if $r \neq 0$ then $i(r^{-1}) = [i(r)]^{-1}$;
-			      \item $r < s$ if and only if $i(r) < i(s)$.
+			      \item \label{real:t:rat:3:1}
+			            $i(r + s)=i(r) + i(s)$;
+			      \item \label{real:t:rat:3:2}
+			            $i(-r) = -i(r)$;
+			      \item \label{real:t:rat:3:3}
+			            $i(r s) = i(r) i(s)$;
+			      \item \label{real:t:rat:3:4}
+			            if $r \neq 0$ then $i(r^{-1}) = [i(r)]^{-1}$;
+			      \item \label{real:t:rat:3:5}
+			            $r < s$ if and only if $i(r) < i(s)$.
 		      \end{enumerate}
 	\end{enumerate}
 \end{theorem}
@@ -219,20 +227,55 @@
 \end{proof}
 
 \begin{proof}[(\ref{real:e:4:2})]
-	\TBD
+	By the \nameref{real:t:props:inverses_add} we know that $A + (-A) = D_0$. Then,
+	\begin{align*}
+		D_0 & = A + (-A)                                                                                  \\
+		    & \iff D_0 + (-(-A)) = A + (-A) + (-(-A))                                                     \\
+		    & \iff D_0 + (-(-A)) = A + [(-A) + (-(-A))] & \text{(\nameref{real:t:props:associative_add})} \\
+		    & \iff D_0 + (-(-A)) = A + D_0              & \text{(\nameref{real:t:props:inverses_add})}    \\
+		    & \iff (-(-A)) + D_0 = A + D_0              & \text{(\nameref{real:t:props:commutative_add})} \\
+		    & \iff -(-A) = A,
+	\end{align*}
+	as required.
 \end{proof}
 
-% \begin{proof}[(\ref{real:e:4:3})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{real:e:4:3})]
+	By the \nameref{real:t:props:identity_add} we observe that $D_0 = D_0 + D_0$. From the \nameref{real:t:props:inverses_add} we deduce that $(A + B) + [-(A + B)] = D_0$, that $A + (-A) = D_0$, and that $B + (-B) = D_0$. Then,
+	$$
+		(A + B) + [-(A + B)] = [A + (-A)] + [B + (-B)].
+	$$
+	By repeated use of the \hyperref[real:t:props:associative_add]{Associative} and \hyperref[real:t:props:commutative_add]{Commutative} Laws for Addition we obtain
+	$$
+		[-(A + B)] + (A + B) = (-A) + (-B) + (A + B).
+	$$
+	Adding $-(A + B)$ to both sides of this equation and using the \hyperref[real:t:props:associative_add]{Associtative}, \hyperref[real:t:props:inverses_add]{Inverses} and \hyperref[real:t:props:identity_add]{Identity} Laws for Addition it follows that
+	$$
+		-(A + B) = (-A) + (-B),
+	$$
+	as required.
+\end{proof}
 
-% \begin{proof}[(\ref{real:e:4:4})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{real:e:4:4})]
+	Suppose that $A > D_0$ and $B > D_0$. From the \nameref{real:t:props:addition_order} we deduce that $A + B > D_0 + B$. By the \hyperref[real:t:props:commutative_add]{Commutative} and \hyperref[real:t:props:identity_add]{Identity} Laws for Addition we see that $D_0 + B = B + D_0 = B$. Then $A + B > B > D_0$, and hence by the \nameref{rat:t:props:transitive} $A + B > D_0$. A similar argument shows that if $A < D_0$ and $B < D_0$, then $A + B < D_0$.
+\end{proof}
 
-% \begin{proof}[(\ref{real:e:4:5})]
-% 	\TBD
-% \end{proof}
+\begin{proof}[(\ref{real:e:4:5})]
+	By the \nameref{real:t:props:identity_add} we observe that $A = A + D_0$. Then,
+	\begin{align*}
+		A & = A + D_0 = A + [B + (-B)] & \text{(\nameref{real:t:props:inverses_add})}     \\
+		  & = (A + B) + (-B)           & \text{(\nameref{real:t:props:associative_add})}  \\
+		  & = (-B) + (A + B)           & \text{(\nameref{real:t:props:commutative_add})}  \\
+		  & = [(-B) + A] + B           & \text{(\nameref{real:t:props:associative_add})}  \\
+		  & = B + [A + (-B)]           & \text{(\nameref{real:t:props:commutative_add})}.
+	\end{align*}
+	Similarly, by the \nameref{real:t:props:identity_add} we observe that $-A = (-A) + D_0$. Then,
+	\begin{align*}
+		-A & = (-A) + D_0 = D_0 + (-A) & \text{(\nameref{real:t:props:commutative_add})}    \\
+		   & = [B + (-B)] + (-A)       & \text{(\nameref{real:t:props:inverses_add})}       \\
+		   & = B + [(-B) + (-A)]       & \text{(\nameref{real:t:props:associative_add})}    \\
+		   & = B + [-(B + A)]          & \text{(Part (\ref{real:e:4:3}) of this exercise)}.
+	\end{align*}
+\end{proof}
 
 
 %-------------------------------------------------------------------------------------------------------------
@@ -245,11 +288,72 @@
 \end{exercise}
 
 \begin{proof}
-	\PartProof{real:t:props:associative_mult}
-	\TBD
+	\hfill
 
-	% PartProof{real:t:props:identity_mult}
-	% \TBD
+	\PartProof{real:t:props:associative_mult}
+	Let $X, Y, Z \in \mathbb{R}$, and suppose that $X \geq D_0$ and $Y \geq D_0$ and $Z \geq D_0$. By the definition of multiplication for the real numbers, it then follows that
+	\begin{align*}
+		(X Y) Z & = \{ r \in \mathbb{Q} \mid r = (x y)z \text{ for some } x \in X \text{ and } y \in Y \text{ and } z \in Z \}  \\
+		        & = \{ r \in \mathbb{Q} \mid r = x (y z) \text{ for some } x \in X \text{ and } y \in Y \text{ and } z \in Z \} \\
+		        & = X (Y Z).
+	\end{align*}
+
+	Suppose that $X \geq D_0$ and $Y < D_0$. From Exercise \ref{real:e:4} (\ref{real:e:4:2}) it follows that $X (-Y) = -[-X (-Y)] = - X Y$. By Exercise \ref{real:e:4} (\ref{real:e:4:1}) and Exercise \ref{real:e:2} (\ref{real:e:2:1}) we deduce that $X (-Y) = - X Y > D_0$ and $X Y < D_0$. A similar argument shows that if $X < D_0$ and $Y \geq D_0$ then $(-X) Y = -X Y > D_0$ and $X Y < D_0$.
+
+	Now we will prove that $(A B) C = A (B C)$. We consider the following cases.
+	\begin{bycases}
+		\item $A \geq D_0$ and $B \geq D_0$.
+		      \begin{bycases}
+			      \item $C \geq D_0$. Clearly, $(A B) C = A (B C)$.
+			      \item $C < D_0$. Then $-C < D_0$, and then
+			            \begin{align*}
+				            (A B) C & = -[(A B) \cdot (-C)] = -[A \cdot (B [-C])] \\
+				                    & = -[A \cdot (-B C)] = A (B C).
+			            \end{align*}
+		      \end{bycases}
+		\item \label{real:e:5:c:2} $A < D_0$ and $B \geq D_0$. Then $-A > D_0$ and $A B < D_0$.
+		      \begin{bycases}
+			      \item $C \geq D_0$. It then follows that
+			            \begin{align*}
+				            (A B) C & = -[(-A B) \cdot  C] = -[([-A] B) \cdot C] \\
+				                    & = -[(-A) \cdot (B C)] = A (B C).
+			            \end{align*}
+			      \item $C < D_0$. Then $-C > D_0$, and then
+			            \begin{align*}
+				            (A B) C & = (-A B) \cdot (-C) = ([-A] B) \cdot (-C)             \\
+				                    & = (-A) \cdot (B [-C]) = (-A) \cdot (- B C) = A (B C).
+			            \end{align*}
+		      \end{bycases}
+		\item $A \geq D_0$ and $B < D_0$. By a similar argument as Case \ref{real:e:5:c:2}, we deduce that $(A B) C = A (B C)$.
+		\item $A < D_0$ and $B < D_0$. It then follows that $-A > D_0$ and $-B > D_0$, and then ${A B = (-A)(-B) > D_0}$.
+		      \begin{bycases}
+			      \item $C \geq D_0$. Then
+			            \begin{align*}
+				            (A B) C & = ([-A] [-B]) \cdot C = (-A) \cdot ([-B] C) \\
+				                    & = (-A) \cdot (-B C) = A (B C).
+			            \end{align*}
+			      \item $C < D_0$. Then $-C > D_0$, and then
+			            \begin{align*}
+				            (A B) C & = -[([-A] [-B]) \cdot (-C)]      \\
+				                    & = -[(-A) \cdot ([-B] [-C])]      \\
+				                    & = -[(-A) \cdot (B C)] = A (B C).
+			            \end{align*}
+		      \end{bycases}
+	\end{bycases}
+
+	\PartProof{real:t:props:identity_mult}
+	We note that $D_1 > D_0$ because of the \nameref{real:t:props:non_triviality}. Suppose that $A \geq D_0$. To see that $A \cdot D_1 \subseteq A$, suppose that $x = a d_1 \in A \cdot D_1$ for some $a \in A$ and $d_1 \in D_1$. From Lemma \ref{cuts:l:diff} (\ref{cuts:l:diff:2}) it follows that $a > 0$, and from the definition of $D_1$ it follows that $d_1 > 1$. Then $a d_1 > a$. Applying Part (\ref{cuts:d:cut:b}) of the definition of \nameref{cuts:d:cuts} to $A$, we deduce that $x = a d_1 \in A$. Hence, $A \cdot D_1 \subseteq A$.
+
+	To see that $A \subseteq A \cdot D_1$, suppose that $x \in A$. By Part (\ref{cuts:d:cut:c}) of the definition of \nameref{cuts:d:cuts} we can find some $y \in A$ such that $y < x$. Let $d = x y^{-1}$. Then $d > 1$, and as a result $d \in D_1$. We then deduce that
+	$$
+		x = x \cdot 1 = x (y y^{-1}) = (x y) y^{-1} = (y x) y^{-1} = y (x y^{-1}) = y d.
+	$$
+	Therefore $x \in A \cdot D_1$, or in other words $A \subseteq A \cdot D_1$. Thus, we have shown that if $A \geq D_0$ then $A \cdot D_1 = A$.
+
+	Now suppose that $A < D_0$. By Exercise \ref{real:e:4} (\ref{real:e:4:1}) we see that $-A \geq D_0$. Using Exercise \ref{real:e:4} (\ref{real:e:4:2}) and the case we have already proved, we obtain
+	$$
+		A \cdot D_1 = - [(-A)D_1] = -(-A) = A.
+	$$
 \end{proof}
 
 
@@ -263,7 +367,36 @@
 \end{exercise}
 
 \begin{proof}
-	\TBD
+	First, suppose that $A < D_0$ and $B \geq D_0$ and $C \geq D_0$. Then $-A > D_0$, and then
+	\begin{align*}
+		A(B + C) & = -[(-A)(B + C)] = -[(-A)B + (-A)C] = -[(-[A B]) + (-[A C])] \\
+		         & = -[-(A B + A C)] = A B + A C.
+	\end{align*}
+
+	Second, suppose that $A < D_0$ and $B < D_0$ and $C \geq D_0$. Then $-A > D_0$ and $-B > D_0$. If $B + C \geq D_0$, then
+	\begin{align*}
+		A B + A C & = (-A)(-B) + (-[(-A)([-B] + [B + C])])        \\
+		          & = (-A)(-B) + (-[(-A)(-B)]) + (-[(-A)(B + C)]) \\
+		          & = D_0 + (-[(-A)(B + C)])                      \\
+		          & = (-[(-A)(B + C)]) + D_0                      \\
+		          & = -[(-A)(B + C)] = A(B + C).
+	\end{align*}
+	If $B + C < D_0$, then $-(B + C) > D_0$ and
+	\begin{align*}
+		A B + A C & = (-A)(-B) + (-[(-A)C])               \\
+		          & = (-A)([-(B + C)] + C) + (-[(-A)C])   \\
+		          & = (-A)[-(B + C)] + (-A)C + (-[(-A)C]) \\
+		          & = (-A)[-(B + C)] + D_0                \\
+		          & = (-A)[-(B + C)] = A(B + C).
+	\end{align*}
+
+	Third, suppose that $A < D_0$ and $B \geq D_0$ and $C < D_0$. This case is just like the previous case, and we omit details.
+
+	Fourth, suppose that $A < D_0$ and $B < D_0$ and $C < D_0$. Then $B + C < D_0$, and $-A > D_0$ and $-B > D_0$ and $-C > D_0$ and $-(B + C) > D_0$. Then,
+	\begin{align*}
+		A(B + C) & = (-A)[-(B + C)] = (-A)[(-B) + (-C)] \\
+		         & = (-A)(-B) + (-A)(-C) = A B + A C.
+	\end{align*}
 \end{proof}
 
 
@@ -277,5 +410,83 @@
 \end{exercise}
 
 \begin{proof}
-	\TBD
+	\hfill
+
+	\PartProof{real:t:rat:1}
+	Let $x, y \in \mathbb{Q}$, and suppose that $i(x) = i(y)$. Then $D_x = D_y$. This implies $r > x$ and $r > y$ for all $r \in D_x = D_y$. Suppose to the contrary that $x \neq y$. This means that $x < y$ or $x > y$. If $x < y$ then $y \in D_x$, and as a result $y \in D_y$, which is a contradiction to the definition of $D_y$. Similarly, if $x > y$ then $x \in D_y$, and as a result $x \in D_x$, which is a contradiction to the definition of $D_x$. Hence, $x = y$.
+
+	\PartProof{real:t:rat:2}
+	Clearly, by the definition of $i: \mathbb{Q} \to \mathbb{R}$ we have $i(0) = D_0$ and $i(1) = D_1$.
+
+	\PartProof{real:t:rat:3:1}
+	We will prove that $D_{r + s} = D_r + D_s$, which will imply that $i(r + s) = i(r) + i(s)$. Suppose that $x \in D_{r + s}$. Then $x > r + s$. Let $a = \frac{x + r - s}{2}$ and $b = \frac{x + s -r}{2}$. We observe that
+	$$
+		a = \frac{x + r - s}{2} > \frac{(r + s) + r - s}{2} = r
+	$$
+	and that
+	$$
+		b = \frac{x + s - r}{2} > \frac{(r + s) + s - r}{2} = s.
+	$$
+	It then follows that $a \in D_r$ and $b \in D_s$. We deduce that
+	$$
+		a + b = \frac{x + r - s}{2} + \frac{x + s - r}{2} = x.
+	$$
+	Hence $x \in D_r + D_s$, and therefore $D_{r + s} \subseteq D_r + D_s$.
+
+	Now suppose that $x \in D_r + D_s$. We can choose some $a \in D_r$ and $b \in D_s$ such that $x = a + b$. Then $a > r$ and $b > s$. We see that $a + b > r + b$ and that $b + r > s + r$. Then $x = a + b > r + s$. Hence $x \in D_{r + s}$, and therefore $D_r + D_s \subseteq D_{r + s}$.
+
+	\PartProof{real:t:rat:3:2}
+	By Exercise \ref{real:e:1} (\ref{real:e:1:1}) we know that $D_{-r} = -D_r$, so $i(-r) = -i(r)$, as required.
+
+	\PartProof{real:t:rat:3:3}
+	We will prove that $D_{r s} = D_r D_s$, which will imply that $i(r s) = i(r) i(s)$. Suppose that $D_r \geq D_0$ and $D_s \geq D_0$. If $D_s = D_0$ then
+	$$
+		D_{r s} = D_{r \cdot 0} = D_0 = D_r D_0 = D_r D_s.
+	$$
+	A similar argument shows that if $D_r = D_0$ then $D_{r s} = D_r D_s$. Next suppose that $D_r > D_0$ and $D_s > D_0$. By Lemma \ref{real:l:mult_req} (\ref{real:l:mult_req:2}) it follows that $r > 0$ and $s > 0$. Suppose further that $x \in D_{r s}$. Then $x > r s$. By Part (\ref{cuts:d:cut:c}) of the definition of \nameref{cuts:d:cuts} applied to $D_{r s}$ we can find some $y \in D_{r s}$ such that $y < x$. We note that
+	\begin{align*}
+		y > rs & \iff x - (x - y) > rs                        \\
+		       & \iff x > rs + (x - y)                        \\
+		       & \iff x > r \left( s + (x - y) r^{-1} \right) \\
+		       & \iff \frac{x}{s + (x - y) r^{-1}} > r.
+	\end{align*}
+	By Exercises \ref{rat:e:6} (\ref{rat:e:6:5}) and \ref{rat:e:6} (\ref{rat:e:6:4}) we have $(x - y) r^{-1} > 0$, so $s + (x - y) r^{-1} > s$. Let
+	$$
+		a = \frac{x}{s + (x - y) r^{-1}} \text{ and } b = s + (x - y) r^{-1}.
+	$$
+	Then $a \in D_r$ and $b \in D_s$. We also observe that
+	$$
+		a b = \frac{x}{s + (x - y) r^{-1}} \left( s + (x - y) r^{-1} \right) = x.
+	$$
+	Hence $x \in D_r + D_s$, and therefore $D_{r s} \subseteq D_r D_s$.
+
+	To see that $D_r D_s \subseteq D_{r s}$, suppose that $x \in D_r D_s$. We can find some $a \in D_r$ and $b \in D_s$ such that ${x = a b}$. Then $a > r$ and $b > s$. It follows from Lemma \ref{real:l:mult_req} (\ref{real:l:mult_req:2}) and Exercise \ref{rat:e:6} (\ref{rat:e:6:7}) that $0 < r s < a b$, and hence $x \in D_{r s}$, which implies $D_r D_s \subseteq D_{r s}$. Thus, we have shown that if $D_r \geq D_0$ and $D_s \geq D_0$ then $D_{r s} = D_r D_s$.
+
+	Now we will prove the remaining three cases. First, suppose that $D_r < D_0$ and ${D_s \geq D_0}$. By Exercise \ref{real:e:4} (\ref{real:e:4:1}) we see that $-D_r > D_0$. Using Exercises \ref{real:e:1} (\ref{real:e:1:1}) and \ref{real:e:4} (\ref{real:e:4:2}) we obtain
+	$$
+		D_{r s} = -(-D_{r s}) = -D_{-(r s)} = -D_{(-r) s} = -(D_{-r} D_s) = -[(-D_r) D_s] = D_r D_s.
+	$$
+
+	Second, suppose that $D_r \geq D_0$ and $D_s < D_0$. This case is just like the previous case, and we omit details.
+
+	Third, suppose that $D_r < D_0$ and $D_s < D_0$. Then $-D_r > D_0$ and $-D_s > D_0$, and we deduce that
+	$$
+		D_{r s} = D_{-(-r s)} = D_{(-r)(-s)} = D_{-r} D_{-s} = (-D_r)(-D_s) = D_r D_s.
+	$$
+
+	\PartProof{real:t:rat:3:4}
+	Suppose that $r \neq 0$. By Exercise \ref{real:e:1} (\ref{real:e:1:2}) it follows that $D_{r^{-1}} = [D_r]^{-1}$, so $i(r^{-1}) = [i(r)]^{-1}$, as required.
+
+	\PartProof{real:t:rat:3:5}
+	Suppose that $r < s$. Then $s - r > 0$. From Lemma \ref{real:l:mult_req} (\ref{real:l:mult_req:1}) we see that $D_{s - r} > D_0$. Then,
+	\begin{align*}
+		D_0 < D_{s - r} & \iff D_0 < D_{s + (-r)}                                                                             \\
+		                & \iff D_0 < D_s + D_{-r}               & \text{(Part (\ref{real:t:rat:3:1}) of this exercise)}       \\
+		                & \iff D_0 < D_s + (-D_r)               & \text{(Part (\ref{real:e:1:1}) of Exercise \ref{real:e:1})} \\
+		                & \iff D_0 + D_r < [D_s + (-D_r)] + D_r & \text{(\nameref{real:t:props:addition_order})}              \\
+		                & \iff D_0 + D_r < D_s + [(-D_r) + D_r] & \text{(\nameref{real:t:props:associative_add})}             \\
+		                & \iff D_r + D_0 < D_s + [D_r + (-D_r)] & \text{(\nameref{real:t:props:commutative_add})}             \\
+		                & \iff D_r + D_0 < D_s + D_0            & \text{(\nameref{real:t:props:inverses_add})}                \\
+		                & \iff D_r < D_s                        & \text{(\nameref{real:t:props:identity_add})}.
+	\end{align*}
 \end{proof}

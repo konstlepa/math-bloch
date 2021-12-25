@@ -1,0 +1,701 @@
+%=============================================================================================================
+%= SECTION 2.3
+%=============================================================================================================
+\section{Algebraic Properties of the Real Numbers}
+\label{rpr}
+
+\begin{definition} %% 2.3.1
+	\hfill
+
+	\begin{enumerate}
+		\item The binary operation $-$ on $\mathbb{R}$ is defined by $a - b = a + (-b)$ for all $a, b \in \mathbb{R}$. The binary operation $\div$ on $\mathbb{R} - \{0\}$ is defined by $a \div b = a b^{-1}$ for all $a, b \in$ $\mathbb{R} - \{0\}$; we also let $0 \div s = 0 \cdot s^{-1} = 0$ for all $s \in \mathbb{R} - \{0\}$. The number $a \div b$ is also denoted $\frac{a}{b}$.
+		\item Let $a \in \mathbb{R}$. The square of $a$, denoted $a^{2}$, is defined by $a^{2} = a \cdot a$.
+		\item The relation $\leq$ on $\mathbb{R}$ is defined by $x \leq y$ if and only if $x < y$ or $x = y$, for all $x, y \in \mathbb{R}$.
+		\item The number $2 \in \mathbb{R}$ is defined by $2 = 1 + 1$.
+	\end{enumerate}
+\end{definition}
+
+\begin{lemma} %% 2.3.2
+	\label{rpr:l:props}
+	Let $a, b, c \in \mathbb{R}$.
+	\begin{enumerate}
+		\item \label{rpr:l:props:1}
+		      If $a + c = b + c$ then $a = b$ \quad (\nameref*{rpr:l:props:cancellation_add}). \xlabel[Cancellation Law for Addition]{rpr:l:props:cancellation_add}
+		\item \label{rpr:l:props:2}
+		      If $a + b = a$ then $b = 0$.
+		\item \label{rpr:l:props:3}
+		      If $a + b = 0$ then $b = -a$.
+		\item \label{rpr:l:props:4}
+		      $-(a + b) = (-a) + (-b)$.
+		\item \label{rpr:l:props:5}
+		      $-0 = 0$.
+		\item \label{rpr:l:props:6}
+		      If $a c = b c$ and $c \neq 0$, then $a = b$ \quad (\nameref*{rpr:l:props:cancellation_mult}). \xlabel[Cancellation Law for Multiplication]{rpr:l:props:cancellation_mult}
+		\item \label{rpr:l:props:7}
+		      $0 \cdot a = 0 = a \cdot 0$.
+		\item \label{rpr:l:props:8}
+		      If $a b = a$ and $a \neq 0$, then $b = 1$.
+		\item \label{rpr:l:props:9}
+		      If $a b = 1$ then $b = a^{-1}$.
+		\item \label{rpr:l:props:10}
+		      If $a \neq 0$ and $b \neq 0$, then $(a b)^{-1} = a^{-1} b^{-1}$.
+		\item \label{rpr:l:props:11}
+		      $(-1) \cdot a = -a$.
+		\item \label{rpr:l:props:12}
+		      $(-a) b = -a b = a(-b)$.
+		\item \label{rpr:l:props:13}
+		      $-(-a) = a$.
+		\item \label{rpr:l:props:14}
+		      $(-1)^{2} = 1$ and $1^{-1} = 1$.
+		\item \label{rpr:l:props:15}
+		      If $a b = 0$, then $a = 0$ or $b = 0$  \quad (\nameref*{rpr:l:props:no_zero_divisors}). \xlabel[No Zero Divisors Law]{rpr:l:props:no_zero_divisors}
+		\item \label{rpr:l:props:16}
+		      If $a \neq 0$ then $(a^{-1})^{-1} = a$.
+		\item \label{rpr:l:props:17}
+		      If $a \neq 0$ then $(-a)^{-1} = -a^{-1}$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{lemma} %% 2.3.3
+	\label{rpr:l:rprops}
+	Let $a, b, c, d \in \mathbb{R}$.
+	\begin{enumerate}
+		\item \label{rpr:l:rprops:1}
+		      If $a \leq b$ and $b \leq a$, then $a = b$.
+		\item \label{rpr:l:rprops:2}
+		      If $a \leq b$ and $b \leq c$, then $a \leq c$. If $a \leq b$ and $b <c $, then $a < c$. If $a < b$ and $b \leq c$, then $a < c$.
+		\item \label{rpr:l:rprops:3}
+		      If $a \leq b$ then $a + c \leq b + c$.
+		\item \label{rpr:l:rprops:4}
+		      If $a < b$ and $c < d$, then $a + c < b + d$; if $a \leq b$ and $c \leq d$, then $a + c \leq b + d$.
+		\item \label{rpr:l:rprops:5}
+		      $a > 0$ if and only if $-a < 0$, and $a < 0$ if and only if $-a > 0 ;$ also $a \geq 0$ if and only if $-a \leq 0$, and $a \leq 0$ if and only if $-a \geq 0$.
+		\item \label{rpr:l:rprops:6}
+		      $a < b$ if and only if $b - a > 0$ if and only if $-b < -a$. Also $a \leq b$ if and only if $b - a \geq 0$ if and only if $-b \leq -a$.
+		\item \label{rpr:l:rprops:7}
+		      If $a \neq 0$ then $a^{2} > 0$.
+		\item \label{rpr:l:rprops:8}
+		      $-1 < 0 < 1$.
+		\item \label{rpr:l:rprops:9}
+		      $a < a + 1$.
+		\item \label{rpr:l:rprops:10}
+		      If $a \leq b$ and $c > 0$, then $a c \leq b c$.
+		\item \label{rpr:l:rprops:11}
+		      If $0 \leq a < b$ and $0 \leq c < d$, then $a c < b d$; if $0 \leq a \leq b$ and $0 \leq c \leq d$, then $a c \leq b d$.
+		\item \label{rpr:l:rprops:12}
+		      If $a < b$ and $c < 0$, then $a c > b c$.
+		\item \label{rpr:l:rprops:13}
+		      If $a > 0$ then $a^{-1} > 0$.
+		\item \label{rpr:l:rprops:14}
+		      If $a > 0$ and $b > 0$, then $a < b$ if and only if $b^{-1} < a^{-1}$ if and only if $a^{2} < b^{2}$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{definition} %% 2.3.4
+	Let $a \in \mathbb{R}$. The number $a$ is \emph{positive} if $a > 0$; the number $a$ is \emph{negative} if $a < 0$; and the number $a$ is \emph{non-negative} if $a \geq 0$.
+\end{definition}
+
+\begin{lemma} %% 2.3.5
+	\label{rpr:l:pos_neg}
+
+	Let $a, b \in \mathbb{R}$.
+	\begin{enumerate}
+		\item \label{rpr:l:pos_neg:1}
+		      If $a > 0$ and $b > 0$, then $a + b > 0$. If $a > 0$ and $b \geq 0$, then $a + b > 0$. If $a \geq 0$ and $b \geq 0$, then $a+b \geq 0$.
+		\item \label{rpr:l:pos_neg:2}
+		      If $a < 0$ and $b < 0$, then $a + b < 0$. If $a < 0$ and $b \leq 0$, then $a + b < 0$. If $a \leq 0$ and $b \leq 0$, then $a+b \leq 0$.
+		\item \label{rpr:l:pos_neg:3}
+		      If $a > 0$ and $b > 0$, then $a b > 0$. If $a > 0$ and $b \geq 0$, then $a b \geq 0$. If $a \geq 0$ and $b \geq 0$, then $a b \geq 0$.
+		\item \label{rpr:l:pos_neg:4}
+		      If $a < 0$ and $b < 0$, then $a b > 0$. If $a < 0$ and $b \leq 0$, then $a b \geq 0$. If $a \leq 0$ and $b \leq 0$, then $a b \geq 0$.
+		\item \label{rpr:l:pos_neg:5}
+		      If $a < 0$ and $b > 0$, then $a b < 0$. If $a < 0$ and $b \geq 0$, then $a b \leq 0$. If $a \leq 0$ and $b>0$, then $a b \leq 0$. If $a \leq 0$ and $b \geq 0$, then $a b \leq 0$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{definition} %% 2.3.6
+	An \emph{open bounded interval} is a set of the form
+	$$
+		(a, b) = \{ x \in \mathbb{R} \mid a < x < b \},
+	$$
+	where $a, b \in \mathbb{R}$ and $a \leq b$. A \emph{closed bounded interval} is a set of the form
+	$$
+		[a, b] = \{ x \in \mathbb{R} \mid a \leq x \leq b \},
+	$$
+	where $a, b \in \mathbb{R}$ and $a \leq b$. A \emph{half-open interval} is a set of the form
+	$$
+		[a, b) = \{ x \in \mathbb{R} \mid a \leq x < b \} \quad \text { or } \quad (a, b] = \{ x \in \mathbb{R} \mid a < x \leq b \},
+	$$
+	where $a, b \in \mathbb{R}$ and $a \leq b$. An \emph{open unbounded interval} is a set of the form
+	$$
+		(a, \infty) = \{ x \in \mathbb{R} \mid a < x \} \quad \text { or } \quad (-\infty, b) = \{ x \in \mathbb{R} \mid x < b \} \quad \text { or } \quad (-\infty, \infty) = \mathbb{R},
+	$$
+	where $a, b \in \mathbb{R}$. A \emph{closed unbounded interval} is a set of the form
+	$$
+		[a, \infty) = \{ x \in \mathbb{R} \mid a \leq x \} \quad \text { or } \quad(-\infty, b] = \{ x \in \mathbb{R} \mid x \leq b \},
+	$$
+	where $a, b \in \mathbb{R}$.
+
+	An \emph{open interval} is either an open bounded interval or an open unbounded interval. A \emph{closed interval} is either a closed bounded interval or a closed unbounded interval. A \emph{right unbounded interval} is any interval of the form $(a, \infty), [a, \infty)$ or $(-\infty, \infty)$. A \emph{left unbounded interval} is any interval of the form $(-\infty, b), (-\infty, b]$ or $(-\infty, \infty)$. A \emph{non-degenerate interval} is any interval of the form $(a, b), (a, b], [a, b)$ or $[a, b]$ where $a < b$, or any unbounded interval. The number $a$ in intervals of the form $[a, b), [a, b]$ or $[a, \infty)$ is called the \emph{left endpoint} of the interval. The number $b$ in intervals of the form $(a, b], [a, b]$ or $(-\infty, b]$ is called the \emph{right endpoint} of the interval. An \emph{endpoint} of an interval is either a left endpoint or a right endpoint. The \emph{interior} of an interval is everything in the interval other than its endpoints (if it has any).
+\end{definition}
+
+\begin{lemma} %% 2.3.7
+	\label{rpr:l:interval}
+
+	Let $I \subseteq \mathbb{R}$ be an interval.
+	\begin{enumerate}
+		\item \label{rpr:l:interval:1}
+		      If $x, y \in I$ and $x \leq y$, then $[x, y] \subseteq I$.
+		\item \label{rpr:l:interval:2}
+		      If $I$ is an open interval, and if $x \in I$, then there is some $\delta > 0$ such that $[x - \delta, x + \delta] \subseteq I$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{definition} %% 2.3.8
+	Let $a \in \mathbb{R}$. The \emph{absolute value} of $a$, denoted $|a|$, is defined by
+	$$
+		|a|= \begin{cases}
+			a,  & \text{ if } a \geq 0 \\
+			-a, & \text{ if } a < 0.
+		\end{cases}
+	$$
+\end{definition}
+
+\begin{lemma} %% 2.3.9
+	\label{rpr:l:abs}
+
+	Let $a, b \in \mathbb{R}$.
+	\begin{enumerate}
+		\item \label{rpr:l:abs:1}
+		      $|a| \geq 0$, and $|a| = 0$ if and only if $a = 0$.
+		\item \label{rpr:l:abs:2}
+		      $-|a| \leq a \leq |a|$.
+		\item \label{rpr:l:abs:3}
+		      $|a| = |b|$ if and only if $a = b$ or $a = -b$.
+		\item \label{rpr:l:abs:4}
+		      $|a| < b$ if and only if $-b < a < b$, and $|a| \leq b$ if and only if $-b \leq a \leq b$.
+		\item \label{rpr:l:abs:5}
+		      $|a b| = |a| \cdot |b|$.
+		\item \label{rpr:l:abs:6} \xlabel[Triangle Inequility]{rpr:l:abs:triangle}
+		      $|a + b| \leq |a| + |b|$ \quad (\nameref*{rpr:l:abs:triangle}).
+		\item \label{rpr:l:abs:7}
+		      $||a| - |b|| \leq |a + b|$ and $||a| - |b|| \leq |a - b|$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{lemma} %% 2.3.10
+	\label{rpr:l:eps}
+
+	Let $a \in \mathbb{R}$.
+	\begin{enumerate}
+		\item \label{rpr:l:eps:1}
+		      $a \leq 0$ if and only if $a < \varepsilon$ for all $\varepsilon > 0$.
+		\item \label{rpr:l:eps:2}
+		      $a \geq 0$ if and only if $a > -\varepsilon$ for all $\varepsilon > 0$.
+		\item \label{rpr:l:eps:3}
+		      $a = 0$ if and only if $|a| < \varepsilon$ for all $\varepsilon > 0$.
+	\end{enumerate}
+\end{lemma}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{rpr:l:props}] %% 2.3.1
+	Prove Lemma \ref{rpr:l:props} (\ref{rpr:l:props:2}) (\ref{rpr:l:props:3}) (\ref{rpr:l:props:4}) (\ref{rpr:l:props:6}) (\ref{rpr:l:props:8}) (\ref{rpr:l:props:10}) (\ref{rpr:l:props:12}) (\ref{rpr:l:props:13}) (\ref{rpr:l:props:14}) (\ref{rpr:l:props:16}) (\ref{rpr:l:props:17}).
+\end{exercise}
+
+\begin{proof}
+	\hfill
+
+	\PartProof{rpr:l:props:2}
+	Suppose that $a + b = a$. Then,
+	\begin{align*}
+		a + b = a & \iff (a + b) + (-a) = a + (-a)                                                  \\
+		          & \iff (b + a) + (-a) = a + (-a) & \text{(\nameref{rax:d:props:commutative_add})} \\
+		          & \iff b + (a + [-a]) = a + (-a) & \text{(\nameref{rax:d:props:associative_add})} \\
+		          & \iff b + 0 = 0                 & \text{(\nameref{rax:d:props:inverses_add})}    \\
+		          & \iff b = 0                     & \text{(\nameref{rax:d:props:identity_add})}.
+	\end{align*}
+
+	\PartProof{rpr:l:props:3}
+	Suppose that $a + b = 0$. Then,
+	\begin{align*}
+		a + b = 0 & \iff (a + b) + (-a) = 0 + (-a)                                                  \\
+		          & \iff (b + a) + (-a) = (-a) + 0 & \text{(\nameref{rax:d:props:commutative_add})} \\
+		          & \iff b + (a + [-a]) = (-a) + 0 & \text{(\nameref{rax:d:props:associative_add})} \\
+		          & \iff b + 0 = (-a) + 0          & \text{(\nameref{rax:d:props:inverses_add})}    \\
+		          & \iff b = -a                    & \text{(\nameref{rax:d:props:identity_add})}.
+	\end{align*}
+
+	\PartProof{rpr:l:props:4}
+	By the \nameref{rax:d:props:inverses_add} we observe that $(a + b) + [-(a + b)] = 0$. Adding $(-a) + (-b)$ to both sides of this equation we obtain
+	$$
+		[(a + b) + (-[a + b])] + [(-a) + (-b)] = 0 + [(-a) + (-b)].
+	$$
+	By repeated use of the \hyperref[rax:d:props:associative_add]{Associative} and \hyperref[rax:d:props:commutative_add]{Commutative} Laws for Addition we deduce that
+	$$
+		[([-(a + b)] + [a + (-a)]) + (b + [-b])] = [(-a) + (-b)] + 0.
+	$$
+	From the \nameref{rax:d:props:inverses_add} we see that $a + (-a) = 0$ and $b + (-b) = 0$. Then,
+	$$
+		[([-(a + b)] + 0) + 0] = [(-a) + (-b)] + 0.
+	$$
+	Hence by repeated use of the \nameref{rax:d:props:inverses_add} we can conclude that
+	$$
+		-(a + b) = (-a) + (-b).
+	$$
+
+	\PartProof{rpr:l:props:6}
+	Suppose that $a c = b c$ and $c \neq 0$. Then,
+	\begin{align*}
+		a c = b c & \iff (a c)c^{-1} = (b c)c^{-1}                                                   \\
+		          & \iff a(c c^{-1}) = b(c c^{-1}) & \text{(\nameref{rax:d:props:associative_mult})} \\
+		          & \iff a \cdot 1 = b \cdot 1     & \text{(\nameref{rax:d:props:inverses_mult})}    \\
+		          & \iff a = b                     & \text{(\nameref{rax:d:props:identity_mult})}.
+	\end{align*}
+
+	\PartProof{rpr:l:props:8}
+	Suppose that $a b = a$ and $a \neq 0$. Then,
+	\begin{align*}
+		a b = a & \iff (a b)a^{-1} = a a^{-1}                                                   \\
+		        & \iff (b a)a^{-1} = a a^{-1} & \text{(\nameref{rax:d:props:commutative_mult})} \\
+		        & \iff b(a a^{-1}) = a a^{-1} & \text{(\nameref{rax:d:props:associative_mult})} \\
+		        & \iff b \cdot 1 = 1          & \text{(\nameref{rax:d:props:inverses_mult})}    \\
+		        & \iff b = 1                  & \text{(\nameref{rax:d:props:identity_mult})}.
+	\end{align*}
+
+	\PartProof{rpr:l:props:10}
+	Suppose that $a \neq 0$ and $b \neq 0$. From the \nameref{rax:d:props:inverses_mult} we observe that $(a b)(a b)^{-1} = 1$. Then,
+	\begin{align*}
+		(a b)(a b)^{-1} = 1 & \iff (a b)(b a) = 1                            & \text{(\nameref{rax:d:props:commutative_mult})} \\
+		                    & \iff [(a b)^{-1} b]a = 1                       & \text{(\nameref{rax:d:props:associative_mult})} \\
+		                    & \iff ([(a b)^{-1} b]a)a^{-1} = 1 \cdot a^{-1}                                                    \\
+		                    & \iff [(a b)^{-1} b][a a^{-1}] = 1 \cdot a^{-1} & \text{(\nameref{rax:d:props:associative_mult})} \\
+		                    & \iff [(a b)^{-1} b] \cdot 1 = 1 \cdot a^{-1}   & \text{(\nameref{rax:d:props:inverses_mult})}    \\
+		                    & \iff [(a b)^{-1} b] \cdot 1 = a^{-1} \cdot 1   & \text{(\nameref{rax:d:props:commutative_mult})} \\
+		                    & \iff (a b)^{-1} b = a^{-1}                     & \text{(\nameref{rax:d:props:identity_mult})}    \\
+		                    & \iff [(a b)^{-1} b]b^{-1} = a^{-1} b^{-1}                                                        \\
+		                    & \iff (a b)^{-1} (b b^{-1}) = a^{-1} b^{-1}     & \text{(\nameref{rax:d:props:associative_mult})} \\
+		                    & \iff (a b)^{-1} \cdot 1 = a^{-1} b^{-1}        & \text{(\nameref{rax:d:props:inverses_mult})}    \\
+		                    & \iff (a b)^{-1} = a^{-1} b^{-1}                & \text{(\nameref{rax:d:props:identity_mult})}.
+	\end{align*}
+
+	\PartProof{rpr:l:props:12}
+	By Part (\ref{rpr:l:props:11}) of this lemma and the \nameref{rax:d:props:associative_mult}, we deduce that
+	$$
+		(-a)b = [(-1)a]b = (-1)(a b) = -a b.
+	$$
+	Using the \nameref{rax:d:props:commutative_mult} additionally, we deduce that
+	$$
+		a(-b) = a[(-1)b] = [a(-1)]b = [(-1)a]b = (-a)b.
+	$$
+	Hence, $(-a)b = -a b = a (-b)$.
+
+	\PartProof{rpr:l:props:13}
+	From the \nameref{rax:d:props:inverses_add} we see that $(-a) + (-[-a]) = 0$. Then,
+	\begin{align*}
+		(-a) & + (-[-a]) = 0                                                                      \\
+		     & \iff [(-a) + (-[-a])] + a = 0 + a                                                  \\
+		     & \iff [(-[-a]) + (-a)] + a = a + 0 & \text{(\nameref{rax:d:props:commutative_add})} \\
+		     & \iff [-(-a)] + [(-a) + a] = a + 0 & \text{(\nameref{rax:d:props:associative_add})} \\
+		     & \iff [-(-a)] + [a + (-a)] = a + 0 & \text{(\nameref{rax:d:props:commutative_add})} \\
+		     & \iff [-(-a)] + 0 = a + 0          & \text{(\nameref{rax:d:props:inverses_add})}    \\
+		     & \iff -(-a) = a                    & \text{(\nameref{rax:d:props:identity_add})}.
+	\end{align*}
+
+	\PartProof{rpr:l:props:14}
+	Using Parts (\ref{rpr:l:props:12}) (\ref{rpr:l:props:13}) of this lemma and the \nameref{rax:d:props:identity_add} we obtain
+	$$
+		(-1)^2 = (-1)(-1) = -[1 \cdot (-1)] = -(-[1 \cdot 1]) = -(-1) = 1.
+	$$
+	By the \hyperref[rax:d:props:identity_mult]{Identity}, \hyperref[rax:d:props:commutative_mult]{Commutative} and \hyperref[rax:d:props:inverses_mult]{Inverses} Laws for Multiplication we deduce that
+	$$
+		1^{-1} = 1^{-1} \cdot 1 = 1 \cdot 1^{-1} = 1.
+	$$
+
+	\PartProof{rpr:l:props:16}
+	Let $x \in \mathbb{R}$, and suppose that $x \neq 0$. From the \nameref{rax:d:props:identity_mult} we obtain $x x^{-1} = 1$. Suppose to the contrary that $x^{-1} = 0$. Then by Part (\ref{rpr:l:props:7}) of this lemma we observe that $x \cdot 0 = x x^{-1} = 0$, which is a contradiction. Hence, $x^{-1} \neq 0$.
+
+	Suppose that $a \neq 0$. From the \nameref{rax:d:props:inverses_mult} we see that $a^{-1} (a^{-1})^{-1} = 1$. Then,
+	\begin{align*}
+		a^{-1} (a^{-1})^{-1} = 1 & \iff [a^{-1} (a^{-1})^{-1}]a = 1 \cdot a                                                    \\
+		                         & \iff [(a^{-1})^{-1} a^{-1}]a = a \cdot 1  & \text{(\nameref{rax:d:props:commutative_mult})} \\
+		                         & \iff (a^{-1})^{-1} (a^{-1} a) = a \cdot 1 & \text{(\nameref{rax:d:props:associative_mult})} \\
+		                         & \iff (a^{-1})^{-1} (a a^{-1}) = a \cdot 1 & \text{(\nameref{rax:d:props:commutative_mult})} \\
+		                         & \iff (a^{-1})^{-1} \cdot 1 = a \cdot 1    & \text{(\nameref{rax:d:props:inverses_mult})}    \\
+		                         & \iff (a^{-1})^{-1} = a                    & \text{(\nameref{rax:d:props:identity_mult})}.
+	\end{align*}
+
+	\PartProof{rpr:l:props:17}
+	Let $x \in \mathbb{R}$, and suppose that $x \neq 0$. From the \nameref{rax:d:props:identity_mult} we obtain $x x^{-1} = 1$. By Part (\ref{rpr:l:props:13}) of this lemma we know that $x = -(-x)$. Using Part (\ref{rpr:l:props:5}) of this lemma we deduce that $x = -(-x) = -0 = 0$, which is a contradiction. Hence, $-x \neq 0$.
+
+	Suppose that $a \neq 0$. Suppose to the contrary that $-a = 0$. From the \nameref{rax:d:props:inverses_mult} we see that $(-1)(-1)^{-1} = 1$. Then,
+	\begin{align*}
+		(-1) & (-1)^{-1} = 1                                                                                     \\
+		     & \iff [(-1)(-1)^{-1}](-1) = 1 \cdot (-1)                                                           \\
+		     & \iff [(-1)^{-1} (-1)](-1) = (-1) \cdot 1     & \text{(\nameref{rax:d:props:commutative_mult})}    \\
+		     & \iff (-1)^{-1} [(-1)(-1)] = (-1) \cdot 1     & \text{(\nameref{rax:d:props:associative_mult})}    \\
+		     & \iff (-1)^{-1} \cdot 1 = (-1) \cdot 1        & \text{(Part (\ref{rpr:l:props:14}) of this lemma)} \\
+		     & \iff (-1)^{-1} = (-1)                        & \text{(\nameref{rax:d:props:identity_mult})}       \\
+		     & \iff (-1)^{-1} a^{-1} = (-1) a^{-1}                                                               \\
+		     & \iff [(-1)a]^{-1} = (-1) a^{-1}              & \text{(Part (\ref{rpr:l:props:10}) of this lemma)} \\
+		     & \iff [a(-1)]^{-1} = a^{-1} (-1)              & \text{(\nameref{rax:d:props:commutative_mult})}    \\
+		     & \iff [-(a \cdot 1)]^{-1} = -[a^{-1} \cdot 1] & \text{(Part (\ref{rpr:l:props:12}) of this lemma)} \\
+		     & \iff (-a)^{-1} = -a^{-1}                     & \text{(\nameref{rax:d:props:identity_mult})}.
+	\end{align*}
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{rpr:l:rprops}] %% 2.3.2
+	Prove Lemma \ref{rpr:l:rprops} (\ref{rpr:l:rprops:2}) (\ref{rpr:l:rprops:4}) (\ref{rpr:l:rprops:6}) (\ref{rpr:l:rprops:9}) (\ref{rpr:l:rprops:10}) (\ref{rpr:l:rprops:13}) (\ref{rpr:l:rprops:14}).
+\end{exercise}
+
+\begin{proof}
+	\hfill
+
+	\PartProof{rpr:l:rprops:2}
+	Suppose that $a \leq b$ and $b \leq c$. We consider the following four cases. First, if $a < b$ and $b < c$, then by the \nameref{rax:d:props:transitive} it follows that $a < c$, and hence $a \leq c$. Second, if $a = b$ and $b = c$, then $a = c$, and hence $a \leq c$. Third, if $a < b$ and $b = c$, then $a < c$, and hence $a \leq c$. Fourth, if $a = b$ and $b < c$, then $a < c$, and hence $a \leq c$.
+
+	\PartProof{rpr:l:rprops:4}
+	Suppose that $a < b$ and $c < d$. By the \nameref{rax:d:props:addition_order} we deduce that $a + c < b + c$ and that $c + b < d + b$. From the \nameref{rax:d:props:commutative_add} we observe that $b + c < b + d$, and hence by the \nameref{rax:d:props:transitive} we conclude that $a + c < b + d$. A similar argument shows that if $a \leq b$ and $c \leq d$, then $a + c \leq b + d$.
+
+	\PartProof{rpr:l:rprops:6}
+	First, suppose that $a < b$. Then,
+	\begin{align*}
+		b > a & \iff b + (-a) > a + (-a) & \text{(\nameref{rax:d:props:addition_order})} \\
+		      & \iff b - a > 0           & \text{(\nameref{rax:d:props:identity_add})}.
+	\end{align*}
+	Second, suppose that $b - a > 0$. Then,
+	\begin{align*}
+		0 < b & + (-a)                                                                             \\
+		      & \iff 0 + (-b) < [b + (-a)] + (-b) & \text{(\nameref{rax:d:props:addition_order})}  \\
+		      & \iff (-b) + 0 < [(-a) + b] + (-b) & \text{(\nameref{rax:d:props:commutative_add})} \\
+		      & \iff (-b) + 0 < (-a) + [b + (-b)] & \text{(\nameref{rax:d:props:associative_add})} \\
+		      & \iff (-b) + 0 < (-a) + 0          & \text{(\nameref{rax:d:props:inverses_add})}    \\
+		      & \iff -b < -a                      & \text{(\nameref{rax:d:props:identity_add})}.
+	\end{align*}
+	Third, suppose that $-b < -a$. Then,
+	\begin{align*}
+		-b < -a & \iff (-b) + (b + a) < (-a) + (b + a) & \text{(\nameref{rax:d:props:addition_order})}  \\
+		        & \iff [(-b) + b] + a < (-a) + (b + a) & \text{(\nameref{rax:d:props:associative_add})} \\
+		        & \iff a + [b + (-b)] < (b + a) + (-a) & \text{(\nameref{rax:d:props:commutative_add})} \\
+		        & \iff a + [b + (-b)] < b + [a + (-a)] & \text{(\nameref{rax:d:props:associative_add})} \\
+		        & \iff a + 0 < b + 0                   & \text{(\nameref{rax:d:props:inverses_add})}    \\
+		        & \iff a < b                           & \text{(\nameref{rax:d:props:identity_add})}.
+	\end{align*}
+	Thus, $a < b$ if and only if $b - a > 0$ if and only if $-b < -a$. A similar argument shows that $a \leq b$ if and only if $b - a \geq 0$ if and only if $-b \leq -a$.
+
+	\PartProof{rpr:l:rprops:9}
+	By Part (\ref{rpr:l:rprops:8}) of this lemma we know that $0 < 1$. Then,
+	\begin{align*}
+		0 < 1 & \iff 0 + a < 1 + a & \text{(\nameref{rax:d:props:addition_order})}  \\
+		      & \iff a + 0 < a + 1 & \text{(\nameref{rax:d:props:commutative_add})} \\
+		      & \iff a < a + 1     & \text{(\nameref{rax:d:props:identity_add})}.
+	\end{align*}
+
+	\PartProof{rpr:l:rprops:10}
+	Suppose that $a \leq b$ and $c > 0$. If $a = b$, then $a c = b c$, and hence $a c \leq b c$. If $a < b$, then by the \nameref{rax:d:props:multiplication_order} we deduce that $a c < b c$, and hence $a c \leq b c$.
+
+	\PartProof{rpr:l:rprops:13}
+	Suppose that $a > 0$. Then by the \nameref{rax:d:props:trichotomy} it follows that $a \neq 0$, and then by  \nameref{rax:d:props:inverses_mult} it follows that $a a^{-1} = 1$. Suppose to the contrary that $a^{-1} \leq 0$, which means that either $a^{-1} = 0$ or $a^{-1} < 0$. Suppose that $a^{-1} = 0$. We then deduce from Lemma \ref{rpr:l:props} (\ref{rpr:l:props:7}) that $0 = a \cdot 0 = a \cdot a^{-1}$, which is a contradiction.
+
+	Now suppose that $a^{-1} < 0$. Then,
+	\begin{align*}
+		a^{-1} < 0 & \iff -a^{-1} > 0     & \text{(Part (\ref{rpr:l:rprops:5}) of this lemma)}              \\
+		           & \iff a(-a^{-1}) > 0  & \text{(Part (\ref{rpr:l:rprops:10}) of this lemma)}             \\
+		           & \iff -(a a^{-1}) > 0 & \text{(Part (\ref{rpr:l:props:12}) of Lemma \ref{rpr:l:props})} \\
+		           & \iff -1 > 0          & \text{(\nameref{rax:d:props:inverses_mult})}.
+	\end{align*}
+	From Part (\ref{rpr:l:rprops:8}) of this lemma we know that $-1 < 0$. Thus, we have $-1 > 0$ and $-1 < 0$, which is a contradiction to the \nameref{rax:d:props:trichotomy}. Hence, $a^{-1} > 0$.
+
+	\PartProof{rpr:l:rprops:14}
+	Suppose that $a > 0$ and $b > 0$. Suppose further that $a < b$. By Part (\ref{rpr:l:rprops:13}) of this lemma we see that $a^{-1} > 0$ and $b^{-1} > 0$. From Part (\ref{rpr:l:rprops:10}) of this lemma we observe that $a^{-1} b^{-1} > 0$. Then,
+	\begin{align*}
+		a < b & \iff a(a^{-1} b^{-1}) < b(a^{-1} b^{-1})    & \text{(\nameref{rax:d:props:multiplication_order})} \\
+		      & \iff a(a^{-1} b^{-1}) < (a^{-1} b^{-1})b    & \text{(\nameref{rax:d:props:commutative_mult})}     \\
+		      & \iff (a a^{-1})b^{-1} < a^{-1} (b^{-1} b)   & \text{(\nameref{rax:d:props:associative_mult})}     \\
+		      & \iff b^{-1} (a a^{-1}) <  a^{-1} (b b^{-1}) & \text{(\nameref{rax:d:props:commutative_mult})}     \\
+		      & \iff b^{-1} \cdot 1 < a^{-1} \cdot 1        & \text{(\nameref{rax:d:props:inverses_mult})}        \\
+		      & \iff b^{-1} < a^{-1}                        & \text{(\nameref{rax:d:props:identity_mult})}.
+	\end{align*}
+
+	Now suppose that $b^{-1} < a^{-1}$. By Parts (\ref{rpr:l:rprops:7}) (\ref{rpr:l:rprops:10}) of this lemma we know that $a^2 > 0$ and $b a^2 > 0$. Then,
+	\begin{align*}
+		b^{-1} & < a^{-1}                                                                                                    \\
+		       & \iff b^{-1} (b a^2) < a^{-1} (b a^2) = a^{-1} (b a a) & \text{(\nameref{rax:d:props:multiplication_order})} \\
+		       & \iff b^{-1} (b a^2) < (b a a) a^{-1}                  & \text{(\nameref{rax:d:props:commutative_mult})}     \\
+		       & \iff (b^{-1} b) a^2 < (b a)(a a^{-1})                 & \text{(\nameref{rax:d:props:associative_mult})}     \\
+		       & \iff a^2 (b b^{-1}) < (a b)(a a^{-1})                 & \text{(\nameref{rax:d:props:commutative_mult})}     \\
+		       & \iff a^2 \cdot 1 < (a b) \cdot 1                      & \text{(\nameref{rax:d:props:inverses_mult})}        \\
+		       & \iff a^2 < a b                                        & \text{(\nameref{rax:d:props:identity_mult})}.
+	\end{align*}
+	A similar argument shows that $b^2 > 0$ and $a b^2 > 0$ and $a b < b^2$. Thus, $a^2 < a b < b^2$, and from the \nameref{rax:d:props:transitive} it follows that $a^2 < b^2$.
+
+	Finally, suppose that $a^2 < b^2$. Suppose to the contrary that $a \geq b$. By the \nameref{rax:d:props:multiplication_order} we observe that $a b \geq b b = b^2$ and that $a^2 = a a \geq a b$. From the \nameref{rax:d:props:transitive} we see that $a^2 \geq b^2$, which is a contradiction to the fact that $a^2 < b^2$ because of the \nameref{rax:d:props:trichotomy}. Hence, $a < b$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise} %% 2.3.3
+	\label{rpr:e:3}
+	For any $a \in \mathbb{R}$, let $a^{3}$ denote $a \cdot a \cdot a$.
+
+	Let $x, y \in \mathbb{R}$.
+	\begin{enumerate}
+		\item \label{rpr:e:3:1}
+		      Prove that if $x < y$, then $x^{3} < y^{3}$.
+		\item \label{rpr:e:3:2}
+		      Prove that there are $c, d \in \mathbb{R}$ such that $c^{3} < x < d^{3}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{rpr:e:3:1})]
+	Suppose that $x < y$. Suppose that $x = 0$. Then $y > 0$. By repeated use of Lemma \ref{rpr:l:rprops} (\ref{rpr:l:rprops:10}) we deduce that $y^3 > 0^3$. From Lemma \ref{rpr:l:props} (\ref{rpr:l:props:7}) we observe that $0^2 = 0 \cdot 0$ and that $x^3 = 0^3 = 0^2 \cdot 0 = 0$. Hence, $x^3 < y^3$. A similar argument shows that if $y = 0$, then $x^3 < y^3$.
+
+	Now suppose that $x \neq 0$ and $y \neq 0$. Because of Lemma \ref{rpr:l:rprops} (\ref{rpr:l:rprops:7}) it follows that $x^2 > 0$ and $y^2 > 0$. From Lemma \ref{rpr:l:rprops} (\ref{rpr:l:rprops:10}) we obtain
+	$$
+		x (x x) < y (x x) \quad \text{and} \quad x (y y) < y (y y) \quad \text{and} \quad x (x y) < y (x y).
+	$$
+	Using the \hyperref[rax:d:props:associative_mult]{Associative} and \hyperref[rax:d:props:commutative_mult]{Commutative} Laws for Multiplication we then deduce that
+	$$
+		x^3 < y x^2 < x y^2 < y^3.
+	$$
+	Hence by \nameref{rax:d:props:transitive} we conclude that $x^3 < y^3$.
+\end{proof}
+
+\begin{proof}[(\ref{rpr:e:3:2})]
+	We note that $0 = 0^3$ according to Part (\ref{rpr:l:props:7}) of Lemma \ref{rpr:l:props}. We consider the following three cases. First, suppose that $x = 0$. We then deduce from Lemma \ref{rpr:l:rprops} (\ref{rpr:l:rprops:8}) that $-1 < x < 1$.
+
+	Second, suppose that $x > 0$. It then follows from the \nameref{rax:d:props:addition_order} that $x + 1 > 0 + 1$. Because of the \hyperref[rax:d:props:commutative_add]{Commutative} and \hyperref[rax:d:props:identity_add]{Identity} Laws for Addition, we deduce that $x + 1 > 1$. Using the \nameref{rax:d:props:multiplication_order} we observe that $(x + 1)^2 > x + 1$ and that $(x + 1)^3 > (x + 1)^2$. By Lemma \ref{rpr:l:rprops} (\ref{rpr:l:rprops:8}) it follows that $x < x + 1$, and hence by the \nameref{rax:d:props:transitive} we conclude that $0^3 < x < (x + 1)^3$.
+
+	Third, suppose that $x < 0$. By a similar argument, we obtain ${(x - 1)^3 < x < 0^3}$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{rpr:l:pos_neg}] %% 2.3.4
+	Prove Lemma \ref{rpr:l:pos_neg} (\ref{rpr:l:pos_neg:2}) (\ref{rpr:l:pos_neg:3}) (\ref{rpr:l:pos_neg:4}).
+\end{exercise}
+
+\begin{proof}
+	\hfill
+
+	\PartProof{rpr:l:pos_neg:2}
+	First, suppose that $a < 0$ and $b < 0$. Then by Lemma \ref{rpr:l:rprops} (\ref{rpr:l:rprops:4}) and the \nameref{rax:d:props:identity_add} we see that $a + b < 0 + 0 = 0$.
+
+	Second, suppose that $a < 0$ and $b \leq 0$. There are now two subcases. First, suppose that $b < 0$. Then by the previous paragraph we know that $a + b < 0$. Second, suppose that $b = 0$. Then by the \nameref{rax:d:props:identity_add} we see that $a + b = a + 0 = a > 0$.
+
+	Third, suppose that $a \leq 0$ and $b \leq 0$. There are now two subcases. First, suppose that $a < 0$. Then by the previous paragraph we know that $a + b < 0$, which implies that $a + b \leq 0$. Second, suppose that $a = 0$. Then by the \hyperref[rax:d:props:commutative_add]{Commutative} and \hyperref[rax:d:props:identity_add]{Identity} Laws for Addition we see that $a + b = 0 + b = b + 0 = b \leq 0$.
+
+	\PartProof{rpr:l:pos_neg:3}
+	First, suppose that $a > 0$ and $b > 0$. By the \nameref{rax:d:props:multiplication_order} and Lemma \ref{rpr:l:props} (\ref{rpr:l:props:7}) we deduce that $a b > 0 \cdot b = 0$.
+
+	Second, suppose that $a > 0$ and $b \geq 0$ There are now two subcases. First suppose that $b > 0$. Then by the previous case we know that $a b > 0$, which implies that $a b \geq 0$. Second, suppose that $b = 0$. Then by Lemma \ref{rpr:l:props} (\ref{rpr:l:props:7}) we see that $a b = 0 \cdot 0 = 0$, and hence $a b \leq 0$.
+
+	The proofs of other two parts are similar, and we omit the details.
+
+	\PartProof{rpr:l:pos_neg:4}
+	This part is just like the previous part, and we omit details.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Exercise \ref{rpr:e:6} and Exercise \ref{dec:e:9}] %% 2.3.5
+	\label{rpr:e:5}
+	\hfill
+
+	\begin{enumerate}
+		\item \label{rpr:e:5:1} Prove that $1 < 2$.
+		\item \label{rpr:e:5:2} Prove that $0 < \frac{1}{2} < 1$.
+		\item \label{rpr:e:5:3} Prove that if $a, b \in \mathbb{R}$ and $a < b$, then $a < \frac{a + b}{2} < b$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{rpr:e:5:1})]
+	By Lemma \ref{rpr:l:rprops} (\ref{rpr:l:rprops:8}) we know that $1 > 0$. From the \nameref{rax:d:props:addition_order} we obtain $0 + 1 < 1 + 1 = 2$, and hence by the \hyperref[rax:d:props:commutative_add]{Commutative} and \hyperref[rax:d:props:identity_add]{Identity} Laws for Addition, we conclude that $1 < 2$.
+\end{proof}
+
+\begin{proof}[(\ref{rpr:e:5:2})]
+	By Lemma \ref{rpr:l:rprops} (\ref{rpr:l:rprops:8}) and Part (\ref{rpr:e:5:1}) of this exercise we know that $0 < 1 < 2$. Using the \nameref{rax:d:props:transitive} we deduce that $2 > 0$. By the \nameref{rax:d:props:trichotomy} we see that $2 \neq 0$. It follows from the \nameref{rax:d:props:multiplication_order} that $0 \cdot 2^{-1} < 1 \cdot 2^{-1} < 2 \cdot 2^{-1}$. By the \nameref{rax:d:props:commutative_mult} it implies that $2^{-1} \cdot 0 < 2^{-1} \cdot 1 < 2 \cdot 2^{-1}$. Lemma\,\ref{rpr:l:props}\,(\ref{rpr:l:props:7}) implies $2^{-1} \cdot 0 = 0$. The \nameref{rax:d:props:identity_mult} implies that $2^{-1} \cdot 1 = 2^{-1}$. The \nameref{rax:d:props:inverses_mult} implies that $2 \cdot 2^{-1} = 1$. Hence, $0 < \frac{1}{2} < 1$.
+\end{proof}
+
+\begin{proof}[(\ref{rpr:e:5:3})]
+	Let $a, b \in \mathbb{R}$, and suppose that $a < b$. By the \nameref{rax:d:props:multiplication_order} and \nameref{rax:d:props:commutative_add} we observe that $a + a < a + b < b + b$. By the \nameref{rax:d:props:trichotomy} and Part (\ref{rpr:e:5:1}) of this exercise we deduce that $2 \neq 0$. Then,
+	\begin{align*}
+		a + a & < a + b < b + b                                                                                                    \\
+		      & \iff a \cdot 1 + a \cdot 1 < a + b < b \cdot 1 + b \cdot 1   & \text{(\nameref{rax:d:props:identity_mult})}        \\
+		      & \iff a(1 + 1) < a + b < b(1 + 1)                             & \text{(\nameref{rax:d:props:distributive})}         \\
+		      & \iff a \cdot 2 < a + b < b \cdot 2                                                                                 \\
+		      & \iff (a \cdot 2) 2^{-1} < (a + b)2^{-1} < (b \cdot 2) 2^{-1} & \text{(\nameref{rax:d:props:multiplication_order})} \\
+		      & \iff a (2 \cdot 2^{-1}) < (a + b)2^{-1} < b (2 \cdot 2^{-1}) & \text{(\nameref{int:t:props:associative_mult})}     \\
+		      & \iff a \cdot 1 < (a + b)2^{-1} < b \cdot 1                   & \text{(\nameref{rax:d:props:inverses_mult})}        \\
+		      & \iff a < (a + b)2^{-1} < b                                   & \text{(\nameref{rax:d:props:identity_mult})}.
+	\end{align*}
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{rpr:l:interval}] %% 2.3.6
+	\label{rpr:e:6}
+	Prove Lemma \ref{rpr:l:interval}. \hfill [Use Exercise \ref{rpr:e:5} (\ref{rpr:e:5:3}).]
+\end{exercise}
+
+\begin{proof}
+	\hfill
+
+	\PartProof{rpr:l:interval:1}
+	Let $x, y \in I$, and suppose that $x \leq y$. Suppose further that $p \in [x, y]$. Then $x \leq p \leq y$. Without loss of generality, suppose that $I = (z, w)$ for some $z, w \in \mathbb{R}$. Then $z < x \leq p \leq y < w$, and as a result $z < p < w$. Hence $p \in I$, and therefore $[x, y] \subseteq I$.
+
+	\PartProof{rpr:l:interval:2}
+	Suppose that $I$ is an open interval. Let $x \in I$. There are now four cases. First, suppose that $I = (p, q)$ for some $p, q \in \mathbb{R}$. Then $p < x < q$. From Exercise \ref{rpr:e:5} (\ref{rpr:e:5:3}) we observe that
+	$$
+		p < \frac{p + x}{2} < x < \frac{x + q}{2} < q.
+	$$
+	Without loss of generality, suppose that $x - p < q - x$. Then $p > 2x - q$. Let $\delta = \frac{x - p}{2}$. Because $x > p$ it follows that $\delta > 0$, and hence $x - \delta < x + \delta$. We deduce that
+	$$
+		p < x - \delta = x - \frac{x - p}{2} = \frac{p + x}{2} < x < q.
+	$$
+	Hence $x - \delta \in I$. We also deduce that
+	$$
+		p < x < x + \delta = x + \frac{x - p}{2} = \frac{3x - p}{2} < \frac{3x - (2x - q)}{2} = \frac{x + q}{2} < q.
+	$$
+	Hence $x + \delta \in I$. Using Part (\ref{rpr:l:interval:1}) of this lemma we can conclude that $[x - \delta, x + \delta] \subseteq I$.
+
+	Second, suppose that $I = (p, \infty)$ for some $p \in \mathbb{R}$. Then $x > p$. Let $\delta = \frac{x - p}{2}$. Then by the previous paragraph we deduce that $\delta > 0$ and $x - \delta < x + \delta$ and $x - \delta \in I$. But since $p < x + \delta$ we also deduce that $x + \delta \in I$, and hence by Part (\ref{rpr:l:interval:1}) of this lemma it follows that $[x - \delta, x + \delta] \subseteq I$.
+
+	Third, suppose that $I = (-\infty, q)$ for some $q \in \mathbb{R}$. This case is just like the previous case, and we omit details.
+
+	Fourth, suppose that $I = (-\infty, \infty)$. Let $\delta = 1$. Then $\delta > 0$ and $x - 1 < x + 1$. Because $I = \mathbb{R}$ we obtain $x - 1, x + 1 \in I$. Finally, Part (\ref{rpr:l:interval:1}) of this lemma implies that $[x - \delta, x + \delta] \subseteq I$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{rpr:l:abs}] %% 2.3.7
+	Prove Lemma \ref{rpr:l:abs} (\ref{rpr:l:abs:1}) (\ref{rpr:l:abs:3}) (\ref{rpr:l:abs:7}).
+\end{exercise}
+
+\begin{proof}
+	\hfill
+
+	\PartProof{rpr:l:abs:1}
+	First, suppose that $a \geq 0$. Then $|a| = a \geq 0$. If $|a| = 0$, then $|a| = a = 0$, and if $a = 0$, then $0 = a = |a|$.
+
+	Second, suppose that $a < 0$. Then $-a > 0$ and $|a| = -a$. Hence, $|a| \geq 0$. If $|a| = 0$, then $|a| = -a = -0 = 0$, and if $a = 0$, then $0 = -0 = -a = |a|$.
+
+	\PartProof{rpr:l:abs:3}
+	Suppose that $|a| = |b|$. We consider the following four cases.
+	\begin{bycases}
+		\item $a \geq 0$ and $b \geq 0$. Then $|a| = a$ and $|b| = b$. Hence, $a = b$.
+		\item $a < 0$ and $b \geq 0$. Then $|a| = -a$ and $|b| = b$, so $-a = b$, and as a result $a = -b$.
+		\item $a \geq 0$ and $b < 0$. A similar arguments shows that $a = -b$.
+		\item $a < 0$ and $b < 0$. Then $|a| = -a$ and $|b| = -b$, so $-a = -b$, and as a result $a = b$.
+	\end{bycases}
+	Thus, there is either $a = b$ or $a = -b$.
+
+	Now suppose that there is either $a = b$ or $a = -b$. First, suppose that $a = b$, or in other words $-a = -b$. Then there is either $a \geq 0$ and $b \geq 0$ or $a < 0$ and $b < 0$, so there is either $|a| = a$ and $|b| = b$ or $|a| = -a$ and $|b| = -b$. Hence, $|a| = |b|$. Second, suppose that $a = -b$, or in other words $-a = b$. Then there is either $a \geq 0$ and $b < 0$ or $a < 0$ and $b \geq 0$, so there is either $|a| = a$ and $|b| = -b$ or $|a| = -a$ and $|b| = b$. Hence, $|a| = |b|$.
+
+	\PartProof{rpr:l:abs:7}
+	Suppose that $|a| - |b| \geq 0$. Using the \nameref{rpr:l:abs:triangle} we deduce that
+	\begin{align*}
+		|b| = |(a + b) + (-a)| & \leq |a + b| + |-a| = |a + b| + |a| \\
+		\iff |b|               & \leq |a + b| + |a|                  \\
+		\iff |b| - |a|         & \leq |a + b|                        \\
+		\iff -(|a| - |b|)      & \leq |a + b|                        \\
+		\iff |a| - |b|         & \geq -|a + b|
+	\end{align*}
+	and that
+	\begin{align*}
+		|a| = |(a + b) + (-b)| & \leq |a + b| + |-b| = |a + b| + |b| \\
+		\iff |a| - |b|         & \leq |a + b|.
+	\end{align*}
+	Thus, $-|a + b| \leq |a| - |b| \leq |a + b|$. By Part (\ref{rpr:l:abs:4}) of this lemma we then deduce that ${||a| - |b|| \leq |a + b|}$. A similar argument shows that $||a| - |b|| \leq |a - b|$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used throughout] %% 2.3.8
+	Let $I \subseteq \mathbb{R}$ be an open interval, let $c \in I$ and let $\delta > 0$. Prove that there is some $x \in I - \{ c \}$ such that $|x - c| < \delta$.
+
+	\hfill [Use Exercise \ref{rpr:e:5} (\ref{rpr:e:5:3}).]
+\end{exercise}
+
+\begin{proof}
+	Using Lemma \ref{rpr:l:interval} (\ref{rpr:l:interval:2}) we can find some $\delta_c > 0$ such that $[c - \delta_{c}, c + \delta_{c}] \subseteq I$. Suppose that $\delta_c < \delta$. Let $x = c + \delta_c$. Clearly, $x \in I - \{ c \}$. We observe that $-\delta < \delta_c < \delta$, and by Lemma \ref{rpr:l:abs} (\ref{rpr:l:abs:4}) we deduce that $|\delta_c| < \delta$. Then,
+	$$
+		|x - c| = |(c + \delta_c) - c| = |\delta_c| < \delta.
+	$$
+
+	Now suppose that $\delta_c \geq \delta$. Let $x = c + \frac{\delta}{2}$. From Exercise \ref{rpr:e:5} (\ref{rpr:e:5:3}) it follows that $0 < \frac{\delta}{2} < \delta < \delta_c$. Then $x \neq c$ and $c - \delta < x < c + \delta_c$, and hence $x \in I - \{ c \}$. Because $-\delta < 0$ we obtain $-\delta < \frac{\delta}{2} < \delta$, and by Lemma \ref{rpr:l:abs} (\ref{rpr:l:abs:4}) we deduce that $\left| \frac{\delta}{2} \right| < \delta$. Then,
+	$$
+		|x - c| = \left| \left( c + \frac{\delta}{2} \right) - c \right| = \left| \frac{\delta}{2} \right| < \delta.
+	$$
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{pow:t:diff_integr} and Exercise \ref{pow:e:4}] %% 2.3.9
+	Let $a \in \mathbb{R}$, let $R \in (0, \infty)$ and let $x \in(a - R, a + R)$. Prove that there is some $P \in(0, R)$ such that $x \in$ $(a - P, a + P)$.
+\end{exercise}
+
+\begin{proof}
+	Because $x \in (a - R, a + R)$ we obtain $a - R < x < a + R$, or in other words $-R < x - a < R$, which means that $x - a \in (-R, R)$. Because of Lemma \ref{rpr:l:interval} (\ref{rpr:l:interval:2}) we can find some $\delta > 0$ such that
+	$$
+		[(x - a) - \delta,\, (x - a) + \delta] \subseteq (-R, R).
+	$$
+	Suppose that $x - a \geq 0$. Let $P = (x - a) + \delta$. It then follows that $0 < P < R$, and as a result $-R < -P < 0$. Hence, $P \in (0, R)$. Because of hypothesis on $x - a$ we see that $-P < x - a < P$, or in other words $a - P < x < a + P$, and hence $x \in (a - P, a + P)$. A similar argument shows that if $x - a < 0$ then $x \in (a - P, a + P)$ where $P = (x - a) - \delta \in (0, R)$.
+\end{proof}
+
+
+\addtocounter{exercise}{1}
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used throughout] %% 2.3.11
+	Let $A \subseteq \mathbb{R}$ be a set. Prove that $A$ is bounded if and only if there is some $M \in \mathbb{R}$ such that $M > 0$ and that $|x| \leq M$ for all $x \in A$.
+\end{exercise}
+
+\begin{proof}
+	Suppose that $A$ is bounded. According to Definition \ref{rax:d:bound} this means that $A$ is bounded below and above, so there is some $L, U \in \mathbb{R}$ such that $L \leq x \leq U$ for all $x \in A$. Let $M = |L| + |U|$. Clearly, $M \in \mathbb{R}$. From Lemma \ref{rpr:l:abs} (\ref{rpr:l:abs:1}) we see that $|L| \geq 0$ and $|U| \geq 0$, and hence $M > 0$. We also deduce that $|L| \leq M$ and $|U| \leq M$, and because of Lemma \ref{rpr:l:abs} (\ref{rpr:l:abs:4}) we observe that $-M \leq L \leq M$ and $-M \leq U \leq M$. Then $-M \leq x \leq M$ for all $x \in A$, and hence $|x| \leq M$ for all $x \in A$.
+
+	Now suppose that there is some $M \in \mathbb{R}$ such that $M > 0$ and $|x| \leq M$ for all $x \in A$. From Lemma \ref{rpr:l:abs} (\ref{rpr:l:abs:4}) we deduce that $-M \leq x \leq M$ for all $x \in A$. By Definition\,\ref{rax:d:bound} it follows that $-M$ is a lower bound of $A$ and $M$ is an upper bound of $A$. Hence, $A$ is bounded.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{rpr:l:eps}] %% 2.3.12
+	Prove Lemma \ref{rpr:l:eps} (\ref{rpr:l:eps:2}).
+\end{exercise}
+
+\begin{proof}
+	Suppose that $a \geq 0$, and let $\varepsilon > 0$. Then $-\varepsilon < 0$, and then $\varepsilon < 0 \leq a$. Hence, $a > -\varepsilon$.
+
+	Now suppose that $a > -\varepsilon$ for all $\varepsilon > 0$. Suppose to the contrary that $a < 0$. Then $-a > 0$, and then $a > -(-a) = a$, which is a contradiction to the fact that $a = a$ . Hence, $a \geq 0$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Exercise \ref{irp:e:15}] %% 2.3.13
+	Let $a, b, x, y \in \mathbb{R}$. Suppose that $a \leq x \leq b$ and $a \leq y \leq b$. Prove that $|x - y| \leq b - a$.
+\end{exercise}
+
+\begin{proof}
+	We deduce that
+	$$
+		x - b \leq 0 = b - b \quad \text{and} \quad a - a = 0 \leq y - a.
+	$$
+	Then $x - b \leq y - a$, and then $x - y \leq b - a$. Similarly, we also deduce that
+	$$
+		a - a = 0 \leq x - a \quad \text{and} \quad y - b \leq 0 = b - b.
+	$$
+	Then $y - b \leq x - a$, and then $x - y \geq a - b = -(b - a)$. Thus, $-(b - a) \leq x - y \leq b - a$, and by Lemma \ref{rpr:l:abs} (\ref{rpr:l:abs:4}) we can conclude that $|x - y| \leq b - a$.
+\end{proof}

@@ -1,0 +1,47 @@
+%=============================================================================================================
+%= SECTION 2.2
+%=============================================================================================================
+\section{Entry 3: Axioms for the Real Numbers}
+\label{rax}
+
+\begin{definition} %% 2.2.1
+	\label{rax:d:props}
+	Let $x, y, z \in \mathbb{x}$.
+	\begin{lenumerate}
+		\item $(x + y) + z = x + (y + z)$ \quad (\nameref*{rax:d:props:associative_add}). \xlabel[Associative Law for Addition]{rax:d:props:associative_add}
+		\item $x + y = y + x$ \quad (\nameref*{rax:d:props:commutative_add}). \xlabel[Commutative Law for Addition]{rax:d:props:commutative_add}
+		\item $x + 0 = x$ \quad (\nameref*{rax:d:props:identity_add}). \xlabel[Identity Law for Addition]{rax:d:props:identity_add}
+		\item $x + (-x) = 0$ \quad (\nameref*{rax:d:props:inverses_add}). \xlabel[Inverses Law for Addition]{rax:d:props:inverses_add}
+		\item $(x y) z = x(y z)$ \quad (\nameref*{rax:d:props:associative_mult}). \xlabel[Associative Law for Multiplication]{rax:d:props:associative_mult}
+		\item $x y = y x$ \quad (\nameref*{rax:d:props:commutative_mult}). \xlabel[Commutative Law for Multiplication]{rax:d:props:commutative_mult}
+		\item $x \cdot 1 = x$ \quad (\nameref*{rax:d:props:identity_mult}). \xlabel[Identity Law for Multiplication]{rax:d:props:identity_mult}
+		\item If $x \neq 0$, then $x \cdot x^{-1} = 1$ \quad (\nameref*{rax:d:props:inverses_mult}). \xlabel[Inverses Law for Multiplication]{rax:d:props:inverses_mult}
+		\item $x(y + z) = x y + x z$ \quad (\nameref*{rax:d:props:distributive}). \xlabel[Distributive Law]{rax:d:props:distributive}
+		\item Precisely one of $x < y$ or $x = y$ or $x > y$ holds \quad (\nameref*{rax:d:props:trichotomy}). \xlabel[Trichotomy Law]{rax:d:props:trichotomy}
+		\item If $x < y$ and $y < z$, then $x < z$ \quad (\nameref*{rax:d:props:transitive}). \xlabel[Transitive Law]{rax:d:props:transitive}
+		\item If $x < y$ then $x + z < y + z$ \quad (\nameref*{rax:d:props:addition_order}). \xlabel[Addition Law for Order]{rax:d:props:addition_order}
+		\item If $x < y$ and $z > 0$, then $x z < y z$ \quad (\nameref*{rax:d:props:multiplication_order}). \xlabel[Multiplication Law for Order]{rax:d:props:multiplication_order}
+		\item $0 \neq 1$ \quad (\nameref*{rax:d:props:non_triviality}). \xlabel[Non-Triviality]{rax:d:props:non_triviality}
+	\end{lenumerate}
+\end{definition}
+
+\begin{definition} %% 2.2.2
+	\label{rax:d:bound}
+	Let $F$ be an ordered field, and let $A \subseteq F$ be a set.
+	\begin{enumerate}
+		\item The set $A$ is \emph{bounded above} if there is some $M \in \mathbb{R}$ such that $X \leq M$ for all $X \in A$. The number $M$ is called an \emph{upper bound} of $A$.
+		\item The set $A$ is \emph{bounded below} if there is some $P \in \mathbb{R}$ such that $X \geq P$ for all $X \in A$. The number $P$ is called a \emph{lower bound} of $A$.
+		\item The set $A$ is \emph{bounded} if it is bounded above and bounded below.
+		\item Let $M \in \mathbb{R}$. The number $M$ is a \emph{least upper bound} (also called a \emph{supremum}) of $A$ if $M$ is an upper bound of $A$, and if $M \leq T$ for all upper bounds $T$ of $A$.
+		\item Let $P \in \mathbb{R}$. The number $P$ is a \emph{greatest lower bound} (also called an \emph{infimum}) of $A$ if $P$ is a lower bound of $A$, and if $P \geq V$ for all lower bounds $V$ of $A$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition} %% 2.2.3
+	\xlabel[Least Upper Bound Property]{rax:d:lub_prop}
+	Let $F$ be an ordered field. The ordered field $F$ satisfies the \emph{\nameref*{rax:d:lub_prop}} if every non-empty subset of $F$ that is bounded above has a least upper bound.
+\end{definition}
+
+\begin{axiom}[Axiom for the Real Numbers] %% 2.2.4
+	There exists an ordered field $\mathbb{R}$ that satisfies the \nameref{rax:d:lub_prop}.
+\end{axiom}
