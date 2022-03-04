@@ -1,6 +1,6 @@
-\usepackage{stix}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage{amssymb}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{mdframed}
@@ -11,12 +11,15 @@
 \usepackage{thm-restate}
 \usepackage{stackengine}
 \usepackage[active,tightpage]{preview}
+\usepackage{graphicx}
+\graphicspath{{figs/}}
 
 \mdfsetup{
 	innerleftmargin=6pt,
 	innerrightmargin=6pt,
 	splittopskip=\topskip,
-	skipabove=1.5em
+	skipabove=1.5em,
+	skipbelow=1.5em
 }
 
 \makeatletter
@@ -99,8 +102,8 @@
 \let\proof\relax
 \declaretheorem[style=proofstyle, unnumbered]{proof}
 
-\newcommand{\bibbloch}[1]{
-	\bibitem{bloch#1}
+\newcommand{\bibbloch}{
+	\bibitem{bloch}
 	Ethan~D. Bloch,
 	\emph{The Real Numbers and Real Analysis},
 	1st ed.,

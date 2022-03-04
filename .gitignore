@@ -3,11 +3,12 @@
 *.fls
 *.log
 __latexindent_temp.tex
-*.pdf
+snapshot.jpg
 *.gz
 *.cut
 *.thm
 *.out
 *.synctex
+*.synctex(busy)
 /out/
 .DS_Store

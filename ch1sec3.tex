@@ -544,14 +544,7 @@
 	By Part (\ref{int:t:neg_zero_props:9}) of this theorem we know that $0 < 1$, so by the \nameref{int:t:props:addition_order} we deduce that $0 + a < 1 + a$ for all $a \in \mathbb{Z}$. By the Commutative and Identity Laws for Addition we obtain $a < a + 1$ for all $a \in \mathbb{Z}$.
 
 	Suppose that $x y = 1$, and suppose to the contrary that either $x \not= 1$ or $y \not= 1$. Without loss of generality, suppose that $x \not= 1$. Then either $x < 1$ or $x > 1$.
-	Suppose that $x < 1$. We have
-	\begin{align*}
-		x < 1 & \iff x < 1 + 0                                & \text{(\nameref{int:t:props:identity_add})}    \\
-		      & \iff x < 0 + 1                                & \text{(\nameref{int:t:props:commutative_add})} \\
-		      & \iff x \leq 0                                 & \text{(\nameref{nat:t:wop})}                   \\
-		      & \iff \text{ either } x < 0 \text{ or } x = 0.
-	\end{align*}
-	If $x = 0$, then using the \nameref{int:t:props:commutative_mult} we get ${x y = 0 \cdot y = y \cdot 0 = 1}$, which contradicts Part (4) of this theorem. Hence, $x \not= 0$. A similar argument shows that $y \not= 0$. Next since $x \not= 0$, we have
+	Suppose that $x < 1$. Using the \hyperref[int:t:props:identity_add]{Identity} and \hyperref[int:t:props:commutative_add]{Commutative} Laws for Addition we obtain $x < 1 = 1 + 0 = 0 + 1$, and by the \nameref{nat:t:wop} we deduce that $x \leq 0$, or in other words either $x < 0$ or $x = 0$. If $x = 0$, then using the \nameref{int:t:props:commutative_mult} we get ${x y = 0 \cdot y = y \cdot 0 = 1}$, which contradicts Part (4) of this theorem. Hence, $x \not= 0$. A similar argument shows that $y \not= 0$. Next since $x \not= 0$, we have
 	\begin{align*}
 		x < 0 & \iff x < 1 + (-1)  & \text{(\nameref{int:t:props:inverses_add})}                   \\
 		      & \iff x < (-1) + 1  & \text{(\nameref{int:t:props:commutative_add})}                \\
@@ -561,33 +554,34 @@
 	\end{align*}
 	We also know that $-x < (-x) + 1$, so $1 \leq -x < (-x) + 1$, and by the \nameref{int:t:props:transitive} we get $1 < (-x) + 1$. If $y > 0$ then
 	\begin{align*}
-		1 \leq -x < (-x) + 1 & \iff 1 < (-x) + 1                            & \text{(\nameref{int:t:props:transitive})}                    \\
-		                     & \iff y \cdot 1 < y[(-x) + 1]                 & \text{(\nameref{int:t:props:multiplication_order})}          \\
-		                     & \iff y \cdot 1 < y(-x) + y \cdot 1           & \text{(\nameref{int:t:props:distributive})}                  \\
-		                     & \iff y \cdot 1 < y[-(x \cdot 1)] + y \cdot 1 & \text{(\nameref{int:t:props:identity_mult})}                 \\
-		                     & \iff y \cdot 1 < -[y(x \cdot 1)] + y \cdot 1 & \text{(Part (\ref{int:t:neg_zero_props:6}) of this theorem)} \\
-		                     & \iff y < (-yx) + y                           & \text{(\nameref{int:t:props:identity_mult})}                 \\
-		                     & \iff y < (-1) + y                            & \text{(Hypothesis on $xy$)}                                  \\
-		                     & \iff y + 1 < (-1) + y + 1                    & \text{(\nameref{int:t:props:addition_order})}                \\
-		                     & \iff y + 1 < y + 1 + (-1)                    & \text{(\nameref{int:t:props:commutative_add})}               \\
-		                     & \iff y + 1 < y + [1 + (-1)]                  & \text{(\nameref{int:t:props:associative_add})}               \\
-		                     & \iff y + 1 < y + 0                           & \text{(\nameref{int:t:props:inverses_add})}                  \\
-		                     & \iff y + 1 < y                               & \text{(\nameref{int:t:props:identity_add})},
+		 & 1 \leq -x < (-x) + 1                                                                                              \\
+		 & \quad \iff 1 < (-x) + 1                            & \text{(\nameref{int:t:props:transitive})}                    \\
+		 & \quad \iff y \cdot 1 < y[(-x) + 1]                 & \text{(\nameref{int:t:props:multiplication_order})}          \\
+		 & \quad \iff y \cdot 1 < y(-x) + y \cdot 1           & \text{(\nameref{int:t:props:distributive})}                  \\
+		 & \quad \iff y \cdot 1 < y[-(x \cdot 1)] + y \cdot 1 & \text{(\nameref{int:t:props:identity_mult})}                 \\
+		 & \quad \iff y \cdot 1 < -[y(x \cdot 1)] + y \cdot 1 & \text{(Part (\ref{int:t:neg_zero_props:6}) of this theorem)} \\
+		 & \quad \iff y < (-yx) + y                           & \text{(\nameref{int:t:props:identity_mult})}                 \\
+		 & \quad \iff y < (-1) + y                            & \text{(Hypothesis on $xy$)}                                  \\
+		 & \quad \iff y + 1 < (-1) + y + 1                    & \text{(\nameref{int:t:props:addition_order})}                \\
+		 & \quad \iff y + 1 < y + 1 + (-1)                    & \text{(\nameref{int:t:props:commutative_add})}               \\
+		 & \quad \iff y + 1 < y + [1 + (-1)]                  & \text{(\nameref{int:t:props:associative_add})}               \\
+		 & \quad \iff y + 1 < y + 0                           & \text{(\nameref{int:t:props:inverses_add})}                  \\
+		 & \quad \iff y + 1 < y                               & \text{(\nameref{int:t:props:identity_add})},
 	\end{align*}
 	which is a contradiction to the \nameref{int:t:props:trichotomy} because  $a < a + 1$ for all $a \in \mathbb{Z}$. If $y < 0$ then
 	\begin{align*}
-		1 \leq -x & < (-x) + 1                                                                                                           \\
-		          & \iff  y[(-x) + 1] < y(-x) < y \cdot 1                 & \text{(\nameref{int:t:props:multiplication_order})}          \\
-		          & \iff y(-x) + y \cdot 1 < y(-x) < y \cdot 1            & \text{(\nameref{int:t:props:distributive})}                  \\
-		          & \iff  y[-(x \cdot 1)] + y \cdot 1 < y(-x) < y \cdot 1 & \text{(\nameref{int:t:props:identity_mult})}                 \\
-		          & \iff  [-y(x \cdot 1)] + y \cdot 1 < -yx < y \cdot 1   & \text{(Part (\ref{int:t:neg_zero_props:6}) of this theorem)} \\
-		          & \iff  (-yx) + y  < -xy < y                            & \text{(\nameref{int:t:props:identity_mult})}                 \\
-		          & \iff  (-1) + y  < -xy < y                             & \text{(Hypothesis on $xy$)}                                  \\
-		          & \iff  (-1) + y + 1  < -xy < y + 1                     & \text{(\nameref{int:t:props:addition_order})}                \\
-		          & \iff  y + 1 + (-1) < -xy < y + 1                      & \text{(\nameref{int:t:props:commutative_add})}               \\
-		          & \iff y + [1 + (-1)] < -xy < y + 1                     & \text{(\nameref{int:t:props:associative_add})}               \\
-		          & \iff y + 0 < -xy < y + 1                              & \text{(\nameref{int:t:props:inverses_add})}                  \\
-		          & \iff y < -xy < y + 1                                  & \text{(\nameref{int:t:props:identity_add})},
+		 & 1 \leq -x < (-x) + 1                                                                                                       \\
+		 & \quad \iff  y[(-x) + 1] < y(-x) < y \cdot 1                 & \text{(\nameref{int:t:props:multiplication_order})}          \\
+		 & \quad \iff y(-x) + y \cdot 1 < y(-x) < y \cdot 1            & \text{(\nameref{int:t:props:distributive})}                  \\
+		 & \quad \iff  y[-(x \cdot 1)] + y \cdot 1 < y(-x) < y \cdot 1 & \text{(\nameref{int:t:props:identity_mult})}                 \\
+		 & \quad \iff  [-y(x \cdot 1)] + y \cdot 1 < -yx < y \cdot 1   & \text{(Part (\ref{int:t:neg_zero_props:6}) of this theorem)} \\
+		 & \quad \iff  (-yx) + y  < -xy < y                            & \text{(\nameref{int:t:props:identity_mult})}                 \\
+		 & \quad \iff  (-1) + y  < -xy < y                             & \text{(Hypothesis on $xy$)}                                  \\
+		 & \quad \iff  (-1) + y + 1  < -xy < y + 1                     & \text{(\nameref{int:t:props:addition_order})}                \\
+		 & \quad \iff  y + 1 + (-1) < -xy < y + 1                      & \text{(\nameref{int:t:props:commutative_add})}               \\
+		 & \quad \iff y + [1 + (-1)] < -xy < y + 1                     & \text{(\nameref{int:t:props:associative_add})}               \\
+		 & \quad \iff y + 0 < -xy < y + 1                              & \text{(\nameref{int:t:props:inverses_add})}                  \\
+		 & \quad \iff y < -xy < y + 1                                  & \text{(\nameref{int:t:props:identity_add})},
 	\end{align*}
 	which is a contradiction to the \nameref{nat:t:wop}. Hence, if $x < 1$ then $x = 1 = y$. If $x > 1$, then it follows that $1 < x < x + 1$, so a similar argument leads to a contradiction, and hence $x = 1 = y$. Thus, we can conclude that if $x y = 1$ then either $x = 1 = y$ or $x = -1 = y$.
 

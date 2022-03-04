@@ -1,0 +1,366 @@
+%=============================================================================================================
+%= SECTION 2.4
+%=============================================================================================================
+\section{Finding the Natural Numbers, the Integers and the Rational Numbers in the Real Numbers}
+\label{nir}
+
+\begin{definition} %% 2.4.1
+	Let $S \subseteq \mathbb{R}$ be a set. The set $S$ is \emph{inductive} if it satisfies the following two properties.
+	\begin{lenumerate}
+		\item $1 \in S$.
+		\item If $a \in S$, then $a + 1 \in S$.
+	\end{lenumerate}
+\end{definition}
+
+\begin{definition} %% 2.4.2
+	The set of \emph{natural numbers}, denoted $\mathbb{N}$, is the intersection of all inductive subsets of $\mathbb{R}$.
+\end{definition}
+
+\begin{lemma} %% 2.4.3
+	\label{nir:l:ind_n}
+
+	\hfill
+
+	\begin{enumerate}
+		\item \label{nir:l:ind_n:1}
+		      $\mathbb{N}$ is inductive.
+		\item \label{nir:l:ind_n:2}
+		      If $A \subseteq \mathbb{R}$ and $A$ is inductive, then $\mathbb{N} \subseteq A$.
+		\item \label{nir:l:ind_n:3}
+		      If $n \in \mathbb{N}$ then $n \geq 1$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{theorem}[Peano Postulates] %% 2.4.4
+	\label{nir:t:peano}
+	Let $s: \mathbb{N} \rightarrow \mathbb{N}$ be defined by $s(n) = n + 1$ for all $n \in \mathbb{N}$
+	\begin{lenumerate}
+		\item \label{nir:t:peano:a}
+		      There is no $n \in \mathbb{N}$ such that $s(n) = 1$.
+		\item \label{nir:t:peano:b}
+		      The function $s$ is injective.
+		\item \label{nir:t:peano:c}
+		      Let $G \subseteq \mathbb{N}$ be a set. Suppose that $1 \in G$, and that if $g \in G$ then $s(g) \in G$. Then $G = \mathbb{N}$.
+	\end{lenumerate}
+\end{theorem}
+
+\begin{lemma} %% 2.4.5
+	Let $a, b \in \mathbb{N}$. Then $a + b \in \mathbb{N}$ and $a b \in \mathbb{N}$.
+\end{lemma}
+
+\begin{theorem}[Well-Ordering Principle] %% 2.4.6
+	Let $G \subseteq \mathbb{N}$ be a non-empty set. Then there is some $m \in G$ such that $m \leq g$ for all $g \in G$.
+\end{theorem}
+
+\begin{definition} %% 2.4.7
+	Let
+	$$
+		-\mathbb{N} = \{x \in \mathbb{R} \mid x = -n \text{ for some } n \in \mathbb{N} \}.
+	$$
+	The set of \emph{integers}, denoted $\mathbb{Z}$, is defined by
+	$$
+		\mathbb{Z} =-\mathbb{N} \cup \{ 0 \} \cup \mathbb{N}.
+	$$
+\end{definition}
+
+\begin{lemma} %% 2.4.8
+	\label{nir:l:nat_int_rel}
+	\hfill
+
+	\begin{enumerate}
+		\item \label{nir:l:nat_int_rel:1}
+		      $\mathbb{N} \subseteq \mathbb{Z}$.
+		\item \label{nir:l:nat_int_rel:2}
+		      $a \in \mathbb{N}$ if and only if $a \in \mathbb{Z}$ and $a > 0$.
+		\item \label{nir:l:nat_int_rel:3}
+		      The three sets $-\mathbb{N}$, $\{0\}$ and $\mathbb{N}$ are mutually disjoint.
+	\end{enumerate}
+\end{lemma}
+
+\begin{lemma} %% 2.4.9
+	\label{nir:l:int_closed}
+
+	Let $a, b \in \mathbb{Z}$. Then $a + b \in \mathbb{Z}$, and $a b \in \mathbb{Z}$, and $-a \in \mathbb{Z}$.
+\end{lemma}
+
+\begin{theorem} %% 2.4.10
+	\label{nir:t:int_discr}
+
+	Let $a, b \in \mathbb{Z}$.
+	\begin{enumerate}
+		\item \label{nir:t:int_discr:1}
+		      If $a < b$ then $a + 1 \leq b$.
+		\item \label{nir:t:int_discr:2}
+		      There is no $c \in \mathbb{Z}$ such that $a < c < a + 1$.
+		\item \label{nir:t:int_discr:3}
+		      If $|a - b| < 1$ then $a = b$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition} %% 2.4.11
+	\label{nir:d:rat_irrat}
+
+	The set of \emph{rational numbers}, denoted $\mathbb{Q}$, is defined by
+	$$
+		\mathbb{Q} = \{ x \in \mathbb{R} \mid x = \frac{a}{b} \text{ for some } a, b \in \mathbb{Z} \text{ such that } b \neq 0 \}.
+	$$
+	The set of \emph{irrational numbers} is the set $\mathbb{R} - \mathbb{Q}$.
+\end{definition}
+
+\begin{lemma} %% 2.4.12
+	\label{nir:l:int_rat_rel}
+
+	\hfill
+
+	\begin{enumerate}
+		\item \label{nir:l:int_rat_rel:1}
+		      $\mathbb{Z} \subseteq \mathbb{Q}$.
+		\item \label{nir:l:int_rat_rel:2}
+		      $q \in \mathbb{Q}$ and $q > 0$ if and only if $q = \frac{a}{b}$ for some $a, b \in \mathbb{N}$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{lemma} %% 2.4.13
+	\label{nir:l:frac}
+	Let $a, b, c, d \in \mathbb{Z}$. Suppose that $b \neq 0$ and $d \neq 0$.
+
+	\begin{enumerate}
+		\item \label{nir:l:frac:1}
+		      $\frac{a}{b} = 0$ if and only if $a = 0$.
+		\item \label{nir:l:frac:2}
+		      $\frac{a}{b} = 1$ if and only if $a = b$.
+		\item \label{nir:l:frac:3}
+		      $\frac{a}{b} = \frac{c}{d}$ if and only if $a d = b c$.
+		\item \label{nir:l:frac:4}
+		      $\frac{a}{b} + \frac{c}{d} = \frac{a d + b c}{b d}$.
+		\item \label{nir:l:frac:5}
+		      $-\frac{a}{b} = \frac{-a}{b} = \frac{a}{-b}$.
+		\item \label{nir:l:frac:6}
+		      $\frac{a}{b} \cdot \frac{c}{d} = \frac{a c}{b d}$.
+		\item \label{nir:l:frac:7}
+		      If $a \neq 0$, then $\left(\frac{a}{b}\right)^{-1} = \frac{b}{a}$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{corollary} %% 2.4.14
+	\label{nir:c:rat}
+	Let $a, b \in \mathbb{Q}$. Then $a + b \in \mathbb{Q}$ and $a b \in \mathbb{Q}$, and $-a \in \mathbb{Q}$, and if $a \neq 0$ then $a^{-1} \in \mathbb{Q}$.
+\end{corollary}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{restatable}[Not in the book]{lemma}{existsLargerNatL} %% 2.4.15
+	\label{nir:l:exists_larger_nat}
+
+	Let $q \in \mathbb{Q}$. Then there is some $n \in \mathbb{N}$ such that $q < n$.
+\end{restatable}
+
+\begin{proof}
+	Suppose to the contrary that $q \geq n$ for all $n \in \mathbb{N}$. From Lemma \ref{nir:l:ind_n} (\ref{nir:l:ind_n:2}) we know that $\mathbb{N}$ is inductive, so $1 \in \mathbb{N}$. By hypothesis on $q$, we have $q \geq 1 > 0$. We then deduce that $q \notin - \mathbb{N} \subseteq \mathbb{Z}$, which is a contradiction to Lemma \ref{nir:l:int_rat_rel} (\ref{nir:l:int_rat_rel:1}). Hence, there is some $n \in \mathbb{N}$ such that $q < n$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{nir:l:int_closed}] %% 2.4.1
+	Let $a, b \in \mathbb{N}$. Prove that $a > b$ if and only if $a - b \in \mathbb{N}$ if and only if there is some $d \in \mathbb{N}$ such that $b + d = a$.
+\end{exercise}
+
+\begin{proof}
+	Suppose that $a > b$. By Lemma \ref{nir:l:nat_int_rel} (\ref{nir:l:nat_int_rel:1}) we know that $a, b \in \mathbb{Z}$. Then,
+	$$
+		a - b = a + (-b) > b + (-b) = 0 \quad \text{and} \quad a - b \in \mathbb{Z}.
+	$$
+	Using Lemma \ref{nir:l:nat_int_rel} (\ref{nir:l:nat_int_rel:2}) it follows that $a - b \in \mathbb{N}$. This process can be done backwards, and hence $a > b$ if and only if $a - b \in \mathbb{N}$.
+
+	Now suppose that $a > b$. Then $a - b \in \mathbb{N}$. Let $d = a - b$. We then deduce that $d \in \mathbb{N}$ and $b + d = b + (a - b) = a$. Finally, suppose that there is some $d \in \mathbb{N}$ such that $b + d = a$. By Lemma \ref{nir:l:nat_int_rel} (\ref{nir:l:nat_int_rel:2}) we have $a, b, d \in \mathbb{Z}$. Then,
+	\begin{align*}
+		d & = d + 0 = d + (b + (-b)) = (d + b) + (-b) \\
+		  & = (b + d) + (-b) = a + (-b)               \\
+		  & = a - b.
+	\end{align*}
+	Because $d \in \mathbb{N}$, we conclude that $a - b \in \mathbb{N}$, or in other words $a > b$.
+\end{proof}
+
+
+\addtocounter{exercise}{1}
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{irp:t:ind} and Exercise \ref{irp:e:13}] %% 2.4.3
+	Let $n \in \mathbb{N}$. Suppose that $n \neq 1$. Prove that there is some $b \in \mathbb{N}$ such that $b + 1 = n$.
+\end{exercise}
+
+\begin{proof}
+	From Lemma \ref{nir:l:nat_int_rel} (\ref{nir:l:nat_int_rel:2}) we know that $n \in \mathbb{Z}$ and $n > 0$. By Theorem\,\ref{nir:t:int_discr} it follows that $0 + 1 \leq n$, and because $n \neq 1$ we obtain $n > 1$. Let $b = n - 1$. We have
+	$$
+		b = n - 1 = n + (-1) > 1 + (-1) = 0,
+	$$
+	and hence by Lemma \ref{nir:l:nat_int_rel} (\ref{nir:l:nat_int_rel:2}) we get $b \in \mathbb{N}$. Finally, we deduce that
+	\begin{align*}
+		b + 1 & = (n - 1) + 1 = (n + (-1)) + 1    \\
+		      & = n + ((-1) + 1) = n + (1 + (-1)) \\
+		      & = n + 0 = n.
+	\end{align*}
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise} %% 2.4.4
+	Let $a, b \in \mathbb{Z}$. Prove that if $a b = 1$, then $a = 1$ and $b = 1$, or $a = -1$ and $b = -1$.
+\end{exercise}
+
+\begin{proof}
+	Suppose that $a b = 1$. By Lemma \ref{nir:l:int_rat_rel} (\ref{nir:l:int_rat_rel:1}) and the \hyperref[nir:d:rat_irrat]{definition of rational numbers} we see that $a, b \in \mathbb{Q} \subseteq \mathbb{R}$. From Lemma \ref{rpr:l:pos_neg} we deduce that either $a > 0$ and $b > 0$ or $a < 0$ and $b < 0$.
+
+	First, suppose that $a > 0$ and $b > 0$. By Theorem \ref{nir:t:int_discr} (\ref{nir:t:int_discr:1}) it follows that $a \geq 1$ and $b \geq 1$. Suppose to the contrary that either $a \neq 1$ or $b \neq 1$. Without loss of generality, suppose that $a \neq 1$, so $a > 1$. If $b = 1$, then $a b = a \cdot 1 = a > 1$, which is a contradiciton. If $b > 1$, then $a b > 1$, which is again a contradiction. Hence, $a = b = 1$.
+
+	Second, suppose that $a < 0$ and $b < 0$. Then $-a > 0$ and $-b > 0$. This part is just like the previous paragraph, and hence $-a = -b = 1$, or in other words $a = b = -1$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Section \ref{lub} and Exercise \ref{lub:e:12}] %% 2.4.5
+	Prove that there is no $n \in \mathbb{Z}$ such that $n^{2} = 2$.
+\end{exercise}
+
+\begin{proof}
+	Suppose to the contrary that there is some $n \in \mathbb{Z}$ such that $n^2 = 2$. Clearly $n \neq 0$. By Lemma \ref{nir:l:int_rat_rel} (\ref{nir:l:int_rat_rel:1}) and the \hyperref[nir:d:rat_irrat]{definition of rational numbers} we see that $n \in \mathbb{Q} \subseteq \mathbb{R}$. We note that $|n| \cdot |n| = n^2$, and because $n \in \mathbb{Z}$ we have $|n| \in \mathbb{Z}$ also. Let $m = 1$. We deduce that
+	$$
+		1 = m^2 < n^2 < (m + 1)^2 = 4.
+	$$
+	Using Lemma \ref{rpr:l:abs} (\ref{rpr:l:abs:1}) we observe that $|n| > 0$. From Lemma \ref{rpr:l:rprops} (\ref{rpr:l:rprops:14}) it follows that $m < |n| < m + 1$, which is a contradiction to Lemma \ref{nir:t:int_discr} (\ref{nir:t:int_discr:2}). Hence, there is no $n \in \mathbb{Z}$ such that $n^2 = 2$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{lub:t:dens}] %% 2.4.6
+	\label{nir:e:6}
+	Let $q \in \mathbb{Q}$ and $x \in \mathbb{R} - \mathbb{Q}$.
+	\begin{enumerate}
+		\item \label{nir:e:6:1}
+		      Prove that $q + x \in \mathbb{R} - \mathbb{Q}$.
+		\item \label{nir:e:6:2}
+		      Prove that if $q \neq 0$ then $q x \in \mathbb{R} - \mathbb{Q}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}[(\ref{nir:e:6:1})]
+	We note that $\mathbb{Q} \subseteq \mathbb{R}$ because of the definition of \hyperref[nir:d:rat_irrat]{rational numbers}. Suppose to the contrary that $q + x \in \mathbb{Q}$. Let $c = q + x$. From Corollary \ref{nir:c:rat} we observe that $-q \in \mathbb{Q}$ and that $c - q \in \mathbb{Q}$. We then deduce that
+	$$
+		c - q = (q + x) - q = (x + q) - q = x + (q - q) = x + 0 = x,
+	$$
+	and as a result $x \in \mathbb{Q}$, which is a contradiction to hypothesis on $x$. Hence, we can conclude that ${q + x \in \mathbb{R} - \mathbb{Q}}$.
+\end{proof}
+
+\begin{proof}[(\ref{nir:e:6:2})]
+	We note that $\mathbb{Q} \subseteq \mathbb{R}$ because of the definition of \hyperref[nir:d:rat_irrat]{rational numbers}. Suppose that $q \neq 0$, and suppose to the contrary that $q x \in \mathbb{Q}$. Let $c = q x$. From Corollary \ref{nir:c:rat} we observe that $q^{-1} \in \mathbb{Q}$ and that $c q^{-1} \in \mathbb{Q}$. We then deduce that
+	$$
+		c q^{-1} = (q x) q^{-1} = (x q) q^{-1} = x (q q^{-1}) = x \cdot 1 = x,
+	$$
+	and as a result $x \in \mathbb{Q}$, which is a contradiction to hypothesis on $x$. Hence, we can conclude that ${q x \in \mathbb{R} - \mathbb{Q}}$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in  Lemma \ref{nir:l:int_rat_rel}] %% 2.4.7
+	Prove Lemma \ref{nir:l:int_rat_rel} (\ref{nir:l:int_rat_rel:2}).
+\end{exercise}
+
+\begin{proof}
+	Suppose that $q \in \mathbb{Q}$ and $q > 0$. By the \hyperref[nir:d:rat_irrat]{definition of rational numbers} we know that $q = \frac{a}{b}$ for some $x, y \in \mathbb{Z}$ such that $y \neq 0$. From Lemma \ref{rpr:l:pos_neg} we deduce that either $x > 0$ and $y > 0$ or $x < 0$ and $y < 0$. First, suppose that $x > 0$ and $y > 0$. Let $a = x$ and $b = y$. By Lemma \ref{nir:l:nat_int_rel} (\ref{nir:l:nat_int_rel:2}) it follows that $a, b \in \mathbb{N}$. Second, suppose that $x < 0$ and $y < 0$. Let $a = -x$ and $b = -y$. Then $a > 0$ and $b > 0$, and using Lemma \ref{nir:l:nat_int_rel} (\ref{nir:l:nat_int_rel:2}) again we can conclude that $a, b \in \mathbb{N}$.
+
+	Now suppose that $q = \frac{a}{b}$ for some $a, b \in \mathbb{N}$. From Lemma \ref{nir:l:nat_int_rel} (\ref{nir:l:nat_int_rel:2}) we observe that $a, b \in \mathbb{Z}$ and $a > 0$ and $b > 0$. We then deduce that $b \neq 0$, and using the \hyperref[nir:d:rat_irrat]{definition of rational numbers} we can conclude that $q \in \mathbb{Q}$ and $q > 0$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Lemma \ref{nir:l:frac}] %% 2.4.8
+	Prove Lemma \ref{nir:l:frac} (\ref{nir:l:frac:2}) (\ref{nir:l:frac:3}) (\ref{nir:l:frac:5}) (\ref{nir:l:frac:6}).
+\end{exercise}
+
+\begin{proof}
+	\hfill
+
+	\PartProof{nir:l:frac:2}
+	If $\frac{a}{b} = 1$, then $a b^{-1} = 1$, and therefore
+	$$
+		a = (b b^{-1}) a = b (b^{-1} a) = b (a b^{-1}) = b \cdot 1 = b.
+	$$
+	If $a = b$, then $\frac{a}{b} = a b^{-1} = b b^{-1} = 1$.
+
+	\PartProof{nir:l:frac:3}
+	Suppose that $\frac{a}{b} = \frac{c}{d}$. Then $a b^{-1} = c d^{-1}$, and then
+	\begin{align*}
+		a d & = a d (b^{-1} b) = a (b^{-1} b) d = (a b^{-1})(b d)         \\
+		    & = (c d^{-1})(b d) = (b d)(d^{-1} c) = b (d d^{-1}) c = b c.
+	\end{align*}
+
+	Now suppose that $a d = b c$. Then
+	\begin{align*}
+		\frac{a}{b} & = a b^{-1} = a (d d^{-1}) b^{-1} = (a d)(d^{-1} b^{-1})                \\
+		            & = (b c)(d^{-1} b^{-1}) = c (b b^{-1}) d^{-1} = c d^{-1} = \frac{c}{d}.
+	\end{align*}
+
+	\PartProof{nir:l:frac:5}
+	We have $-(a b^{-1}) = (-a)b^{-1} = a(-b^{-1})$, or in other words
+	$$
+		-\frac{a}{b} = \frac{-a}{b} = \frac{a}{-b}.
+	$$
+
+	\PartProof{nir:l:frac:6}
+	We compute
+	$$
+		\frac{a}{b} \cdot \frac{c}{d} = (a b^{-1})(c d^{-1}) = (a c)(b^{-1} d^{-1}) = (a c)(b d)^{-1} = \frac{a c}{b d}.
+	$$
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\begin{exercise}[Used in Theorem \ref{urn:t:urn}] %% 2.4.9
+	Let $\frac{a}{b}, \frac{c}{d} \in \mathbb{Q}$. Prove that $\frac{a}{b} < \frac{c}{d}$ if and only if either $c b - a d > 0$ and $b d > 0$, or $c b - a d < 0$ and $b d < 0$.
+\end{exercise}
+
+\begin{proof}
+	Suppose that $\frac{a}{b} < \frac{c}{d}$. Then $a b^{-1} < c d^{-1}$. There is either $b d > 0$ or $b d < 0$. If $b d > 0$, then
+	\begin{align*}
+		a d & = a (b b^{-1}) d = (a b^{-1})(b d)        \\
+		    & < (c d^{-1})(b d) = c (d^{-1} d) b = c b,
+	\end{align*}
+	and as a result $c b - a d > 0$.
+	If $b d < 0$, then $a d = (a b^{-1})(b d) > (c d^{-1})(b d) = c b$, and as a result $c b - a d < 0$.
+
+	Now suppose that either $c b - a d > 0$ and $b d > 0$, or $c b - a d < 0$ and $b d < 0$. If $c b - a d > 0$ and $b d > 0$, then $a d < c b$ and $(b d)^{-1} > 0$, and therefore
+	\begin{align*}
+		\frac{a}{b} & = a b^{-1} = a (d d^{-1}) b^{-1} = (a d)(b^{-1} d^{-1}) = (a d)(b d)^{-1}                \\
+		            & < (c b)(b d)^{-1} = (c b)(b^{-1} d^{-1}) = c (b b^{-1}) d^{-1} = c d^{-1} = \frac{c}{d}.
+	\end{align*}
+	If $c b - a d < 0$ and $b d < 0$, then $a d > c b$ and $(b d)^{-1} < 0$, and therefore $\frac{a}{b} = (a d)(b d)^{-1} < (c b)(b d)^{-1} = \frac{c}{d}$.
+\end{proof}
+
+
+%-------------------------------------------------------------------------------------------------------------
+\Newpage
+\existsLargerNatL*
+
+\begin{exercise}[Used in Section \ref{twot}] %% 2.4.10
+	Let $a, b \in \mathbb{Q}$. Suppose that $a > 0$. Prove that there is some $n \in \mathbb{N}$ such that $b < n a$. Use only the material in Sections \ref{rpr} and \ref{nir}; do not use the \nameref{rax:d:lub_prop}.
+\end{exercise}
+
+\begin{proof}
+	We note that $a \neq 0$ because $a > 0$. By Corollary \ref{nir:c:rat} we observe that $a^{-1} \in \mathbb{Q}$ and that $b a^{-1} \in \mathbb{Q}$. From Lemma \ref{nir:l:exists_larger_nat} we see that there is some $n \in \mathbb{N}$ such that $b a^{-1} < n$, so $(b a^{-1}) a < n a$. Then
+	$$
+		(b a^{-1}) a = b (a^{-1} a) = b < n a,
+	$$
+	as required.
+\end{proof}
+
+
+
+

@@ -267,17 +267,18 @@
 	\PartProof{rpr:l:props:10}
 	Suppose that $a \neq 0$ and $b \neq 0$. From the \nameref{rax:d:props:inverses_mult} we observe that $(a b)(a b)^{-1} = 1$. Then,
 	\begin{align*}
-		(a b)(a b)^{-1} = 1 & \iff (a b)(b a) = 1                            & \text{(\nameref{rax:d:props:commutative_mult})} \\
-		                    & \iff [(a b)^{-1} b]a = 1                       & \text{(\nameref{rax:d:props:associative_mult})} \\
-		                    & \iff ([(a b)^{-1} b]a)a^{-1} = 1 \cdot a^{-1}                                                    \\
-		                    & \iff [(a b)^{-1} b][a a^{-1}] = 1 \cdot a^{-1} & \text{(\nameref{rax:d:props:associative_mult})} \\
-		                    & \iff [(a b)^{-1} b] \cdot 1 = 1 \cdot a^{-1}   & \text{(\nameref{rax:d:props:inverses_mult})}    \\
-		                    & \iff [(a b)^{-1} b] \cdot 1 = a^{-1} \cdot 1   & \text{(\nameref{rax:d:props:commutative_mult})} \\
-		                    & \iff (a b)^{-1} b = a^{-1}                     & \text{(\nameref{rax:d:props:identity_mult})}    \\
-		                    & \iff [(a b)^{-1} b]b^{-1} = a^{-1} b^{-1}                                                        \\
-		                    & \iff (a b)^{-1} (b b^{-1}) = a^{-1} b^{-1}     & \text{(\nameref{rax:d:props:associative_mult})} \\
-		                    & \iff (a b)^{-1} \cdot 1 = a^{-1} b^{-1}        & \text{(\nameref{rax:d:props:inverses_mult})}    \\
-		                    & \iff (a b)^{-1} = a^{-1} b^{-1}                & \text{(\nameref{rax:d:props:identity_mult})}.
+		 & (a b)(a b)^{-1} = 1                                                                                    \\
+		 & \quad \iff (a b)(b a) = 1                            & \text{(\nameref{rax:d:props:commutative_mult})} \\
+		 & \quad \iff [(a b)^{-1} b]a = 1                       & \text{(\nameref{rax:d:props:associative_mult})} \\
+		 & \quad \iff ([(a b)^{-1} b]a)a^{-1} = 1 \cdot a^{-1}                                                    \\
+		 & \quad \iff [(a b)^{-1} b][a a^{-1}] = 1 \cdot a^{-1} & \text{(\nameref{rax:d:props:associative_mult})} \\
+		 & \quad \iff [(a b)^{-1} b] \cdot 1 = 1 \cdot a^{-1}   & \text{(\nameref{rax:d:props:inverses_mult})}    \\
+		 & \quad \iff [(a b)^{-1} b] \cdot 1 = a^{-1} \cdot 1   & \text{(\nameref{rax:d:props:commutative_mult})} \\
+		 & \quad \iff (a b)^{-1} b = a^{-1}                     & \text{(\nameref{rax:d:props:identity_mult})}    \\
+		 & \quad \iff [(a b)^{-1} b]b^{-1} = a^{-1} b^{-1}                                                        \\
+		 & \quad \iff (a b)^{-1} (b b^{-1}) = a^{-1} b^{-1}     & \text{(\nameref{rax:d:props:associative_mult})} \\
+		 & \quad \iff (a b)^{-1} \cdot 1 = a^{-1} b^{-1}        & \text{(\nameref{rax:d:props:inverses_mult})}    \\
+		 & \quad \iff (a b)^{-1} = a^{-1} b^{-1}                & \text{(\nameref{rax:d:props:identity_mult})}.
 	\end{align*}
 
 	\PartProof{rpr:l:props:12}
@@ -318,12 +319,13 @@
 
 	Suppose that $a \neq 0$. From the \nameref{rax:d:props:inverses_mult} we see that $a^{-1} (a^{-1})^{-1} = 1$. Then,
 	\begin{align*}
-		a^{-1} (a^{-1})^{-1} = 1 & \iff [a^{-1} (a^{-1})^{-1}]a = 1 \cdot a                                                    \\
-		                         & \iff [(a^{-1})^{-1} a^{-1}]a = a \cdot 1  & \text{(\nameref{rax:d:props:commutative_mult})} \\
-		                         & \iff (a^{-1})^{-1} (a^{-1} a) = a \cdot 1 & \text{(\nameref{rax:d:props:associative_mult})} \\
-		                         & \iff (a^{-1})^{-1} (a a^{-1}) = a \cdot 1 & \text{(\nameref{rax:d:props:commutative_mult})} \\
-		                         & \iff (a^{-1})^{-1} \cdot 1 = a \cdot 1    & \text{(\nameref{rax:d:props:inverses_mult})}    \\
-		                         & \iff (a^{-1})^{-1} = a                    & \text{(\nameref{rax:d:props:identity_mult})}.
+		 & a^{-1} (a^{-1})^{-1} = 1                                                                          \\
+		 & \quad \iff [a^{-1} (a^{-1})^{-1}]a = 1 \cdot a                                                    \\
+		 & \quad \iff [(a^{-1})^{-1} a^{-1}]a = a \cdot 1  & \text{(\nameref{rax:d:props:commutative_mult})} \\
+		 & \quad \iff (a^{-1})^{-1} (a^{-1} a) = a \cdot 1 & \text{(\nameref{rax:d:props:associative_mult})} \\
+		 & \quad \iff (a^{-1})^{-1} (a a^{-1}) = a \cdot 1 & \text{(\nameref{rax:d:props:commutative_mult})} \\
+		 & \quad \iff (a^{-1})^{-1} \cdot 1 = a \cdot 1    & \text{(\nameref{rax:d:props:inverses_mult})}    \\
+		 & \quad \iff (a^{-1})^{-1} = a                    & \text{(\nameref{rax:d:props:identity_mult})}.
 	\end{align*}
 
 	\PartProof{rpr:l:props:17}
@@ -378,12 +380,13 @@
 	\end{align*}
 	Third, suppose that $-b < -a$. Then,
 	\begin{align*}
-		-b < -a & \iff (-b) + (b + a) < (-a) + (b + a) & \text{(\nameref{rax:d:props:addition_order})}  \\
-		        & \iff [(-b) + b] + a < (-a) + (b + a) & \text{(\nameref{rax:d:props:associative_add})} \\
-		        & \iff a + [b + (-b)] < (b + a) + (-a) & \text{(\nameref{rax:d:props:commutative_add})} \\
-		        & \iff a + [b + (-b)] < b + [a + (-a)] & \text{(\nameref{rax:d:props:associative_add})} \\
-		        & \iff a + 0 < b + 0                   & \text{(\nameref{rax:d:props:inverses_add})}    \\
-		        & \iff a < b                           & \text{(\nameref{rax:d:props:identity_add})}.
+		 & -b < -a                                                                                     \\
+		 & \quad \iff (-b) + (b + a) < (-a) + (b + a) & \text{(\nameref{rax:d:props:addition_order})}  \\
+		 & \quad \iff [(-b) + b] + a < (-a) + (b + a) & \text{(\nameref{rax:d:props:associative_add})} \\
+		 & \quad \iff a + [b + (-b)] < (b + a) + (-a) & \text{(\nameref{rax:d:props:commutative_add})} \\
+		 & \quad \iff a + [b + (-b)] < b + [a + (-a)] & \text{(\nameref{rax:d:props:associative_add})} \\
+		 & \quad \iff a + 0 < b + 0                   & \text{(\nameref{rax:d:props:inverses_add})}    \\
+		 & \quad \iff a < b                           & \text{(\nameref{rax:d:props:identity_add})}.
 	\end{align*}
 	Thus, $a < b$ if and only if $b - a > 0$ if and only if $-b < -a$. A similar argument shows that $a \leq b$ if and only if $b - a \geq 0$ if and only if $-b \leq -a$.
 
@@ -423,13 +426,13 @@
 
 	Now suppose that $b^{-1} < a^{-1}$. By Parts (\ref{rpr:l:rprops:7}) (\ref{rpr:l:rprops:10}) of this lemma we know that $a^2 > 0$ and $b a^2 > 0$. Then,
 	\begin{align*}
-		b^{-1} & < a^{-1}                                                                                                    \\
-		       & \iff b^{-1} (b a^2) < a^{-1} (b a^2) = a^{-1} (b a a) & \text{(\nameref{rax:d:props:multiplication_order})} \\
-		       & \iff b^{-1} (b a^2) < (b a a) a^{-1}                  & \text{(\nameref{rax:d:props:commutative_mult})}     \\
-		       & \iff (b^{-1} b) a^2 < (b a)(a a^{-1})                 & \text{(\nameref{rax:d:props:associative_mult})}     \\
-		       & \iff a^2 (b b^{-1}) < (a b)(a a^{-1})                 & \text{(\nameref{rax:d:props:commutative_mult})}     \\
-		       & \iff a^2 \cdot 1 < (a b) \cdot 1                      & \text{(\nameref{rax:d:props:inverses_mult})}        \\
-		       & \iff a^2 < a b                                        & \text{(\nameref{rax:d:props:identity_mult})}.
+		 & b^{-1} < a^{-1}                                                                                                   \\
+		 & \quad \iff b^{-1} (b a^2) < a^{-1} (b a^2) = a^{-1} (b a a) & \text{(\nameref{rax:d:props:multiplication_order})} \\
+		 & \quad \iff b^{-1} (b a^2) < (b a a) a^{-1}                  & \text{(\nameref{rax:d:props:commutative_mult})}     \\
+		 & \quad \iff (b^{-1} b) a^2 < (b a)(a a^{-1})                 & \text{(\nameref{rax:d:props:associative_mult})}     \\
+		 & \quad \iff a^2 (b b^{-1}) < (a b)(a a^{-1})                 & \text{(\nameref{rax:d:props:commutative_mult})}     \\
+		 & \quad \iff a^2 \cdot 1 < (a b) \cdot 1                      & \text{(\nameref{rax:d:props:inverses_mult})}        \\
+		 & \quad \iff a^2 < a b                                        & \text{(\nameref{rax:d:props:identity_mult})}.
 	\end{align*}
 	A similar argument shows that $b^2 > 0$ and $a b^2 > 0$ and $a b < b^2$. Thus, $a^2 < a b < b^2$, and from the \nameref{rax:d:props:transitive} it follows that $a^2 < b^2$.
 
@@ -527,14 +530,20 @@
 \begin{proof}[(\ref{rpr:e:5:3})]
 	Let $a, b \in \mathbb{R}$, and suppose that $a < b$. By the \nameref{rax:d:props:multiplication_order} and \nameref{rax:d:props:commutative_add} we observe that $a + a < a + b < b + b$. By the \nameref{rax:d:props:trichotomy} and Part (\ref{rpr:e:5:1}) of this exercise we deduce that $2 \neq 0$. Then,
 	\begin{align*}
-		a + a & < a + b < b + b                                                                                                    \\
-		      & \iff a \cdot 1 + a \cdot 1 < a + b < b \cdot 1 + b \cdot 1   & \text{(\nameref{rax:d:props:identity_mult})}        \\
-		      & \iff a(1 + 1) < a + b < b(1 + 1)                             & \text{(\nameref{rax:d:props:distributive})}         \\
-		      & \iff a \cdot 2 < a + b < b \cdot 2                                                                                 \\
-		      & \iff (a \cdot 2) 2^{-1} < (a + b)2^{-1} < (b \cdot 2) 2^{-1} & \text{(\nameref{rax:d:props:multiplication_order})} \\
-		      & \iff a (2 \cdot 2^{-1}) < (a + b)2^{-1} < b (2 \cdot 2^{-1}) & \text{(\nameref{int:t:props:associative_mult})}     \\
-		      & \iff a \cdot 1 < (a + b)2^{-1} < b \cdot 1                   & \text{(\nameref{rax:d:props:inverses_mult})}        \\
-		      & \iff a < (a + b)2^{-1} < b                                   & \text{(\nameref{rax:d:props:identity_mult})}.
+		 & a + a < a + b < b + b                                              \\
+		 & \quad \iff a \cdot 1 + a \cdot 1 < a + b < b \cdot 1 + b \cdot 1   \\
+		 & \qquad \qquad \text{(\nameref{rax:d:props:identity_mult})}         \\
+		 & \quad \iff a(1 + 1) < a + b < b(1 + 1)                             \\
+		 & \qquad \qquad \text{(\nameref{rax:d:props:distributive})}          \\
+		 & \quad \iff a \cdot 2 < a + b < b \cdot 2                           \\
+		 & \quad \iff (a \cdot 2) 2^{-1} < (a + b)2^{-1} < (b \cdot 2) 2^{-1} \\
+		 & \qquad \qquad \text{(\nameref{rax:d:props:multiplication_order})}  \\
+		 & \quad \iff a (2 \cdot 2^{-1}) < (a + b)2^{-1} < b (2 \cdot 2^{-1}) \\
+		 & \qquad \qquad \text{(\nameref{int:t:props:associative_mult})}      \\
+		 & \quad \iff a \cdot 1 < (a + b)2^{-1} < b \cdot 1                   \\
+		 & \qquad \qquad \text{(\nameref{rax:d:props:inverses_mult})}         \\
+		 & \quad \iff a < (a + b)2^{-1} < b                                   \\
+		 & \qquad \qquad \text{(\nameref{rax:d:props:identity_mult})}.
 	\end{align*}
 \end{proof}
 

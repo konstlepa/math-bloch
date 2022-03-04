@@ -228,13 +228,16 @@
 
 \begin{proof}[(\ref{real:e:4:2})]
 	By the \nameref{real:t:props:inverses_add} we know that $A + (-A) = D_0$. Then,
-	\begin{align*}
-		D_0 & = A + (-A)                                                                                  \\
-		    & \iff D_0 + (-(-A)) = A + (-A) + (-(-A))                                                     \\
-		    & \iff D_0 + (-(-A)) = A + [(-A) + (-(-A))] & \text{(\nameref{real:t:props:associative_add})} \\
-		    & \iff D_0 + (-(-A)) = A + D_0              & \text{(\nameref{real:t:props:inverses_add})}    \\
-		    & \iff (-(-A)) + D_0 = A + D_0              & \text{(\nameref{real:t:props:commutative_add})} \\
-		    & \iff -(-A) = A,
+	\begin{align*}\hfuzz=\maxdimen
+		 & D_0 = A + (-A)                                                \\
+		 & \quad \iff D_0 + (-(-A)) = A + (-A) + (-(-A))                 \\
+		 & \quad \iff D_0 + (-(-A)) = A + [(-A) + (-(-A))]               \\
+		 & \qquad \qquad \text{(\nameref{real:t:props:associative_add})} \\
+		 & \quad \iff D_0 + (-(-A)) = A + D_0                            \\
+		 & \qquad \qquad \text{(\nameref{real:t:props:inverses_add})}    \\
+		 & \quad \iff (-(-A)) + D_0 = A + D_0                            \\
+		 & \qquad \qquad \text{(\nameref{real:t:props:commutative_add})} \\
+		 & \quad \iff -(-A) = A,
 	\end{align*}
 	as required.
 \end{proof}
@@ -480,13 +483,14 @@
 	\PartProof{real:t:rat:3:5}
 	Suppose that $r < s$. Then $s - r > 0$. From Lemma \ref{real:l:mult_req} (\ref{real:l:mult_req:1}) we see that $D_{s - r} > D_0$. Then,
 	\begin{align*}
-		D_0 < D_{s - r} & \iff D_0 < D_{s + (-r)}                                                                             \\
-		                & \iff D_0 < D_s + D_{-r}               & \text{(Part (\ref{real:t:rat:3:1}) of this exercise)}       \\
-		                & \iff D_0 < D_s + (-D_r)               & \text{(Part (\ref{real:e:1:1}) of Exercise \ref{real:e:1})} \\
-		                & \iff D_0 + D_r < [D_s + (-D_r)] + D_r & \text{(\nameref{real:t:props:addition_order})}              \\
-		                & \iff D_0 + D_r < D_s + [(-D_r) + D_r] & \text{(\nameref{real:t:props:associative_add})}             \\
-		                & \iff D_r + D_0 < D_s + [D_r + (-D_r)] & \text{(\nameref{real:t:props:commutative_add})}             \\
-		                & \iff D_r + D_0 < D_s + D_0            & \text{(\nameref{real:t:props:inverses_add})}                \\
-		                & \iff D_r < D_s                        & \text{(\nameref{real:t:props:identity_add})}.
+		 & D_0 < D_{s - r}                                                                                           \\
+		 & \quad \iff D_0 < D_{s + (-r)}                                                                             \\
+		 & \quad \iff D_0 < D_s + D_{-r}               & \text{(Part (\ref{real:t:rat:3:1}) of this exercise)}       \\
+		 & \quad \iff D_0 < D_s + (-D_r)               & \text{(Part (\ref{real:e:1:1}) of Exercise \ref{real:e:1})} \\
+		 & \quad \iff D_0 + D_r < [D_s + (-D_r)] + D_r & \text{(\nameref{real:t:props:addition_order})}              \\
+		 & \quad \iff D_0 + D_r < D_s + [(-D_r) + D_r] & \text{(\nameref{real:t:props:associative_add})}             \\
+		 & \quad \iff D_r + D_0 < D_s + [D_r + (-D_r)] & \text{(\nameref{real:t:props:commutative_add})}             \\
+		 & \quad \iff D_r + D_0 < D_s + D_0            & \text{(\nameref{real:t:props:inverses_add})}                \\
+		 & \quad \iff D_r < D_s                        & \text{(\nameref{real:t:props:identity_add})}.
 	\end{align*}
 \end{proof}

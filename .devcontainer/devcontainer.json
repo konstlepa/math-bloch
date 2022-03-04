@@ -24,7 +24,7 @@
 			"%TMPFILE%",
 			"-y=\"defaultIndent: '%INDENT%',onlyOneBackUp:1,indentAfterItems:lenumerate:1,indentAfterItems:bycases:1\"",
 		],
-		"latex-workshop.latex.outDir": "./out",
+		"latex-workshop.latex.outDir": ".",
 		"latex-workshop.latex.recipes": [
 			{
 				"name": "latexmk",
